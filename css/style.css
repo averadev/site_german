@@ -1,0 +1,192 @@
+/* Custom Stylesheet */
+
+ul.footer-info li{
+	margin-bottom: 10px;
+}
+
+.margin-top-1{
+	margin-top: 1em;
+}
+
+ .card{
+    box-shadow: none ;
+}
+
+.fb-comments span iframe{
+	width: 400px !important;
+	height: 400px !important;
+}
+.fb-comments span{
+	width: 400px !important;
+	height: 400px !important;
+}
+
+/*Square div*/
+.square {
+	background-color: #949494;
+	color: white;
+	width:30px;
+	height:30px;
+	padding-left: 3px;
+	padding-top: 3px;
+	display: inline-block;
+}
+
+/*change container from 70% to 80%*/
+@media only screen and (min-width: 993px) {
+  .container {
+	width: 80%;
+  }
+}
+
+/*TOP BAR*/
+
+.gray-color{
+  background-color: #C2C2C2;
+}
+
+nav ul a:hover {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li.active {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav ul li:nth-last-child(-n+4){
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-color: white;
+}
+
+.grey-border{
+	color: gray;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+}
+
+.white-border{
+	color: white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: white;
+}
+
+
+
+div.bottomRule {
+	border-bottom:1px solid #787A77;
+}
+
+.large-spacing{
+	letter-spacing: 6px;
+}
+
+p.par-title {
+  font-size: 4rem;
+  line-height: 110%;
+  margin: 0.5rem 0 0.4rem 0;
+  letter-spacing: 4px;
+}
+
+.tab-bg-color{
+	background-color: #EBEBEB;
+}
+
+/*Tabs*/
+
+
+.black-tabs .tab a {
+  font-size: 14px;
+  padding: 0 10px;
+}
+.black-tabs .tab a:hover, .black-tabs .tab a.active {
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+}
+.black-tabs .tab a, .black-tabs .tab a.active {
+  background-color: transparent;
+  color: black;
+}
+.black-tabs .indicator {
+    background-color: black;
+}
+
+
+/*Backgrouns*/
+
+
+.bg_proceso{
+  background-image:url('../media/img/white_room.jpg');
+  width: 100%;
+}
+
+
+.grey-bg{
+  background-color: #EEEEEC;
+}
+.darker{
+  background-color: #40423F !important ;
+}
+
+p.bold-normal{
+	margin-bottom: 0em;
+	margin-top: 0.1em;
+	font-weight: bold;
+}
+
+
+.tab-space{
+	padding-top: 2rem; 
+	padding-left: 3.5rem;
+}
+.max-light{
+	font-weight: 100;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+	width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+	position: absolute;
+	top: 40%;
+  }
+  #index-banner .section {
+	top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+	top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}

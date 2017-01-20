@@ -48,7 +48,9 @@ input.my-input{
 	background-color: #5C5E5B;
 	border-radius: 5px !important;
 	color: white;
-	padding: 0 0 0 20px;
+
+  width: 96%;
+  padding-left: 20px;
 }
 [type="text"].my-input, textarea {
   background-color: #5C5E5B !important;

@@ -13,10 +13,8 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="parallax"><img src="media/img/background1.jpg" alt="Unsplashed background img 1"></div>
+		<div class="parallax"><img src="media/img/home/home_slider.png" alt="banner"></div>
 	</div>
-
-
 	<div class="container">
 		<div class="section">
 			<div class="row">
@@ -120,14 +118,11 @@
 							* Change the path depending on where you have copied contents of /src directory.
 							
 							*/
-							
-							include_once "./widgets/widgets/Widgets.php";
-							
+							include_once "./widgets/widgets/Widgets.php";							
 							
 							Catharsis\Web\Widgets::facebook()->initialize()->appId("1437917246425293")->render();
 							Catharsis\Web\Widgets::facebook()->comments()->url("http://yandex.ru")->render();
-												
-						?>					
+						?>
 				</div>
 			</div>
 
@@ -198,16 +193,11 @@
 					</div>
 					<div class="col s12 center">
 						<p style="font-size: 1.1em; font-weight: 400; text-decoration: underline;  " class="header col s12 light">CARGAR MAS NOTAS DE PRENSA</p>
-					</div>															
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-
-	
 <?php include_once("templates/footer.html");?>
 <script src="js/init.js"></script>
 <script src="js/tabModule.js"></script>

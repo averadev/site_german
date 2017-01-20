@@ -1,6 +1,24 @@
 /* Custom Stylesheet */
 
 
+/*form styles*/
+
+form.whiteform input, form.whiteform textarea{
+	background-color: white !important;
+	color: black;
+	border: 1px solid black;
+}
+
+form.whiteform input:focus{
+	box-shadow: 0 1px 0 0 #C2C2C2 ;
+}
+
+[type="text"].my-input, textarea {
+  background-color: #5C5E5B !important;
+
+}
+
+
 .no-margin-bottom{
 	margin-bottom: 0px; 
 }
@@ -48,6 +66,13 @@ p.size45{
 	padding-right: 10px;
 	padding-bottom: 0px; 
 	font-size: 0.8em;
+}
+
+.med-button{
+
+	font-size: 0.8em;
+	font-weight: bold;"
+
 }
 
 /*Square div*/
@@ -169,7 +194,6 @@ p.par-title {
 }
 
 .bg-monumental-form{
-	background-image:url('../media/img/escultura/fondo_monumental.png') ;
 	background-size: 100%;
 	background-repeat: no-repeat;
 
@@ -245,4 +269,38 @@ p {
 
 footer.page-footer {
 	margin: 0;
+}
+
+
+/*Placeholders*/
+
+
+.whiteform textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: black ;
+}
+.whiteform textarea::-moz-placeholder { /* Firefox 19+ */
+	color: black ;
+
+}
+.whiteform textarea:-ms-input-placeholder { /* IE 10+ */
+	color: black ;
+
+}
+.whiteform textarea:-moz-placeholder { /* Firefox 18- */
+	color: black ;
+}
+
+.whiteform input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: black ;
+}
+.whiteform input::-moz-placeholder { /* Firefox 19+ */
+	color: black ;
+
+}
+.whiteform input:-ms-input-placeholder { /* IE 10+ */
+	color: black ;
+
+}
+.whiteform input:-moz-placeholder { /* Firefox 18- */
+	color: black ;
 }

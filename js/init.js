@@ -10,6 +10,8 @@ var home = function (){
 			$(this).siblings().removeClass("active");
 		});
 
+ 
+
 		$( "#topbar li:eq(0)").addClass('active'); 	
 
 	}

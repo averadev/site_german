@@ -8,7 +8,7 @@
  */
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
-     ========================================================================== */
+	 ========================================================================== */
 /**
    * 1. Change the default font family in all browsers (opinionated).
    * 2. Correct the line height in all browsers.
@@ -18,6 +18,22 @@
 
 /*Foundation Inputs*/
 
+input:not([type]):focus:not([readonly]),
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border: 1px solid black;
+  box-shadow: 0 1px 0 0 #C2C2C2;
+}
 
 /* Text inputs */
 input:not([type]),
@@ -46,38 +62,34 @@ form.myform{
 
 input.my-input{
 	background-color: #5C5E5B;
-	border-radius: 5px !important;
+	
 	color: white;
-
-  width: 96%;
-  padding-left: 20px;
-}
-[type="text"].my-input, textarea {
-  background-color: #5C5E5B !important;
-}
-input.my-input:hover, input.my-input:hover, input.my-input:active{
-  background-color: #5C5E5B ;
+	width: 100%;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: white !important;
-  opacity: 1;
+input, textarea{
+	text-indent: 20px;
+	border-radius: 5px !important;
+}
+
+
+.myform input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: white ;
+	opacity: 1;
+}
+.myform input::-moz-placeholder { /* Firefox 19+ */
+	color: white ;
+	opacity: 1;
 
 }
-::-moz-placeholder { /* Firefox 19+ */
-  color: white !important;
-  opacity: 1;
+.myform input:-ms-input-placeholder { /* IE 10+ */
+	color: white ;
+	opacity: 1;
 
 }
-:-ms-input-placeholder { /* IE 10+ */
-  color: white !important
-  opacity: 1;
-
-}
-:-moz-placeholder { /* Firefox 18- */
-  color: white !important;
-  opacity: 1;
-
+.myform input:-moz-placeholder { /* Firefox 18- */
+	color: white ;
+	opacity: 1;
 }
 
 

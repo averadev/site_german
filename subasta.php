@@ -25,30 +25,34 @@
 		</div>
 	</div>
 
+	<!-- Start ¿Porque? -->
 	<div id="tab1" class="bg_porque" >
-		<div class="container no-pad-top" style="padding-left: 3vw;">
+		<div class="section" >
 			<div class="row">
-				<div class="col l12">
-					<h5 style="font-size: 2.1em; padding-top: 9vw; font-weight: 500; ">
-					Todo comienza con los sueños, <br>
-						Es el punto de partida a un viaje interno.
-					</h5>
+				<div class="col s12 txt_title">
+					<p class="center-align">Inspiración en los sueños y en el <br>cantar del zwampath del barril.</p>
 				</div>
-				<div class="col l7">
-					<div class="col l5" style="float: right; padding-top: 4vw;">
-						<h5 class="light" > 2. SUEÑOS </h5>
-						<p style="line-height: 140%;">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-						</p>
-					</div>
+				<div class="col l2 m10 s12 offset-l4 offset-m1">
+					<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
 				</div>
-				<div class="col l5">
-					<img src="">
+				<div style="position: relative;">
+					<img style="width: 40%; position: absolute; top:4.3em; left:0em; z-index: 100; padding-right: 6em" src="media/img/subasta/bg_porque2.png" alt="">
 				</div>
 			</div>
+			<div class="row" style="margin-top: 0;">
+				<div class="col l10 m12 s12 offset-l1 ">
+					<div class="right">
+						<div class="col l3 m10 s12 offset-l6 offset-m1">
+							<p class="txt_left">
+								El jefe buscó el éxtasis en un imprevisto baño de whisky y gozó como un duque. Exhíbanse politiquillos zafios, con orejas kilométricas y uñas de gavilán. El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo. El pinguino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a.
+							</p>
+						</div>
+					</div>				
+				</div>
+			</div>			
 		</div>
 	</div>
+	<!-- Start ¿Porque? -->
 
 	<!-- <div id="tab2" class="col s12">
 		<div class="container no-pad-top" style="padding-left: 3vw;">
@@ -71,6 +75,7 @@
 		</div>
 	</div> -->
 
+	<!-- Start Proceso -->
 	<div id="tab2" class="bgg_proceso">
 		<div class="container no-pad-top" style="padding-left: 3vw;">
 			<div class="row">
@@ -115,7 +120,7 @@
 											</p>
 										</div>
 										<div class="col l5">
-      										<img src="media/img/subasta/bg_suenos.png" width="485" height="485" alt="" class="img_proceso_3">
+      										<img src="media/img/subasta/bg_suenos.png" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -126,13 +131,17 @@
 									es el punto de partida a un viaje interno.
 									</h2>
 									<div class="row">
-										<div class="col l7">
-											<div class="col l5" style="float: right; padding-top: 4vw;">
-												<h5 class="light">3. Magia</h5>
-												<p>
-													Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-												</p>
-											</div>
+										<div class="col l4">
+      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+										</div>
+										<div class="col l3" style="padding-top: 4vw;">
+											<h5 class="light">3. Magia</h5>
+											<p>
+												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
+											</p>
+										</div>
+										<div class="col l5">
+      										<img src="media/img/subasta/bg_magia.png" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -143,13 +152,17 @@
 									es el punto de partida a un viaje interno.
 									</h2>
 									<div class="row">
-										<div class="col l7">
-											<div class="col l5" style="float: right; padding-top: 4vw;">
-												<h5 class="light">4. Pasión</h5>
-												<p>
-													Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-												</p>
-											</div>
+										<div class="col l4">
+      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+										</div>
+										<div class="col l3" style="padding-top: 4vw;">
+											<h5 class="light">4. Pasión</h5>
+											<p>
+												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
+											</p>
+										</div>
+										<div class="col l5">
+      										<img src="media/img/subasta/bg_pasion.png" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -160,13 +173,17 @@
 									es el punto de partida a un viaje interno.
 									</h2>
 									<div class="row">
-										<div class="col l7">
-											<div class="col l5" style="float: right; padding-top: 4vw;">
-												<h5 class="light">5. Luz</h5>
-												<p>
-													Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-												</p>
-											</div>
+										<div class="col l4">
+      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+										</div>
+										<div class="col l3" style="padding-top: 4vw;">
+											<h5 class="light">5. Luz</h5>
+											<p>
+												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
+											</p>
+										</div>
+										<div class="col l5">
+      										<img src="media/img/subasta/bg_luz.png" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -208,6 +225,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Start Proceso -->
 
 	
 

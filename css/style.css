@@ -227,7 +227,7 @@ p.bold-normal{
 }
 
 p {
-	/*line-height: 2rem;*/
+	line-height: 2rem;
 }
 
 .button-collapse {
@@ -303,18 +303,4 @@ footer.page-footer {
 }
 .whiteform input:-moz-placeholder { /* Firefox 18- */
 	color: black ;
-}
-
-/* Text Submodulo Porque */
-.txt_left p {
-	font-size: 1em;
-	text-align: justify;
-	font-weight: 300;
-	line-height: 130%;
-}
-
-.txt_title p {
-	font-size: 2.1em;
-	font-weight: 500;
-	color: #2d332c;
 }

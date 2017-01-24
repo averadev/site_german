@@ -8,7 +8,7 @@ class ServicesController extends BaseController {
 	|
 	*/
 
-	public function getIndex(){
+	public function getMonumental(){
 		return View::make('serviciosextra');
 	}
 

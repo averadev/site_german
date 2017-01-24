@@ -9,7 +9,7 @@
 						<li><a class="white-text" href="#!">NOTAS DE PRENSA</a></li>
 						<li><a class="white-text" href="#!">GERMAN ARZATE</a></li>
 						<li><a class="white-text" href="#!">CONTACTO</a></li>
-						<li class="white-text" style="margin-top: 1em;" >SÍGUEME EN: <img class="social-button" alt="facebook" id="goface" src="media/img/home/fb.png"> <img class="social-button" alt="instagram" id="goinsta" src="media/img/home/insta.png"> <img class="social-button" alt="twitter" id="gotwitter" src="media/img/home/twitter.png"> </li>			
+						<li class="white-text" style="margin-top: 1em;" >SÍGUEME EN: <img class="social-button" alt="facebook" id="goface" src="{{ URL::asset('media/img/home/fb.png') }}"> <img class="social-button" alt="instagram" id="goinsta" src="{{ URL::asset('media/img/home/insta.png') }}"> <img class="social-button" alt="twitter" id="gotwitter" src="{{ URL::asset('media/img/home/twitter.png') }}"> </li>			
 					</ul>
 				</div>
 				<div class="col l4 s12">
@@ -34,7 +34,7 @@
 				</div>
 				<div class="col l4 s12">
 					<ul class="footer-info">
-						<img style="width: 7em; margin-bottom: 20px;" src="media/img/home/logoblanco.png" alt="logo footer">
+						<img style="width: 7em; margin-bottom: 20px;" src="{{ URL::asset('media/img/home/logoblanco.png') }}" alt="logo footer">
 						<li class="white-text" href="#!" >Calle Niebla No.5 S.M.18,</a></li>
 						<li class="white-text" href="#!" >77580 Cancún, Q. Roo, México</a></li>
 						<li class="white-text" href="#!" >Tel.: 011 521 998 106850</a></li>
@@ -51,5 +51,5 @@
 	</footer>	
 	<!--  Scripts-->
 
-	<script src="js/materialize.js"></script>
-	<script src="js/main.js"></script>
+	<script src="{{ URL::asset('js/materialize.js') }} "></script>
+	<script src="{{ URL::asset('js/main.js') }} "></script>

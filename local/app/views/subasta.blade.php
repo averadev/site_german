@@ -5,23 +5,27 @@
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">
 					<ul class="tabs black-tabs">
-					@foreach($submodule as $submodule)
-						<li class="tab"><a href="#tab{{ $submodule->id }}">{{ $submodule->name }}</a></li>
-					@endforeach
+						<li class="tab"><a href="#tab1">¿POR QUÉ?</a></li>
+						<li class="tab"><a href="#tab2">EL PROCESO</a></li>
+						<li class="tab"><a href="#tab3">¿EN QUÉ TE CONVIERTE?</a></li>
+						<li class="tab"><a href="#tab4">ESPECIFICACIONES </a></li>
+						<li class="tab"><a href="#tab5">COMENTARIOS </a></li>
+						<li class="tab"><a href="#tab6">SUBASTA </a></li>
+						<li class="tab"><a href="#tab7">PRÓXIMAMENTE</a></li>
 					</ul>
 				</div>
 				
-				<div id="tab6" class="col s12">Test 3</div>
-				<div id="tab7" class="col s12">Test 4</div>
-				<div id="tab8" class="col s12">Test 5</div>
-				<div id="tab9" class="col s12">Test 6</div>
-				<div id="tab10" class="col s12">Test 7</div>
+				<div id="tab3" class="col s12">Test 3</div>
+				<div id="tab4" class="col s12">Test 4</div>
+				<div id="tab5" class="col s12">Test 5</div>
+				<div id="tab6" class="col s12">Test 6</div>
+				<div id="tab7" class="col s12">Test 7</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- Start ¿Porque? -->
-	<div id="tab4" class="bg_porque" >
+	<div id="tab1" class="bg_porque" >
 		<div class="section" >
 			<div class="row">
 				<div class="col s12 txt_title">
@@ -71,7 +75,7 @@
 	</div> -->
 
 	<!-- Start Proceso -->
-	<div id="tab5" class="bgg_proceso">
+	<div id="tab2" class="bgg_proceso">
 		<div class="container no-pad-top" style="padding-left: 3vw;">
 			<div class="row">
 				<div class="col l12">
@@ -221,9 +225,6 @@
 		</div>
 	</div>
 	<!-- Start Proceso -->
-
-	<!-- Start ¿En Que Te Convierte? -->
-	<!-- End ¿En Que Te Convierte? -->
 @stop
 @section('addJs')
 <script src="js/esculturas.js"></script>

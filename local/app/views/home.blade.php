@@ -6,7 +6,7 @@
 				<br><br>
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
-					<h3 style="margin-top: 10%; " class="header col s12 light">Bienvenidos</h3>
+					<h3 style="margin-top: 10%; " class="header col s12 light">{{$data->homeBannerTxt}}</h3>
 				</div>
 				<div class="row center">
 					<i class="large material-icons">expand_more</i>
@@ -14,13 +14,13 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="parallax"><img src="media/img/home/home_slider.png" alt="banner"></div>
+		<div class="parallax"><img src="media/img/home/{{$data->homeBanner}}" alt="banner"></div>
 	</div>
 	<div class="container">
 		<div class="section">
 			<div class="row">
 				<div class="col s12 m8 l8 ">
-					 <p class="par-title max-light">¡EN SUBASTA AHORA!</p>
+					 <p class="par-title max-light">{{$data->auctionTitle}}</p>
 				</div>
 				<div class="col s12 m4 l4 ">
 					<p class="bold-normal">Hasta el 21 de Noviembre 2016.</p>
@@ -136,7 +136,7 @@
 			<div class="section no-pad">
 				<div class="row"  style="margin-bottom: 0em;">
 					<div class="col s12 center">
-						<h5 style="padding-top: 10px;" class="header col s12 light">NOTAS DE PRENSA</h5>
+						<h5 style="padding-top: 10px;" class="header col s12 light">{{$data->titleBlogEntries}}</h5>
 					</div>
 					<div class="col s12 m4 l4">
 						<div class="card">
@@ -193,7 +193,7 @@
 						</div>
 					</div>
 					<div class="col s12 center">
-						<p style="font-size: 1.1em; font-weight: 400; text-decoration: underline;  " class="header col s12 light">CARGAR MAS NOTAS DE PRENSA</p>
+						<p style="font-size: 1.1em; font-weight: 400; text-decoration: underline;  " class="header col s12 light">{{$data->footerBlogEntries}}</p>
 					</div>
 				</div>
 			</div>

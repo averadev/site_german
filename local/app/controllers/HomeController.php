@@ -9,7 +9,21 @@ class HomeController extends BaseController {
 	*/
 
 	public function getIndex(){
-		return View::make('home');
+
+		$dataHome = DB::table('xref_section_component as block')
+			->select('block.name','block.value','block.detail')
+			->join('section','block.idSection','=','section.id')
+			->join('submodule','submodule.id','=','section.idSubmodule')
+			->where('submodule.idModule','=',1)
+			->get();
+			
+			$block = new stdClass();
+			foreach ($dataHome as $key => $value) {
+				$block->{$value->name} = $value->value;
+			}
+
+			return View::make('home')
+			->with('data',$block);
 	}
 
 }

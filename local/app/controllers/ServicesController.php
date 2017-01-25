@@ -9,7 +9,14 @@ class ServicesController extends BaseController {
 	*/
 
 	public function getMonumental(){
-		return View::make('serviciosextra');
+		return View::make('servicios.monumental');
 	}
+	public function getInteriores(){
+		return View::make('servicios.interiores');
+	}
+	public function getPersonalizadas(){
+		return View::make('servicios.personalizadas');
+	}	
+
 
 }

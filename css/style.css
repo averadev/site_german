@@ -310,3 +310,99 @@ footer.page-footer {
 .whiteform input:-moz-placeholder { /* Firefox 18- */
 	color: black ;
 }
+
+
+/* Formulario de Contacto */
+.fontContact{
+    font-family: "Crimson Text";
+}
+.ContactT{
+    letter-spacing: 4px;
+    font-size: 3rem;
+}
+.ContactSubT{
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: bold;
+}
+.bg_contact {
+    background-image: url("../media/img/subasta/bg_porque.png");
+    padding-top: 20px;
+    width: 100%;
+}
+.txtForm {
+    background-color: transparent !important;
+    border: 2px solid #b3b3b1 !important;
+    border-radius: 2px !important;
+    margin: 0 !important;
+}
+.txtForm::-webkit-input-placeholder {
+    color: #2d332c !important;
+}
+ 
+.txtForm:-moz-placeholder { /* Firefox 18- */
+    color: #2d332c !important;  
+}
+ 
+.txtForm::-moz-placeholder {  /* Firefox 19+ */
+    color: #2d332c !important;  
+}
+ 
+.txtForm:-ms-input-placeholder {  
+    color: #2d332c !important;  
+}
+
+.algRC{
+    float: right;
+    padding-right: 15%;
+}
+.btnRight{
+    float: right;
+}
+
+
+/* Botones */
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: 1em 2em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 1.1rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #1779ba;
+    color: #fefefe; 
+}
+[data-whatinput='mouse'] .button {
+    outline: 0; 
+}
+.button:hover, .button:focus {
+    background-color: #14679e;
+    color: #fefefe; 
+}
+.button.tiny {
+    font-size: 0.6rem; 
+}
+.button.small {
+    font-size: 0.75rem; 
+}
+.button.large {
+    font-size: 1.25rem; 
+}
+.button.expanded {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0; 
+}   
+.button.success {
+    background-color: #22bb5b;
+}
+.button.success:hover, .button.success:focus {
+    background-color: #3adb76;
+}

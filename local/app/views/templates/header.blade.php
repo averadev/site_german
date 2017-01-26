@@ -7,8 +7,8 @@
 				<li><a id="subasta" >SUBASTA</a></li>
 				<li><a id="extraservices" >SERVICIOS EXTRA</a></li>
 				<li><a href="#!">NOTAS DE PRENSA</a></li>
-				<li><a href="#!">GERMAN ARZATE</a></li>
-				<li><a href="#!">CONTACTO</a></li>
+				<li><a href="german">GERMAN ARZATE</a></li>
+				<li><a href="contacto">CONTACTO</a></li>
 			</ul>
 		</div>
 	</div>

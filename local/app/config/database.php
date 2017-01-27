@@ -54,9 +54,9 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'equipo1-pc',
+			'host'      => 'localhost',
 			'database'  => 'site_german',
-			'username'  => 'beto',
+			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',

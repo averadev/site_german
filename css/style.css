@@ -52,9 +52,8 @@ ul.footer-info li{
 
 p.size45{
 	font-size: 1.9em;
-  line-height: 130%;
-
-  margin: 1.14rem 0 0.912rem 0;
+	line-height: 130%;
+	margin: 1.14rem 0 0.912rem 0;
 }
 
 
@@ -161,6 +160,10 @@ nav ul li:first-child{
 
 div.bottomRule {
 	border-bottom:1px solid #787A77;
+}
+
+.med-spacing{
+	letter-spacing: 3px;
 }
 
 .large-spacing{
@@ -322,23 +325,29 @@ footer.page-footer {
 }
 
 
-/* General Font */
-.fontCrimson{
+/* Formulario de Contacto */
+.fontContact{
     font-family: "Crimson Text";
 }
-.itaBold{
-    font-style: italic;
-    font-weight: bold;
+
+.titleservices{
+    font-family: "Crimson Text 2";	
 }
 
-
-/* Pagina German */
-.imgFloat{
-    max-width: 100%;
+.menuFont{
+	font-family: 'Open Sans', sans-serif;
 }
 
+nav.mymenu ul a {
+	font-family: 'Open Sans', sans-serif!important;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
 
-/* Formulario de Contacto */ 
+.italic{
+	font-style: italic;
+}
+
 .ContactT{
     letter-spacing: 4px;
     font-size: 3rem;
@@ -428,79 +437,4 @@ footer.page-footer {
 }
 .button.success:hover, .button.success:focus {
     background-color: #3adb76;
-}
-
-/* Text Submodulo Porque */
-.font_head_style {
-	font-family: "Crimson Text";
-	font-weight: bold;
-	font-style: italic;
-	color: #2d332c;
-}
-.font_head_h {
-    font-size: 4.5rem;
-}
-.font_subhead_hp {
-	font-size: 2rem;
-}
-.font_subhead_h {
-	font-size: 2rem;
-	margin-right: -15%;
-    line-height: 140%;
-}
-.font_subhead_h p {
-	font-size: 2rem;
-	margin-right: -15%;
-    line-height: 140%;
-}
-.txt_desc {
-	text-align: justify;
-}
-.img_ga_pq {
-    margin-left: -2em;
-    margin-bottom: -4em;
-    padding-top: 0em;
-}
-/* Proceso Media RD */
-@media all and (max-width: 900px){
-	.img_ga_pq {
-		width:100%;
-		margin-bottom: 0;
-		margin: 0 auto;
-	}
-}
-.font_head_style_proceso {
-	font-family: "Crimson Text";
-	font-weight: bold;
-	font-style: italic;
-	color: #2d322c;
-}
-.txt_left p {
-	font-size: 1em;
-	text-align: justify;
-	font-weight: 300;
-	line-height: 130%;
-}
-
-.txt_title p {
-	font-size: 2.1em;
-	font-weight: 500;
-	color: #2d332c;
-}
-
-.img_right {
-	position: relative;
-    right: -5em;
-}
-
-.txt_fright {
-    float: right;
-    margin-right: -6em;
-    margin-top: -3em;
-}
-.txt_head {
-	font-weight: 300;
-    float: left;
-    line-height: normal;
-    padding-right: 12em;
 }

@@ -2,7 +2,7 @@
 @section('content')
 
     <!-- Slider -->
-    <div id="index-banner" class="parallax-container fontCrimson">
+    <div id="index-banner" class="parallax-container fontContact">
 		<div class="section no-pad-bot">
 			<div class="container">
 				<br><br>
@@ -24,7 +24,7 @@
 	<!-- Formulario -->
 	<div class="bg_contact" >
 		<div class="section" >
-			<div class="container row fontCrimson">
+			<div class="container row fontContact">
 				<div class="col s12 m6 l6">
                     <div class="row"><img class="algRC" src="media/img/contacto/bull.png"></div>
                     <div class="row">

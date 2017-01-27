@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="{{ URL::asset('css/materialize.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/tabModule.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/foundation.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-timeline.css') }}">
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="{{ URL::asset('js/jquery.localScroll.min.js') }}"></script>
 	
 </head>
 <body>

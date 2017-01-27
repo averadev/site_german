@@ -33,6 +33,13 @@ var serviciosextra = function (){
 					break;										
 			}
 	});
+	$(".appointment").click(function(event) {
+		$.smoothScroll({
+			scrollTarget: $('#divform'),
+			speed: 1500,
+		});
+	});
+
 	var onloadExec = function(){
 		bindEvents();
 	}

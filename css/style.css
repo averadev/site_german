@@ -322,10 +322,23 @@ footer.page-footer {
 }
 
 
-/* Formulario de Contacto */
-.fontContact{
+/* General Font */
+.fontCrimson{
     font-family: "Crimson Text";
 }
+.itaBold{
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* Pagina German */
+.imgFloat{
+    max-width: 100%;
+}
+
+
+/* Formulario de Contacto */ 
 .ContactT{
     letter-spacing: 4px;
     font-size: 3rem;

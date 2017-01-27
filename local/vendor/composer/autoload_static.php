@@ -129,6 +129,20 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
     );
 
     public static $prefixesPsr0 = array (
+        'Z' => 
+        array (
+            'ZendXml\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/zendframework/zendxml/library',
+            ),
+        ),
+        'Y' => 
+        array (
+            'Yangqi\\Htmldom' => 
+            array (
+                0 => __DIR__ . '/..' . '/yangqi/htmldom/src',
+            ),
+        ),
         'W' => 
         array (
             'Whoops' => 
@@ -146,12 +160,20 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
             array (
                 0 => __DIR__ . '/..' . '/stack/builder/src',
             ),
+            'SimplePie' => 
+            array (
+                0 => __DIR__ . '/..' . '/simplepie/simplepie/library',
+            ),
         ),
         'P' => 
         array (
             'Predis' => 
             array (
                 0 => __DIR__ . '/..' . '/predis/predis/lib',
+            ),
+            'PicoFeed' => 
+            array (
+                0 => __DIR__ . '/..' . '/fguillot/picofeed/lib',
             ),
             'PHPParser' => 
             array (
@@ -214,6 +236,7 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
     );
 
     public static $classMap = array (
+        'AuctionController' => __DIR__ . '/../..' . '/app/controllers/AuctionController.php',
         'BaseController' => __DIR__ . '/../..' . '/app/controllers/BaseController.php',
         'Boris\\Boris' => __DIR__ . '/..' . '/d11wtq/boris/lib/Boris/Boris.php',
         'Boris\\CLIOptionsHandler' => __DIR__ . '/..' . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -631,7 +654,7 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         'Jeremeamia\\SuperClosure\\SerializableClosure' => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/SerializableClosure.php',
         'Jeremeamia\\SuperClosure\\Visitor\\ClosureFinderVisitor' => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/Visitor/ClosureFinderVisitor.php',
         'Jeremeamia\\SuperClosure\\Visitor\\MagicConstantVisitor' => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src/Jeremeamia/SuperClosure/Visitor/MagicConstantVisitor.php',
-        'LoginController' => __DIR__ . '/../..' . '/app/controllers/loginController.php',
+        'LoginController' => __DIR__ . '/../..' . '/app/controllers/LoginController.php',
         'Math_BigInteger' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Math/BigInteger.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',
         'Monolog\\Formatter\\ChromePHPFormatter' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Formatter/ChromePHPFormatter.php',
@@ -913,6 +936,73 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         'Patchwork\\Utf8\\BestFit' => __DIR__ . '/..' . '/patchwork/utf8/src/Patchwork/Utf8/BestFit.php',
         'Patchwork\\Utf8\\Bootup' => __DIR__ . '/..' . '/patchwork/utf8/src/Patchwork/Utf8/Bootup.php',
         'Patchwork\\Utf8\\WindowsStreamWrapper' => __DIR__ . '/..' . '/patchwork/utf8/src/Patchwork/Utf8/WindowsStreamWrapper.php',
+        'PicoFeed\\Base' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Base.php',
+        'PicoFeed\\Client\\Client' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/Client.php',
+        'PicoFeed\\Client\\ClientException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/ClientException.php',
+        'PicoFeed\\Client\\Curl' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/Curl.php',
+        'PicoFeed\\Client\\ForbiddenException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/ForbiddenException.php',
+        'PicoFeed\\Client\\HttpHeaders' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/HttpHeaders.php',
+        'PicoFeed\\Client\\InvalidCertificateException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/InvalidCertificateException.php',
+        'PicoFeed\\Client\\InvalidUrlException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/InvalidUrlException.php',
+        'PicoFeed\\Client\\MaxRedirectException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/MaxRedirectException.php',
+        'PicoFeed\\Client\\MaxSizeException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/MaxSizeException.php',
+        'PicoFeed\\Client\\Stream' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/Stream.php',
+        'PicoFeed\\Client\\TimeoutException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/TimeoutException.php',
+        'PicoFeed\\Client\\UnauthorizedException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/UnauthorizedException.php',
+        'PicoFeed\\Client\\Url' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Client/Url.php',
+        'PicoFeed\\Config\\Config' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Config/Config.php',
+        'PicoFeed\\Encoding\\Encoding' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Encoding/Encoding.php',
+        'PicoFeed\\Filter\\Attribute' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Filter/Attribute.php',
+        'PicoFeed\\Filter\\Filter' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Filter/Filter.php',
+        'PicoFeed\\Filter\\Html' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Filter/Html.php',
+        'PicoFeed\\Filter\\Tag' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Filter/Tag.php',
+        'PicoFeed\\Generator\\ContentGeneratorInterface' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Generator/ContentGeneratorInterface.php',
+        'PicoFeed\\Generator\\FileContentGenerator' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Generator/FileContentGenerator.php',
+        'PicoFeed\\Generator\\YoutubeContentGenerator' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Generator/YoutubeContentGenerator.php',
+        'PicoFeed\\Logging\\Logger' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Logging/Logger.php',
+        'PicoFeed\\Parser\\Atom' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Atom.php',
+        'PicoFeed\\Parser\\DateParser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/DateParser.php',
+        'PicoFeed\\Parser\\Feed' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Feed.php',
+        'PicoFeed\\Parser\\Item' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Item.php',
+        'PicoFeed\\Parser\\MalformedXmlException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/MalformedXmlException.php',
+        'PicoFeed\\Parser\\Parser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Parser.php',
+        'PicoFeed\\Parser\\ParserException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/ParserException.php',
+        'PicoFeed\\Parser\\ParserInterface' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/ParserInterface.php',
+        'PicoFeed\\Parser\\Rss10' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Rss10.php',
+        'PicoFeed\\Parser\\Rss20' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Rss20.php',
+        'PicoFeed\\Parser\\Rss91' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Rss91.php',
+        'PicoFeed\\Parser\\Rss92' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/Rss92.php',
+        'PicoFeed\\Parser\\XmlEntityException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/XmlEntityException.php',
+        'PicoFeed\\Parser\\XmlParser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Parser/XmlParser.php',
+        'PicoFeed\\PicoFeedException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/PicoFeedException.php',
+        'PicoFeed\\Processor\\ContentFilterProcessor' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Processor/ContentFilterProcessor.php',
+        'PicoFeed\\Processor\\ContentGeneratorProcessor' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Processor/ContentGeneratorProcessor.php',
+        'PicoFeed\\Processor\\ItemPostProcessor' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Processor/ItemPostProcessor.php',
+        'PicoFeed\\Processor\\ItemProcessorInterface' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Processor/ItemProcessorInterface.php',
+        'PicoFeed\\Processor\\ScraperProcessor' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Processor/ScraperProcessor.php',
+        'PicoFeed\\Reader\\Favicon' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Reader/Favicon.php',
+        'PicoFeed\\Reader\\Reader' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Reader/Reader.php',
+        'PicoFeed\\Reader\\ReaderException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Reader/ReaderException.php',
+        'PicoFeed\\Reader\\SubscriptionNotFoundException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Reader/SubscriptionNotFoundException.php',
+        'PicoFeed\\Reader\\UnsupportedFeedFormatException' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Reader/UnsupportedFeedFormatException.php',
+        'PicoFeed\\Scraper\\CandidateParser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Scraper/CandidateParser.php',
+        'PicoFeed\\Scraper\\ParserInterface' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Scraper/ParserInterface.php',
+        'PicoFeed\\Scraper\\RuleLoader' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Scraper/RuleLoader.php',
+        'PicoFeed\\Scraper\\RuleParser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Scraper/RuleParser.php',
+        'PicoFeed\\Scraper\\Scraper' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Scraper/Scraper.php',
+        'PicoFeed\\Serialization\\Subscription' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Serialization/Subscription.php',
+        'PicoFeed\\Serialization\\SubscriptionList' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Serialization/SubscriptionList.php',
+        'PicoFeed\\Serialization\\SubscriptionListBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Serialization/SubscriptionListBuilder.php',
+        'PicoFeed\\Serialization\\SubscriptionListParser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Serialization/SubscriptionListParser.php',
+        'PicoFeed\\Serialization\\SubscriptionParser' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Serialization/SubscriptionParser.php',
+        'PicoFeed\\Syndication\\AtomFeedBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/AtomFeedBuilder.php',
+        'PicoFeed\\Syndication\\AtomHelper' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/AtomHelper.php',
+        'PicoFeed\\Syndication\\AtomItemBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/AtomItemBuilder.php',
+        'PicoFeed\\Syndication\\FeedBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/FeedBuilder.php',
+        'PicoFeed\\Syndication\\ItemBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/ItemBuilder.php',
+        'PicoFeed\\Syndication\\Rss20FeedBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/Rss20FeedBuilder.php',
+        'PicoFeed\\Syndication\\Rss20Helper' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/Rss20Helper.php',
+        'PicoFeed\\Syndication\\Rss20ItemBuilder' => __DIR__ . '/..' . '/fguillot/picofeed/lib/PicoFeed/Syndication/Rss20ItemBuilder.php',
         'Predis\\Autoloader' => __DIR__ . '/..' . '/predis/predis/lib/Predis/Autoloader.php',
         'Predis\\BasicClientInterface' => __DIR__ . '/..' . '/predis/predis/lib/Predis/BasicClientInterface.php',
         'Predis\\Client' => __DIR__ . '/..' . '/predis/predis/lib/Predis/Client.php',
@@ -1188,7 +1278,43 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/NullLogger.php',
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'ServicesController' => __DIR__ . '/../..' . '/app/controllers/ServicesController.php',
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
+        'SimplePie' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie.php',
+        'SimplePie_Author' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Author.php',
+        'SimplePie_Cache' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache.php',
+        'SimplePie_Cache_Base' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/Base.php',
+        'SimplePie_Cache_DB' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/DB.php',
+        'SimplePie_Cache_File' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/File.php',
+        'SimplePie_Cache_Memcache' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/Memcache.php',
+        'SimplePie_Cache_Memcached' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/Memcached.php',
+        'SimplePie_Cache_MySQL' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/MySQL.php',
+        'SimplePie_Cache_Redis' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Cache/Redis.php',
+        'SimplePie_Caption' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Caption.php',
+        'SimplePie_Category' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Category.php',
+        'SimplePie_Content_Type_Sniffer' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Content/Type/Sniffer.php',
+        'SimplePie_Copyright' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Copyright.php',
+        'SimplePie_Core' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Core.php',
+        'SimplePie_Credit' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Credit.php',
+        'SimplePie_Decode_HTML_Entities' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Decode/HTML/Entities.php',
+        'SimplePie_Enclosure' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Enclosure.php',
+        'SimplePie_Exception' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Exception.php',
+        'SimplePie_File' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/File.php',
+        'SimplePie_HTTP_Parser' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/HTTP/Parser.php',
+        'SimplePie_IRI' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/IRI.php',
+        'SimplePie_Item' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Item.php',
+        'SimplePie_Locator' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Locator.php',
+        'SimplePie_Misc' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Misc.php',
+        'SimplePie_Net_IPv6' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Net/IPv6.php',
+        'SimplePie_Parse_Date' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Parse/Date.php',
+        'SimplePie_Parser' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Parser.php',
+        'SimplePie_Rating' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Rating.php',
+        'SimplePie_Registry' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Registry.php',
+        'SimplePie_Restriction' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Restriction.php',
+        'SimplePie_Sanitize' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Sanitize.php',
+        'SimplePie_Source' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/Source.php',
+        'SimplePie_XML_Declaration_Parser' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/XML/Declaration/Parser.php',
+        'SimplePie_gzdecode' => __DIR__ . '/..' . '/simplepie/simplepie/library/SimplePie/gzdecode.php',
         'Stack\\Builder' => __DIR__ . '/..' . '/stack/builder/src/Stack/Builder.php',
         'Stack\\StackedHttpKernel' => __DIR__ . '/..' . '/stack/builder/src/Stack/StackedHttpKernel.php',
         'Symfony\\Component\\BrowserKit\\Client' => __DIR__ . '/..' . '/symfony/browser-kit/Client.php',
@@ -1808,6 +1934,13 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         'Whoops\\Run' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Run.php',
         'Whoops\\Util\\Misc' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/Misc.php',
         'Whoops\\Util\\TemplateHelper' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Util/TemplateHelper.php',
+        'Yangqi\\Htmldom\\Htmldom' => __DIR__ . '/..' . '/yangqi/htmldom/src/Yangqi/Htmldom/Htmldom.php',
+        'Yangqi\\Htmldom\\HtmldomServiceProvider' => __DIR__ . '/..' . '/yangqi/htmldom/src/Yangqi/Htmldom/HtmldomServiceProvider.php',
+        'Yangqi\\Htmldom\\Htmldomnode' => __DIR__ . '/..' . '/yangqi/htmldom/src/Yangqi/Htmldom/Htmldomnode.php',
+        'ZendXml\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/zendframework/zendxml/library/ZendXml/Exception/ExceptionInterface.php',
+        'ZendXml\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/zendframework/zendxml/library/ZendXml/Exception/InvalidArgumentException.php',
+        'ZendXml\\Exception\\RuntimeException' => __DIR__ . '/..' . '/zendframework/zendxml/library/ZendXml/Exception/RuntimeException.php',
+        'ZendXml\\Security' => __DIR__ . '/..' . '/zendframework/zendxml/library/ZendXml/Security.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

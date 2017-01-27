@@ -9,8 +9,7 @@
 						<li data="tab2" class="tab"><a href="#tab2">ENTREVISTA GERMAN</a></li>
 						<li data="tab3" class="tab"><a href="#tab3">LLUVIA DE IDEAS</a></li>
 						<li data="tab4" class="tab"><a href="#tab4">MATERELIAZANDO SUEÑOS</a></li>
-						<li data="tab5" class="tab"><a href="#tab5">COMENTARIOS </a></li>
-						<li data="tab6" class="tab"><a href="#tab6">INMORTALIDAD</a></li>
+						<li data="tab5" class="tab"><a href="#tab5">INMORTALIDAD</a></li>
 					</ul>
 				</div>
 			</div>

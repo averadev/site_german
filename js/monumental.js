@@ -16,19 +16,19 @@ var serviciosextra = function (){
 				case 'tab2':
 					$.smoothScroll({
 						scrollTarget: $('#section2'),
-						speed: 1000,
+						speed: 1200,
 					});
 					break;
 				case 'tab3':
 					$.smoothScroll({
 						scrollTarget: $('#section3'),
-						speed: 1000,
+						speed: 1400,
 					});
 					break;
 				case 'tab4':
 					$.smoothScroll({
 						scrollTarget: $('#section4'),
-						speed: 1000,
+						speed: 1600,
 					});
 					break;										
 			}

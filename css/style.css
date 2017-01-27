@@ -91,7 +91,15 @@ p.size45{
 	padding-top: 3px;
 	display: inline-block;
 }
-
+.med-square {
+	background-color: #636363;
+	color: white;
+	width:40px;
+	height:40px;
+	padding-left: 9px;
+	padding-top: 8px;
+	display: inline-block;
+}
 /*change container from 70% to 80%*/
 @media only screen and (min-width: 993px) {
 	.container {
@@ -211,7 +219,9 @@ p.par-title {
 
 
 .grey-bg{
-	background-color: #EEEEEC;
+	background-image:url('../media/img/home/notasbg.png');
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 .darker{
 	background-color: #40423F !important ;

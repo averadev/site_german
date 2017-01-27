@@ -1,5 +1,32 @@
 @extends('templates.main')
 @section('content')
+<style>
+.crop {
+ max-height: 250px;
+ overflow: hidden;
+}
+
+p.trunc{
+	height:90px;
+    /* Height / no. of lines to display */
+    overflow:hidden;
+}
+
+@media only screen and (max-width : 992px) {
+	.crop {
+	 max-height: 900px;
+	 overflow: hidden;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+	.crop {
+	 max-height: 600px;
+	 overflow: hidden;
+	}
+}
+
+</style>
 	<div id="index-banner" class="parallax-container">
 		<div class="section no-pad-bot">
 			<div class="container">
@@ -136,18 +163,29 @@
 			<div class="section no-pad">
 				<div class="row"  style="margin-bottom: 0em;">
 					<div class="col s12 center">
-						<h5 style="padding-top: 10px;" class="header col s12 light">{{$data->titleBlogEntries}}</h5>
+						<h5 style="margin-top: 30px; margin-bottom: 20px;" class="header col s12 light">{{$data->titleBlogEntries}}</h5>
 					</div>
-					<div class="col s12 m4 l4">
+			@foreach($feeds as $feed)			
+					<div class="col s12 m12 l4">
 						<div class="card">
-							<div class="card-image">
-								<img src="media/img/img1.jpg">
+							<div class="card-image crop">								
+								<img src="{{$feed->image}}">
 							</div>
 							<div class="card-content">
-								<span class="card-title">titulo</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+								<span class="card-title truncate">{{$feed->title}}</span>
+							<div style="margin-top: 15px; margin-bottom: 13px; " >
+							<div style="display: flex; align-items: center;">
+								<div class="med-square"><img src="media/img/home/reloj.png"></div>
+								<div style="padding: 8px; border: 1px solid #636363;" >
+									{{$feed->postdate}}
+								</div>
 							</div>
-							<div class="card-action" style="padding-top: 0px; padding-bottom: 0px;" >
+
+								
+							</div>
+								<p class="trunc" >{{$feed->description}}</p>...
+							</div>
+							<div onclick="window.location.href='{{$feed->image_url}}';" class="card-action waves-effect hoverable" style="padding-top: 0px; padding-bottom: 0px;" >
 								<div style="  display: flex; align-items: center;" >
 									<div class="square">
 										<i class="material-icons">expand_more</i>
@@ -156,44 +194,9 @@
 							</div>
 						</div>
 					</div>
-					<div class="col s12 m4 l4">
-						<div class="card">
-							<div class="card-image">
-								<img src="media/img/img1.jpg">
-							</div>
-							<div class="card-content">
-								<span class="card-title">titulo</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-							</div>
-							<div class="card-action" style="padding-top: 0px; padding-bottom: 0px;" >
-								<div style="  display: flex; align-items: center;" >
-									<div class="square">
-										<i class="material-icons">expand_more</i>
-									</div> <p style="margin-left: 5px; font-size: 0.8em; font-weight: bold; ">LEER MÁS</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m4 l4">
-						<div class="card">
-							<div class="card-image">
-								<img src="media/img/img1.jpg">
-							</div>
-							<div class="card-content">
-								<span class="card-title">titulo</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-							</div>
-							<div class="card-action" style="padding-top: 0px; padding-bottom: 0px;" >
-								<div style="  display: flex; align-items: center;" >
-									<div class="square">
-										<i class="material-icons">expand_more</i>
-									</div> <p style="margin-left: 5px; font-size: 0.8em; font-weight: bold; ">LEER MÁS</p>
-								</div>
-							</div>
-						</div>
-					</div>
+				@endforeach
 					<div class="col s12 center">
-						<p style="font-size: 1.1em; font-weight: 400; text-decoration: underline;  " class="header col s12 light">{{$data->footerBlogEntries}}</p>
+						<a href="{{$bloglink}}" style="font-size: 1.1em; font-weight: 400; color: black; margin-bottom: 1.5em; margin-top: 0.5em; cursor: pointer; text-decoration: underline;  " class="header col s12 light">{{$data->footerBlogEntries}}</a>
 					</div>
 				</div>
 			</div>

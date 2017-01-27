@@ -6,10 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ZendXml\\' => array($vendorDir . '/zendframework/zendxml/library'),
+    'Yangqi\\Htmldom' => array($vendorDir . '/yangqi/htmldom/src'),
     'Whoops' => array($vendorDir . '/filp/whoops/src'),
     'System' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Stack' => array($vendorDir . '/stack/builder/src'),
+    'SimplePie' => array($vendorDir . '/simplepie/simplepie/library'),
     'Predis' => array($vendorDir . '/predis/predis/lib'),
+    'PicoFeed' => array($vendorDir . '/fguillot/picofeed/lib'),
     'PHPParser' => array($vendorDir . '/nikic/php-parser/lib'),
     'Net' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Math' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),

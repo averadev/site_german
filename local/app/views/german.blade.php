@@ -7,10 +7,10 @@
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">
 					<ul class="tabs black-tabs">
-						<li class="tab"><a class='smooth' href="#german-1">¿QUIÉN SOY?</a></li>
-						<li class="tab"><a class='smooth' href="#german-2">EL PENSADOR</a></li>
-						<li class="tab"><a class='smooth' href="#german-3">EL ESCULTOR</a></li>
-						<li class="tab"><a class='smooth' href="#german-4">¿QUE ME MUEVE?</a></li>
+						<li class="tab"><a class='smooth' href="#" goto="#german-1">¿QUIÉN SOY?</a></li>
+						<li class="tab"><a class='smooth' href="#" goto="#german-2">EL PENSADOR</a></li>
+						<li class="tab"><a class='smooth' href="#" goto="#german-3">EL ESCULTOR</a></li>
+						<li class="tab"><a class='smooth' href="#" goto="#german-4">¿QUE ME MUEVE?</a></li>
 					</ul>
 				</div>
 			</div>

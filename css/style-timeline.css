@@ -375,6 +375,10 @@ a {
   background-image: url("../media/img/subasta/bg_proceso.png");
   width: 100%;
 }
+.bg_queteconvierte {
+  background-image: url("../media/img/subasta/bg_enqueteconvierte.png");
+  width: 100%;
+}
 .img_proceso {
   border-radius: 1%;
   margin-top: 59px;

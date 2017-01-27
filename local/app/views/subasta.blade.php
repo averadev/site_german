@@ -10,7 +10,6 @@
 					@endforeach
 					</ul>
 				</div>
-				
 				<div id="tab8" class="col s12">Test 5</div>
 				<div id="tab9" class="col s12">Test 6</div>
 				<div id="tab10" class="col s12">Test 7</div>
@@ -22,27 +21,25 @@
 	<div id="tab4" class="bg_porque">
 		<div class="section">
 			<div class="row">
-				<div class="col s12 txt_title">
-					<p class="center-align">Inspiración en los sueños y en el <br>cantar del zwampath del barril.</p>
-				</div>
-				<div class="col l2 m10 s12 offset-l4 offset-m1">
-					<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
-				</div>
-				<div style="position: relative;">
-					<img style="width: 40%; position: absolute; top:4.3em; left:0em; z-index: 100; padding-right: 6em" src="media/img/subasta/bg_porque2.png" alt="">
+				<div class="col l12 s12">
+					<div class="row">
+						<div class="col l12 s12 center light font_head_style">
+							<p class="font_subhead_hp"><span class="font_head_h">Inspiración </span>en los sueños y en el <br><span class="font_subhead_h"> cantar del zwampath del barril.</span></p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col l4 s12">
+							<img src="media/img/subasta/bg_porque2.png" alt="" class="responsive-img img_ga_pq">
+						</div>
+						<div class="col l3 s12">
+							<p class="txt_desc">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
+						</div>
+						<div class="col l3 s12 offset-l3">
+							<p class="txt_desc">El jefe buscó el éxtasis en un imprevisto baño de whisky y gozó como un duque. Exhíbanse politiquillos zafios, con orejas kilométricas y uñas de gavilán. El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo. El pinguino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a.</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="row" style="margin-top: 0;">
-				<div class="col l10 m12 s12 offset-l1 ">
-					<div class="right">
-						<div class="col l3 m10 s12 offset-l6 offset-m1">
-							<p class="txt_left">
-								El jefe buscó el éxtasis en un imprevisto baño de whisky y gozó como un duque. Exhíbanse politiquillos zafios, con orejas kilométricas y uñas de gavilán. El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo. El pinguino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a.
-							</p>
-						</div>
-					</div>				
-				</div>
-			</div>			
 		</div>
 	</div>
 	<!-- Start ¿Porque? -->
@@ -72,15 +69,14 @@
 	<div id="tab5" class="bgg_proceso">
 		<div class="container no-pad-top" style="padding-left: 3vw;">
 			<div class="row">
-				<div class="col l12">
+				<div class="col l12 s12">
 					<section class="cd-horizontal-timeline">
 						<div class="events-content">
 							<ol>
 								<li class="selected" data-date="16/01/2014">
-									<h2>
-									Todo comienza con los sueños, <br>
-									es el punto de partida a un viaje interno.
-									</h2>
+									<div class="font_head_style_proceso">
+										<h3 class="font_subhead_h">Todo comienza con los <span class="font_head_h">sueños, </span><br><span class="font_subhead_h"> es el punto de partida a un viaje interno.</span></h3>
+									</div>
 									<div class="row">
 										<div class="col l4">
       										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
@@ -224,21 +220,21 @@
 	<div id="tab6" class="bg_queteconvierte">
 		<div class="section">
 			<div class="row">
-				<div class="col l12 center txt_title">
+				<div class="col l12 s12">
 					<div class="row">
-						<div class="col l12 offset-l2">
-							<p class="left-align">Calidad, durabilidad y resistencia <br>ante la adversidad de la noche.</p>
+						<div class="col l12 s12 offset-l2 light font_head_style">
+							<p class="font_subhead_hp"><span class="font_head_h">Calidad, </span>durabilidad y resistencia <br><span class="font_subhead_h"> ante la adversidad de la noche.</span></p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col l4 offset-l1">
+						<div class="col l4 s12 offset-l1">
 							<img class="responsive-img" src="media/img/subasta/bg_convierte.png" width="400" height="300" alt="">
 						</div>
 						<div class="col l3">
 							<h5 class="txt_head">Materiales</h5>
 							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
 						</div>
-						<div class="col l4">
+						<div class="col l4 s12">
 							<div class="row">
 								<div class="col l3">
 									<a class="modal-trigger" href="#modal1"><img class="circle responsive-img" src="media/img/subasta/bg_circle1.png" width="139" height="139" alt=""></a>
@@ -246,13 +242,13 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col l3">
+								<div class="col l3 s12">
 									<a class="modal-trigger" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/bg_circle2.png" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright">26%</h5>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col l3" style="margin-left: -2em;">
+								<div class="col l3 s12" style="margin-left: -2em;">
 									<a class="modal-trigger" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/bg_circle3.png" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright" style="margin-right: -7em">33%</h5>
 								</div>
@@ -312,36 +308,36 @@
 	<div id="tab7" class="bg_queteconvierte">
 		<div class="section">
 			<div class="row">
-				<div class="col l12 center txt_title">
+				<div class="col l12 s12">
 					<div class="row">
-						<div class="col l12 offset-l2">
-							<p class="left-align">Calidad, durabilidad y resistencia <br>ante la adversidad de la noche.</p>
+						<div class="col l12 s12 offset-l2 light font_head_style">
+							<p class="font_subhead_hp"><span class="font_head_h">Calidad, </span>durabilidad y resistencia <br><span class="font_subhead_h"> ante la adversidad de la noche.</span></p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col l4 offset-l1">
+						<div class="col l4 s12 offset-l1">
 							<img class="responsive-img" src="media/img/subasta/bg_convierte.png" width="400" height="300" alt="">
 						</div>
 						<div class="col l3">
 							<h5 class="txt_head">Materiales</h5>
 							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
 						</div>
-						<div class="col l4">
+						<div class="col l4 s12">
 							<div class="row">
 								<div class="col l3">
-									<a class="modal-trigger" href="#modal4"><img class="circle responsive-img" src="media/img/subasta/bg_circle1.png" width="139" height="139" alt=""></a>
+									<a class="modal-trigger" href="#modal1"><img class="circle responsive-img" src="media/img/subasta/bg_circle1.png" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright">41%</h5>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col l3">
-									<a class="modal-trigger" href="#modal5"><img class="circle responsive-img img_right" src="media/img/subasta/bg_circle2.png" width="139" height="139" alt=""></a>
+								<div class="col l3 s12">
+									<a class="modal-trigger" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/bg_circle2.png" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright">26%</h5>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col l3" style="margin-left: -2em;">
-									<a class="modal-trigger" href="#modal6"><img class="circle responsive-img" src="media/img/subasta/bg_circle3.png" width="139" height="139" alt=""></a>
+								<div class="col l3 s12" style="margin-left: -2em;">
+									<a class="modal-trigger" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/bg_circle3.png" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright" style="margin-right: -7em">33%</h5>
 								</div>
 							</div>
@@ -350,7 +346,7 @@
 				</div>
 			</div>
 			<!-- Start Modal -->
-			<div id="modal4" class="modal_md">
+			<div id="modal1" class="modal_md">
 				<div class="modal_dialog">
 					<div class="modal_content">
 						<h3>Resina</h3>
@@ -364,7 +360,7 @@
 				</div>
 			</div>
 
-			<div id="modal5" class="modal_md">
+			<div id="modal2" class="modal_md">
 				<div class="modal_dialog">
 					<div class="modal_content">
 						<h3>Resina</h3>
@@ -378,7 +374,7 @@
 				</div>
 			</div>
 
-			<div id="modal6" class="modal_md">
+			<div id="modal3" class="modal_md">
 				<div class="modal_dialog">
 					<div class="modal_content">
 						<h3>Resina</h3>

@@ -431,6 +431,50 @@ footer.page-footer {
 }
 
 /* Text Submodulo Porque */
+.font_head_style {
+	font-family: "Crimson Text";
+	font-weight: bold;
+	font-style: italic;
+	color: #2d332c;
+}
+.font_head_h {
+    font-size: 4.5rem;
+}
+.font_subhead_hp {
+	font-size: 2rem;
+}
+.font_subhead_h {
+	font-size: 2rem;
+	margin-right: -15%;
+    line-height: 140%;
+}
+.font_subhead_h p {
+	font-size: 2rem;
+	margin-right: -15%;
+    line-height: 140%;
+}
+.txt_desc {
+	text-align: justify;
+}
+.img_ga_pq {
+    margin-left: -2em;
+    margin-bottom: -4em;
+    padding-top: 0em;
+}
+/* Proceso Media RD */
+@media all and (max-width: 900px){
+	.img_ga_pq {
+		width:100%;
+		margin-bottom: 0;
+		margin: 0 auto;
+	}
+}
+.font_head_style_proceso {
+	font-family: "Crimson Text";
+	font-weight: bold;
+	font-style: italic;
+	color: #2d322c;
+}
 .txt_left p {
 	font-size: 1em;
 	text-align: justify;

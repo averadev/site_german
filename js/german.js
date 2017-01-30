@@ -1,6 +1,6 @@
 var esculturas = function (){
 	var bindEvents = function(){
-		$('.button-collapse').sideNav();
+		//$('.button-collapse').sideNav();
 		$('.parallax').parallax();
 		$( "#topbar li:eq(4)").addClass('active'); 
 	}

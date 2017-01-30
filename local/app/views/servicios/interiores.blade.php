@@ -20,10 +20,8 @@
 				<div class="container">
 					<br><br>
 				<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
-					<div class="row center">
-						<div class="col s12 m12 l6 offset-l3">
-							<h3 style="margin-top: 100px; " class="titleservices large-spacing header col s12 light"> {{$data->inter_banner_title}} </h3>
-						</div>
+					<div class="row center">				
+						<h3 style="margin-top: 6%; " class="titleservices large-spacing header col s12 light"> {{$data->inter_banner_title}} </h3>
 					</div>
 					<div class="row center">
 						<a class="appointment waves-effect transparent lighten-5 white-border noshadow btn">Hacer cita</a>

@@ -53,7 +53,7 @@ class HomeController extends BaseController {
 		/*Se añaden todo el conenido de las secciones a un objecto*/
 		
 		foreach ($dataHome as $key => $value) {
-			$block->{$value->name} = $value->value;
+			$block->{$value->name} = nl2br($value->value);
 		}
 
 		return View::make('home')

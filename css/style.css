@@ -201,9 +201,22 @@ p.par-title {
 		background-color: black;
 }
 
+.mobile-nav li a{
+	color: white !important;
+	border: 1px solid white !important;
+}
 
+#sidenav-overlay {
+    background-color: transparent;
+    z-index: 1;
+}
 /*Backgrouns*/
 
+
+.mobile-nav{
+	background-color: #40423F 
+
+}
 
 .bg_proceso{
 	background-image:url('../media/img/white_room.jpg');
@@ -265,18 +278,25 @@ p {
 
 @media only screen and (max-width : 992px) {
 	.parallax-container .section {
-	position: absolute;
-	top: 40%;
+		position: absolute;
+		top: 40%;
 	}
 	#index-banner .section {
 	top: 10%;
 	}
+	ul.side-nav.leftside-navigation {
+	    top: 64px;
+	}	
 }
 
 @media only screen and (max-width : 600px) {
 	#index-banner .section {
 	top: 0;
 	}
+	ul.side-nav.leftside-navigation {
+	    top: 56px;
+	}
+
 }
 
 .icon-block {

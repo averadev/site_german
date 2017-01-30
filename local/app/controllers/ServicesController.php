@@ -20,7 +20,7 @@ class ServicesController extends BaseController {
 		/*Se añade todo el conenido de las secciones a un objecto*/
 		$block = new stdClass();
 		foreach ($data as $key => $value) {
-			$block->{$value->name} = $value->value;
+			$block->{$value->name} = nl2br($value->value);
 		}
 
 		return View::make('servicios.monumental')
@@ -38,7 +38,7 @@ class ServicesController extends BaseController {
 		/*Se añade todo el conenido de las secciones a un objecto*/
 		$block = new stdClass();
 		foreach ($data as $key => $value) {
-			$block->{$value->name} = $value->value;
+			$block->{$value->name} = nl2br($value->value);
 		}
 		
 		return View::make('servicios.personalizadas')
@@ -56,7 +56,7 @@ class ServicesController extends BaseController {
 		/*Se añade todo el conenido de las secciones a un objecto*/
 		$block = new stdClass();
 		foreach ($data as $key => $value) {
-			$block->{$value->name} = $value->value;
+			$block->{$value->name} = nl2br($value->value);
 		}
 
 		return View::make('servicios.interiores')

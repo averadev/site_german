@@ -2,7 +2,7 @@
 	<div class="nav-wrapper gray-color">
 		<div class="container">
 			<img class="brand-logo" style="margin-top: 0.35em" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
-			<ul id="topbar" class="right hide-on-med-and-down menuFont">
+			<ul id="topbar" class="right hide-on-med-and-down">
 				<li><a id="homepage" >INICIO</a></li>
 				<li><a id="subasta" >SUBASTA</a></li>
 				<li><a id="extraservices" >SERVICIOS EXTRA</a></li>

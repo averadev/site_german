@@ -12,7 +12,6 @@
 				</div>
 				<div id="tab8" class="col s12">Test 5</div>
 				<div id="tab9" class="col s12">Test 6</div>
-				<div id="tab10" class="col s12">Test 7</div>
 			</div>
 		</div>
 	</div>
@@ -220,92 +219,40 @@
 	<div id="tab6" class="bg_queteconvierte">
 		<div class="section">
 			<div class="row">
-				<div class="col l12 s12">
+				<div class="col s12">
 					<div class="row">
-						<div class="col l12 s12 offset-l2 light font_head_style">
-							<p class="font_subhead_hp"><span class="font_head_h">Calidad, </span>durabilidad y resistencia <br><span class="font_subhead_h"> ante la adversidad de la noche.</span></p>
+						<div class="col s4 l4">
+							<img class="responsive-img img_queteconvierte1" src="media/img/subasta/bg_pieza1.png" width="300" height="300" alt="">
 						</div>
-					</div>
-					<div class="row">
-						<div class="col l4 s12 offset-l1">
-							<img class="responsive-img" src="media/img/subasta/bg_convierte.png" width="400" height="300" alt="">
-						</div>
-						<div class="col l3">
-							<h5 class="txt_head">Materiales</h5>
-							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
-						</div>
-						<div class="col l4 s12">
-							<div class="row">
-								<div class="col l3">
-									<a class="modal-trigger" href="#modal4"><img class="circle responsive-img" src="media/img/subasta/bg_circle1.png" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright">41%</h5>
-								</div>
+						<div class="col s4 l4 center">
+							<div class="col s5">
+								<h4 class="right light">Autoridad</h4>
+								<p style="" class="right light med-lineheight">Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma.</p>
 							</div>
 							<div class="row">
-								<div class="col l3 s12">
-									<a class="modal-trigger" href="#modal5"><img class="circle responsive-img img_right" src="media/img/subasta/bg_circle2.png" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright">26%</h5>
+								<div class="col s12 l12 font_head_style">
+									<p class="font_subhead_hp"><span class="font_head_h">Fuerza, </span>templanza y resistencia <br><span class="font_subhead_h"> ante la adversidad de la noche.</span></p>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col l3 s12" style="margin-left: -2em;">
-									<a class="modal-trigger" href="#modal6"><img class="circle responsive-img" src="media/img/subasta/bg_circle3.png" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright" style="margin-right: -7em">33%</h5>
+								<div class="row">
+									<div class="col s12">
+									<h4 class="center light">Visión</h4>
+									<p style="" class="right light med-lineheight">Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma.</p>
+								</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<!-- Start Modal -->
-			<div id="modal4" class="modal_md">
-				<div class="modal_dialog">
-					<div class="modal_content">
-						<h3>Resina</h3>
-						<p>Sustancia orgánica de consistencia pastosa, pegajosa, transparente o traslúcida, que se solidifica en contacto con el aire es de origen vegetal o se obtiene artificialmente mediante reacciones de polimerización.</p>
-						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
+						<div class="col s4 l4">
+							<img class="responsive-img img_queteconvierte2" src="media/img/subasta/bg_pieza2.png" width="400" height="300" alt="">
 						</div>
-						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close">x</a>
 					</div>
 				</div>
 			</div>
-
-			<div id="modal5" class="modal_md">
-				<div class="modal_dialog">
-					<div class="modal_content">
-						<h3>Resina</h3>
-						<p>Sustancia orgánica de consistencia pastosa, pegajosa, transparente o traslúcida, que se solidifica en contacto con el aire es de origen vegetal o se obtiene artificialmente mediante reacciones de polimerización.</p>
-						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
-						</div>
-						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close">x</a>
-					</div>
-				</div>
-			</div>
-
-			<div id="modal6" class="modal_md">
-				<div class="modal_dialog">
-					<div class="modal_content">
-						<h3>Resina</h3>
-						<p>Sustancia orgánica de consistencia pastosa, pegajosa, transparente o traslúcida, que se solidifica en contacto con el aire es de origen vegetal o se obtiene artificialmente mediante reacciones de polimerización.</p>
-						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
-						</div>
-						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close">x</a>
-					</div>
-				</div>
-			</div>
-			<!-- End Modal -->
 		</div>
 	</div>
 	<!-- End ¿En Que Te Convierte? -->
 
 	<!-- Start Especificaciones -->
-	<div id="tab7" class="bg_queteconvierte">
+	<div id="tab7" class="bg_especificaciones">
 		<div class="section">
 			<div class="row">
 				<div class="col l12 s12">
@@ -391,6 +338,70 @@
 		</div>
 	</div>
 	<!-- End Especificaciones -->
+
+	<!-- Start Coming Soon -->
+	<div id="tab10" class="bg_comingsoon">
+		<div class="section">
+			<div class="row">
+				<div class="col s12">
+					<div class="row">
+						<div class="col s6 right">
+							<span class="right light">Lunes 30 de enero de 2017 | 13:00 hrs</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s6 center">
+							<span style="position: absolute; margin-top: 5em; font-size: 2em; padding-left: 4em;">21 Febrero 2017</span>
+							<img class="responsive-img" style="margin-top: -4em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
+						</div>
+						<div class="col s6">
+							<div class="row">
+								<div class="col s12">
+									<div class="row">
+										<div class="col s4">
+											<span class="light">El desarrollo de la próxima escultura comenzará a transmitirse el próximo 21 de febrero de 2017, y puedes seguirlo aquí.</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col l8 white div_arrow">
+											<form id="" class="col s12" action="" method="post">
+												<label for="">Me interesa recibir información sobre la próxima escultura:</label>
+												<div class="row">
+													<div class="input-field col s4">
+														<input id="name" class="" type="text" name="name" placeholder="NOMBRE">
+													</div>
+													<div class="input-field col s4">
+														<input id="email" class="" type="email" name="email" placeholder="E-MAIL">
+													</div>
+													<div class="input-field col s4">
+														<select>
+															<option value="" disabled selected>Ciudad</option><i class="material-icons">keyboard_arrow_down</i>
+															<option value="1">Option 1</option>
+															<option value="2">Option 2</option>
+															<option value="3">Option 3</option>
+														</select>
+													</div>
+												</div>
+												<div class="row">
+													<div class="input-field col s8">
+														<textarea id="comment" class="materialize-textarea">Comentarios</textarea>
+													</div>
+													<div class="input-field col s4">
+														<button id="sendBtn" class="btn_cs btn_large_cs">CONTÁCTENME</button>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Coming Soon -->
 @stop
 @section('addJs')
 <script src="js/esculturas.js"></script>
@@ -398,6 +409,7 @@
 	$(document).ready(function(){
 		$('.materialboxed').materialbox();
 		$('.modal_md').modal();
+		$('select').material_select();
 	});
 </script>
 @stop

@@ -508,3 +508,32 @@ nav.mymenu ul a {
     line-height: normal;
     padding-right: 12em;
 }
+
+/* Boton Coming Soon */
+.btn_cs {
+	border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+}
+.btn_cs:hover {
+	background-color: #43b33b;
+}
+.btn_large_cs {
+    height: 50px;
+    line-height: 50px;
+}
+.btn_large_cs, .btn_large_style {
+    text-decoration: none;
+    color: #fff;
+    background-color: #3bb347;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+}

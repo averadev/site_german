@@ -370,14 +370,42 @@ a {
 .bg_porque {
   background-image: url("../media/img/subasta/bg_porque.png");
   width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .bgg_proceso {
   background-image: url("../media/img/subasta/bg_proceso.png");
   width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .bg_queteconvierte {
   background-image: url("../media/img/subasta/bg_enqueteconvierte.png");
   width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bg_especificaciones {
+  background-image: url("../media/img/subasta/bg_especificaciones.png");
+  width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bg_comingsoon {
+  background-image: url("../media/img/subasta/bg_comingsoon.png");
+  width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .img_proceso {
   border-radius: 1%;
@@ -396,6 +424,21 @@ a {
   position: absolute;
   top: -172px;
   width: 40%;
+}
+.img_queteconvierte1 {
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-left: -2em;
+}
+.img_queteconvierte2 {
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  float: right;
+  margin-right: -2em;
 }
 /* End Background */
 @media only screen and (min-width: 768px) {

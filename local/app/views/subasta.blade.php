@@ -341,56 +341,64 @@
 
 	<!-- Start Coming Soon -->
 	<div id="tab10" class="bg_comingsoon">
-		<div class="section">
-			<div class="row">
-				<div class="col s12">
-					<div class="row">
-						<div class="col s6 right">
-							<span class="right light">Lunes 30 de enero de 2017 | 13:00 hrs</span>
+		<div class="container">
+			<div class="section">
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="col s6 right">
+								<span class="right gb_gray">Lunes 30 de enero de 2017 | 13:00 hrs</span>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col s6 center">
-							<span style="position: absolute; margin-top: 5em; font-size: 2em; padding-left: 4em;">21 Febrero 2017</span>
-							<img class="responsive-img" style="margin-top: -4em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
-						</div>
-						<div class="col s6">
-							<div class="row">
-								<div class="col s12">
-									<div class="row">
-										<div class="col s4">
-											<span class="light">El desarrollo de la próxima escultura comenzará a transmitirse el próximo 21 de febrero de 2017, y puedes seguirlo aquí.</span>
+						<div class="row">
+							<div class="col s6 center">
+								<div class="split-date">
+									<span class="day">31</span>
+									<span class="month">Enero</span>
+									<span class="year">2017</span>
+								</div>
+								<img class="responsive-img" style="margin-top: -4em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
+							</div>
+							<div class="col s6 gb_mlf_1 center">
+								<div class="row">
+									<div class="col s12">
+										<div class="row">
+											<div class="col s6 offset-s3">
+												<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo 21 de febrero de 2017, y puedes seguirlo aquí.</span>
+											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="col l8 white div_arrow">
-											<form id="" class="col s12" action="" method="post">
-												<label for="">Me interesa recibir información sobre la próxima escultura:</label>
-												<div class="row">
-													<div class="input-field col s4">
-														<input id="name" class="" type="text" name="name" placeholder="NOMBRE">
+										<div class="row">
+											<div class="col s12 white gb_arrow_box">
+												<form id="" class="col s12" action="" method="post">
+													<div class="row">
+														<div class="input-field col s12">
+															<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
+														</div>
 													</div>
-													<div class="input-field col s4">
-														<input id="email" class="" type="email" name="email" placeholder="E-MAIL">
+													<div class="row">
+														<div class="input-field col s4">
+															<input id="name" class="border_cs" type="text" name="name" placeholder="NOMBRE">
+														</div>
+														<div class="input-field col s4">
+															<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
+														</div>
+														<div class="col s4">
+															<select class="browser-default gb_mrg_1 gb_gray_2">
+																<option value="" disabled selected>CIUDAD</option><i class="material-icons">keyboard_arrow_down</i>
+																<option value="1">Option 1</option>
+																<option value="2">Option 2</option>
+																<option value="3">Option 3</option>
+															</select>
+														</div>
+														<div class="input-field col s8">
+															<textarea id="comment" class="border_cs" rows=5 placeholder="COMENTARIOS"></textarea>
+														</div>
+														<div class="input-field col s4">
+															<button id="sendBtn" class="btn_cs btn_large_cs gb_mgr_2">CONTÁCTENME</button>
+														</div>
 													</div>
-													<div class="input-field col s4">
-														<select>
-															<option value="" disabled selected>Ciudad</option><i class="material-icons">keyboard_arrow_down</i>
-															<option value="1">Option 1</option>
-															<option value="2">Option 2</option>
-															<option value="3">Option 3</option>
-														</select>
-													</div>
-												</div>
-												<div class="row">
-													<div class="input-field col s8">
-														<textarea id="comment" class="materialize-textarea">Comentarios</textarea>
-													</div>
-													<div class="input-field col s4">
-														<button id="sendBtn" class="btn_cs btn_large_cs">CONTÁCTENME</button>
-													</div>
-												</div>
-											</form>
+												</form>
+											</div>
 										</div>
 									</div>
 								</div>

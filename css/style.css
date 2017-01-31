@@ -56,6 +56,12 @@ p.size45{
 	margin: 1.14rem 0 0.912rem 0;
 }
 
+span.size60{
+	font-size: 2.5em;
+	line-height: 130%;
+	margin: 1.14rem 0 0.912rem 0;
+}
+
 
 /*Buttons*/
 
@@ -112,26 +118,30 @@ p.size45{
 	background-color: #C2C2C2;
 }
 
-nav ul a:hover {
+ul.desktop a:hover {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-nav ul li.active {
+ul.desktop li.active {
 	background-color: rgba(0, 0, 0, 0.3);
 }
 
-nav ul li{
+ul.desktop li{
 	border-left-style: solid;
 	border-left-width: 1px;
 	border-color: white;
+	text-align: center;
+	width: 8.5em;
 }
-nav ul li:first-child{
+ul.desktop li:first-child{
 	border-left-style: solid;
 	border-left-width: 1px;
 	border-color: transparent;
 }
 
-
+ul.desktop a {
+    padding: 0 0px;
+}
 
 .grey-border{
 	color: gray;
@@ -160,6 +170,10 @@ nav ul li:first-child{
 
 div.bottomRule {
 	border-bottom:1px solid #787A77;
+}
+
+.small-spacing{
+	letter-spacing: 1px;
 }
 
 .med-spacing{
@@ -201,10 +215,6 @@ p.par-title {
 		background-color: black;
 }
 
-.mobile-nav li a{
-	color: white !important;
-	border: 1px solid white !important;
-}
 
 #sidenav-overlay {
     background-color: transparent;
@@ -212,21 +222,15 @@ p.par-title {
 }
 /*Backgrouns*/
 
-
-.mobile-nav{
-	background-color: #40423F 
-
-}
-
 .bg_proceso{
 	background-image:url('../media/img/white_room.jpg');
 	width: 100%;
 }
 
-.bg-monumental-form{
+.bg-services-form{
 	background-size: 100%;
 	background-repeat: no-repeat;
-
+	margin-bottom: 5%;
 }
 
 .bg-white{
@@ -272,9 +276,16 @@ p {
 	height: auto;
 	color: rgba(255,255,255,.9);
 }
-	.parallax-container .section {
+.parallax-container .section {
 	width: 100%;
-	}
+}
+
+.black-section{
+	background-color: black;
+	padding-bottom: 3%;
+	width: 74%;
+	margin-left: 13.3%; 
+}  
 
 @media only screen and (max-width : 992px) {
 	.parallax-container .section {
@@ -282,10 +293,16 @@ p {
 		top: 40%;
 	}
 	#index-banner .section {
-	top: 10%;
+		top: 10%;
 	}
 	ul.side-nav.leftside-navigation {
 	    top: 64px;
+	}
+	.black-section{
+		background-color: black;
+		padding-bottom: 3%;
+		width: 100%;
+		margin-left: 0%; 
 	}	
 }
 
@@ -308,6 +325,10 @@ p {
 
 footer.page-footer {
 	margin: 0;
+}
+
+.per-parallax{
+  height: 420px;
 }
 
 
@@ -351,7 +372,7 @@ footer.page-footer {
 }
 
 .titleservices{
-    font-family: "Crimson Text";	
+    font-family: "Crimson Text script=all";	
 }
 
 nav.mymenu ul a {
@@ -556,4 +577,40 @@ nav.mymenu ul a {
     letter-spacing: .5px;
     transition: .2s ease-out;
     cursor: pointer;
+}
+
+/*mobile menu and button*/
+
+.mobile-nav{
+	background-color: #40423F;
+	opacity: 0.9;
+}
+
+.mobile-nav li a{
+	color: white ;
+	border-bottom: 1px solid white ;
+	border-left: none;
+	text-align: center;
+}
+
+
+.material-icons.md-36 {
+	font-size: 36px;
+}
+
+nav .button-collapse {
+    float: left;
+    position: relative;
+    z-index: 1;
+    height: 56px;
+    padding: 0 18px 0 18px;
+    margin: 0;
+    color: white;
+    position: absolute;
+    left: 0;
+    background-color: #40423F;
+}
+
+#mobile-german{
+	width: 100%;
 }

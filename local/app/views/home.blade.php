@@ -33,7 +33,7 @@ p.trunc{
 				<br><br>
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
-					<h3 style="margin-top: 10%; " class="header col s12 light">{{$data->homeBannerTxt}}</h3>
+					<h3 style="margin-top: 3em; font-weight: 600; font-style: italic;" class="titleservices small-spacing">{{$data->homeBannerTxt}}</h3>
 				</div>
 				<div class="row center">
 					<i class="large material-icons">expand_more</i>

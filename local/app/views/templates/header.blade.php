@@ -1,9 +1,14 @@
 <nav class="mymenu">
 	<div class="nav-wrapper gray-color">
 		<div class="container">
-			<img class="brand-logo" style="margin-top: 0.35em" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
-      <a href="#" data-activates="mobile-german" class="button-collapse"><i class="material-icons">menu</i></a>			
-			<ul id="topbar" class="right hide-on-med-and-down">
+			<div class="hide-on-med-and-down">
+				<img class="brand-logo" style="margin-top: 0.35em;" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
+     		</div>
+     		<div class="hide-on-large-only">
+     			<img class="brand-logo" style="margin-top: 0.35em; margin-left: 35px; " src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
+     		</div>	
+     		<a href="#" data-activates="mobile-german" class="button-collapse"><i class="material-icons md-36">menu</i></a>			
+			<ul id="topbar" class="right hide-on-med-and-down desktop">
 				<li><a class="homepage" >INICIO</a></li>
 				<li><a class="subasta" >SUBASTA</a></li>
 				<li><a class="extraservices" >SERVICIOS EXTRA</a></li>

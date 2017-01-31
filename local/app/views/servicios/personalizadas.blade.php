@@ -1,36 +1,14 @@
 @extends('templates.main')
 @section('content')
-<style>
-    .parallax-container {
-      height: 420px;
-    }
-.black-section{
-	background-color: black;
-	padding-bottom: 3%;
-	width: 74%;
-	margin-left: 13.3%; 
-}    
-@media only screen and (max-width : 992px) {
-	.black-section{
-		background-color: black;
-		padding-bottom: 3%;
-		width: 100%;
-		margin-left: 0%; 
-	}
-}
-
-
 </style>
 	<div class="container">
 		<div class="section">
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">
-					<ul id="personalizadastab" class="tabs black-tabs">
-						<li data="tab1" class="tab" ><a href="#tab1">MOMENTO ÚNICO</a></li>
-						<li data="tab2" class="tab" ><a href="#tab2">ENTREVISTA GERMAN</a></li>
-						<li data="tab3" class="tab" ><a href="#tab3">LLUVIA DE IDEAS</a></li>
-						<li data="tab4" class="tab" ><a href="#tab4">MATERELIAZANDO SUEÑOS</a></li>
-						<li data="tab5" class="tab" ><a href="#tab5">INMORTALIDAD</a></li>
+					<ul class="tabs menuFont black-tabs">
+						<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
+						<li class="tab"><a class="active" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+						<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
 					</ul>
 				</div>
 			</div>
@@ -128,7 +106,7 @@
 				</div>			
 			</div>
 		</div>
-		<div style="background-image:url('../media/img/personalizadas/{{$data->per_form_bg}}')" class="bg-monumental-form">
+		<div style="background-image:url('../media/img/personalizadas/{{$data->per_form_bg}}')" class="bg-services-form">
 			<div class="container" >
 				<div class="section" >
 					<div style="margin-top: 36vw;" class="row">

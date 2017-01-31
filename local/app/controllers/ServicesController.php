@@ -9,6 +9,11 @@ class ServicesController extends BaseController {
 	*/
 
 	public function getMonumental(){
+		$customReplace = [
+			"larger"=>"div",
+		];
+
+
 		/*Obtener los elementos de las secciones de esculturas monumentales en servicios extras*/
 		$data = DB::table('xref_section_component as block')
 		->select('block.name','block.value','block.detail')
@@ -20,7 +25,7 @@ class ServicesController extends BaseController {
 		/*Se añade todo el conenido de las secciones a un objecto*/
 		$block = new stdClass();
 		foreach ($data as $key => $value) {
-			$block->{$value->name} = nl2br($value->value);
+			$block->{$value->name} = $this->replaceTag( (nl2br($value->value)) , $customReplace );
 		}
 
 		return View::make('servicios.monumental')
@@ -64,6 +69,10 @@ class ServicesController extends BaseController {
 
 	}
 
-
+	private function replaceTag($str,$tags) {
+	    foreach ( $tags as $old => $new )
+	        $str = preg_replace("~<(/)?$old>~", "<\\1$new>", $str);
+	    return $str;
+	}
 
 }

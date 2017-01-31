@@ -4,11 +4,10 @@
 		<div class="section">
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">   
-					<ul id="interiorestab" class="tabs black-tabs">
-						<li data="tab1" class="tab"><a href="#tab1">DISTINCIÓN</a></li>
-						<li data="tab2" class="tab"><a href="#tab2">CATÁLOGO</a></li>
-						<li data="tab3" class="tab"><a href="#tab3">PERSONALIZADAS</a></li>
-						<li data="tab4" class="tab"><a href="#tab4">LA PIEZA CLAVE</a></li>
+					<ul class="tabs menuFont black-tabs">
+						<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
+						<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+						<li class="tab"><a class="active" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
 					</ul>
 				</div>				
 			</div>
@@ -117,7 +116,7 @@
 				</div>			
 			</div>
 		</div>
-		<div style="background-image:url('../media/img/interiores/{{$data->inter_form_bg}}')" class="bg-monumental-form">
+		<div style="background-image:url('../media/img/interiores/{{$data->inter_form_bg}}')" class="bg-services-form">
 			<div class="container" >
 				<div class="section" >
 					<div class="row">

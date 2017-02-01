@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/foundation.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-timeline.css') }}">
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ URL::asset('js/siema.js') }}"></script>
 	
 </head>
 <body>

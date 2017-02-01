@@ -365,8 +365,37 @@ footer.page-footer {
 	color: black ;
 }
 
+/* General Font */
+.fontCrimson{
+    font-family: "Crimson Text";
+}
+.itaBold{
+    font-style: italic;
+    font-weight: bold;
+}
 
-/* Formulario de Contacto */
+
+/* Pagina German */
+.imgFloat{
+    max-width: 100%;
+}
+.bg_bottom {
+    background-image: url("../media/img/subasta/bg_porque.png");
+    padding-top: 20px;
+    width: 100%;
+}
+
+
+/* Formulario de Contacto */ 
+.ContactT{
+    letter-spacing: 4px;
+    font-size: 3rem;
+}
+.ContactSubT{
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: bold;
+}
 .fontContact{
     font-family: "Crimson Text";
 }

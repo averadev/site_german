@@ -61,13 +61,12 @@ class AuctionController extends BaseController {
 		->join('section', 'section.idSubmodule', '=', 'submodule.id')
 		->join('xref_section_component', 'section.id', '=', 'xref_section_component.idSection')
 		->where('module.id', '=', 2)
-		->where('section.idSubmodule', '=', 4)
 		->get();
 		
 		foreach ($submodule_section as $key => $value) {
 			$submodule_section_data->{$value->name} = $value->value;
 		}
-        return View::make('subastas.porque')->with('submodule_section_data', $submodule_section_data);
+        return View::make('subasta')->with('submodule_section_data', $submodule_section_data);
     }
 
 }

@@ -5,9 +5,13 @@
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">
 					<ul class="tabs black-tabs">
-					@foreach($submodule as $submodule)
-						<li class="tab"><a href="#tab{{ $submodule->id }}">{{ $submodule->name }}</a></li>
-					@endforeach
+						<li class="tab"><a href="#tab4">¿Por Qué?</a></li>
+						<li class="tab"><a href="#tab5">El Proceso</a></li>
+						<li class="tab"><a href="#tab6">¿En Qué Te Convierte?</a></li>
+						<li class="tab"><a href="#tab7">Especificaciones</a></li>
+						<li class="tab"><a href="#tab8">Comentarios</a></li>
+						<li class="tab"><a href="#tab9">Subasta</a></li>
+						<li class="tab"><a href="#tab10">Próximamente</a></li>
 					</ul>
 				</div>
 				<div id="tab8" class="col s12">Test 5</div>
@@ -28,13 +32,13 @@
 					</div>
 					<div class="row">
 						<div class="col l4 s12">
-							<img src="media/img/subasta/bg_porque2.png" alt="" class="responsive-img img_ga_pq">
+							<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="responsive-img img_ga_pq">
 						</div>
 						<div class="col l3 s12">
-							<p class="txt_desc">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
+							<p class="txt_desc">{{$submodule_section_data->Desc1PorQue}}</p>
 						</div>
 						<div class="col l3 s12 offset-l3">
-							<p class="txt_desc">El jefe buscó el éxtasis en un imprevisto baño de whisky y gozó como un duque. Exhíbanse politiquillos zafios, con orejas kilométricas y uñas de gavilán. El cadáver de Wamba, rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo. El pinguino Wenceslao hizo kilómetros bajo exhaustiva lluvia y frío, añoraba a.</p>
+							<p class="txt_desc">{{$submodule_section_data->Desc2PorQue}}</p>
 						</div>
 					</div>
 				</div>
@@ -42,27 +46,6 @@
 		</div>
 	</div>
 	<!-- Start ¿Porque? -->
-
-	<!-- <div id="tab2" class="col s12">
-		<div class="container no-pad-top" style="padding-left: 3vw;">
-			<div class="row">
-				<div class="col l12">
-					<h5 style="font-size: 2.1em; padding-top: 9vw; font-weight: 500">
-						Todo comienza con los sueños, <br>
-						es el punto de partida a un viaje interno.
-					</h5>
-				</div>
-				<div class="col l7">
-					<div class="col l5" style="float: right;; padding-top: 4vw;">
-						<h5 class="light">1. Concepto</h5>
-						<p style="line-height: 140%">
-							Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 
 	<!-- Start Proceso -->
 	<div id="tab5" class="bgg_proceso">
@@ -78,16 +61,14 @@
 									</div>
 									<div class="row">
 										<div class="col l4">
-      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 										</div>
 										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">1. Concepto</h5>
-											<p>
-												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-											</p>
+											<h5 class="light">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
+											<p>{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
 										</div>
 										<div class="col l5">
-      										<img src="media/img/subasta/bg_concepto_2.png" width="591" height="600" alt="" class="img_proceso_2">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto2}}" width="591" height="600" alt="" class="img_proceso_2">
 										</div>
 									</div>
 								</li>
@@ -99,16 +80,14 @@
 									</h2>
 									<div class="row">
 										<div class="col l4">
-      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 										</div>
 										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">2. Sueños</h5>
-											<p>
-												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-											</p>
+											<h5 class="light">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
+											<p>{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
 										</div>
 										<div class="col l5">
-      										<img src="media/img/subasta/bg_suenos.png" width="591" height="600" alt="" class="img_proceso_3">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -120,16 +99,14 @@
 									</h2>
 									<div class="row">
 										<div class="col l4">
-      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 										</div>
 										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">3. Magia</h5>
-											<p>
-												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-											</p>
+											<h5 class="light">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
+											<p>{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
 										</div>
 										<div class="col l5">
-      										<img src="media/img/subasta/bg_magia.png" width="591" height="600" alt="" class="img_proceso_3">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -141,16 +118,14 @@
 									</h2>
 									<div class="row">
 										<div class="col l4">
-      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 										</div>
 										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">4. Pasión</h5>
-											<p>
-												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-											</p>
+											<h5 class="light">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
+											<p>{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
 										</div>
 										<div class="col l5">
-      										<img src="media/img/subasta/bg_pasion.png" width="591" height="600" alt="" class="img_proceso_3">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -162,16 +137,14 @@
 									</h2>
 									<div class="row">
 										<div class="col l4">
-      										<img src="media/img/subasta/bg_concepto.png" width="250" height="250" alt="" class="img_proceso">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 										</div>
 										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">5. Luz</h5>
-											<p>
-												Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey gordo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.
-											</p>
+											<h5 class="light">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
+											<p>{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
 										</div>
 										<div class="col l5">
-      										<img src="media/img/subasta/bg_luz.png" width="591" height="600" alt="" class="img_proceso_3">
+      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}" width="591" height="600" alt="" class="img_proceso_3">
 										</div>
 									</div>
 								</li>
@@ -186,11 +159,11 @@
 							<div class="events-wrapper">
 								<div class="events">
 									<ol>
-										<li><a href="#0" data-date="16/01/2014" class="selected">CONCEPTO</a></li>
-										<li><a href="#0" data-date="28/02/2014">SUEÑOS</a></li>
-										<li><a href="#0" data-date="20/04/2014">MAGIA</a></li>
-										<li><a href="#0" data-date="20/05/2014">PASIÓN</a></li>
-										<li><a href="#0" data-date="09/07/2014">LUZ</a></li>
+										<li><a href="#0" data-date="16/01/2014" class="selected">{{$submodule_section_data->SeccionSubTProcesoConcepto}}</a></li>
+										<li><a href="#0" data-date="28/02/2014">{{$submodule_section_data->SeccionSubTProcesoSuenos}}</a></li>
+										<li><a href="#0" data-date="20/04/2014">{{$submodule_section_data->SeccionSubTProcesoMagia}}</a></li>
+										<li><a href="#0" data-date="20/05/2014">{{$submodule_section_data->SeccionSubTProcesoPasion}}</a></li>
+										<li><a href="#0" data-date="09/07/2014">{{$submodule_section_data->SeccionSubTProcesoLuz}}</a></li>
 										<li><a href="#0" data-date="30/08/2014"></a></li>
 										<li><a href="#0" data-date="15/09/2014"></a></li>
 										<li><a href="#0" data-date="01/11/2014"></a></li>
@@ -226,8 +199,8 @@
 						</div>
 						<div class="col s4 l4 center">
 							<div class="col s5">
-								<h4 class="right light">Autoridad</h4>
-								<p style="" class="right light med-lineheight">Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma.</p>
+								<h4 class="right light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+								<p style="" class="right light med-lineheight">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 							</div>
 							<div class="row">
 								<div class="col s12 l12 font_head_style">
@@ -235,8 +208,8 @@
 								</div>
 								<div class="row">
 									<div class="col s12">
-									<h4 class="center light">Visión</h4>
-									<p style="" class="right light med-lineheight">Esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma.</p>
+									<h4 class="center light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+									<p style="" class="right light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
 								</div>
 								</div>
 							</div>
@@ -263,28 +236,28 @@
 					</div>
 					<div class="row">
 						<div class="col l4 s12 offset-l1">
-							<img class="responsive-img" src="media/img/subasta/bg_convierte.png" width="400" height="300" alt="">
+							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" width="400" height="300" alt="">
 						</div>
 						<div class="col l3">
-							<h5 class="txt_head">Materiales</h5>
-							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasión entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zinc que pesó un kilo.</p>
+							<h5 class="txt_head">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
+							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
 						</div>
 						<div class="col l4 s12">
 							<div class="row">
 								<div class="col l3">
-									<a class="modal-trigger" href="#modal1"><img class="circle responsive-img" src="media/img/subasta/bg_circle1.png" width="139" height="139" alt=""></a>
+									<a class="modal-trigger" href="#modal1"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright">41%</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12">
-									<a class="modal-trigger" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/bg_circle2.png" width="139" height="139" alt=""></a>
+									<a class="modal-trigger" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright">26%</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12" style="margin-left: -2em;">
-									<a class="modal-trigger" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/bg_circle3.png" width="139" height="139" alt=""></a>
+									<a class="modal-trigger" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright" style="margin-right: -7em">33%</h5>
 								</div>
 							</div>
@@ -404,7 +377,6 @@
 	<!-- End Coming Soon -->
 @stop
 @section('addJs')
-<script src="js/esculturas.js"></script>
 <script>
 	$(document).ready(function(){
 		$('.materialboxed').materialbox();

@@ -13,5 +13,6 @@
     Route::controller('contacto', 'ContactoController');
 	/** Subasta **/
 	Route::get('/subasta', 'AuctionController@showSubmodule');
+	Route::get('/subasta', 'AuctionController@getSectionSubPQ');
 	Route::get('/subasta/{id}/', 'AuctionController@getSectionSubmodule');
 	Route::controller('/', 'HomeController');

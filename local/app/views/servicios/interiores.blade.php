@@ -128,7 +128,7 @@
 						<div class="col s12 m12 l6 offset-l3 bg-white">	
 							<p style="padding-left: 4vw; padding-right: 3vw; margin-top: 3vw;" class="titleservices size45 italic"><b>
 								{{$data->inter_form_title}}
-							</p>
+							</b></p>
 							<p class="med-lineheight" style="padding-left: 4vw; padding-right: 3vw; margin-top: 2.4vw; margin-bottom: 2.4vw  ">
 								{{$data->inter_form_desc}}
 							</p>

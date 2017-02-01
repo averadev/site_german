@@ -607,6 +607,99 @@ nav.mymenu ul a {
     transition: .2s ease-out;
     cursor: pointer;
 }
+.border_cs {
+	background-color: transparent !important;
+	border: 1px solid #d7d7d7 !important;
+}
+.txtLabelInfo {
+	color:#2f342e !important;
+    font-size: 17px !important;
+    margin-top: -1em;
+}
+.gb_color {
+	font-size: 23px;
+    color: #363b35;
+    font-weight: 500;
+}
+.gb_gray {
+	color:#30322f;
+}
+.gb_gray_2 {
+	color: #d7d7d7;
+}
+.gb_mlf_1 {
+	margin-top: 9em;
+    margin-left: -3em !important;
+}
+.gb_arrow_box {
+	position: relative;
+	background: #ffffff;
+}
+.gb_arrow_box:after, .gb_arrow_box:before {
+	right: 100%;
+	top: 20%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.gb_arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #ffffff;
+	border-width: 24px;
+	margin-top: -24px;
+}
+.gb_arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-width: 36px;
+	margin-top: -36px;
+}
+.gb_mrg_1 {
+	margin-top: 1rem;
+}
+.gb_mgr_2 {
+	margin-top: 1.6rem;
+}
+
+/* Date Coming Soon */
+.split-date {
+    margin: 0px 6px 2px 10px;
+    width: 62px;
+    float: right;
+    position: absolute;
+    margin-top: 8em;
+    padding-left: 15rem;
+}
+.split-date span {
+	color: #383a35;
+	display: block;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: -5px;
+	text-align: center;
+}
+span.day {
+	font-size: 4rem;
+	padding-top: 10px;
+}
+span.month {
+	position: absolute;
+    font-size: 24px;
+    right: -70%;
+    top: 1em;
+    text-transform: uppercase;
+}
+
+span.year {
+	position: absolute;
+    font-size: 24px;
+    right: -6em;
+    top: 2em;
+    left: 12.5em;
+}
 
 /*mobile menu and button*/
 

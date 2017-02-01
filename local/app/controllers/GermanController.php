@@ -9,7 +9,11 @@ class GermanController extends BaseController {
 	*/
 
 	public function getIndex(){
-		return View::make('german');
+        $submodule = DB::table('module', 'module.id', 'module.name')
+		->join('submodule', 'module.id', '=', 'submodule.idModule')
+		->where('module.id', '=', 5)
+		->get();
+		return View::make('german', array('submodule' => $submodule));
 	}
 
 }

@@ -54,9 +54,9 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '192.168.1.75',
 			'database'  => 'site_german',
-			'username'  => 'root',
+			'username'  => 'beto',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',

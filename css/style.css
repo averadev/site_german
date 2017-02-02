@@ -519,6 +519,22 @@ nav.mymenu ul a {
     background-color: #3adb76;
 }
 /* Text Submodulo Porque */
+.gb_title_x2 {
+	font-family: "Crimson Text";
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 6px;
+}
+.gb_top_x3 {
+	margin-top: 3rem;
+}
+.gb_top_left_x3 {
+	margin-left: -12rem;
+}
+.gb_top_x6 {
+	margin-top: 6rem;
+}
 .font_head_style {
 	font-family: "Crimson Text";
 	font-weight: bold;
@@ -534,20 +550,20 @@ nav.mymenu ul a {
 .font_subhead_h {
 	font-size: 2rem;
 	margin-right: -15%;
-    line-height: 140%;
+	line-height: 140%;
 }
 .font_subhead_h p {
 	font-size: 2rem;
 	margin-right: -15%;
-    line-height: 140%;
+	line-height: 140%;
 }
 .txt_desc {
 	text-align: justify;
 }
 .img_ga_pq {
-    margin-left: -2em;
-    margin-bottom: -4em;
-    padding-top: 0em;
+	margin-left: -2em;
+	margin-bottom: -4em;
+	padding-top: 0em;
 }
 /* Proceso Media RD */
 @media all and (max-width: 900px){
@@ -578,48 +594,48 @@ nav.mymenu ul a {
 
 .img_right {
 	position: relative;
-    right: -5em;
+	right: -5em;
 }
 
 .txt_fright {
-    float: right;
-    margin-right: -6em;
-    margin-top: -3em;
+	float: right;
+	margin-right: -6em;
+	margin-top: -3em;
 }
 .txt_head {
 	font-weight: 300;
-    float: left;
-    line-height: normal;
-    padding-right: 12em;
+	float: left;
+	line-height: normal;
+	padding-right: 12em;
 }
 
 /* Boton Coming Soon */
 .btn_cs {
 	border: none;
-    border-radius: 2px;
-    display: inline-block;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 2rem;
-    text-transform: uppercase;
-    vertical-align: middle;
-    -webkit-tap-highlight-color: transparent;
+	border-radius: 2px;
+	display: inline-block;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 2rem;
+	text-transform: uppercase;
+	vertical-align: middle;
+	-webkit-tap-highlight-color: transparent;
 }
 .btn_cs:hover {
 	background-color: #43b33b;
 }
 .btn_large_cs {
-    height: 50px;
-    line-height: 50px;
+	height: 50px;
+	line-height: 50px;
 }
 .btn_large_cs, .btn_large_style {
-    text-decoration: none;
-    color: #fff;
-    background-color: #3bb347;
-    text-align: center;
-    letter-spacing: .5px;
-    transition: .2s ease-out;
-    cursor: pointer;
+	text-decoration: none;
+	color: #fff;
+	background-color: #3bb347;
+	text-align: center;
+	letter-spacing: .5px;
+	transition: .2s ease-out;
+	cursor: pointer;
 }
 .border_cs {
 	background-color: transparent !important;
@@ -627,13 +643,13 @@ nav.mymenu ul a {
 }
 .txtLabelInfo {
 	color:#2f342e !important;
-    font-size: 17px !important;
-    margin-top: -1em;
+	font-size: 17px !important;
+	margin-top: -1em;
 }
 .gb_color {
 	font-size: 23px;
-    color: #363b35;
-    font-weight: 500;
+	color: #363b35;
+	font-weight: 500;
 }
 .gb_gray {
 	color:#30322f;
@@ -643,7 +659,7 @@ nav.mymenu ul a {
 }
 .gb_mlf_1 {
 	margin-top: 9em;
-    margin-left: -3em !important;
+	margin-left: -3em !important;
 }
 .gb_arrow_box {
 	position: relative;
@@ -680,12 +696,12 @@ nav.mymenu ul a {
 
 /* Date Coming Soon */
 .split-date {
-    margin: 0px 6px 2px 10px;
-    width: 62px;
-    float: right;
-    position: absolute;
-    margin-top: 8em;
-    padding-left: 15rem;
+	margin: 0px 6px 2px 10px;
+	width: 62px;
+	float: right;
+	position: absolute;
+	margin-top: 8em;
+	padding-left: 15rem;
 }
 .split-date span {
 	color: #383a35;
@@ -701,18 +717,18 @@ span.day {
 }
 span.month {
 	position: absolute;
-    font-size: 24px;
-    right: -70%;
-    top: 1em;
-    text-transform: uppercase;
+	font-size: 24px;
+	right: -70%;
+	top: 1em;
+	text-transform: uppercase;
 }
 
 span.year {
 	position: absolute;
-    font-size: 24px;
-    right: -6em;
-    top: 2em;
-    left: 12.5em;
+	font-size: 24px;
+	right: -6em;
+	top: 2em;
+	left: 12.5em;
 }
 
 /*mobile menu and button*/

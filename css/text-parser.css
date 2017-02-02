@@ -1,6 +1,29 @@
 /* Stylesheet utilizado para cambiar el tamaño del textro dinamicamente */
 
 
+span.size-x2 {
+	font-family: "Crimson Text";
+	font-size: 2rem;
+	font-weight: bold;
+	font-style: italic;
+	color: #2d332c;
+	line-height: 0rem;
+}
+
+span.size-x2-left {
+	font-size: 2rem;
+	color: #2d332c;
+	margin-left: 6rem;
+	line-height: 140%;
+}
+
+span.size-x2-right {
+	font-size: 2rem;
+	color: #2d332c;
+	margin-right: -15%;
+	line-height: 140%;
+}
+
 span.size-x3{
 	font-size: 3rem;
 }
@@ -9,4 +32,11 @@ span.size-x35{
 	font-size: 3.5rem;
 }
 
-
+span.size-x45 {
+	font-family: "Crimson Text";
+	font-size: 4.5rem;
+	font-weight: bold;
+	font-style: italic;
+	color: #2d332c;
+	line-height: 0rem;
+}

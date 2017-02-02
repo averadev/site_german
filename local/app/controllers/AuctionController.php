@@ -64,7 +64,7 @@ class AuctionController extends BaseController {
 		->get();
 		
 		foreach ($submodule_section as $key => $value) {
-			$submodule_section_data->{$value->name} = $value->value;
+			$submodule_section_data->{$value->name} = TextParser::change(nl2br($value->value));
 		}
         return View::make('subasta')->with('submodule_section_data', $submodule_section_data);
     }

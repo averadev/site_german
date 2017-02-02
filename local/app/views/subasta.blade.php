@@ -4,6 +4,7 @@
 		<div class="section">
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">
+					<span class="nav-title gb_title_x2">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
 					<ul class="tabs black-tabs">
 						<li class="tab"><a href="#tab4">¿Por Qué?</a></li>
 						<li class="tab"><a href="#tab5">El Proceso</a></li>
@@ -26,8 +27,8 @@
 			<div class="row">
 				<div class="col l12 s12">
 					<div class="row">
-						<div class="col l12 s12 center light font_head_style">
-							<p class="font_subhead_hp"><span class="font_head_h">Inspiración </span>en los sueños y en el <br><span class="font_subhead_h"> cantar del zwampath del barril.</span></p>
+						<div class="col l12 s12 center light">
+							<p class="gb_top_x6">{{$submodule_section_data->TitlePorQue}}</p>
 						</div>
 					</div>
 					<div class="row">
@@ -56,9 +57,7 @@
 						<div class="events-content">
 							<ol>
 								<li class="selected" data-date="16/01/2014">
-									<div class="font_head_style_proceso">
-										<h3 class="font_subhead_h">Todo comienza con los <span class="font_head_h">sueños, </span><br><span class="font_subhead_h"> es el punto de partida a un viaje interno.</span></h3>
-									</div>
+									<p>{{$submodule_section_data->SeccionTituloProceso}}</p>
 									<div class="row">
 										<div class="col l4">
       										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
@@ -74,10 +73,7 @@
 								</li>
 
 								<li data-date="28/02/2014">
-									<h2>
-									Todo comienza con los sueños, <br>
-									es el punto de partida a un viaje interno.
-									</h2>
+									<p>{{$submodule_section_data->SeccionTituloProcesoSuenos}}</p>
 									<div class="row">
 										<div class="col l4">
       										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
@@ -93,10 +89,7 @@
 								</li>
 
 								<li data-date="20/04/2014">
-									<h2>
-									Todo comienza con los sueños, <br>
-									es el punto de partida a un viaje interno.
-									</h2>
+									<p>{{$submodule_section_data->SeccionTituloProcesoMagia}}</p>
 									<div class="row">
 										<div class="col l4">
       										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
@@ -112,10 +105,7 @@
 								</li>
 
 								<li data-date="20/05/2014">
-									<h2>
-									Todo comienza con los sueños, <br>
-									es el punto de partida a un viaje interno.
-									</h2>
+									<p>{{$submodule_section_data->SeccionTituloProcesoPasion}}</p>
 									<div class="row">
 										<div class="col l4">
       										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
@@ -131,10 +121,7 @@
 								</li>
 
 								<li data-date="09/07/2014">
-									<h2>
-									Todo comienza con los sueños, <br>
-									es el punto de partida a un viaje interno.
-									</h2>
+									<p>{{$submodule_section_data->SeccionTituloProcesoLuz}}</p>
 									<div class="row">
 										<div class="col l4">
       										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
@@ -203,8 +190,8 @@
 								<p style="" class="right light med-lineheight">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 							</div>
 							<div class="row">
-								<div class="col s12 l12 font_head_style">
-									<p class="font_subhead_hp"><span class="font_head_h">Fuerza, </span>templanza y resistencia <br><span class="font_subhead_h"> ante la adversidad de la noche.</span></p>
+								<div class="col s12 l12">
+									<p class="gb_top_x3 gb_top_left_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
 								</div>
 								<div class="row">
 									<div class="col s12">
@@ -251,13 +238,13 @@
 							</div>
 							<div class="row">
 								<div class="col l3 s12">
-									<a class="modal-trigger" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
+									<a class="modal-trigger2" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright">26%</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12" style="margin-left: -2em;">
-									<a class="modal-trigger" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
+									<a class="modal-trigger3" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
 									<h5 class="light txt_fright" style="margin-right: -7em">33%</h5>
 								</div>
 							</div>
@@ -275,7 +262,7 @@
 							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
 						</div>
 						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close">x</a>
+						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 					</div>
 				</div>
 			</div>
@@ -289,7 +276,7 @@
 							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
 						</div>
 						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close">x</a>
+						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 					</div>
 				</div>
 			</div>
@@ -303,7 +290,7 @@
 							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
 						</div>
 						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close">x</a>
+						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 					</div>
 				</div>
 			</div>

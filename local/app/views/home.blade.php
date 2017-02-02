@@ -33,17 +33,15 @@ p.trunc{
 				<br><br>
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
-					<h3 style="margin-top: 3em; font-weight: 600; font-style: italic;" class="titleservices small-spacing">{{$data->homeBannerTxt}}</h3>
-				</div>
-				<div class="row center">
-					<i class="large material-icons">expand_more</i>
+					<h3 style="margin-top: 4em; font-weight: 600; font-style: italic;" class="titleservices small-spacing">{{$data->homeBannerTxt}}</h3>
+					<img id="movedown" style="width: 45px; margin-top: 3em; cursor: pointer; " src="media/img/home/scroll.png" alt="scroll">
 				</div>
 				<br><br>
 			</div>
 		</div>
 		<div class="parallax"><img src="media/img/home/{{$data->homeBanner}}" alt="banner"></div>
 	</div>
-	<div class="container">
+	<div id="section1" class="container">
 		<div class="section">
 			<div class="row">
 				<div class="col s12 m8 l8 ">
@@ -203,5 +201,6 @@ p.trunc{
 		</div>
 	</div>
 	<script src="js/init.js"></script>
-	<script src="js/tabModule.js"></script>	
+	<script src="js/tabModule.js"></script>
+	<script src="vendor/js/jquery.smooth-scroll.min.js"></script>
 @stop

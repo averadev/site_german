@@ -1,19 +1,26 @@
 <?php
 
+/*
+	Clase para reemplazar las etiquetas personalizadas a sus clases de estilo
+	que se encuentran en css/text-paser.css
+*/
+
+
 class TextParser {
 
-	public function change($string){
+	public static function change($string){
 
-		$parttern = array();
-		$parttern[0] = "/<large-x1>/";
-		$parttern[1] = "/<large-x2>/";
-		$parttern[2] = "/<\/[A-Za-z_-]+>/";/* Match lowercase and uppercase letters and _ - characters*/
+		$parttern = array(
+			"/<size-x3>/",
+			"/<size-x35>/",			
+			"/<\/[A-Za-z-0-9-]+>/", /* Match Numbers, lowercase and uppercase letters and _ - characters*/
+		);
 
-		$replace = array();
-
-		$replace[0] = "<span class='large-x1'>";
-		$replace[1] = "<span class='large-x2'>";
-		$replace[2] = "</span>";
+		$replace = array(
+			"<span class='size-x3'>",
+			"<span class='size-x35'>",
+			"</span>",
+		);
 
 		$final_string = preg_replace($parttern,$replace,$string);
 

@@ -1,9 +1,12 @@
 /* Stylesheet utilizado para cambiar el tamaño del textro dinamicamente */
 
-span.large-x1{
-	font-size: 2.35em;
+
+span.size-x3{
+	font-size: 3rem;
 }
 
-span.large-x2{
-	font-size: 2.5em;
+span.size-x35{
+	font-size: 3.5rem;
 }
+
+

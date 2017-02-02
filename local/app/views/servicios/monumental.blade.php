@@ -2,10 +2,18 @@
 @section('content')
 <style type="text/css">
 p.headerForm {
-  font-size: 4vw;
+  font-size: 2.7rem;
   line-height: 110%;
   margin: 1.78rem 0 1.424rem 0;
 }
+@media only screen and (max-width : 600px) {
+	p.headerForm {
+	  font-size: 2rem;
+	  line-height: 110%;
+	  margin: 1.78rem 0 1.424rem 0;
+	}
+}
+
 </style>
 	<div class="container">
 		<div class="section">
@@ -27,7 +35,7 @@ p.headerForm {
 					<br><br>
 				<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 					<div class="row center">
-						<h3 style="margin-top: 1.8em;" class="titleservices large-spacing header col s12 light">{{$data->mon_banner_title}}</h3>
+						<p style="margin-top: 2em;" class="titleservices size45 med-spacing header col s12 light">{{$data->mon_banner_title}}</p>
 					</div>
 					<div class="row center">
 						<a style="margin-top: 3%;" class="appointment waves-effect transparent lighten-5 white-border noshadow btn">Hacer cita</a>
@@ -57,7 +65,7 @@ p.headerForm {
 					<div class="col l10 m12 s12 offset-l1 ">
 						<div class="right">
 							<div id="section2"  class="col s12 right">
-								<p class="titleservices size45 italic right-align"><b>
+								<p class="titleservices size4 italic right-align add-right-ident"><b>
 									{{$data->mon_entrevista_title}}
 								</b></p>
 							</div>
@@ -76,7 +84,7 @@ p.headerForm {
 						</div>		
 						<div class="row no-margin-bottom"> 
 							<div id="section3"  class="col s12">
-								<p class="titleservices size45 italic left-align"><b>
+								<p class="titleservices size4 italic left-align indent-after-first"><b>
 									{{$data->mon_lluvia_title}}
 								</b></p>
 							</div>
@@ -97,7 +105,7 @@ p.headerForm {
 						</div>												
 						<div class="right">
 							<div id="section4" class="col s12 right">
-								<p class="titleservices size45 italic right-align"><b>
+								<p class="titleservices size4 italic right-align"><b>
 									{{$data->mon_materia_title}}
 								</b></p>
 							</div>
@@ -122,16 +130,14 @@ p.headerForm {
 		<div class="container" >
 			<div class="section" >
 				<div class="row">
-					<div class="col l12 m12 s12 center hide-on-med-and-down " >
-						<p style="padding-top: 15vw; padding-bottom: 14vw;" class="titleservices large-spacing headerForm white-text light">{{$data->mon_form_header}}</p>
+					<div class="col l12 m12 s12 center" >
+						<p style="padding-top: 15vw; padding-bottom: 14vw;" class="titleservices med-spacing headerForm white-text light">{{$data->mon_form_header}}</p>
 					</div>
-					<div class="col l12 m12 s12 center hide-on-large-only" >
-						<p style="padding-top: 15vw; font-size: 2rem; ; padding-bottom: 14vw;" class="titleservices large-spacing white-text light">{{$data->mon_form_header}}</p>
-					</div>
+
 				</div>
 				<div id="divform" class="row">
 					<div class="col s12 m12 l6 offset-l3 bg-white">	
-						<p style="padding-left: 4vw; padding-right: 3vw; margin-top: 3vw;" class="titleservices size45 italic"><b>
+						<p style="padding-left: 4vw; padding-right: 3vw; margin-top: 3vw; font-size: 2rem; line-height: 130%;" class="titleservices italic"><b>
 							{{$data->mon_form_title}}
 						</b></p>
 						<p class="med-lineheight" style="padding-left: 4vw; padding-right: 3vw; margin-top: 2.4vw; margin-bottom: 2.4vw  ">

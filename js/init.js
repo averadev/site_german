@@ -7,6 +7,13 @@ var home = function (){
 			$(this).addClass("active");
 			$(this).siblings().removeClass("active");
 		});
+
+		$("#movedown").click(function(event) {
+			$.smoothScroll({
+				scrollTarget: $('#section1'),
+				speed: 1000,
+			});
+		});
  
 
 		$( "#topbar li:eq(0)").addClass('active'); 	

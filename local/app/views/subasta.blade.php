@@ -182,7 +182,7 @@
 				<div class="col s12">
 					<div class="row">
 						<div class="col s4 l4">
-							<img class="responsive-img img_queteconvierte1" src="media/img/subasta/bg_pieza1.png" width="300" height="300" alt="">
+							<img class="responsive-img img_queteconvierte1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="300" height="300" alt="">
 						</div>
 						<div class="col s4 l4 center">
 							<div class="col s5">
@@ -202,7 +202,7 @@
 							</div>
 						</div>
 						<div class="col s4 l4">
-							<img class="responsive-img img_queteconvierte2" src="media/img/subasta/bg_pieza2.png" width="400" height="300" alt="">
+							<img class="responsive-img img_queteconvierte2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
 						</div>
 					</div>
 				</div>
@@ -217,8 +217,8 @@
 			<div class="row">
 				<div class="col l12 s12">
 					<div class="row">
-						<div class="col l12 s12 offset-l2 light font_head_style">
-							<p class="font_subhead_hp"><span class="font_head_h">Calidad, </span>durabilidad y resistencia <br><span class="font_subhead_h"> ante la adversidad de la noche.</span></p>
+						<div class="col l12 s12 offset-l2 light">
+							<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
 						</div>
 					</div>
 					<div class="row">
@@ -256,10 +256,10 @@
 			<div id="modal1" class="modal_md">
 				<div class="modal_dialog">
 					<div class="modal_content">
-						<h3>Resina</h3>
-						<p>Sustancia orgánica de consistencia pastosa, pegajosa, transparente o traslúcida, que se solidifica en contacto con el aire es de origen vegetal o se obtiene artificialmente mediante reacciones de polimerización.</p>
+						<h3>{{$submodule_section_data->SecccionTiuloEspecificacion1}}</h3>
+						<p>{{$submodule_section_data->SecccionDescEspecificacion1}}</p>
 						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
+							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion1}}" alt="">
 						</div>
 						<!-- modal close button -->
 						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
@@ -270,10 +270,10 @@
 			<div id="modal2" class="modal_md">
 				<div class="modal_dialog">
 					<div class="modal_content">
-						<h3>Resina</h3>
-						<p>Sustancia orgánica de consistencia pastosa, pegajosa, transparente o traslúcida, que se solidifica en contacto con el aire es de origen vegetal o se obtiene artificialmente mediante reacciones de polimerización.</p>
+						<h3>{{$submodule_section_data->SecccionTiuloEspecificacion2}}</h3>
+						<p>{{$submodule_section_data->SecccionDescEspecificacion2}}</p>
 						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
+							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion2}}" alt="">
 						</div>
 						<!-- modal close button -->
 						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
@@ -284,10 +284,10 @@
 			<div id="modal3" class="modal_md">
 				<div class="modal_dialog">
 					<div class="modal_content">
-						<h3>Resina</h3>
-						<p>Sustancia orgánica de consistencia pastosa, pegajosa, transparente o traslúcida, que se solidifica en contacto con el aire es de origen vegetal o se obtiene artificialmente mediante reacciones de polimerización.</p>
+						<h3>{{$submodule_section_data->SecccionTiuloEspecificacion3}}</h3>
+						<p>{{$submodule_section_data->SecccionDescEspecificacion3}}</p>
 						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/resina_material.png" alt="">
+							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion3}}" alt="">
 						</div>
 						<!-- modal close button -->
 						<a href="#" class="modal_close btn_modal_close modal-close">x</a>

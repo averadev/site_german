@@ -55,7 +55,7 @@ class AuctionController extends BaseController {
     public function getSectionSubPQ () {
     	// objeto vacio
     	$submodule_section_data = new stdClass();
-
+		
     	$submodule_section = DB::table('module')
 		->join('submodule', 'module.id', '=', 'submodule.idModule')
 		->join('section', 'section.idSubmodule', '=', 'submodule.id')

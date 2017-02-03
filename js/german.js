@@ -5,10 +5,14 @@ var esculturas = function (){
 		$( "#topbar li:eq(4)").addClass('active');
         
         // Carrusel
-        new Siema();
+        var siema = new Siema({
+          duration: 400,
+          easing: 'ease-out'
+        });
         // Menu Carrusel
         $( ".smooth" ).click(function() {
-            
+            var goto = $(this).attr('goto');
+            siema.goTo(goto-1);
         });
 	}
 	var onloadExec = function(){

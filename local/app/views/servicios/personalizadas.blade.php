@@ -1,5 +1,27 @@
 @extends('templates.main')
 @section('content')
+	<style type="text/css">
+		@media only screen and (max-width : 600px) {
+			span.size-x35{
+				font-size: 2.9rem;
+			}
+			p.size45{
+				font-size: 2.3em;
+			}
+			p.size4{
+				font-size: 1.5rem;
+				line-height: 130%;
+				margin: 1.14rem 0 0.912rem 0;
+
+			}
+			p.size4 br{
+				display: none;
+			}
+			p.size41 br{
+				display: none;
+			}
+		}
+	</style>
 </style>
 	<div class="container">
 		<div class="section">
@@ -21,11 +43,11 @@
 					<br><br>
 				<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 					<div class="row center">
-						<h3 style="margin-top: 3em;" class="titleservices large-spacing header light">{{$data->per_banner_title}}</h3>
+						<p style="margin-top: 3em;" class="titleservices size45 med-spacing header col s12 light">{{$data->per_banner_title}}</p>
 					</div>
 					<div class="row center">
 						<a style="margin-top: 3%;" class="appointment waves-effect transparent lighten-5 white-border noshadow btn">Hacer cita</a>
-					</div>
+					</div>					
 					<br><br>
 				</div>
 			</div>
@@ -45,58 +67,67 @@
 					<div class="col l10 m12 s12 offset-l1 ">
 						<div class="right">
 							<div id="section2" class="col s12 right">
-								<p class="titleservices size45 italic right-align"><b>
+								<p class="titleservices size4 italic right-align add-right-ident hide-on-med-and-down"><b>
 									{{$data->per_entrevista_title}}
 								</b></p>
+								<p class="titleservices size4 italic right-align hide-on-large-only"><b>
+									{{$data->per_entrevista_title}}
+								</b></p>								
 							</div>
 							<div class="col s12 l4 offset-l8">
-								<p style="font-size: 1em; margin-top: 2em;" class="right-align light med-lineheight">
+								<p class="description-services light">
 									{{$data->per_entrevista_desc}}
 								</p>
 								<a class="appointment small-button waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
 							</div>
 						</div>
-						<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 65%;">
-							<img style="width: 65%; position: absolute; top:7.5em; left:-3em; z-index: 100; " src="../media/img/personalizadas/{{$data->per_entrevista_pic}}" alt="escultura1">
+						<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 70%;">
+							<img class="txt-over" style="width: 70%; position: absolute; top:7.5em; left:-3em;" src="../media/img/personalizadas/{{$data->per_entrevista_pic}}" alt="escultura1">
 						</div>
 						<div class="hide-on-large-only">
 							<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/personalizadas/{{$data->per_entrevista_pic}}" alt="escultura1">
 						</div>		
 						<div class="row no-margin-bottom"> 
 							<div id="section3" class="col s12">
-								<p class="titleservices size45 italic left-align"><b>
+								<p class="titleservices size4 italic left-align hide-on-med-and-down indent-after-first"><b>
 									{{$data->per_lluvia_title}}
 								</b></p>
+								<p class="titleservices size4 italic left-align hide-on-large-only"><b>
+									{{$data->per_lluvia_title}}
+								</b></p>								
 							</div>
 						</div>					
 						<div class="row no-margin-bottom">
 							<div class="col s12 l4">
-								<p style="font-size: 1em; margin-top: 2em;" class="light med-lineheight">
+								<p class="description-services light">
 									{{$data->per_lluvia_desc}}
 								</p>
 								<a class="appointment small-button waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
 							</div>
 						</div>
 						<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 40%;">
-							<img style="width: 63%; position: absolute; top:-11em; right:0em; z-index: 100; " src="../media/img/personalizadas/{{$data->per_lluvia_pic}}" alt="escultura1">
+							<img class="txt-over" style="width: 63%; position: absolute; top:-11em; right:0em;" src="../media/img/personalizadas/{{$data->per_lluvia_pic}}" alt="escultura1">
 						</div>
 						<div class="hide-on-large-only">
 							<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/personalizadas/{{$data->per_lluvia_pic}}" alt="escultura1">
 						</div>												
 						<div class="right">
 							<div id="section4" class="col s12">
-								<p class="titleservices size45 italic right-align"><b>
+								<p class="titleservices size4 italic right-align add-right-ident-x hide-on-med-and-down"><b>
 									{{$data->per_materia_title}}
 								</b></p>
+								<p class="titleservices size4 italic right-align hide-on-large-only"><b>
+									{{$data->per_materia_title}}
+								</b></p>					
 							</div>
 							<div class="col s12 l4 offset-l8">
-								<p style="font-size: 1em; margin-top: 2em;" class="right-align light med-lineheight">
+								<p class="description-services light">
 									{{$data->per_materia_desc}}
 								</p>
 								<a class="appointment small-button waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
 							</div>
-							<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 60%;">
-								<img style="width: 70%; position: absolute; top:7.5em; left:-3em; z-index: 100; " src="../media/img/personalizadas/{{$data->per_materia_pic}}" alt="escultura1">
+							<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 72%;">
+								<img class="txt-over" style="width: 90%; position: absolute; top:7.5em; left:-3em;" src="../media/img/personalizadas/{{$data->per_materia_pic}}" alt="escultura1">
 							</div>
 							<div class="hide-on-large-only">
 								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/personalizadas/{{$data->per_materia_pic}}" alt="escultura1">
@@ -110,26 +141,26 @@
 			<div class="container" >
 				<div class="section" >
 					<div style="margin-top: 36vw;" class="row">
-						<div  style="background-color: transparent;" class="col s10 m8 l6 offset-s1 offset-m2 offset-l3">	
-							<p style="color: white;" class="titleservices hide-on-med-and-down size45 italic"><b>
+						<div id="formsection" style="background-color: transparent; width: 70%; margin-left:22.5%;" class="">	
+							<p style="color: white;" class="titleservices hide-on-med-and-down indent-after-first-s2 size45 italic"><b>
 								{{$data->per_form_title}}
 							</b></p>
 						</div>
-						<div id="formsection" class="col black-section">	
-							<form class=" col s10 m10 l6 offset-m1 offset-s1 offset-l3">
+						<div class="col black-section">	
+							<form class=" col s10 m10 l8 offset-m1 offset-s1 offset-l2">
 							<div class="hide-on-large-only">
-								<p style="color: white;" class="titleservices size45 italic"><b>
+								<p style="color: white; text-align: center;" class="titleservices size4 italic"><b>
 									{{$data->per_form_title}}
 								</b></p>				
 							</div>
-							<p class="med-lineheight" style="margin-top: 2.4vw; margin-bottom: 2.4vw; color: white;  ">
+							<p class="med-lineheight" style="margin-top: 2.4vw; margin-bottom: 2.4vw; color: white; font-size: 1.3rem; ">
 								{{$data->per_form_desc}}
 							</p>
 								<input id="myname"  class="black-input" required type="text" placeholder="Nombre Completo">
 								<input id="myemail" class="black-input" required type="text" placeholder="Correo electronico">
 								<input id="myemail" class="black-input" required type="text" placeholder="Compañia / Empresa">
 								<input id="myemail" class="black-input" required type="text" placeholder="Día para la cita">
-									<textarea  cols="100" style="height: 100px" placeholder="Comentarios" ></textarea>							
+									<textarea  cols="100" style="height: 100px; color: white;" placeholder="Comentarios" ></textarea>							
 								<button style="margin-bottom: 10%;" class="waves-effect green right med-button light btn">HACER CITA</button>
 							</form>
 						</div>

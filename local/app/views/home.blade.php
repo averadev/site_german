@@ -33,8 +33,8 @@ p.trunc{
 				<br><br>
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
-					<h3 style="margin-top: 4em; font-weight: 600; font-style: italic;" class="titleservices small-spacing">{{$data->homeBannerTxt}}</h3>
-					<img id="movedown" style="width: 45px; margin-top: 3em; cursor: pointer; " src="media/img/home/scroll.png" alt="scroll">
+					<p style="margin-top: 2.5em; font-weight: 600; font-style: italic;" class="titleservices size70 small-spacing">{{$data->homeBannerTxt}}</p>
+					<img id="movedown" style="width: 45px; margin-top: 2em; cursor: pointer; " src="media/img/home/scroll.png" alt="scroll">
 				</div>
 				<br><br>
 			</div>

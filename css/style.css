@@ -50,17 +50,30 @@ ul.footer-info li{
 	height: 400px !important;
 }
 
-p.size45{
-	font-size: 2.5rem;
+p.size70{
+	font-size: 3.5rem;
 	line-height: 130%;
 	margin: 1.14rem 0 0.912rem 0;
 }
 
+p.size45{
+	font-size: 2.5rem;
+	line-height: 110%;
+	margin: 1.14rem 0 0.912rem 0;
+}
+
 p.size4{
-	font-size: 1.8rem;
+	font-size: 2.1rem;
+	line-height: 120%;
+	margin: 1.14rem 0 0.912rem 0;
+}
+
+p.size41{
+	font-size: 2.2rem;
 	line-height: 130%;
 	margin: 1.14rem 0 0.912rem 0;
 }
+
 .bold600{
 	font-weight: 600;
 }
@@ -72,9 +85,64 @@ p.add-right-ident:before {
 	height: 5px
 }
 
+p.add-right-ident-x:before {
+	content: ' ';
+	width: 140px;
+	float: right;
+	height: 5px
+}
+
+p.add-right-ident-x2:before {
+	content: ' ';
+	width: 65px;
+	float: right;
+	height: 5px
+}
+
+p.indent-after-first-x{
+	text-indent: -12.5rem;
+	margin-left: 12.5rem;
+}
+
+p.indent-after-first-x2{
+	text-indent: -17.5rem;
+	margin-left: 17.5rem;
+}
+
 p.indent-after-first{
 	text-indent: -9.5rem;
 	margin-left: 9.5rem;
+}
+
+p.indent-after-first-s{
+	text-indent: -4rem;
+	margin-left: 4rem;
+}
+
+p.indent-after-first-s2{
+	text-indent: -6rem;
+	margin-left: 6rem;
+}
+
+p.indent-after-first-s3{
+	text-indent: -7rem;
+	margin-left: 7rem;
+}
+
+p.description-services{
+	font-size: 1rem;
+	margin-top: 2em;
+	line-height: 140%; 
+}
+
+p.headerForm {
+  font-size: 2.7rem;
+  line-height: 110%;
+  margin: 1.78rem 0 1.424rem 0;
+}
+
+img.txt-over{
+	z-index: -1;
 }
 
 /*Buttons*/
@@ -327,6 +395,11 @@ p {
 	ul.side-nav.leftside-navigation {
 	    top: 56px;
 	}
+	p.headerForm {
+	  font-size: 2rem;
+	  line-height: 110%;
+	  margin: 1.78rem 0 1.424rem 0;
+	}	
 
 }
 
@@ -415,7 +488,7 @@ footer.page-footer {
 }
 
 .titleservices{
-    font-family: "Crimson Text script=all";	
+    font-family: "Crimson Text";	
 }
 
 nav.mymenu ul a {

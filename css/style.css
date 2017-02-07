@@ -639,11 +639,31 @@ nav.mymenu ul a {
 	padding-top: 0em;
 }
 /* Proceso Media RD */
-@media all and (max-width: 900px){
+@media screen and (max-width: 1024px){
 	.img_ga_pq {
-		width:100%;
+		margin-bottom: -5rem;
+	}
+}
+@media screen and (max-width: 900px){
+	.img_ga_pq {
+		max-width: 100%;
 		margin-bottom: 0;
 		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 600px){
+	.img_ga_pq {
+		max-width: 100%;
+	}
+}
+@media screen and (max-width: 480px){
+	.img_ga_pq {
+		max-width: 100%;
+	}
+}
+@media screen and (max-width: 320px){
+	.img_ga_pq {
+		max-width: 100%;
 	}
 }
 .font_head_style_proceso {

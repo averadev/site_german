@@ -17,6 +17,13 @@ span.size-x2-left {
 	line-height: 140%;
 }
 
+span.size-x2-left2 {
+	font-size: 2rem;
+	color: #2d332c;
+	margin-left: 3rem;
+	line-height: 140%;
+}
+
 span.size-x2-right {
 	font-size: 2rem;
 	color: #2d332c;

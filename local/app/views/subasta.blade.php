@@ -25,20 +25,20 @@
 	<div id="tab4" class="bg_porque">
 		<div class="section">
 			<div class="row">
-				<div class="col l12 s12">
+				<div class="col s12 l12">
 					<div class="row">
-						<div class="col l12 s12 center light">
+						<div class="col s12 l12 center light">
 							<p class="gb_top_x6">{{$submodule_section_data->TitlePorQue}}</p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col l4 s12">
-							<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="responsive-img img_ga_pq">
+						<div class="col s12 l4 m4">
+							<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="img_ga_pq">
 						</div>
-						<div class="col l3 s12">
+						<div class="col s12 l3 m4">
 							<p class="txt_desc">{{$submodule_section_data->Desc1PorQue}}</p>
 						</div>
-						<div class="col l3 s12 offset-l3">
+						<div class="col s12 l3 m4 offset-l3">
 							<p class="txt_desc">{{$submodule_section_data->Desc2PorQue}}</p>
 						</div>
 					</div>
@@ -50,125 +50,128 @@
 
 	<!-- Start Proceso -->
 	<div id="tab5" class="bgg_proceso">
-		<div class="container no-pad-top" style="padding-left: 3vw;">
-			<div class="row">
-				<div class="col l12 s12">
-					<section class="cd-horizontal-timeline">
-						<div class="events-content">
-							<ol>
-								<li class="selected" data-date="16/01/2014">
-									<p>{{$submodule_section_data->SeccionTituloProceso}}</p>
-									<div class="row">
-										<div class="col l4">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+		<div class="section" style="padding-left: 3vw;">
+			<div class="container">
+				<div class="row">
+					<div class="col s12 l12">
+						<section class="cd-horizontal-timeline">
+							<div class="events-content">
+								<ol>
+									<li class="selected" data-date="16/01/2014">
+										<div class="col s12">
+											<div class="row">
+												<div class="col s12 m10">
+													<p>{{$submodule_section_data->SeccionTituloProceso}}</p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col l4">
+		      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+												</div>
+												<div class="col l3">
+													<h5 class="light">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
+													<p>{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
+												</div>
+												<div class="col l5">
+		      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto2}}" width="591" height="600" alt="" class="hide-on-med-and-down img_proceso_2">
+												</div>
+											</div>
 										</div>
-										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
-											<p>{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
-										</div>
-										<div class="col l5">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto2}}" width="591" height="600" alt="" class="img_proceso_2">
-										</div>
-									</div>
-								</li>
+									</li>
 
-								<li data-date="28/02/2014">
-									<p>{{$submodule_section_data->SeccionTituloProcesoSuenos}}</p>
-									<div class="row">
-										<div class="col l4">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+									<li data-date="28/02/2014">
+										<p>{{$submodule_section_data->SeccionTituloProcesoSuenos}}</p>
+										<div class="row">
+											<div class="col l4">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+											</div>
+											<div class="col l3" style="padding-top: 4vw;">
+												<h5 class="light">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
+												<p>{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
+											</div>
+											<div class="col l5">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}" width="591" height="600" alt="" class="img_proceso_3">
+											</div>
 										</div>
-										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
-											<p>{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
-										</div>
-										<div class="col l5">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}" width="591" height="600" alt="" class="img_proceso_3">
-										</div>
-									</div>
-								</li>
+									</li>
 
-								<li data-date="20/04/2014">
-									<p>{{$submodule_section_data->SeccionTituloProcesoMagia}}</p>
-									<div class="row">
-										<div class="col l4">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+									<li data-date="20/04/2014">
+										<p>{{$submodule_section_data->SeccionTituloProcesoMagia}}</p>
+										<div class="row">
+											<div class="col l4">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+											</div>
+											<div class="col l3" style="padding-top: 4vw;">
+												<h5 class="light">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
+												<p>{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
+											</div>
+											<div class="col l5">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}" width="591" height="600" alt="" class="img_proceso_3">
+											</div>
 										</div>
-										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
-											<p>{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
-										</div>
-										<div class="col l5">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}" width="591" height="600" alt="" class="img_proceso_3">
-										</div>
-									</div>
-								</li>
+									</li>
 
-								<li data-date="20/05/2014">
-									<p>{{$submodule_section_data->SeccionTituloProcesoPasion}}</p>
-									<div class="row">
-										<div class="col l4">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+									<li data-date="20/05/2014">
+										<p>{{$submodule_section_data->SeccionTituloProcesoPasion}}</p>
+										<div class="row">
+											<div class="col l4">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+											</div>
+											<div class="col l3" style="padding-top: 4vw;">
+												<h5 class="light">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
+												<p>{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
+											</div>
+											<div class="col l5">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}" width="591" height="600" alt="" class="img_proceso_3">
+											</div>
 										</div>
-										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
-											<p>{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
-										</div>
-										<div class="col l5">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}" width="591" height="600" alt="" class="img_proceso_3">
-										</div>
-									</div>
-								</li>
+									</li>
 
-								<li data-date="09/07/2014">
-									<p>{{$submodule_section_data->SeccionTituloProcesoLuz}}</p>
-									<div class="row">
-										<div class="col l4">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+									<li data-date="09/07/2014">
+										<p>{{$submodule_section_data->SeccionTituloProcesoLuz}}</p>
+										<div class="row">
+											<div class="col l4">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
+											</div>
+											<div class="col l3" style="padding-top: 4vw;">
+												<h5 class="light">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
+												<p>{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
+											</div>
+											<div class="col l5">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}" width="591" height="600" alt="" class="img_proceso_3">
+											</div>
 										</div>
-										<div class="col l3" style="padding-top: 4vw;">
-											<h5 class="light">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
-											<p>{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
-										</div>
-										<div class="col l5">
-      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}" width="591" height="600" alt="" class="img_proceso_3">
-										</div>
-									</div>
-								</li>
+									</li>
 
-							</ol>
-						</div> 
-						<!-- .events-content -->
+								</ol>
+							</div> 
+							<!-- .events-content -->
 
-						<!-- Start .timeline -->
-						<div class="timeline">
-							<!-- Start .events-wrapper -->
-							<div class="events-wrapper">
-								<div class="events">
-									<ol>
-										<li><a href="#0" data-date="16/01/2014" class="selected">{{$submodule_section_data->SeccionSubTProcesoConcepto}}</a></li>
-										<li><a href="#0" data-date="28/02/2014">{{$submodule_section_data->SeccionSubTProcesoSuenos}}</a></li>
-										<li><a href="#0" data-date="20/04/2014">{{$submodule_section_data->SeccionSubTProcesoMagia}}</a></li>
-										<li><a href="#0" data-date="20/05/2014">{{$submodule_section_data->SeccionSubTProcesoPasion}}</a></li>
-										<li><a href="#0" data-date="09/07/2014">{{$submodule_section_data->SeccionSubTProcesoLuz}}</a></li>
-										<li><a href="#0" data-date="30/08/2014"></a></li>
-										<li><a href="#0" data-date="15/09/2014"></a></li>
-										<li><a href="#0" data-date="01/11/2014"></a></li>
-										<li><a href="#0" data-date="10/12/2014"></a></li>
-										<li><a href="#0" data-date="19/01/2015"></a></li>
-										<li><a href="#0" data-date="03/03/2015"></a></li>
-									</ol>
-									<span class="filling-line" aria-hidden="true"></span>
-								</div> <!-- .events -->
-							</div> <!-- End .events-wrapper -->
-							
-							<!-- Start .cd-timeline-navigation -->
-							<!-- <ul class="cd-timeline-navigation">
-								<li><a href="#0" class="prev inactive">Prev</a></li>
-								<li><a href="#0" class="next">Next</a></li>
-							</ul>  --> <!-- End .cd-timeline-navigation -->
-						</div> <!-- End .timeline -->
-					</section>
+							<!-- Start .timeline -->
+							<div class="timeline">
+								<!-- Start .events-wrapper -->
+								<div class="events-wrapper">
+									<div class="events">
+										<ol>
+											<li><a href="#0" data-date="16/01/2014" class="selected">{{$submodule_section_data->SeccionSubTProcesoConcepto}}</a></li>
+											<li><a href="#0" data-date="28/02/2014">{{$submodule_section_data->SeccionSubTProcesoSuenos}}</a></li>
+											<li><a href="#0" data-date="20/04/2014">{{$submodule_section_data->SeccionSubTProcesoMagia}}</a></li>
+											<li><a href="#0" data-date="20/05/2014">{{$submodule_section_data->SeccionSubTProcesoPasion}}</a></li>
+											<li><a href="#0" data-date="09/07/2014">{{$submodule_section_data->SeccionSubTProcesoLuz}}</a></li>
+											<li><a href="#0" data-date="30/08/2014"></a></li>
+											<li><a href="#0" data-date="15/09/2014"></a></li>
+											<li><a href="#0" data-date="01/11/2014"></a></li>
+											<li><a href="#0" data-date="10/12/2014"></a></li>
+											<li><a href="#0" data-date="19/01/2015"></a></li>
+											<li><a href="#0" data-date="03/03/2015"></a></li>
+										</ol>
+										<span class="filling-line" aria-hidden="true"></span>
+									</div> <!-- .events -->
+								</div> <!-- End .events-wrapper -->
+							</div> 
+							<!-- End .timeline -->
+						</section>
+					</div>
 				</div>
 			</div>
 		</div>

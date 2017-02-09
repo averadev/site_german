@@ -21,14 +21,15 @@
 	
 	Route::group(array('prefix' => 'admin', 'namespace' => 'App\Controllers\Admin', 'before' => 'auth.admin'), function () {
 	
-	    // admin dashboard
-	    Route::get('/', array('as' => 'admin.dashboard', function () {
-	
-	        return View::make('admin/dashboard')->with('active', 'home');
-	    }));	
+		// admin dashboard
+		Route::get('/', array('as' => 'admin.dashboard', function () {
+			$modules  = Module::all();
+			return View::make('admin/dashboard')
+			->with('active', 'home')
+			->with('modules',$modules);
+		}));
 	
 	});
-
 
 
 	/*Servicios*/

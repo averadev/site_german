@@ -60,7 +60,7 @@
 						<p style="font-size: 1.2em; " class="center-align light med-lineheight " >{{$data->mon_unico_desc}}</p>
 					</div>
 					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em; ">
-						<img class="txt-over" style="width: 28%; position: absolute; top:-25em; left:0em;" src="../media/img/monumental/{{$data->mon_unico_pic}}" alt="escultura1">
+						<img style="width: 28%; position: absolute; top:-25em; left:0em;" src="../media/img/monumental/{{$data->mon_unico_pic}}" alt="escultura1">
 					</div>
 					<div class="hide-on-large-only">
 						<img style="width: 30%; margin-left: 35%; margin-top: 5%;" src="../media/img/monumental/{{$data->mon_unico_pic}}" alt="escultura1">

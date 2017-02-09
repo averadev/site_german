@@ -36,7 +36,7 @@
 		</div>
 	</div>
 	<div>
-		<div id="index-banner" class="parallax-container">
+		<div id="index-banner" class="parallax-container" >
 			<div class="section no-pad-bot">
 				<div class="container">
 					<br><br>
@@ -62,7 +62,7 @@
 						<p style="font-size: 1.2em; " class="center-align light med-lineheight " >{{$data->inter_distincion_desc}}</p>
 					</div>
 					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em; ">
-						<img class="txt-over" style="width: 31%; position: absolute; top:-22.5em; left:0em;" src="../media/img/interiores/{{$data->inter_distincion_pic}}" alt="escultura1">
+						<img style="width: 31%; position: absolute; top:-22.5em; left:0em;" src="../media/img/interiores/{{$data->inter_distincion_pic}}" alt="escultura1">
 					</div>
 					<div class="hide-on-large-only">
 						<img style="width: 30%; margin-left: 35%; margin-top: 5%;" src="../media/img/interiores/{{$data->inter_distincion_pic}}" alt="escultura1">

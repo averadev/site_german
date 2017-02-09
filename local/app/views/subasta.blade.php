@@ -85,12 +85,12 @@
 											<div class="col l4">
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
-											<div class="col l3" style="padding-top: 4vw;">
+											<div class="col l3">
 												<h5 class="light">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
 											</div>
 											<div class="col l5">
-	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}" width="591" height="600" alt="" class="img_proceso_3">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}" width="591" height="600" alt="" class="hide-on-med-and-down img_proceso_3">
 											</div>
 										</div>
 									</li>
@@ -101,12 +101,12 @@
 											<div class="col l4">
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
-											<div class="col l3" style="padding-top: 4vw;">
+											<div class="col l3">
 												<h5 class="light">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
 											</div>
 											<div class="col l5">
-	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}" width="591" height="600" alt="" class="img_proceso_3">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}" width="591" height="600" alt="" class="hide-on-med-and-down img_proceso_3">
 											</div>
 										</div>
 									</li>
@@ -117,12 +117,12 @@
 											<div class="col l4">
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
-											<div class="col l3" style="padding-top: 4vw;">
+											<div class="col l3">
 												<h5 class="light">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
 											</div>
 											<div class="col l5">
-	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}" width="591" height="600" alt="" class="img_proceso_3">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}" width="591" height="600" alt="" class="hide-on-med-and-down img_proceso_3">
 											</div>
 										</div>
 									</li>
@@ -133,12 +133,12 @@
 											<div class="col l4">
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
-											<div class="col l3" style="padding-top: 4vw;">
+											<div class="col l3">
 												<h5 class="light">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
 											</div>
 											<div class="col l5">
-	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}" width="591" height="600" alt="" class="img_proceso_3">
+	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}" width="591" height="600" alt="" class="hide-on-med-and-down img_proceso_3">
 											</div>
 										</div>
 									</li>
@@ -182,30 +182,38 @@
 	<div id="tab6" class="bg_queteconvierte">
 		<div class="section">
 			<div class="row">
-				<div class="col s12">
+				<div class="col s12 gb_bottom4">
 					<div class="row">
 						<div class="col s4 l4">
-							<img class="responsive-img img_queteconvierte1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="300" height="300" alt="">
+							<img class="hide-on-med-and-down responsive-img gb_img_piece1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="369" height="765" alt="">
 						</div>
-						<div class="col s4 l4 center">
-							<div class="col s5">
-								<h4 class="right light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
-								<p style="" class="right light med-lineheight">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
+						<div class="col s12 m4 l4">
+							<div class="row">
+								<div class="col s12 l4 gb_text_center">
+									<h4 class="right light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+								</div>
 							</div>
 							<div class="row">
-								<div class="col s12 l12">
+								<div class="col s12 l4 center">
+									<p class="right light med-lineheight">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col s12 m4 l12">
 									<p class="gb_top_x3 gb_top_left_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
 								</div>
 								<div class="row">
 									<div class="col s12">
-									<h4 class="center light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
-									<p style="" class="right light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
-								</div>
+										<h4 class="center light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+									</div>
+									<div class="col s12">
+										<p class="right light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col s4 l4">
-							<img class="responsive-img img_queteconvierte2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
+							<img class="hide-on-med-and-down responsive-img gb_img_piece2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
 						</div>
 					</div>
 				</div>
@@ -218,37 +226,39 @@
 	<div id="tab7" class="bg_especificaciones">
 		<div class="section">
 			<div class="row">
-				<div class="col l12 s12">
+				<div class="col s12">
 					<div class="row">
-						<div class="col l12 s12 offset-l2 light">
+						<div class="col s12 col m6 col l10 offset-l1 light">
 							<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col l4 s12 offset-l1">
-							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" width="400" height="300" alt="">
+						<div class="col s12 col m6 col l4 offset-l1">
+							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" alt="">
 						</div>
-						<div class="col l3">
-							<h5 class="txt_head">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
-							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+						<div class="col s12 col m6 col l3">
+							<div class="gb_top_x3">
+								<h5 class="">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
+								<p style="" class="left-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+							</div>
 						</div>
 						<div class="col l4 s12">
 							<div class="row">
 								<div class="col l3">
-									<a class="modal-trigger" href="#modal1"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright">41%</h5>
+									<a class="modal-trigger" href="#modal1"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
+									<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12">
-									<a class="modal-trigger2" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright">26%</h5>
+									<a class="modal-trigger2" href="#modal2"><img class="hide-on-med-and-down circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
+									<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12" style="margin-left: -2em;">
-									<a class="modal-trigger3" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright" style="margin-right: -7em">33%</h5>
+									<a class="modal-trigger3" href="#modal3"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
+									<h5 class="hide-on-med-and-down light txt_fright" style="margin-right: -7em">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h5>
 								</div>
 							</div>
 						</div>

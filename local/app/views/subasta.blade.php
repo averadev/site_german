@@ -226,37 +226,39 @@
 	<div id="tab7" class="bg_especificaciones">
 		<div class="section">
 			<div class="row">
-				<div class="col l12 s12">
+				<div class="col s12">
 					<div class="row">
-						<div class="col l12 s12 offset-l2 light">
+						<div class="col s12 col m6 col l10 offset-l1 light">
 							<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col l4 s12 offset-l1">
-							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" width="400" height="300" alt="">
+						<div class="col s12 col m6 col l4 offset-l1">
+							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" alt="">
 						</div>
-						<div class="col l3">
-							<h5 class="txt_head">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
-							<p style="font-size: 1em; font-weight: 300; text-align: justify; line-height: 130%;" class="center-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+						<div class="col s12 col m6 col l3">
+							<div class="gb_top_x3">
+								<h5 class="">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
+								<p style="" class="left-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+							</div>
 						</div>
 						<div class="col l4 s12">
 							<div class="row">
 								<div class="col l3">
-									<a class="modal-trigger" href="#modal1"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h5>
+									<a class="modal-trigger" href="#modal1"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
+									<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12">
-									<a class="modal-trigger2" href="#modal2"><img class="circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h5>
+									<a class="modal-trigger2" href="#modal2"><img class="hide-on-med-and-down circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
+									<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h5>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col l3 s12" style="margin-left: -2em;">
-									<a class="modal-trigger3" href="#modal3"><img class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
-									<h5 class="light txt_fright" style="margin-right: -7em">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h5>
+									<a class="modal-trigger3" href="#modal3"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
+									<h5 class="hide-on-med-and-down light txt_fright" style="margin-right: -7em">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h5>
 								</div>
 							</div>
 						</div>

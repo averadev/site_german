@@ -184,35 +184,31 @@
 			<div class="row">
 				<div class="col s12 gb_bottom4">
 					<div class="row">
-						<div class="col s4 l4">
+						<div class="col s12 l4">
 							<img class="hide-on-med-and-down responsive-img gb_img_piece1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="369" height="765" alt="">
 						</div>
 						<div class="col s12 m4 l4">
 							<div class="row">
-								<div class="col s12 l4 gb_text_center">
-									<h4 class="right light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col s12 l4 center">
-									<p class="right light med-lineheight">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
+								<div class="col s12 l5 gb_text_center">
+									<h4 class="right light gb_top_x3 gb_bottom_x5 right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+									<p class="right light med-lineheight right-align">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col s12 m4 l12">
-									<p class="gb_top_x3 gb_top_left_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
+									<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
 								</div>
 								<div class="row">
 									<div class="col s12">
-										<h4 class="center light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+										<h4 class="center light gb_bottom_x6">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
 									</div>
-									<div class="col s12">
+									<div class="col s12 m6 l4 offset-l5">
 										<p class="right light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col s4 l4">
+						<div class="col s12 l4">
 							<img class="hide-on-med-and-down responsive-img gb_img_piece2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
 						</div>
 					</div>
@@ -320,7 +316,7 @@
 					<div class="col s12">
 						<div class="row">
 							<div class="col s12 m8 l6 right">
-								<span class="right gb_gray">Lunes 30 de enero de 2017 | 13:00 hrs</span>
+								<span class="right gb_gray">Lunes 30 de enero de 2017 | {{$hour}} hrs</span>
 							</div>
 						</div>
 						<div class="row">

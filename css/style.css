@@ -608,6 +608,15 @@ nav.mymenu ul a {
 .gb_top_x6 {
 	margin-top: 6rem;
 }
+.gb_bottom_x2 {
+	margin-bottom: -2rem;
+}
+.gb_bottom_x5 {
+	margin-bottom: -5px;
+}
+.gb_bottom_x6 {
+	margin-bottom: -6px;
+}
 .font_head_style {
 	font-family: "Crimson Text";
 	font-weight: bold;

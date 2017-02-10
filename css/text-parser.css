@@ -24,6 +24,13 @@ span.size-x2-left2 {
 	line-height: 140%;
 }
 
+span.size-x8-left {
+	font-size: 40px;
+	color: #2d332c;
+	margin-left: 8rem;
+	line-height: 140%;
+}
+
 span.size-x2-right {
 	font-size: 2rem;
 	color: #2d332c;
@@ -39,9 +46,27 @@ span.size-x35{
 	font-size: 3.5rem;
 }
 
+span.size-x4 {
+	font-family: "Crimson Text";
+	font-size: 40px;
+	font-weight: bold;
+	font-style: italic;
+	color: #2d332c;
+	line-height: 0rem;
+}
+
 span.size-x45 {
 	font-family: "Crimson Text";
 	font-size: 4.5rem;
+	font-weight: bold;
+	font-style: italic;
+	color: #2d332c;
+	line-height: 0rem;
+}
+
+span.size-x5 {
+	font-family: "Crimson Text";
+	font-size: 5rem;
 	font-weight: bold;
 	font-style: italic;
 	color: #2d332c;

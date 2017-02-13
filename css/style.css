@@ -608,6 +608,15 @@ nav.mymenu ul a {
 .gb_top_x6 {
 	margin-top: 6rem;
 }
+.gb_bottom_x2 {
+	margin-bottom: -2rem;
+}
+.gb_bottom_x5 {
+	margin-bottom: -5px;
+}
+.gb_bottom_x6 {
+	margin-bottom: -6px;
+}
 .font_head_style {
 	font-family: "Crimson Text";
 	font-weight: bold;
@@ -644,6 +653,10 @@ nav.mymenu ul a {
 	.img_ga_pq {
 		margin-bottom: -5rem;
 	}
+	.split-date {
+		margin-top: 6rem !important;
+		margin-left: -7rem !important;
+	}
 }
 @media screen and (max-width: 900px){
 	.img_ga_pq {
@@ -651,20 +664,36 @@ nav.mymenu ul a {
 		margin-bottom: 0;
 		margin: 0 auto;
 	}
+	.split-date {
+		margin-left: 7rem !important;
+	}
 }
 @media screen and (max-width: 600px){
 	.img_ga_pq {
 		max-width: 100%;
+	}
+	.gb_mleft_x10 {
+		margin-left: 0rem !important;
+	}
+	.split-date {
+		margin-left: -1rem !important;
 	}
 }
 @media screen and (max-width: 480px){
 	.img_ga_pq {
 		max-width: 100%;
 	}
+	.split-date {
+		margin-left: -5rem !important;
+	}
 }
 @media screen and (max-width: 320px){
 	.img_ga_pq {
 		max-width: 100%;
+	}
+	.split-date {
+		margin-top: 2rem !important;
+		margin-left: -10rem !important;
 	}
 }
 .font_head_style_proceso {
@@ -753,7 +782,7 @@ nav.mymenu ul a {
 }
 .gb_mlf_1 {
 	margin-top: 9em;
-	margin-left: -3em !important;
+	margin-left: -3em;
 }
 .gb_arrow_box {
 	position: relative;
@@ -786,6 +815,9 @@ nav.mymenu ul a {
 }
 .gb_mgr_2 {
 	margin-top: 1.6rem;
+}
+.gb_mleft_x10 {
+	margin-left: 10rem;
 }
 
 /* Date Coming Soon */

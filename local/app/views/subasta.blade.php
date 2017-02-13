@@ -184,35 +184,31 @@
 			<div class="row">
 				<div class="col s12 gb_bottom4">
 					<div class="row">
-						<div class="col s4 l4">
+						<div class="col s12 l4">
 							<img class="hide-on-med-and-down responsive-img gb_img_piece1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="369" height="765" alt="">
 						</div>
 						<div class="col s12 m4 l4">
 							<div class="row">
-								<div class="col s12 l4 gb_text_center">
-									<h4 class="right light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col s12 l4 center">
-									<p class="right light med-lineheight">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
+								<div class="col s12 l5 gb_text_center">
+									<h4 class="right light gb_top_x3 gb_bottom_x5 right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+									<p class="right light med-lineheight right-align">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col s12 m4 l12">
-									<p class="gb_top_x3 gb_top_left_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
+									<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
 								</div>
 								<div class="row">
 									<div class="col s12">
-										<h4 class="center light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+										<h4 class="center light gb_bottom_x6">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
 									</div>
-									<div class="col s12">
+									<div class="col s12 m6 l4 offset-l5">
 										<p class="right light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col s4 l4">
+						<div class="col s12 l4">
 							<img class="hide-on-med-and-down responsive-img gb_img_piece2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
 						</div>
 					</div>
@@ -319,12 +315,12 @@
 				<div class="row">
 					<div class="col s12">
 						<div class="row">
-							<div class="col s6 right">
-								<span class="right gb_gray">Lunes 30 de enero de 2017 | 13:00 hrs</span>
+							<div class="col s12 m8 l6 right">
+								<span class="right gb_gray">Lunes 30 de enero de 2017 | {{$hour}} hrs</span>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col s6 center">
+							<div class="col s12 m12 l6 center">
 								<div class="split-date">
 									<span class="day">31</span>
 									<span class="month">Enero</span>
@@ -332,47 +328,43 @@
 								</div>
 								<img class="responsive-img" style="margin-top: -4em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
 							</div>
-							<div class="col s6 gb_mlf_1 center">
+							<div class="col s12 m12 l6">
 								<div class="row">
-									<div class="col s12">
-										<div class="row">
-											<div class="col s6 offset-s3">
-												<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo 21 de febrero de 2017, y puedes seguirlo aquí.</span>
+									<div class="col s12 m12 l6 gb_mlf_1 gb_mleft_x10 center" style="margin-left: 10rem;">
+										<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo 21 de febrero de 2017, y puedes seguirlo aquí.</span>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s12 white gb_arrow_box">
+										<form id="" class="col s12" action="" method="post">
+											<div class="row">
+												<div class="input-field col s12 m10 l12">
+													<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
+												</div>
 											</div>
-										</div>
-										<div class="row">
-											<div class="col s12 white gb_arrow_box">
-												<form id="" class="col s12" action="" method="post">
-													<div class="row">
-														<div class="input-field col s12">
-															<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
-														</div>
-													</div>
-													<div class="row">
-														<div class="input-field col s4">
-															<input id="name" class="border_cs" type="text" name="name" placeholder="NOMBRE">
-														</div>
-														<div class="input-field col s4">
-															<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
-														</div>
-														<div class="col s4">
-															<select class="browser-default gb_mrg_1 gb_gray_2">
-																<option value="" disabled selected>CIUDAD</option><i class="material-icons">keyboard_arrow_down</i>
-																<option value="1">Option 1</option>
-																<option value="2">Option 2</option>
-																<option value="3">Option 3</option>
-															</select>
-														</div>
-														<div class="input-field col s8">
-															<textarea id="comment" class="border_cs" rows=5 placeholder="COMENTARIOS"></textarea>
-														</div>
-														<div class="input-field col s4">
-															<button id="sendBtn" class="btn_cs btn_large_cs gb_mgr_2">CONTÁCTENME</button>
-														</div>
-													</div>
-												</form>
+											<div class="row">
+												<div class="input-field col s12 l4">
+													<input id="name" class="border_cs" type="text" name="name" placeholder="NOMBRE">
+												</div>
+												<div class="input-field col s12 l4">
+													<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
+												</div>
+												<div class="col s12 l4">
+													<select class="browser-default gb_mrg_1 gb_gray_2">
+														<option value="" disabled selected>CIUDAD</option><i class="material-icons">keyboard_arrow_down</i>
+														<option value="1">Option 1</option>
+														<option value="2">Option 2</option>
+														<option value="3">Option 3</option>
+													</select>
+												</div>
+												<div class="input-field col s12 l8">
+													<textarea id="comment" class="border_cs" rows=5 placeholder="COMENTARIOS"></textarea>
+												</div>
+												<div class="input-field col s12 l4">
+													<button id="sendBtn" class="btn btn-large green gb_mgr_2">CONTÁCTENME</button>
+												</div>
 											</div>
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>

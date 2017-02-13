@@ -1,5 +1,5 @@
 <?php 
-
+use Carbon\Carbon;
 
 class AuctionController extends BaseController {
 	/*
@@ -62,11 +62,21 @@ class AuctionController extends BaseController {
 		->join('xref_section_component', 'section.id', '=', 'xref_section_component.idSection')
 		->where('module.id', '=', 2)
 		->get();
+
+		/**
+		 * Date Current
+		 */
+		Carbon::setLocale('es');
+		$now = Carbon::now(new DateTimeZone('America/Mexico_City'));
+		$date = $now;
+		// $hour toTimeString('H:i:s') = (12:00:00)
+		$hour = $now->toTimeString();
+		//$date=$now->format('l jS \\of F Y h:i:s');
 		
 		foreach ($submodule_section as $key => $value) {
 			$submodule_section_data->{$value->name} = TextParser::change(nl2br($value->value));
 		}
-        return View::make('subasta')->with('submodule_section_data', $submodule_section_data);
+        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour);
     }
 
 }

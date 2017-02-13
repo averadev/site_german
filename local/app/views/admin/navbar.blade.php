@@ -7,14 +7,12 @@
 					<img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
 				</div> -->
 				<div class="col s9">
-					
 					<a style="margin-bottom: 2rem;" class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Usuario<i class="material-icons">arrow_drop_down</i></a><ul id="profile-dropdown" class="dropdown-content" style="width: 128px; position: absolute; top: 57px; left: 101.25px; opacity: 1; display: none;">
-
 						<li>
 							<a href="#"><i class="material-icons">settings</i> Config</a>
 						</li>
 						<li>
-							<a href="#"><i class="material-icons">power_settings_new</i> Logout</a>
+							<a href="{{ url('/admin/logout') }}"><i class="material-icons">power_settings_new</i> Logout</a>
 						</li>
 					</ul>
 					<p class="user-roal"></p>

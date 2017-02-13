@@ -21,7 +21,7 @@ class AuthController extends BaseController {
 	 */
 	public function getLogin() {
 		if (!Auth::check()) return View::make('admin.login');
-		else return Redirect::route('admin.dashboard');
+		else return Redirect::to('/admin');
 	}
 
 	/**
@@ -48,7 +48,7 @@ class AuthController extends BaseController {
 				Auth::attempt($credentials,false);
 			}
 			if(Auth::check()){
-				return Redirect::route('admin.dashboard');
+				return Redirect::to('/admin');
 			}
 			return Redirect::back()->with('error_message', 'Usuario o contraseña no validas')->withInput();
 			//return Redirect::back()->withInput()->with('failure','username or password is invalid!');
@@ -83,10 +83,8 @@ class AuthController extends BaseController {
 	 */
 	public function getLogout() {
 
-		$this->user = Sentry::getUser();
-		Event::fire('user.logout', $this->user);
-		Sentry::logout();
-		return Redirect::route('admin.login');
+		Auth::logout();
+    	return Redirect::to('/admin/login');
 	}
 
 

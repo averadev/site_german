@@ -1563,7 +1563,7 @@ tfoot {
 
 .input-field label {
     font-size: 1rem;
-    left: 0.8rem;
+    left: 0rem;
 }
 
 .select-wrapper + label {
@@ -1573,6 +1573,6 @@ tfoot {
 
 .select-wrapper input.select-dropdown {
 
-    margin: 0 0 33px;
+    margin: 0 0 50px;
 
 }

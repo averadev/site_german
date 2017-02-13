@@ -6,10 +6,10 @@
 	<title>Admin | German Arzate</title>
 	<!-- CSS  -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
-
 	<link rel="stylesheet" href="{{ URL::asset('css/style-admin.css') }}">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/css/perfect-scrollbar.min.css">
+ 	<link rel="stylesheet" href="{{ URL::asset('vendor/plugins/line-editor/editor.css') }}">
+
 	<style type="text/css">
 		.side-nav a {
 			padding: 0 19px;
@@ -45,6 +45,15 @@
 		$.ajaxSetup({
 			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 		});
+if (typeof jQuery.fn.live == 'undefined' || !(jQuery.isFunction(jQuery.fn.live))) {
+  jQuery.fn.extend({
+      live: function (event, callback) {
+         if (this.selector) {
+              jQuery(document).on(event, this.selector, callback);
+          }
+      }
+  });
+}	
 		var f = $(".page-topbar").height();
         var g = window.innerHeight - f;
 $(".leftside-navigation").height(g).perfectScrollbar({

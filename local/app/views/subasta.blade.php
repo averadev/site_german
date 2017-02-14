@@ -15,7 +15,6 @@
 						<li class="tab"><a href="#tab10">Próximamente</a></li>
 					</ul>
 				</div>
-				<div id="tab8" class="col s12">Test 5</div>
 				<div id="tab9" class="col s12">Test 6</div>
 			</div>
 		</div>
@@ -220,93 +219,120 @@
 
 	<!-- Start Especificaciones -->
 	<div id="tab7" class="bg_especificaciones">
-		<div class="section">
-			<div class="row">
-				<div class="col s12">
-					<div class="row">
-						<div class="col s12 col m6 col l10 offset-l1 light">
-							<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
+		<div class="container">
+			<div class="section">
+				<div class="row">
+					<div class="col s12">
+						<div class="row">
+							<div class="col s12 col m6 col l10 offset-l1 light">
+								<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col s12 col m6 col l4 offset-l1">
+								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" alt="">
+							</div>
+							<div class="col s12 col m6 col l3">
+								<div class="gb_top_x3">
+									<h5 class="">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
+									<p style="" class="left-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+								</div>
+							</div>
+							<div class="col l4 s12">
+								<div class="row">
+									<div class="col l3">
+										<a class="modal-trigger" href="#modal1"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
+										<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col l3 s12">
+										<a class="modal-trigger2" href="#modal2"><img class="hide-on-med-and-down circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
+										<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h5>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col l3 s12" style="margin-left: -2em;">
+										<a class="modal-trigger3" href="#modal3"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
+										<h5 class="hide-on-med-and-down light txt_fright" style="margin-right: -7em">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h5>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col s12 col m6 col l4 offset-l1">
-							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" alt="">
-						</div>
-						<div class="col s12 col m6 col l3">
-							<div class="gb_top_x3">
-								<h5 class="">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
-								<p style="" class="left-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+				</div>
+				<!-- Start Modal -->
+				<div id="modal1" class="modal_md">
+					<div class="modal_dialog">
+						<div class="modal_content">
+							<h3>{{$submodule_section_data->SecccionTiuloEspecificacion1}}</h3>
+							<p>{{$submodule_section_data->SecccionDescEspecificacion1}}</p>
+							<div class="col l4 center">
+								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion1}}" alt="">
 							</div>
-						</div>
-						<div class="col l4 s12">
-							<div class="row">
-								<div class="col l3">
-									<a class="modal-trigger" href="#modal1"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
-									<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h5>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col l3 s12">
-									<a class="modal-trigger2" href="#modal2"><img class="hide-on-med-and-down circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
-									<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h5>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col l3 s12" style="margin-left: -2em;">
-									<a class="modal-trigger3" href="#modal3"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
-									<h5 class="hide-on-med-and-down light txt_fright" style="margin-right: -7em">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h5>
-								</div>
-							</div>
+							<!-- modal close button -->
+							<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 						</div>
 					</div>
 				</div>
-			</div>
-			<!-- Start Modal -->
-			<div id="modal1" class="modal_md">
-				<div class="modal_dialog">
-					<div class="modal_content">
-						<h3>{{$submodule_section_data->SecccionTiuloEspecificacion1}}</h3>
-						<p>{{$submodule_section_data->SecccionDescEspecificacion1}}</p>
-						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion1}}" alt="">
-						</div>
-						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
-					</div>
-				</div>
-			</div>
 
-			<div id="modal2" class="modal_md">
-				<div class="modal_dialog">
-					<div class="modal_content">
-						<h3>{{$submodule_section_data->SecccionTiuloEspecificacion2}}</h3>
-						<p>{{$submodule_section_data->SecccionDescEspecificacion2}}</p>
-						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion2}}" alt="">
+				<div id="modal2" class="modal_md">
+					<div class="modal_dialog">
+						<div class="modal_content">
+							<h3>{{$submodule_section_data->SecccionTiuloEspecificacion2}}</h3>
+							<p>{{$submodule_section_data->SecccionDescEspecificacion2}}</p>
+							<div class="col l4 center">
+								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion2}}" alt="">
+							</div>
+							<!-- modal close button -->
+							<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 						</div>
-						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 					</div>
 				</div>
-			</div>
 
-			<div id="modal3" class="modal_md">
-				<div class="modal_dialog">
-					<div class="modal_content">
-						<h3>{{$submodule_section_data->SecccionTiuloEspecificacion3}}</h3>
-						<p>{{$submodule_section_data->SecccionDescEspecificacion3}}</p>
-						<div class="col l4 center">
-							<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion3}}" alt="">
+				<div id="modal3" class="modal_md">
+					<div class="modal_dialog">
+						<div class="modal_content">
+							<h3>{{$submodule_section_data->SecccionTiuloEspecificacion3}}</h3>
+							<p>{{$submodule_section_data->SecccionDescEspecificacion3}}</p>
+							<div class="col l4 center">
+								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion3}}" alt="">
+							</div>
+							<!-- modal close button -->
+							<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 						</div>
-						<!-- modal close button -->
-						<a href="#" class="modal_close btn_modal_close modal-close">x</a>
 					</div>
 				</div>
+				<!-- End Modal -->
 			</div>
-			<!-- End Modal -->
 		</div>
 	</div>
 	<!-- End Especificaciones -->
+
+	<!-- Start Comments -->
+	<div class="bg_porque">
+		<div id="tab8" class="parallax-container">
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="s12 m6 l12 center" style="margin-top: 1rem;">
+							<span class="size-x4">Comentarios</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="s12 m6 l12">
+							<p style="color: #2d332c;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid optio illum quo fuga tempore, pariatur animi consectetur ex repudiandae delectus? Harum aliquid repellat tempora, quod atque saepe numquam sed cum.</p>
+							<br>
+							<p style="color: #2d332c;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est veritatis amet, qui iste asperiores dignissimos odit nam doloremque minus, at obcaecati quas delectus repudiandae quidem maxime, dicta, molestiae ex cumque!</p>
+							<br>
+							<p style="color: #2d332c;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel beatae quos eaque saepe eum, placeat enim temporibus. Eius, porro! Sint, magnam doloremque. Nulla velit voluptate sed explicabo repellat, debitis itaque.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Comments -->
 
 	<!-- Start Coming Soon -->
 	<div id="tab10" class="bg_comingsoon">
@@ -336,7 +362,7 @@
 								</div>
 								<div class="row">
 									<div class="col s12 white gb_arrow_box">
-										<form id="" class="col s12" action="" method="post">
+										<form id="FormCS" class="col s12" action="#" method="post">
 											<div class="row">
 												<div class="input-field col s12 m10 l12">
 													<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
@@ -349,19 +375,14 @@
 												<div class="input-field col s12 l4">
 													<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
 												</div>
-												<div class="col s12 l4">
-													<select class="browser-default gb_mrg_1 gb_gray_2">
-														<option value="" disabled selected>CIUDAD</option><i class="material-icons">keyboard_arrow_down</i>
-														<option value="1">Option 1</option>
-														<option value="2">Option 2</option>
-														<option value="3">Option 3</option>
-													</select>
+												<div class="input-field col s12 l4">
+													<input id="autocomplete" class="border_cs" type="text" name="city" placeholder="CIUDAD">
 												</div>
 												<div class="input-field col s12 l8">
-													<textarea id="comment" class="border_cs" rows=5 placeholder="COMENTARIOS"></textarea>
+													<textarea id="comment" class="border_cs" name="comment" rows=5 placeholder="COMENTARIOS"></textarea>
 												</div>
 												<div class="input-field col s12 l4">
-													<button id="sendBtn" class="btn btn-large green gb_mgr_2">CONTÁCTENME</button>
+													<button id="sendBtn" class="btn btn-large green gb_mgr_2" type="submit">CONTÁCTENME</button>
 												</div>
 											</div>
 										</form>
@@ -385,4 +406,6 @@
 	});
 </script>
 <script src="js/jquery_date.js"></script>
+<!-- <script src="js/jquery.validate.min.js"></script>
+<script src="js/jquery_validate.js"></script> -->
 @stop

@@ -350,7 +350,7 @@
 }
 /* Start Background */
 .bg_porque {
-  background-image: url("../media/img/subasta/bg_porque.png");
+  background-image: url("../media/img/subasta/bg_porque.jpg");
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -358,7 +358,7 @@
   background-size: cover;
 }
 .bgg_proceso {
-  background-image: url("../media/img/subasta/bg_proceso.png");
+  background-image: url("../media/img/subasta/bg_proceso.jpg");
   width: 100%;
   background-position: center center;;
   background-repeat: no-repeat;
@@ -366,7 +366,7 @@
   background-size: cover;
 }
 .bg_queteconvierte {
-  background-image: url("../media/img/subasta/bg_enqueteconvierte.png");
+  background-image: url("../media/img/subasta/bg_enqueteconvierte.jpg");
   width: 100%;
   background-position: center center;;
   background-repeat: no-repeat;
@@ -374,7 +374,7 @@
   background-size: cover;
 }
 .bg_especificaciones {
-  background-image: url("../media/img/subasta/bg_especificaciones.png");
+  background-image: url("../media/img/subasta/bg_especificaciones.jpg");
   width: 100%;
   background-position: center center;;
   background-repeat: no-repeat;
@@ -382,7 +382,7 @@
   background-size: cover;
 }
 .bg_comingsoon {
-  background-image: url("../media/img/subasta/bg_comingsoon.png");
+  background-image: url("../media/img/subasta/bg_comingsoon.jpg");
   width: 100%;
   background-position: center center;;
   background-repeat: no-repeat;

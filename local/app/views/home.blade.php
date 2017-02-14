@@ -49,7 +49,7 @@ p.trunc{
 				</div>
 				<div class="col s12 m4 l4 ">
 					<p class="bold-normal">Hasta el 21 de Noviembre 2016.</p>
-					<a class="waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Ver subasta</a>
+					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Ver subasta</a>
 				</div>
 			</div>
 		</div>
@@ -124,8 +124,8 @@ p.trunc{
 					<div class="row">
 						<div class="col s12" style="margin-top: -45px;" >
 							
-							<a style="margin-left: 1em;" class="waves-effect green right btn">OFERTAR</a>
-							<a style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>VER ESCULTURA</a>
+							<a href="{{ url('/subasta#tab9') }}" style="margin-left: 1em;" class="waves-effect green right btn">OFERTAR</a>
+							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>VER ESCULTURA</a>
 						</div>
 						
 					</div>

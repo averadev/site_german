@@ -321,7 +321,7 @@ p.par-title {
 
 
 .grey-bg{
-	background-image:url('../media/img/home/notasbg.png');
+	background-image:url('../media/img/home/notasbg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -467,7 +467,7 @@ footer.page-footer {
     max-width: 100%;
 }
 .bg_bottom {
-    background-image: url("../media/img/subasta/bg_porque.png");
+    background-image: url("../media/img/subasta/bg_porque.jpg");
     padding-top: 20px;
     width: 100%;
 }
@@ -511,7 +511,7 @@ nav.mymenu ul a {
     font-weight: bold;
 }
 .bg_contact {
-    background-image: url("../media/img/subasta/bg_porque.png");
+    background-image: url("../media/img/subasta/bg_porque.jpg");
     padding-top: 20px;
     width: 100%;
 }
@@ -591,6 +591,15 @@ nav.mymenu ul a {
 .button.success:hover, .button.success:focus {
     background-color: #3adb76;
 }
+
+.gb_title_auction {
+	font-family: "Crimson Text";
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+
 /* Text Submodulo Porque */
 .gb_title_x2 {
 	font-family: "Crimson Text";

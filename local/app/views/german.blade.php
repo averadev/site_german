@@ -31,7 +31,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="parallax"><img src="media/img/german/slider1.png"></div>
+                <div class="parallax"><img src="media/img/german/slider1.jpg"></div>
             </div>
             <!-- Slider German -->
 
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="parallax"><img src="media/img/german/slider2.png"></div>
+                <div class="parallax"><img src="media/img/german/slider2.jpg"></div>
             </div>
             <!-- Slider Pensador -->
 
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="parallax"><img src="media/img/german/slider3.png"></div>
+                <div class="parallax"><img src="media/img/german/slider3.jpg"></div>
             </div>
             <!-- Slider Escultor -->
         </div>

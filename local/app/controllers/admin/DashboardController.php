@@ -9,11 +9,13 @@ use Validator;
 use Cache;
 use Event;
 use Auth;
-use Module;
-use Submodule;
 use Request;
 use Section;
 use Component;
+
+/*models*/
+use Module;
+use Submodule;
 
 class DashboardController extends BaseController {
 	function __construct(){

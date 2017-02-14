@@ -17,11 +17,18 @@ use Validator;
 use Cache;
 use Event;
 use Auth;
-use Module;
-use Submodule;
 use Request;
 use Section;
 use Component;
+use DB;
+
+
+/*models*/
+use Module;
+use Submodule;
+use Subasta;
+use Images;
+
 
 
 class AuctionAdminController extends BaseController {
@@ -32,10 +39,10 @@ class AuctionAdminController extends BaseController {
 	}
 
 	public function getIndex(){
-		$modules  = Module::all();
-		return View::make('admin.dashboard')
+		$subastas  = Subasta::select('name',DB::raw("date_format((iniDate),'%d/%m/%Y %h:%i %p') as iniDate"),DB::raw("date_format((endDate),'%d/%m/%Y %h:%i %p') as endDate"))->orderBy('id','DESC')->with('images')->paginate(10);
+		return View::make('admin.auction_index')
 		->with('active', 'home')
-		->with('modules',$modules);
+		->with('auctions',$subastas);
 	}
 
 

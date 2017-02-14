@@ -19,10 +19,10 @@
 				</div>
 			</div>
 			</li>
-				<li class="bold"><a href="about.html" class="waves-effect waves-teal">Dashboard</a></li>
-				<li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Galeria</a></li>
-				<li class="bold"><a href="http://materializecss.com/mobile.html" class="waves-effect waves-teal">Subasta</a></li>
-				<li style="height: 10em;" ></li>			
+			<li class="bold"><a href="{{ url('/admin') }}" class="waves-effect waves-teal">Dashboard</a></li>
+			<!--<li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Galeria</a></li> -->
+			<li class="bold"><a a href="{{ url('/admin/subasta') }}" class="waves-effect waves-teal">Subasta</a></li>
+			<li style="height: 10em;" ></li>			
 			</ul>
 			<a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only cyan"><i class="mdi-navigation-menu"></i></a>
 		</ul>

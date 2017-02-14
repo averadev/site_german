@@ -14,7 +14,8 @@
 	
 	/*Admin*/
 	Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
-		Route::controller('/admin', 'DashboardController');	
+		Route::controller('/admin/subasta', 'AuctionAdminController');	
+		Route::controller('/admin', 'DashboardController');
 	});
 
 	/*Servicios*/

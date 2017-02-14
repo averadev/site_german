@@ -17,7 +17,7 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="parallax"><img src="media/img/contacto/contacto_slider.png"></div>
+		<div class="parallax"><img src="media/img/contacto/contacto_slider.jpg"></div>
 	</div>
 	<!-- Slider -->
 

@@ -316,7 +316,7 @@
 					<div class="col s12">
 						<div class="row">
 							<div class="col s12 m8 l6 right">
-								<span class="right gb_gray">Lunes 30 de enero de 2017 | {{$hour}} hrs</span>
+								<span id="date_current" class="right gb_gray"></span>
 							</div>
 						</div>
 						<div class="row">
@@ -384,4 +384,5 @@
 		$('select').material_select();
 	});
 </script>
+<script src="js/jquery_date.js"></script>
 @stop

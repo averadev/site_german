@@ -45,22 +45,24 @@
 	<!-- Start ¿Porque? -->
 	<div id="tab4" class="bg_porque">
 		<div class="section">
-			<div class="row">
-				<div class="col s12 l12">
-					<div class="row">
-						<div class="col s12 l12 center light">
-							<p class="gb_top_x6">{{$submodule_section_data->TitlePorQue}}</p>
+			<div class="container">
+				<div class="row">
+					<div class="col s12 l12">
+						<div class="row">
+							<div class="col s12 l12 center light">
+								<p class="gb_top_x6">{{$submodule_section_data->TitlePorQue}}</p>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col s12 l4 m4">
-							<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="img_ga_pq">
-						</div>
-						<div class="col s12 l3 m4">
-							<p class="txt_desc">{{$submodule_section_data->Desc1PorQue}}</p>
-						</div>
-						<div class="col s12 l3 m4 offset-l3">
-							<p class="txt_desc">{{$submodule_section_data->Desc2PorQue}}</p>
+						<div class="row">
+							<div class="col s12 m12 l4">
+								<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="img_ga_pq">
+							</div>
+							<div class="col s12 m12 l3 offset-l1">
+								<p class="txt_desc">{{$submodule_section_data->Desc1PorQue}}</p>
+							</div>
+							<div class="col s12 m12 l3 offset-l4">
+								<p class="txt_desc">{{$submodule_section_data->Desc2PorQue}}</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -453,7 +455,8 @@
 								</div>
 								<div class="row">
 									<div class="col s12 white gb_arrow_box">
-										<form id="FormCS" class="col s12" action="#" method="post">
+										<form id="FormCS" class="col s12" action="http://localhost:8080/site_german.git/subasta" method="post">
+											<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
 											<div class="row">
 												<div class="input-field col s12 m10 l12">
 													<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
@@ -467,7 +470,7 @@
 													<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
 												</div>
 												<div class="input-field col s12 l4">
-													<input id="autocomplete" class="border_cs" type="text" name="city" placeholder="CIUDAD">
+													<input id="city" class="border_cs" type="text" name="city" placeholder="CIUDAD">
 												</div>
 												<div class="input-field col s12 l8">
 													<textarea id="comment" class="border_cs" name="comment" rows=5 placeholder="COMENTARIOS"></textarea>
@@ -512,6 +515,7 @@
 	});
 </script>
 <script src="js/jquery_date.js"></script>
+<script src="js/script.js"></script>
 <!-- <script src="js/jquery.validate.min.js"></script>
 <script src="js/jquery_validate.js"></script> -->
 @stop

@@ -1,4 +1,10 @@
 <?php 
+
+use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+//use Mail;
+//use Storage;
 use Carbon\Carbon;
 
 class AuctionController extends BaseController {
@@ -85,6 +91,51 @@ class AuctionController extends BaseController {
 
 
         return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour)->with('auctionpics',$CurrentAuctionPics);;
+    }
+
+    /**
+     * Function SendmailContactUS --> Subseccion Proximamente
+     */
+    public function SendmailContactUS () {
+    	$input = Input::all();
+
+		$rules = array (
+				'name'=> 'required',
+				'email'=> 'required|email',
+				'city'=> 'required',
+				'comment'=> 'required'
+			);
+		
+		$messages = array(
+            'required'  => 'El campo :attribute es obligatorio.',
+            'email'   =>'El campo :attribute no es email valido',
+        );
+
+		$validation = Validator::make($input, $rules);
+
+		if ($validation->fails()) {
+			$return = '';
+			foreach ($validation->errors()->all() as $err) {
+				$return .= $err . '<br>';
+			}
+			return $return;
+			return View::make('subasta')->withErrors($validation)->withInput();
+		} else {
+			$data = array(
+					'name'=>Input::get('name'),
+					'email'=>Input::get('email'),
+					'city'=>Input::get('city'),
+					'comment'=>Input::get('comment')
+				);
+
+			$send = Mail::send('subastas.email_send', $data, function($message) {
+				$message->to(Input::get('email'))
+				->from('tu_correo@dominio.com', 'German Arzate | Próximamente')
+				->subject(Input::get('comment'));
+			});
+			return $send;
+			
+		}
     }
 
 }

@@ -1,5 +1,27 @@
 @extends('templates.main')
 @section('content')
+<style type="text/css">
+	.auction-image{
+		width: 80%;
+		margin-left: 7%;
+	}
+	.thumb-auction{
+		display: inline;
+		margin: 0 0 10px 0;
+		padding: 4px;
+		width: 60px;
+		border:2px solid white;
+	}
+	.thumb-auction.active{
+		border:2px solid gray;
+	}
+
+	.thumbnails li{
+		float: left;
+		margin-right: 10px;
+	}
+</style>
+
 	<div class="container">
 		<div class="section">
 			<div class="row"  style="margin-bottom: 0em;">
@@ -15,7 +37,7 @@
 						<li class="tab"><a href="#tab10">Próximamente</a></li>
 					</ul>
 				</div>
-				<div id="tab9" class="col s12">Test 6</div>
+		
 			</div>
 		</div>
 	</div>
@@ -309,6 +331,75 @@
 	</div>
 	<!-- End Especificaciones -->
 
+	<!-- INFO SUBASTA -->
+
+	<div style="background-image:url('media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="tab9">
+		<div  class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<div style="padding: 10px 0 0 20px; border: 1px solid black; margin-top: 5%; border-radius: 5px;">
+						<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
+						<div class="row">
+							<ul class="thumbnails col l2 s12">
+								@foreach ($auctionpics as $key => $value)
+									@if($key == 0)
+										<li>
+											<a href="media/img/subasta_esculturas/{{$value->name}}">
+												<img src="media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction active" alt="Thumbnail">
+											</a>
+										</li>
+									@else
+										<li>
+											<a href="media/img/subasta_esculturas/{{$value->name}}">
+												<img src="media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction" alt="Thumbnail">
+											</a>
+										</li>
+									@endif
+								@endforeach
+							</ul>
+							<div class="col l10 s12">
+								@if($auctionpics)
+									<div class="main-image">
+										<img src="media/img/subasta_esculturas/{{$auctionpics[0]->name}}" alt="Placeholder" class="auction-image">
+									</div>
+								@endif
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div style="padding: 10px; margin-top: 2em;"  >
+							<form id="" action="" class="white top_arrow_box">
+								<p style="margin-left: 10px; padding-top: 10px;" class="size30">Me interesa esta escultura</p>
+								<div class="row">
+									<div class="col s12">
+										<div class="input-field col s12 l4">
+											<input id="name" class="border_cs" type="text" name="name" placeholder="NOMBRE">
+										</div>
+										<div class="input-field col s12 l4">
+											<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
+										</div>
+										<div class="input-field col s12 l4">
+											<input id="cantidad" class="border_cs" type="text" name="cantidad" placeholder="CANTIDAD">
+										</div>
+									</div>
+									<div class="col s12">
+										<div class="input-field col s12 l8">
+											<textarea id="comment" class="border_cs" rows=5 placeholder="COMENTARIOS"></textarea>
+										</div>
+										<div class="input-field col s12 l4">
+											<button style="margin-top: 2.5vw;" class="btn col l12 s4 right btn-small green">OFERTAR</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ENF INFO SUBASTA -->
+
 	<!-- Start Comments -->
 	<div class="bg_porque">
 		<div id="tab8" class="parallax-container">
@@ -398,11 +489,26 @@
 	<!-- End Coming Soon -->
 @stop
 @section('addJs')
+<script src="vendor/plugins/simple-gal.js"></script>
 <script>
 	$(document).ready(function(){
 		$('.materialboxed').materialbox();
 		$('.modal_md').modal();
 		$('select').material_select();
+
+		$('.black-tabs li a').click(function(event) {
+			var hashtag = $(this).attr('href')
+			var url = 'subasta' + hashtag;
+			window.history.pushState({key:'url'},'',url);
+		});
+		$('.thumbnails').simpleGal({
+			mainImage: '.auction-image'
+		});
+		$(".thumb-auction").click(function(event) {
+			$(".thumb-auction").removeClass('active');
+			$(this).addClass('active');
+		});
+
 	});
 </script>
 <script src="js/jquery_date.js"></script>

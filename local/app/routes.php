@@ -24,6 +24,7 @@
 	Route::get('servicios/personalizadas', 'ServicesController@getPersonalizadas');	
     Route::controller('german', 'GermanController');
     Route::controller('contacto', 'ContactoController');
+    Route::post('contacto', 'ContactoController@SendContactUSGerman');
 	/** Subasta **/
 	Route::get('/subasta', 'AuctionController@showSubmodule');
 	Route::get('/subasta', 'AuctionController@getSectionSubPQ');

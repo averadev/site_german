@@ -70,6 +70,33 @@ class AuctionController extends BaseController {
 		->get();
 
 		/**
+		 * query to the table subasta | extract Day, Month, Year and name of the month | Fecha proxima subasta afectuar
+		 */
+		$date_coming = DB::table('subasta as s')
+		->select('s.iniDate as FechaProximaSubasta', DB::raw('SUBSTRING(s.iniDate, 9,2) as Dia'), DB::raw('SUBSTRING(s.iniDate, 6,2) AS Mes'), DB::raw('SUBSTRING(s.iniDate, 1,4) AS Anio'), DB::raw('CASE WHEN MONTH(s.iniDate) = 1 THEN "Enero" 
+					WHEN MONTH(s.iniDate) = 2 THEN "Febrero" 
+					WHEN MONTH(s.iniDate) = 3 THEN "Marzo" 
+					WHEN MONTH(s.iniDate) = 4 THEN "Abril" 
+					WHEN MONTH(s.iniDate) = 5 THEN "Mayo" 
+					WHEN MONTH(s.iniDate) = 6 THEN "Junio" 
+					WHEN MONTH(s.iniDate) = 7 THEN "Julio" 
+					WHEN MONTH(s.iniDate) = 8 THEN "Agosto" 
+					WHEN MONTH(s.iniDate) = 9 THEN "Septiembre" 
+					WHEN MONTH(s.iniDate) = 10 THEN "Octubre" 
+					WHEN MONTH(s.iniDate) = 11 THEN "Noviembre" 
+					WHEN MONTH(s.iniDate) = 12 THEN "Diciembre" 
+					ELSE "" 
+				END AS NombreMes'), DB::raw('CASE WHEN s.status = 0 THEN "Inactivo" ELSE 
+											CASE WHEN s.status = 1 THEN "Activo" ELSE 
+												CASE WHEN s.status = 2 THEN "Proxima Subasta"
+												END 
+											END 
+										END AS StatusOferta'))
+		->where('s.status', '=', 2)
+		->orderBy('s.iniDate', 'desc')
+		->get();
+
+		/**
 		 * Date Current
 		 */
 		Carbon::setLocale('es');
@@ -90,7 +117,7 @@ class AuctionController extends BaseController {
 		/*  */
 
 
-        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour)->with('auctionpics',$CurrentAuctionPics);;
+        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour)->with('auctionpics',$CurrentAuctionPics)->with('date_coming', $date_coming);
     }
 
     /**
@@ -107,8 +134,8 @@ class AuctionController extends BaseController {
 			);
 		
 		$messages = array(
-            'required'  => 'El campo :attribute es obligatorio.',
-            'email'   =>'El campo :attribute no es email valido',
+            'required' => 'El campo :attribute es obligatorio.',
+            'email' =>'El campo :attribute no es un email valido',
         );
 
 		$validation = Validator::make($input, $rules);
@@ -129,8 +156,8 @@ class AuctionController extends BaseController {
 				);
 
 			$send = Mail::send('subastas.email_send', $data, function($message) {
-				$message->to(Input::get('email'))
-				->from('tu_correo@dominio.com', 'German Arzate | Próximamente')
+				$message->to('tu_correo@dominio.com')
+				->from(Input::get('email'), 'German Arzate | Próximamente')
 				->subject(Input::get('comment'));
 			});
 			return $send;

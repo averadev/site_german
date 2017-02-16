@@ -441,16 +441,20 @@
 						<div class="row">
 							<div class="col s12 m12 l6 center">
 								<div class="split-date">
-									<span class="day">31</span>
-									<span class="month">Enero</span>
-									<span class="year">2017</span>
+									@foreach ($date_coming as $key=> $value)
+									<span class="day">{{$value->Dia}}</span>
+									<span class="month">{{$value->NombreMes}}</span>
+									<span class="year">{{$value->Anio}}</span>
+									@endforeach
 								</div>
 								<img class="responsive-img" style="margin-top: -4em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
 							</div>
 							<div class="col s12 m12 l6">
 								<div class="row">
 									<div class="col s12 m12 l6 gb_mlf_1 gb_mleft_x10 center" style="margin-left: 10rem;">
-										<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo 21 de febrero de 2017, y puedes seguirlo aquí.</span>
+										@foreach ($date_coming as $key=> $value)
+										<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo {{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}, y puedes seguirlo aquí.</span>
+										@endforeach
 									</div>
 								</div>
 								<div class="row">

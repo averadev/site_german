@@ -36,15 +36,15 @@
                     <div class="row"><img class="algRC" src="media/img/contacto/logo.png"></div>
                 </div>
 				<div class="col s12 m6 l6">
-                    <form>
+                    <form id="FormContact" action="http://localhost:8080/site_german.git/contacto" method="post">
                         <div class="row">
-                            <input type="text" class="txtForm" placeholder="NOMBRE COMPLETO" />
+                            <input type="text" id="name" class="txtForm" name="name" placeholder="NOMBRE COMPLETO" />
                         </div>
                         <div class="row">
-                            <input type="text" class="txtForm" placeholder="CORREO ELECTRÓNICO" />
+                            <input type="text" id="email" class="txtForm" name="email" placeholder="CORREO ELECTRÓNICO" />
                         </div>
                         <div class="row">
-                            <input type="text" class="txtForm" placeholder="COMPAÑIA" />
+                            <input type="text" id="company" class="txtForm" name="company" placeholder="COMPAÑIA" />
                         </div>
                         
                         <div class="row">
@@ -58,11 +58,12 @@
                         </div>
                         
                         <div class="row">
-                            <textarea class="txtForm" rows="8" placeholder="COMENTARIOS"></textarea>
+                            <textarea id="comment" class="txtForm" name="comment" rows="8" placeholder="COMENTARIOS"></textarea>
                         </div>
                         
                         <div class="row">
-                            <a href="#" onclick="return false;" class="button success btnRight">ENVIAR</a>
+                            <button id="sendBtnContact" class="button success btnRight" type="submit">ENVIAR</button>
+                            <!-- <a href="#"  id="sendBtnContact" class="button success btnRight">ENVIAR</a> -->
                         </div>
                     </form>
                 </div>

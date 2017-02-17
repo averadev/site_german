@@ -5,7 +5,7 @@ $("#FormCS").validate({
 		},
 		email: {
 			required: true,
-			email:true
+			email: true
 		},
 		city: "required",
 		comment: {
@@ -14,25 +14,62 @@ $("#FormCS").validate({
 	},
 	messages: {
 		name: {
-			required: "Ingresa tu nombre"
+			required: "Campo requerido"
 		},
 		email: {
-			required: "Ingresa tú correo electronico"
+			required: "Campo requerido",
+			email: "Ingresa un correo válido"
 		},
 		city: {
-			required: "Ingresa una ciudad"
+			required: "Campo requerido"
 		},
 		comment: {
-			required: "Ingresa un comentario"
+			required: "Campo requerido"
 		}
 	},
-	errorElement : 'div',
-	errorPlacement: function(error, element) {
-		var placement = $(element).data('error');
-		if (placement) {
-			$(placement).append(error)
-		} else {
-			error.insertAfter(element);
+	submitHandler: function(form) {
+		form.submit();
+	}
+});
+
+$("#FormContactUS").validate({
+	rules: {
+		name: {
+			required: true
+		},
+		email: {
+			required: true,
+			email: true
+		},
+		company: {
+			required: true
+		},
+		asuntos: {
+			required: true
+		},
+		comment: {
+			required: true
 		}
+	},
+	messages: {
+		name: {
+			required: "Campo requerido"
+		},
+		email: {
+			required: "Campo requerido",
+			email: "Ingresa un correo válido"
+		},
+		company: {
+			required: "Campo requerido"
+		},
+		asuntos: {
+			required: "Campo requerido"
+		},
+		comment: {
+			required: "Campo requerido"
+		}
+	},
+	submitHandler:  function(form) {
+		form.submit();
 	}
 });

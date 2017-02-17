@@ -125,45 +125,52 @@ class AuctionController extends BaseController {
      * Function SendmailContactUS --> Subseccion Proximamente
      */
     public function SendmailContactUS () {
-    	$input = Input::all();
+    	
+    	if (Request::ajax()) {
 
-		$rules = array (
-				'name'=> 'required',
-				'email'=> 'required|email',
-				'city'=> 'required',
-				'comment'=> 'required'
-			);
-		
-		$messages = array(
-            'required' => 'El campo :attribute es obligatorio.',
-            'email' =>'El campo :attribute no es un email valido',
-        );
+	    	$input = Input::all();
 
-		$validation = Validator::make($input, $rules);
-
-		if ($validation->fails()) {
-			$return = '';
-			foreach ($validation->errors()->all() as $err) {
-				$return .= $err . '<br>';
-			}
-			return $return;
-			return View::make('subasta')->withErrors($validation)->withInput();
-		} else {
-			$data = array(
-					'name'=>Input::get('name'),
-					'email'=>Input::get('email'),
-					'city'=>Input::get('city'),
-					'comment'=>Input::get('comment')
+			$rules = array (
+					'name'=> 'required',
+					'email'=> 'required|email',
+					'city'=> 'required',
+					'comment'=> 'required'
 				);
-
-			$send = Mail::send('subastas.email_send', $data, function($message) {
-				$message->to('tu_correo@dominio.com')
-				->from(Input::get('email'), 'German Arzate | Próximamente')
-				->subject(Input::get('comment'));
-			});
-			return $send;
 			
-		}
+			$messages = array(
+				'required' => 'El campo :attribute es obligatorio.',
+				'email' =>'El campo :attribute no es un email valido',
+			);
+
+			$validation = Validator::make($input, $rules, $messages);
+
+			if ($validation->fails()) {
+
+				return Response::json(array(
+						'success' => false,
+						'errors' => $validation->errors()->getMessageBag()->toArray()
+					));
+
+			} else {
+
+				$send = Mail::send('subastas.email_send', $input, function($message) use ($input) {
+					$message->to('tu_correo@dominio.com')
+					->from(Input::get('email'), 'German Arzate | Próximamente')
+					->subject(Input::get('comment'));
+				});
+				return $send;
+
+				return Response::json(array(
+						'success' => true,
+						'message' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'
+					));
+			}
+
+    	} else {
+
+    		return 'No se ha realizado una petición';
+    	}
+    	
     }
 
 	/*Obtiene la lista de pujas activas*/

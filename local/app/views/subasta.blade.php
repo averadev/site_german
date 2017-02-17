@@ -507,17 +507,12 @@
 
 	<!-- Start Coming Soon -->
 	<div id="tab10" class="bg_comingsoon">
-		<div class="container">
-			<div class="section">
+		<div class="section">
+			<div class="container">
 				<div class="row">
-					<div class="col s12">
+					<div class="col s12 l6">
 						<div class="row">
-							<div class="col s12 m8 l6 right">
-								<span id="" class="right gb_gray date_current"></span>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col s12 m12 l6 center">
+							<div class="col s12 m12 l12 center">
 								<div class="split-date">
 									@foreach ($date_coming as $key=> $value)
 									<span class="day">{{$value->Dia}}</span>
@@ -525,11 +520,20 @@
 									<span class="year">{{$value->Anio}}</span>
 									@endforeach
 								</div>
-								<img class="responsive-img" style="margin-top: -4em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
+								<img class="responsive-img" style="margin-top: -1em" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
 							</div>
-							<div class="col s12 m12 l6">
+						</div>
+					</div>
+					<div class="col s12 l6">
+						<div class="row">
+							<div class="col s12 m8 l6 right">
 								<div class="row">
-									<div class="col s12 m12 l6 gb_mlf_1 gb_mleft_x10 center" style="margin-left: 10rem;">
+									<span id="" class="right gb_gray date_current hide-on-med-and-down"></span>
+								</div>
+							</div>
+							<div class="col s12 m12 l12">
+								<div class="row">
+									<div class="col s12 m12 l10 gb_mlf_1 gb_mleft_x10 center gb_left" style="margin-left: 4rem;">
 										@foreach ($date_coming as $key=> $value)
 										<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo {{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}, y puedes seguirlo aquí.</span>
 										@endforeach
@@ -544,23 +548,25 @@
 													<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
 												</div>
 											</div>
+											<br>
 											<div class="row">
-												<div class="input-field col s12 l4">
-													<input id="name" class="border_cs" type="text" name="name" placeholder="NOMBRE">
+												<div class="col s12 l4">
+													<input id="name" class="border_cs" type="text" name="name" required placeholder="NOMBRE">
 												</div>
-												<div class="input-field col s12 l4">
-													<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
+												<div class="col s12 l4">
+													<input id="email" class="border_cs" type="email" name="email" required placeholder="E-MAIL">
 												</div>
-												<div class="input-field col s12 l4">
-													<input id="city" class="border_cs" type="text" name="city" placeholder="CIUDAD">
+												<div class="col s12 l4">
+													<input id="city" class="border_cs" type="text" name="city" required placeholder="CIUDAD">
 												</div>
-												<div class="input-field col s12 l8">
-													<textarea id="comment" class="border_cs" name="comment" rows=5 placeholder="COMENTARIOS"></textarea>
+												<div class="col s12 l8">
+													<textarea id="comment" class="border_cs" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
 												</div>
 												<div class="input-field col s12 l4">
 													<button id="sendBtn" class="btn btn-large green gb_mgr_2" type="submit">CONTÁCTENME</button>
 												</div>
 											</div>
+											<span id="msg_success"></span>
 										</form>
 									</div>
 								</div>
@@ -600,6 +606,5 @@
 <script src="js/jquery_date.js"></script>
 <script src="js/script.js"></script>
 <script src="js/auction_bids.js"></script>
-<!-- <script src="js/jquery.validate.min.js"></script>
-<script src="js/jquery_validate.js"></script> -->
+<script src="js/jquery_validate.js"></script>
 @stop

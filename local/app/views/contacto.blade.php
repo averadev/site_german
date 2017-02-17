@@ -36,19 +36,19 @@
                     <div class="row"><img class="algRC" src="media/img/contacto/logo.png"></div>
                 </div>
 				<div class="col s12 m6 l6">
-                    <form id="FormContact" action="http://localhost:8080/site_german.git/contacto" method="post">
+                    <form id="FormContactUS" action="http://localhost:8080/site_german.git/contacto" method="post">
                         <div class="row">
-                            <input type="text" id="name" class="txtForm" name="name" placeholder="NOMBRE COMPLETO" />
+                            <input type="text" id="name" class="txtForm" name="name" required placeholder="NOMBRE COMPLETO" />
                         </div>
                         <div class="row">
-                            <input type="text" id="email" class="txtForm" name="email" placeholder="CORREO ELECTRÓNICO" />
+                            <input type="text" id="email" class="txtForm" name="email" required placeholder="CORREO ELECTRÓNICO" />
                         </div>
                         <div class="row">
-                            <input type="text" id="company" class="txtForm" name="company" placeholder="COMPAÑIA" />
+                            <input type="text" id="company" class="txtForm" name="company" required placeholder="COMPAÑIA" />
                         </div>
                         
                         <div class="row">
-                            <input type="text" class="txtForm" placeholder="ASUNTO --- ELIGE UNA OPCIÓN" list="asuntos" />
+                            <input type="text" class="txtForm" required placeholder="ASUNTO --- ELIGE UNA OPCIÓN" list="asuntos" />
                             <datalist id="asuntos">
                                 <option value="PROYECTO">
                                 <option value="DISEÑO">
@@ -58,7 +58,7 @@
                         </div>
                         
                         <div class="row">
-                            <textarea id="comment" class="txtForm" name="comment" rows="8" placeholder="COMENTARIOS"></textarea>
+                            <textarea id="comment" class="txtForm" name="comment" rows="8" required placeholder="COMENTARIOS"></textarea>
                         </div>
                         
                         <div class="row">
@@ -76,4 +76,6 @@
 @stop
 @section('addJs')
 <script src="js/contacto.js"></script>
+<script src="js/script.js"></script>
+<script src="js/jquery_validate.js"></script>
 @stop

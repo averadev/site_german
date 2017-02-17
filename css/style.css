@@ -663,18 +663,109 @@ nav.mymenu ul a {
 		margin-bottom: -5rem;
 	}
 	.split-date {
-		margin-top: 6rem !important;
+		margin-top: 9rem !important;
 		margin-left: -7rem !important;
 	}
+	span.day {
+		font-size: 4rem !important;
+		padding-top: 10px !important;
+	}
+	span.month {
+		position: absolute;
+		font-size: 24px;
+		right: -70%;
+		top: 1em;
+		text-transform: uppercase;
+	}
+	span.year {
+		position: absolute;
+		font-size: 24px;
+		right: -6em;
+		top: 2em;
+		left: 10.9em !important;
+	}
+	.gb_left {
+		margin-left: 0rem !important;
+		margin-top: -1rem;
+	}
+	.gb_mlf_1 {
+		margin-left: 0rem !important;
+		margin-top: -1rem !important;
+	}
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 980px){
 	.img_ga_pq {
 		max-width: 100%;
 		margin-bottom: 0;
 		margin: 0 auto;
 	}
 	.split-date {
-		margin-left: 7rem !important;
+		margin-top: 11rem !important;
+		margin-left: 9rem !important;
+	}
+	span.day {
+		font-size: 4rem !important;
+		padding-top: 10px !important;
+	}
+	span.month {
+		position: absolute;
+		font-size: 24px;
+		right: -70%;
+		top: 1em;
+		text-transform: uppercase;
+	}
+	span.year {
+		position: absolute;
+		font-size: 24px;
+		right: -6em;
+		top: 2em;
+		left: 10.4em !important;
+	}
+	.gb_left {
+		margin-left: 0rem !important;
+		margin-top: -1rem;
+	}
+	.gb_mlf_1 {
+		margin-left: 0rem !important;
+		margin-top: -1rem !important;
+	}
+}
+@media screen and (max-width: 768px){
+	.img_ga_pq {
+		max-width: 100%;
+	}
+	.gb_mleft_x10 {
+		margin-left: 0rem !important;
+	}
+	.split-date {
+		margin-top: 11rem !important;
+		margin-left: 2.8rem !important;
+	}
+	span.day {
+		font-size: 4rem !important;
+		padding-top: 10px !important;
+	}
+	span.month {
+		position: absolute;
+		font-size: 24px;
+		right: -70%;
+		top: 1em;
+		text-transform: uppercase;
+	}
+	span.year {
+		position: absolute;
+		font-size: 24px;
+		right: -6em;
+		top: 2em;
+		left: 10.4em !important;
+	}
+	.gb_left {
+		margin-left: 0rem !important;
+		margin-top: -1rem;
+	}
+	.gb_mlf_1 {
+		margin-left: 0rem !important;
+		margin-top: -1rem !important;
 	}
 }
 @media screen and (max-width: 600px){
@@ -685,7 +776,34 @@ nav.mymenu ul a {
 		margin-left: 0rem !important;
 	}
 	.split-date {
+		margin-top: 10rem !important;
 		margin-left: -1rem !important;
+	}
+	span.day {
+		font-size: 4rem !important;
+		padding-top: 10px !important;
+	}
+	span.month {
+		position: absolute;
+		font-size: 24px;
+		right: -70%;
+		top: 1em;
+		text-transform: uppercase;
+	}
+	span.year {
+		position: absolute;
+		font-size: 24px;
+		right: -6em;
+		top: 2em;
+		left: 10.4em !important;
+	}
+	.gb_left {
+		margin-left: 0rem !important;
+		margin-top: -1rem;
+	}
+	.gb_mlf_1 {
+		margin-left: 0rem !important;
+		margin-top: -1rem !important;
 	}
 }
 @media screen and (max-width: 480px){
@@ -693,7 +811,34 @@ nav.mymenu ul a {
 		max-width: 100%;
 	}
 	.split-date {
+		margin-top: 10rem !important;
 		margin-left: -5rem !important;
+	}
+	span.day {
+		font-size: 4rem !important;
+		padding-top: 10px !important;
+	}
+	span.month {
+		position: absolute;
+		font-size: 24px;
+		right: -70%;
+		top: 1em;
+		text-transform: uppercase;
+	}
+	span.year {
+		position: absolute;
+		font-size: 24px;
+		right: -6em;
+		top: 2em;
+		left: 10.4em !important;
+	}
+	.gb_left {
+		margin-left: 0rem !important;
+		margin-top: -1rem;
+	}
+	.gb_mlf_1 {
+		margin-left: 0rem !important;
+		margin-top: -1rem !important;
 	}
 }
 @media screen and (max-width: 320px){
@@ -701,8 +846,30 @@ nav.mymenu ul a {
 		max-width: 100%;
 	}
 	.split-date {
-		margin-top: 2rem !important;
+		margin-top: 5rem !important;
 		margin-left: -10rem !important;
+	}
+	span.day {
+		font-size: 4rem !important;
+		padding-top: 10px !important;
+	}
+	span.month {
+		position: absolute;
+		font-size: 24px;
+		right: -70%;
+		top: 1em;
+		text-transform: uppercase;
+	}
+	span.year {
+		position: absolute;
+		font-size: 24px;
+		right: -6em;
+		top: 2em;
+		left: 10.4em !important;
+	}
+	.gb_left {
+		margin-left: 0rem !important;
+		margin-top: -1rem;
 	}
 }
 .font_head_style_proceso {
@@ -857,6 +1024,9 @@ nav.mymenu ul a {
 	border-width: 36px;
 	margin-left: -36px;
 }
+.gb_left {
+	margin-left: 5rem;
+}
 
 
 /* Date Coming Soon */
@@ -865,7 +1035,7 @@ nav.mymenu ul a {
 	width: 62px;
 	float: right;
 	position: absolute;
-	margin-top: 8em;
+	margin-top: 10rem;
 	padding-left: 15rem;
 }
 .split-date span {
@@ -893,7 +1063,7 @@ span.year {
 	font-size: 24px;
 	right: -6em;
 	top: 2em;
-	left: 12.5em;
+	left: 11.8em;
 }
 
 .no-indent{
@@ -939,4 +1109,9 @@ nav .button-collapse {
 
 #mobile-german{
 	width: 100%;
+}
+
+label.error {
+	color: #ff0000 !important;
+	margin-bottom: 0;
 }

@@ -1,43 +1,32 @@
 $(document).ready(function(){
-	var name = $("#name").val();
-	var email = $("#email").val();
-	var city = $("#city").val();
-	var comment = $("#comment").val();
+	var ContactoCSForm = $("#FormCS");
 	var sendBtn = $("#sendBtn");
+	var msg_success = $("#msg_success");
 
-	// Click button form
-	sendBtn.click(function(e) {
-		var name = $("#name").val();
-		var email = $("#email").val();
-		var city = $("#city").val();
-		var comment = $("#comment").val();
-
-		$.ajaxSetup({
-			headers: {
-				'X-CSRF-TOKEN': $('#_token').val()
-			}
-		});
+	ContactoCSForm.submit(function(e){
+		e.preventDefault();
+		var formData = ContactoCSForm.serialize();
 
 		$.ajax({
-			type: "POST",
-			url: 'subasta',
-			data: {name: name, email: email, city: city, comment: comment},
+			url: HOST +'/subasta/coming',
+			type:'POST',
+			dataType: 'json',
+			data:formData,
 			success: function (data) {
-				console.log("MESSAGE DEBUG: " + data);
+				if (data.success === true) {
+					formData.submit();
+					msj_success.html(data.messsage);
+					return false;
+				} else {
+					console.log(data.errors);
+				}
+				return false;
 			},
-			error: function (jqXHR, textStatus, errorThrown) {
-				console.log("ERROR MESSAGE: " +  errorThrown);
+			error: function () {
+				var msj_error = "Se produjo un problema al comprobar los nombres de los campos";
+				console.log("ERROR: ", msj_error);
 			}
 		});
 		return false;
 	});
-
-	// Clean Input
-	var cleanInput = function() {
-		var name = $("#name").html('');
-		var email = $("#email").html('');
-		var city = $("#city").html('');
-		var comment = $("#comment").html('');
-	}
-
 });

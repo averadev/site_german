@@ -1,8 +1,9 @@
 <?php 
-
+/** No se utilizo namespace
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+**/
 //use Mail;
 //use Storage;
 use Carbon\Carbon;
@@ -164,5 +165,78 @@ class AuctionController extends BaseController {
 			
 		}
     }
+
+	/*Obtiene la lista de pujas activas*/
+	public function getAuctionBids(){
+		if(Request::ajax()){
+			$bids = 	Subasta::getBids();
+				$time = time(); /*Server Time*/
+			return Response::json(array('bids' => $bids,'time'=>$time));
+		}
+	}
+
+	public function postAuctionBid(){
+		if(Request::ajax()){
+			$data = [
+				'name' 			=> strip_tags(trim(Input::get('name'))),
+				'nickname' 		=> strip_tags(trim(Input::get('nickname'))),
+				'email' 			=> strip_tags(trim(Input::get('email'))),
+				'amount'			=> strip_tags(trim(Input::get('amount'))),
+				'comment' 		=> strip_tags(trim(Input::get('comment')))
+			];
+			$rules = [
+				'name'			=> 'required|max:50',
+				'nickname'		=> 'required|max:45',
+				'email' 			=> 'required|email|max:50',
+				'amount' 		=> 'required|digits_between:1,9',
+				'comment' 		=> 'required|max:200'
+			];
+			$validator = Validator::make($data, $rules);
+			if($validator->passes()){
+				$data = (object)$data;
+				$user = Auction_user::isActive($data->email);
+				if($user){ /*Si el usuario existe*/
+					$user_status = $user->status;
+					if($user_status){ /* Si el usuario es válido registrar puja */
+						$auction = Subasta::getActiveAuction();
+						$auction_id = $auction->id;
+						$user_id = $user->id;
+						$highestBid = Auction_bid::getHighestBid($auction_id)->amount;
+						if($data->amount <= $highestBid){ /*Si la cantida a ofertar es menor o igual que la cantidad mayor ofertada mandar mensaje de advertencia*/
+							return Response::json(array('msg' => number_format($highestBid) ));
+						}else{ /*Si la cantidad a ofertar es mayor registrar la puja*/
+							$auction_bid = new Auction_bid;
+							$auction_bid = $auction_bid->addBid($data,$auction_id,$user_id);
+							if($auction_bid){
+								return Response::json(array('msg' => 'Oferta registrada correctamente'));
+							}		
+						}				
+					}else{	/*Si el usuario existe pero no es válido mandar aviso que revise su email, sin guardar la puja*/
+
+					}
+				}else{ /*Si el usuario no existe, registrarlo, guardar la puja, ponerlo inactivo y mandar email de validación*/
+
+				}
+				return Response::json(array('user' => $user));
+			}else{
+				$messages = $validator->messages();
+
+				if($validator->messages()->has('name'))
+					$errorField = 'Nombre: '.$validator->messages()->first('name');
+				else if($validator->messages()->has('nickname'))
+					$errorField = 'Apodo: '.$validator->messages()->first('nickname');
+				else if($validator->messages()->has('email'))
+					$errorField = 'E-mail: '.$validator->messages()->first('email');
+				else if($validator->messages()->has('amount'))
+					$errorField = 'Cantidad: '.$validator->messages()->first('amount');
+				else if($validator->messages()->has('comment'))
+					$errorField = 'Comentario: '.$validator->messages()->first('comment');
+
+				return Response::json(array('error' => 1,'msg' => $errorField ));
+			}
+		}
+	}    
+
+
 
 }

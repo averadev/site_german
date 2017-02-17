@@ -29,5 +29,7 @@
 	Route::get('/subasta', 'AuctionController@showSubmodule');
 	Route::get('/subasta', 'AuctionController@getSectionSubPQ');
 	Route::post('/subasta', 'AuctionController@SendmailContactUS');
-	Route::get('/subasta/{id}/', 'AuctionController@getSectionSubmodule');
+	Route::get('/subasta/bids', 'AuctionController@getAuctionBids');
+	Route::post('/subasta/submit-bid', 'AuctionController@postAuctionBid');
+
 	Route::controller('/', 'HomeController');

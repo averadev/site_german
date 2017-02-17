@@ -896,6 +896,11 @@ span.year {
 	left: 12.5em;
 }
 
+.no-indent{
+	text-indent: 0px;
+}
+
+
 /*mobile menu and button*/
 
 .mobile-nav{
@@ -913,6 +918,10 @@ span.year {
 
 .material-icons.md-36 {
 	font-size: 36px;
+}
+
+.material-icons.md-30 {
+	font-size: 30px !important;
 }
 
 nav .button-collapse {

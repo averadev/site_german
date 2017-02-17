@@ -1,10 +1,12 @@
 $(document).ready(function(){
+var today = serverdate; /*Hora del servidor*/
 	(function gb_update_hour(){
 
-		var date_current = $("#date_current");
+		var date_current = $(".date_current");
 
 		// Date Current
-		var today = new Date();
+		
+		today.setSeconds(today.getSeconds() + 1);
 		var day = today.getDate();
 		var month = today.getMonth();
 		var year = today.getFullYear();

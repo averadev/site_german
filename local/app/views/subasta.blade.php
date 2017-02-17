@@ -20,6 +20,53 @@
 		float: left;
 		margin-right: 10px;
 	}
+	.collection .collection-item.avatar {
+		min-height: 40px;
+	}
+	span.title{
+		font-weight: bold;
+	}
+
+	p.bid-amount{
+		font-weight: bold;
+		font-size: 1.2rem;
+		line-height: 1.5rem
+	}
+
+	.circle{
+		border-radius: 10%;
+	}
+
+	.collection {
+		border-bottom: 1px solid gray;
+		border-top: 1px solid gray;
+	}
+
+	.collection .collection-item{
+		background: transparent;
+		border-bottom: 1px solid gray;
+		
+	}
+
+	.collection .collection-item.avatar .time {
+		position: absolute;
+		color: red;
+		right: 16px;
+		top: 8px;
+	}
+
+	.collection .collection-item.avatar .date {
+		position: absolute;
+		right: 16px;
+		top: 30px;
+	}		
+
+	label.error{
+		margin-top: -20px;
+		margin-bottom: 10px;
+		color: red !important;
+	}
+
 </style>
 
 	<div class="container">
@@ -335,11 +382,12 @@
 
 	<!-- INFO SUBASTA -->
 
+
 	<div style="background-image:url('media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="tab9">
 		<div  class="container">
-			<div class="row">
-				<div class="col l6 s12">
-					<div style="padding: 10px 0 0 20px; border: 1px solid black; margin-top: 5%; border-radius: 5px;">
+			<div class="row no-margin-bottom" style="padding-top: 4%;" >
+				<div class="col l6 s12"> <!-- LEFT SIDE -->
+					<div style="padding: 10px 0 0 20px; border: 1px solid black; border-radius: 5px;">
 						<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
 						<div class="row">
 							<ul class="thumbnails col l2 s12">
@@ -370,26 +418,31 @@
 					</div>
 					<div class="row">
 						<div style="padding: 10px; margin-top: 2em;"  >
-							<form id="" action="" class="white top_arrow_box">
-								<p style="margin-left: 10px; padding-top: 10px;" class="size30">Me interesa esta escultura</p>
+							<form id="bidForm" class="white top_arrow_box whiteform">
+								<p style="margin-left: 10px;" class="size30">Me interesa esta escultura</p>
 								<div class="row">
 									<div class="col s12">
-										<div class="input-field col s12 l4">
-											<input id="name" class="border_cs" type="text" name="name" placeholder="NOMBRE">
+										<div class="col s12 l4">
+											<input id="name_bid" class="border_cs" maxlength="50" required type="text" name="name_bid" placeholder="NOMBRE">
 										</div>
-										<div class="input-field col s12 l4">
-											<input id="email" class="border_cs" type="email" name="email" placeholder="E-MAIL">
+										<div class="col s12 l4">
+											<input id="nick_bid" class="border_cs" maxlength="45" required type="text" name="nick_bid" placeholder="APODO">
 										</div>
-										<div class="input-field col s12 l4">
-											<input id="cantidad" class="border_cs" type="text" name="cantidad" placeholder="CANTIDAD">
+										<div class="col s12 l4">
+											<input id="email_bid" class="border_cs" maxlength="50" required type="text" name="email_bid" placeholder="E-MAIL">
 										</div>
 									</div>
 									<div class="col s12">
-										<div class="input-field col s12 l8">
-											<textarea id="comment" class="border_cs" rows=5 placeholder="COMENTARIOS"></textarea>
+										<div class="col s12 l8">
+											<textarea id="comment_bid" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
 										</div>
-										<div class="input-field col s12 l4">
-											<button style="margin-top: 2.5vw;" class="btn col l12 s4 right btn-small green">OFERTAR</button>
+										<div class="col l4">
+											<div class="col s12" style="margin-top: 0.7vw;">
+												<div class="row no-margin-bottom">
+													<input id="amount_bid" class="border_cs no-indent" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
+												</div>
+											</div>
+											<button id="submitBid" class="btn col l12 s6 left btn-small green">OFERTAR</button>
 										</div>
 									</div>
 								</div>
@@ -397,9 +450,34 @@
 						</div>
 					</div>
 				</div>
+				<div class="col l6 s12">  <!-- RIGHT SIDE -->				
+					<div class="row">
+						<span class="date_current"></span>
+						<div style="margin-top: 6em;">
+							<p style="line-height: 1em;" >Últimas ofertas: </p>
+							<div id="bid_div">
+								
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+
+
+	<!-- Modal notifications -->
+
+	<div id="messageModal" class="modal">
+		<div class="modal-content">
+			<h4>Mensaje</h4>
+			<h5>Su oferta ha sido añadida</h5>
+		</div>
+		<div class="modal-footer">
+			<button class="modal-action blue modal-close waves-effect waves-blue btn-flat ">ok</button>
+		</div>
+	</div>
+
 	<!-- ENF INFO SUBASTA -->
 
 	<!-- Start Comments -->
@@ -435,7 +513,7 @@
 					<div class="col s12">
 						<div class="row">
 							<div class="col s12 m8 l6 right">
-								<span id="date_current" class="right gb_gray"></span>
+								<span id="" class="right gb_gray date_current"></span>
 							</div>
 						</div>
 						<div class="row">
@@ -515,11 +593,13 @@
 			$(".thumb-auction").removeClass('active');
 			$(this).addClass('active');
 		});
+		serverdate = new Date(<?php echo time(); ?>*1000);
 
 	});
 </script>
 <script src="js/jquery_date.js"></script>
 <script src="js/script.js"></script>
+<script src="js/auction_bids.js"></script>
 <!-- <script src="js/jquery.validate.min.js"></script>
 <script src="js/jquery_validate.js"></script> -->
 @stop

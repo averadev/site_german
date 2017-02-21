@@ -260,6 +260,7 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         'Submodule' => __DIR__ . '/../..' . '/app/models/Submodule.php',
         'TestCase' => __DIR__ . '/../..' . '/app/tests/TestCase.php',
         'User' => __DIR__ . '/../..' . '/app/models/User.php',
+        'UserVerificationController' => __DIR__ . '/../..' . '/app/controllers/UserVerificationController.php',
         'Whoops\\Module' => __DIR__ . '/..' . '/filp/whoops/src/deprecated/Zend/Module.php',
         'Whoops\\Provider\\Zend\\ExceptionStrategy' => __DIR__ . '/..' . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
         'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => __DIR__ . '/..' . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',

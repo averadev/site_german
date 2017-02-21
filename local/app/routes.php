@@ -18,6 +18,9 @@
 		Route::controller('/admin', 'DashboardController');
 	});
 
+	/*verificación usuario*/
+	Route::get('user/auth/{confirmationCode}','UserVerificationController@verify');	
+
 	/*Servicios*/
 	Route::get('servicios/monumental', 'ServicesController@getMonumental');
 	Route::get('servicios/interiores', 'ServicesController@getInteriores');	

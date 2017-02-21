@@ -2,10 +2,10 @@
 	<div class="nav-wrapper gray-color">
 		<div class="container">
 			<div class="hide-on-med-and-down">
-				<img class="brand-logo" style="margin-top: 11px; width: 160px;" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
+				<img class="brand-logo" style="margin-top: 11px; width: 160px; cursor: pointer;" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
      		</div>
      		<div class="hide-on-large-only">
-     			<img class="brand-logo" style="margin-top: 10px; margin-left: 35px; width: 165px;" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
+     			<img class="brand-logo" style="margin-top: 10px; margin-left: 35px; width: 165px; cursor: pointer;" src="{{ URL::asset('media/img/home/logo.png') }}" alt="logo">
      		</div>	
      		<a href="#" data-activates="mobile-german" class="button-collapse"><i class="material-icons md-36">menu</i></a>			
 			<ul id="topbar" class="right hide-on-med-and-down desktop">
@@ -30,6 +30,9 @@
 
 <script type="text/javascript">
 
+	$(".brand-logo").click(function(event) {
+		window.location.href=HOST;
+	});
 	$(".subasta").click(function(event) {
 		window.location.href=HOST+"/subasta";
 	});

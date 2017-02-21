@@ -48,7 +48,7 @@ p.trunc{
 					 <p class="par-title max-light">{{$data->auctionTitle}}</p>
 				</div>
 				<div class="col s12 m4 l4 ">
-					<p class="bold-normal">Hasta el 21 de Noviembre 2016.</p>
+					<p class="bold-normal">Hasta el 21 de Noviembre 2016</p>
 					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Ver subasta</a>
 				</div>
 			</div>
@@ -131,7 +131,14 @@ p.trunc{
 					</div>
 				</div>
 				<div class="col s12 m12 l4 margin-top-1">
+				<div style="position: relative;">
 					<h5 class="light">Comentarios</h5>
+					<img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="media/img/home/fb.png">
+					<img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="media/img/home/insta.png">
+					<img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="media/img/home/twitter.png">
+				</div>
+					
+					
 					<div class="bottomRule">
 					</div>
 						<?php

@@ -303,6 +303,7 @@ p.par-title {
 	font-size: 14px;
 	padding: 0 10px;
 }
+
 .black-tabs .tab a:hover, .black-tabs .tab a.active {
 	background-color: transparent;
 	color: black;
@@ -310,10 +311,14 @@ p.par-title {
 }
 .black-tabs .tab a, .black-tabs .tab a.active {
 	background-color: transparent;
-	color: black;
+	color: #a6a6a6;
+	font-weight: bold;
 }
 .black-tabs .indicator {
-		background-color: black;
+	background-color: black;
+}
+.black-tabs .tab a.active{
+	color: black;
 }
 
 
@@ -1153,4 +1158,21 @@ nav .button-collapse {
 label.error {
 	color: #ff0000 !important;
 	margin-bottom: 0;
+}
+
+.card-image{
+	display: flex;
+	justify-content: center;
+}
+
+.footer-info li, .footer-info a{
+	color: #bfbfbf;
+}
+
+.adress-info li{
+	color: #bfbfbf;
+}
+
+.footer-color{
+	color: #bfbfbf;
 }

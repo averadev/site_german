@@ -604,15 +604,25 @@ nav.mymenu ul a {
 .gb_title_x2 {
 	font-family: "Crimson Text";
 	font-size: 2rem;
+	color: #30322d;
 	text-transform: uppercase;
 	font-weight: bold;
-	letter-spacing: 6px;
+	letter-spacing: 9px;
+}
+.gb_top_x1 {
+	margin-top: -10rem;
 }
 .gb_top_x3 {
 	margin-top: 3rem;
 }
 .gb_top_left_x3 {
 	margin-left: -12rem;
+}
+.gb_top_left_x4 {
+	margin-left: 13rem;
+}
+.gb_top_left_x5 {
+	margin-left: 11rem;
 }
 .gb_top_x6 {
 	margin-top: 6rem;
@@ -626,17 +636,14 @@ nav.mymenu ul a {
 .gb_bottom_x6 {
 	margin-bottom: -6px;
 }
-.font_head_style {
-	font-family: "Crimson Text";
-	font-weight: bold;
-	font-style: italic;
-	color: #2d332c;
+.gb_bottom_x7 {
+	margin-bottom: auto;
 }
-.font_head_h {
-    font-size: 4.5rem;
+.gb_top_x7 {
+    margin-top: -9rem;
 }
-.font_subhead_hp {
-	font-size: 2rem;
+.gb_line_x1 {
+	line-height: inherit;
 }
 .font_subhead_h {
 	font-size: 2rem;
@@ -652,8 +659,8 @@ nav.mymenu ul a {
 	text-align: justify;
 }
 .img_ga_pq {
-	margin-left: -2em;
-	margin-bottom: -4em;
+	margin-left: -6em;
+	margin-bottom: -.5em;
 	padding-top: 0em;
 }
 /* Proceso Media RD */
@@ -729,6 +736,12 @@ nav.mymenu ul a {
 		margin-left: 0rem !important;
 		margin-top: -1rem !important;
 	}
+	.gb_center1 {
+		text-align: center;
+	}
+	.gb_center2 {
+		text-align: initial;
+	}
 }
 @media screen and (max-width: 768px){
 	.img_ga_pq {
@@ -766,6 +779,12 @@ nav.mymenu ul a {
 	.gb_mlf_1 {
 		margin-left: 0rem !important;
 		margin-top: -1rem !important;
+	}
+	.gb_center1 {
+		text-align: center;
+	}
+	.gb_center2 {
+		text-align: initial;
 	}
 }
 @media screen and (max-width: 600px){
@@ -805,6 +824,12 @@ nav.mymenu ul a {
 		margin-left: 0rem !important;
 		margin-top: -1rem !important;
 	}
+	.gb_center1 {
+		text-align: center;
+	}
+	.gb_center2 {
+		text-align: initial;
+	}
 }
 @media screen and (max-width: 480px){
 	.img_ga_pq {
@@ -840,6 +865,12 @@ nav.mymenu ul a {
 		margin-left: 0rem !important;
 		margin-top: -1rem !important;
 	}
+	.gb_center1 {
+		text-align: center;
+	}
+	.gb_center2 {
+		text-align: initial;
+	}
 }
 @media screen and (max-width: 320px){
 	.img_ga_pq {
@@ -870,6 +901,9 @@ nav.mymenu ul a {
 	.gb_left {
 		margin-left: 0rem !important;
 		margin-top: -1rem;
+	}
+	.gb_center2 {
+		text-align: initial;
 	}
 }
 .font_head_style_proceso {

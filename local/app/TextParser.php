@@ -21,6 +21,7 @@ class TextParser {
 			"/<size-x2-left2>/",
 			"/<size-x8-left>/",
 			"/<size-x2-right>/",
+			"/<size-x3-right>/",
 			"/<\/[A-Za-z-0-9-]+>/", /* Match Numbers, lowercase and uppercase letters and _ - characters*/
 		);
 
@@ -35,6 +36,7 @@ class TextParser {
 			"<span class='size-x2-left2'>",
 			"<span class='size-x8-left'>",
 			"<span class='size-x2-right'>",
+			"<span class='size-x3-right'>",
 			"</span>",
 		);
 

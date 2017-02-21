@@ -91,24 +91,24 @@
 
 	<!-- Start ¿Porque? -->
 	<div id="tab4" class="bg_porque">
-		<div class="section">
+		<div class="section no-pad-bot">
 			<div class="container">
-				<div class="row">
+				<div class="row gb_bottom_x7">
 					<div class="col s12 l12">
 						<div class="row">
-							<div class="col s12 l12 center light">
-								<p class="gb_top_x6">{{$submodule_section_data->TitlePorQue}}</p>
+							<div class="col s12 m12 l12 center light">
+								<p class="gb_top_x6 gb_top_left_x4" style="margin-bottom: 0rem;">{{$submodule_section_data->TitlePorQue}}</p>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row gb_bottom_x7">
 							<div class="col s12 m12 l4">
-								<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="img_ga_pq">
+								<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="gb_top_x1 img_ga_pq">
 							</div>
-							<div class="col s12 m12 l3 offset-l1">
-								<p class="txt_desc">{{$submodule_section_data->Desc1PorQue}}</p>
+							<div class="col s12 m12 l2 offset-l2" style="margin-left: 16em;">
+								<p class="gb_line_x1">{{$submodule_section_data->Desc1PorQue}}</p>
 							</div>
-							<div class="col s12 m12 l3 offset-l4">
-								<p class="txt_desc">{{$submodule_section_data->Desc2PorQue}}</p>
+							<div class="col s12 m12 l2 offset-l4 gb_top_x7" style="margin-left: 31em;">
+								<p class="gb_line_x1">{{$submodule_section_data->Desc2PorQue}}</p>
 							</div>
 						</div>
 					</div>
@@ -251,35 +251,39 @@
 	<!-- Start ¿En Que Te Convierte? -->
 	<div id="tab6" class="bg_queteconvierte">
 		<div class="section">
-			<div class="row">
-				<div class="col s12 gb_bottom4">
-					<div class="row">
-						<div class="col s12 l4">
-							<img class="hide-on-med-and-down responsive-img gb_img_piece1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="369" height="765" alt="">
-						</div>
-						<div class="col s12 m4 l4">
-							<div class="row">
-								<div class="col s12 l5 gb_text_center">
-									<h4 class="right light gb_top_x3 gb_bottom_x5 right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
-									<p class="right light med-lineheight right-align">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
-								</div>
+			<div class="container">
+				<div class="row">
+					<div class="col s12 m12 l12 gb_bottom6">
+						<div class="row">
+							<div class="col s12 l4">
+								<img class="hide-on-med-and-down responsive-img gb_img_piece1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="369" height="765" alt="">
 							</div>
-							<div class="row">
-								<div class="col s12 m4 l12">
-									<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
+							<div class="col s12 m12 l4">
+								<div class="row">
+									<div class="col s12 m12 l10">
+										<h4 class="light gb_top_x3 gb_bottom_x5 right-align gb_center1">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+									</div>
+									<div class="col s12 m12 l10">
+										<p class="light med-lineheight right-align gb_center2">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
+									</div>
 								</div>
 								<div class="row">
-									<div class="col s12">
+									<div class="col s12 m12 l12">
+										<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s12 m12 l10">
 										<h4 class="center light gb_bottom_x6">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
 									</div>
-									<div class="col s12 m6 l4 offset-l5">
-										<p class="right light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
+									<div class="col s12 m12 l10">
+										<p class="light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col s12 l4">
-							<img class="hide-on-med-and-down responsive-img gb_img_piece2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
+							<div class="col s12 l4">
+								<img class="hide-on-med-and-down responsive-img gb_img_piece2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
+							</div>
 						</div>
 					</div>
 				</div>

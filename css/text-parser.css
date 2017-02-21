@@ -38,6 +38,14 @@ span.size-x2-right {
 	line-height: 140%;
 }
 
+span.size-x3-right {
+	font-size: 0.9em;
+	color: #2d332c;
+	margin-right: -15%;
+	line-height: 140%;
+	margin-left: 11rem;
+}
+
 span.size-x3{
 	font-size: 3rem;
 }

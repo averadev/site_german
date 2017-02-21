@@ -649,21 +649,24 @@ nav.mymenu ul a {
 .gb_bottom_x7 {
 	margin-bottom: auto;
 }
+.gb_bottom_x8 {
+	margin-bottom: -4.1rem;
+}
 .gb_top_x7 {
     margin-top: -9rem;
+}
+.gb_top_x8 {
+	position: absolute;
+	margin-top: 1em;
 }
 .gb_line_x1 {
 	line-height: inherit;
 }
-.font_subhead_h {
-	font-size: 2rem;
-	margin-right: -15%;
-	line-height: 140%;
+.gb_mg {
+	margin-left: 16em;
 }
-.font_subhead_h p {
-	font-size: 2rem;
-	margin-right: -15%;
-	line-height: 140%;
+.gb_mg2  {
+	margin-left: 31em;
 }
 .txt_desc {
 	text-align: justify;
@@ -672,6 +675,26 @@ nav.mymenu ul a {
 	margin-left: -6em;
 	margin-bottom: -.5em;
 	padding-top: 0em;
+}
+/* ¿EQTC? */
+.gb_img_piece1 {
+	background-position: center center;;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	margin-left: -6em;
+}
+.gb_img_piece2 {
+	background-position: center center;;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	margin-top: 12rem;
+}
+.gb_piece_x2 {
+	position: absolute;
+	top: 13.4em;
+	right: 0;
 }
 /* Proceso Media RD */
 @media screen and (max-width: 1024px){
@@ -706,8 +729,12 @@ nav.mymenu ul a {
 		margin-top: -1rem;
 	}
 	.gb_mlf_1 {
-		margin-left: 0rem !important;
-		margin-top: -1rem !important;
+		margin-left: 6rem !important;
+		margin-top: 2rem !important;
+	}
+	.gb_mlf_2 {
+		margin-left: 0em !important;
+		margin-top: 0em !important;
 	}
 }
 @media screen and (max-width: 980px){
@@ -751,6 +778,18 @@ nav.mymenu ul a {
 	}
 	.gb_center2 {
 		text-align: initial;
+	}
+	.gb_top_left_x4 {
+		margin-left: 0rem;
+	}
+	.gb_top_x7 {
+		margin-top: auto;
+	}
+	.gb_mlf_2 {
+		margin-left: 0em !important;
+	}
+	.gb_arrow_box:after, .gb_arrow_box:before {
+		border: none !important;
 	}
 }
 @media screen and (max-width: 768px){
@@ -796,6 +835,18 @@ nav.mymenu ul a {
 	.gb_center2 {
 		text-align: initial;
 	}
+	.gb_top_left_x4 {
+		margin-left: 0rem;
+	}
+	.gb_top_x7 {
+		margin-top: auto;
+	}
+	.gb_mlf_2 {
+		margin-left: 0em !important;
+	}
+	.gb_arrow_box:after, .gb_arrow_box:before {
+		border: none !important;
+	}
 }
 @media screen and (max-width: 600px){
 	.img_ga_pq {
@@ -840,6 +891,18 @@ nav.mymenu ul a {
 	.gb_center2 {
 		text-align: initial;
 	}
+	.gb_top_left_x4 {
+		margin-left: 0rem;
+	}
+	.gb_top_x7 {
+		margin-top: auto;
+	}
+	.gb_mlf_2 {
+		margin-left: 0em !important;
+	}
+	.gb_arrow_box:after, .gb_arrow_box:before {
+		border: none !important;
+	}
 }
 @media screen and (max-width: 480px){
 	.img_ga_pq {
@@ -881,6 +944,18 @@ nav.mymenu ul a {
 	.gb_center2 {
 		text-align: initial;
 	}
+	.gb_top_left_x4 {
+		margin-left: 0rem;
+	}
+	.gb_top_x7 {
+		margin-top: auto;
+	}
+	.gb_mlf_2 {
+		margin-left: 0em !important;
+	}
+	.gb_arrow_box:after, .gb_arrow_box:before {
+		border: none !important;
+	}
 }
 @media screen and (max-width: 320px){
 	.img_ga_pq {
@@ -915,12 +990,18 @@ nav.mymenu ul a {
 	.gb_center2 {
 		text-align: initial;
 	}
-}
-.font_head_style_proceso {
-	font-family: "Crimson Text";
-	font-weight: bold;
-	font-style: italic;
-	color: #2d322c;
+	.gb_top_left_x4 {
+		margin-left: 0rem;
+	}
+	.gb_top_x7 {
+		margin-top: auto;
+	}
+	.gb_mlf_2 {
+		margin-left: 0em !important;
+	}
+	.gb_arrow_box:after, .gb_arrow_box:before {
+		border: none !important;
+	}
 }
 .txt_left p {
 	font-size: 1em;
@@ -990,9 +1071,11 @@ nav.mymenu ul a {
 	margin-top: -1em;
 }
 .gb_color {
-	font-size: 23px;
+	font-family: "Crimson Text";
+	font-size: 1.8em;
 	color: #363b35;
-	font-weight: 500;
+	font-weight: 600;
+	line-height: 100%
 }
 .gb_gray {
 	color:#30322f;

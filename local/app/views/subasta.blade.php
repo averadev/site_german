@@ -173,10 +173,10 @@ textarea {
 							<div class="col s12 m12 l4">
 								<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="gb_top_x1 img_ga_pq">
 							</div>
-							<div class="col s12 m12 l2 offset-l2" style="margin-left: 16em;">
+							<div class="col s12 m12 l2 offset-l2 gb_mg">
 								<p class="gb_line_x1">{{$submodule_section_data->Desc1PorQue}}</p>
 							</div>
-							<div class="col s12 m12 l2 offset-l4 gb_top_x7" style="margin-left: 31em;">
+							<div class="col s12 m12 l2 offset-l4 gb_top_x7 gb_mg2">
 								<p class="gb_line_x1">{{$submodule_section_data->Desc2PorQue}}</p>
 							</div>
 						</div>
@@ -322,36 +322,26 @@ textarea {
 		<div class="section">
 			<div class="container">
 				<div class="row">
-					<div class="col s12 m12 l12 gb_bottom6">
+					<div class="col s12">
 						<div class="row">
 							<div class="col s12 l4">
-								<img class="hide-on-med-and-down responsive-img gb_img_piece1" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" width="369" height="765" alt="">
-							</div>
-							<div class="col s12 m12 l4">
-								<div class="row">
-									<div class="col s12 m12 l10">
-										<h4 class="light gb_top_x3 gb_bottom_x5 right-align gb_center1">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
-									</div>
-									<div class="col s12 m12 l10">
-										<p class="light med-lineheight right-align gb_center2">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col s12 m12 l12">
-										<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col s12 m12 l10">
-										<h4 class="center light gb_bottom_x6">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
-									</div>
-									<div class="col s12 m12 l10">
-										<p class="light med-lineheight">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
-									</div>
-								</div>
+								<img class="hide-on-med-and-down responsive-img gb_img_piece1 gb_bottom_x8" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
 							</div>
 							<div class="col s12 l4">
-								<img class="hide-on-med-and-down responsive-img gb_img_piece2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
+								<div class="row">
+									<h5 class="light left-align">Autoridad</h5>
+									<p class="light left-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptas deserunt amet magnam consectetur praesentium nam animi facilis eius rem, neque molestiae a, dolorum velit ipsam, inventore maxime numquam laudantium.</p>
+								</div>
+								<div class="row">
+									<h4 style="font-family: 'Crinsom Text'; ">Fuerza, templanza y resistencia <br> ante la adversidad de la noche.</h4>
+								</div>
+								<div class="row">
+									<h5 class="light right-align">Visión</h5>
+									<p class="light right-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptas deserunt amet magnam consectetur praesentium nam animi facilis eius rem, neque molestiae a, dolorum velit ipsam, inventore maxime numquam laudantium.</p>
+								</div>
+							</div>
+							<div class="col 12 l4">
+								<img class="hide-on-med-and-down responsive-img gb_img_piece2 gb_bottom_x8 gb_piece_x2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
 							</div>
 						</div>
 					</div>
@@ -612,42 +602,40 @@ textarea {
 									<span id="" class="right gb_gray date_current hide-on-med-and-down"></span>
 								</div>
 							</div>
-							<div class="col s12 m12 l12">
+							<div class="col s12 m12 l12 gb_mlf_2" style="margin-left: -5.6em; margin-top: 2em;">
 								<div class="row">
-									<div class="col s12 m12 l10 gb_mlf_1 gb_mleft_x10 center gb_left" style="margin-left: 4rem;">
+									<div class="col s12 m12 l7 gb_mlf_1 gb_mleft_x10 center gb_left" style="margin-left: 9rem;">
 										@foreach ($date_coming as $key=> $value)
-										<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo {{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}, y puedes seguirlo aquí.</span>
+										<span class="light gb_color">El desarrollo de la próxima escultura comenzará a transmitirse el próximo {{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}, <br> y puedes seguirlo aquí.</span>
 										@endforeach
 									</div>
 								</div>
 								<div class="row">
-									<div class="col s12 white gb_arrow_box">
-										<form id="FormCS" class="col s12" action="http://localhost:8080/site_german.git/subasta" method="post">
+									<div style="padding: 10px; margin-top: 2em;">
+										<form id="FormCS" class="col s12 white gb_arrow_box" action="http://localhost:8080/site_german.git/subasta" method="post">
 											<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
-											<div class="row">
-												<div class="input-field col s12 m10 l12">
-													<label for="info" class="txtLabelInfo">Me interesa recibir información sobre la próxima escultura:</label>
+											<p style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
+											<div class="row no-margin-bottom">
+												<div class="col s12">
+													<div class="col s12 l4">
+														<input id="name" class="border_cs" type="text" name="name" required placeholder="NOMBRE">
+													</div>
+													<div class="col s12 l4">
+														<input id="email" class="border_cs" type="email" name="email" required placeholder="E-MAIL">
+													</div>
+													<div class="col s12 l4">
+														<input id="city" class="border_cs" type="text" name="city" required placeholder="CIUDAD">
+													</div>
+												</div>
+												<div class="col s12">
+													<div class="col s12 l8">
+														<textarea id="comment" class="border_cs" maxlength="200" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
+													</div>
+													<div class="col s12 l4">
+														<button id="sendBtn" class="btn btn-large green waves-effect gb_mgr_2" type="submit">CONTÁCTENME</button>
+													</div>
 												</div>
 											</div>
-											<br>
-											<div class="row">
-												<div class="col s12 l4">
-													<input id="name" class="border_cs" type="text" name="name" required placeholder="NOMBRE">
-												</div>
-												<div class="col s12 l4">
-													<input id="email" class="border_cs" type="email" name="email" required placeholder="E-MAIL">
-												</div>
-												<div class="col s12 l4">
-													<input id="city" class="border_cs" type="text" name="city" required placeholder="CIUDAD">
-												</div>
-												<div class="col s12 l8">
-													<textarea id="comment" class="border_cs" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
-												</div>
-												<div class="input-field col s12 l4">
-													<button id="sendBtn" class="btn btn-large green gb_mgr_2" type="submit">CONTÁCTENME</button>
-												</div>
-											</div>
-											<span id="msg_success"></span>
 										</form>
 									</div>
 								</div>

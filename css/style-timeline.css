@@ -407,23 +407,6 @@
   top: -172px;
   width: 40%;
 }
-.gb_img_piece1 {
-  background-position: center center;;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  margin-left: -2em;
-}
-.gb_img_piece2 {
-  background-position: center center;;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  margin-top: 12rem;
-}
-.gb_bottom6 {
-  margin-bottom: -6rem;
-}
 /* End Background */
 @media screen and (max-width: 1024px) {
 

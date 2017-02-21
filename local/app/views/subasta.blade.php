@@ -20,11 +20,28 @@
 		float: left;
 		margin-right: 10px;
 	}
+
+	.collection-item{
+		height: 65px;
+	}
+
 	.collection .collection-item.avatar {
 		min-height: 40px;
 	}
+
 	span.title{
 		font-weight: bold;
+	}
+
+	.no-left-border{
+		border-left: none !important;
+	}
+
+	span.totalBids{
+		border: 1px solid white;
+		padding-right: 6px;
+		padding-left: 4px;
+		padding-top: 2px; 
 	}
 
 	p.bid-amount{
@@ -40,6 +57,13 @@
 	.collection {
 		border-bottom: 1px solid gray;
 		border-top: 1px solid gray;
+		height: 390px;
+	}
+
+	ul.showmore{
+		height: 37em ;
+		overflow: scroll;
+		width: 99.9%;
 	}
 
 	.collection .collection-item{
@@ -59,13 +83,58 @@
 		position: absolute;
 		right: 16px;
 		top: 30px;
-	}		
+	}
+
+	p.digitsBox{
+		position: absolute; 
+		top: -15px; 
+		right: 0;
+		font-weight: 400;
+
+	}
+
+	p.showMore{
+		line-height: 1em; float: right; margin-top: 0em; font-weight: bold; cursor: pointer;
+	}
 
 	label.error{
-		margin-top: -20px;
-		margin-bottom: 10px;
-		color: red !important;
+		margin-top: -10px;
+		margin-bottom: 4px;
+		color: red;
 	}
+
+	@media only screen and (max-width : 600px) {
+		p.size45{
+			font-size: 1.5em;
+		}
+	}
+
+	input:not([type]),
+	input[type=text],
+	input[type=password],
+	input[type=email],
+	input[type=number],
+	input[type=search],
+	textarea.materialize-textarea {
+		height: 2.2rem;
+		width: 100%;
+	}
+
+	/* Text inputs */
+	input:not([type]),
+	input[type=text],
+	input[type=password],
+	input[type=email],
+	input[type=number],
+	input[type=search],
+	textarea.materialize-textarea {
+		margin: 0 0 10px 0;
+	}
+	
+textarea {
+	margin: 0 0 10px 0;
+}	
+
 
 </style>
 
@@ -419,18 +488,22 @@
 								@endif
 							</div>
 						</div>
+						<div style="margin-top: 52px; margin-bottom: 20px;" >
+							<p class="small-lineheight">Poseidón Diseñado por <b>Germán Arzate</b> / 2016</p>
+							<p class="small-lineheight">COLECCIÓN: <b>Mitologías Antigúas</b></p>
+						</div>
 					</div>
 					<div class="row">
 						<div style="padding: 10px; margin-top: 2em;"  >
 							<form id="bidForm" class="white top_arrow_box whiteform">
-								<p style="margin-left: 10px;" class="size30">Me interesa esta escultura</p>
-								<div class="row">
+								<p style="margin: 3px 0 5px 10px;  " class="size30">Me interesa esta escultura:</p>
+								<div class="row no-margin-bottom">
 									<div class="col s12">
 										<div class="col s12 l4">
 											<input id="name_bid" class="border_cs" maxlength="50" required type="text" name="name_bid" placeholder="NOMBRE">
 										</div>
 										<div class="col s12 l4">
-											<input id="nick_bid" class="border_cs" maxlength="45" required type="text" name="nick_bid" placeholder="APODO">
+											<input id="nick_bid" class="border_cs" maxlength="20" required type="text" name="nick_bid" placeholder="APODO">
 										</div>
 										<div class="col s12 l4">
 											<input id="email_bid" class="border_cs" maxlength="50" required type="text" name="email_bid" placeholder="E-MAIL">
@@ -438,15 +511,15 @@
 									</div>
 									<div class="col s12">
 										<div class="col s12 l8">
-											<textarea id="comment_bid" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
+											<textarea id="comment_bid" style="height: 100px;" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
 										</div>
 										<div class="col l4">
-											<div class="col s12" style="margin-top: 0.7vw;">
+											<div class="col s12">
 												<div class="row no-margin-bottom">
-													<input id="amount_bid" class="border_cs no-indent" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
+													<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
 												</div>
 											</div>
-											<button id="submitBid" class="btn col l12 s6 left btn-small green">OFERTAR</button>
+											<button id="submitBid" class="btn col l12 s6 left btn-small green waves-effect">OFERTAR</button>
 										</div>
 									</div>
 								</div>
@@ -457,11 +530,16 @@
 				<div class="col l6 s12">  <!-- RIGHT SIDE -->				
 					<div class="row">
 						<span class="date_current"></span>
-						<div style="margin-top: 6em;">
-							<p style="line-height: 1em;" >Últimas ofertas: </p>
+						<div style="margin-top: 2em;">
+							<div style="position: relative; ">
+								<p class="med-light size45" >Numero de ofertas totales:  </p>
+								<p id="boxdigits" class="med-light size45 digitsBox" > </p>
+							</div>
+							<p style="line-height: 1em;" >Últimas ofertas: </p> 
 							<div id="bid_div">
 								
 							</div>
+							<p id="showMoreButton" class="showMore">Ver mas ofertas <i style="vertical-align: middle;" class="material-icons">keyboard_arrow_down</i> </p>
 						</div>
 					</div>
 				</div>
@@ -469,13 +547,12 @@
 		</div>
 	</div>
 
-
-	<!-- Modal notifications -->
+	<!-- Modal auction notifications -->
 
 	<div id="messageModal" class="modal">
 		<div class="modal-content">
 			<h4>Mensaje</h4>
-			<h5>Su oferta ha sido añadida</h5>
+			<h5 id="showmessageModal"></h5>
 		</div>
 		<div class="modal-footer">
 			<button class="modal-action blue modal-close waves-effect waves-blue btn-flat ">ok</button>
@@ -587,28 +664,12 @@
 <script src="vendor/plugins/simple-gal.js"></script>
 <script>
 	$(document).ready(function(){
-		$('.materialboxed').materialbox();
-		$('.modal_md').modal();
-		$('select').material_select();
-
-		$('.black-tabs li a').click(function(event) {
-			var hashtag = $(this).attr('href')
-			var url = 'subasta' + hashtag;
-			window.history.pushState({key:'url'},'',url);
-		});
-		$('.thumbnails').simpleGal({
-			mainImage: '.auction-image'
-		});
-		$(".thumb-auction").click(function(event) {
-			$(".thumb-auction").removeClass('active');
-			$(this).addClass('active');
-		});
 		serverdate = new Date(<?php echo time(); ?>*1000);
-
 	});
 </script>
 <script src="js/jquery_date.js"></script>
 <script src="js/script.js"></script>
 <script src="js/auction_bids.js"></script>
 <script src="js/jquery_validate.js"></script>
+<script src="js/subasta.js"></script>
 @stop

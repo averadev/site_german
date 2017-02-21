@@ -1,9 +1,5 @@
 <?php 
-/** No se utilizo namespace
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-**/
+
 //use Mail;
 //use Storage;
 use Carbon\Carbon;
@@ -177,29 +173,43 @@ class AuctionController extends BaseController {
 	public function getAuctionBids(){
 		if(Request::ajax()){
 			$bids = 	Subasta::getBids();
-				$time = time(); /*Server Time*/
+			$time =		time(); /*Server Time*/
 			return Response::json(array('bids' => $bids,'time'=>$time));
 		}
 	}
 
+	public function getNewBids(){
+		if(Request::ajax()){
+			$change = 0;
+			$oldBids = strip_tags(trim(Input::get('totalbids')));
+			$newBids 		= count(Subasta::getBids());
+			if((int)$oldBids == $newBids){
+				$change = 0;
+			}else{
+				$change = 1;
+			}
+			return Response::json(array('change' => $change));
+		}
+	}
 	public function postAuctionBid(){
 		if(Request::ajax()){
 			$data = [
 				'name' 			=> strip_tags(trim(Input::get('name'))),
 				'nickname' 		=> strip_tags(trim(Input::get('nickname'))),
-				'email' 			=> strip_tags(trim(Input::get('email'))),
-				'amount'			=> strip_tags(trim(Input::get('amount'))),
+				'email' 		=> strip_tags(trim(Input::get('email'))),
+				'amount'		=> strip_tags(trim(Input::get('amount'))),
 				'comment' 		=> strip_tags(trim(Input::get('comment')))
 			];
 			$rules = [
 				'name'			=> 'required|max:50',
-				'nickname'		=> 'required|max:45',
-				'email' 			=> 'required|email|max:50',
+				'nickname'		=> 'required|max:20',
+				'email' 		=> 'required|email|max:50',
 				'amount' 		=> 'required|digits_between:1,9',
 				'comment' 		=> 'required|max:200'
 			];
 			$validator = Validator::make($data, $rules);
 			if($validator->passes()){
+				$credentials = $data;
 				$data = (object)$data;
 				$user = Auction_user::isActive($data->email);
 				if($user){ /*Si el usuario existe*/
@@ -208,21 +218,33 @@ class AuctionController extends BaseController {
 						$auction = Subasta::getActiveAuction();
 						$auction_id = $auction->id;
 						$user_id = $user->id;
-						$highestBid = Auction_bid::getHighestBid($auction_id)->amount;
-						if($data->amount <= $highestBid){ /*Si la cantida a ofertar es menor o igual que la cantidad mayor ofertada mandar mensaje de advertencia*/
-							return Response::json(array('msg' => number_format($highestBid) ));
-						}else{ /*Si la cantidad a ofertar es mayor registrar la puja*/
+						$bid = Auction_bid::getHighestBid($auction_id);
+						$highestBid = $bid->amount;
+						$highestBidUser = $bid->user_id;
+						if($highestBidUser == $user_id){ /*Si la mayor oferta pertenece al mismo usuario que en el momento tiene la mejor oferta mandar mensaje*/
+							return Response::json(array('error' => 1,'msg' => 'En este momento posee la oferta más alta' ));
+						}else if($data->amount <= $highestBid){ /*Si la cantidad a ofertar es menor o igual que la cantidad mayor ofertada mandar mensaje de generar una ofertar mayor*/
+							return Response::json(array('error' => 4,'msg' => number_format($highestBid) ));
+						}else{ /*Registrar puja si la cantidad ofertada es mayor*/
 							$auction_bid = new Auction_bid;
-							$auction_bid = $auction_bid->addBid($data,$auction_id,$user_id);
+							$auction_bid = $auction_bid->addBid($data,$auction_id,$user_id,true);
 							if($auction_bid){
-								return Response::json(array('msg' => 'Oferta registrada correctamente'));
-							}		
-						}				
+								return Response::json(array('error' => 0,'msg' => 'Oferta registrada correctamente'));
+							}
+						}
 					}else{	/*Si el usuario existe pero no es válido mandar aviso que revise su email, sin guardar la puja*/
-
+						return Response::json(array('error' => 3,'msg' => 'Por favor revise su bandeja de entrada ya se envío un E-mail de verificación' ));
 					}
 				}else{ /*Si el usuario no existe, registrarlo, guardar la puja, ponerlo inactivo y mandar email de validación*/
 
+					$newUser = new Auction_user;
+					$confirmation_code = $newUser->addAuctionUser($data); /*get the code*/
+					$credentials['code'] = $confirmation_code;
+					Mail::send('emails.verification', $credentials, function($message) use ($data) {
+						$message->to($data->email, $data->name)
+					->subject('Verifica tu dirección de correo');
+					});
+					return Response::json(array('error' => 2,'msg' => 'Un mensaje de verificación ha sido enviado a su correo'));
 				}
 				return Response::json(array('user' => $user));
 			}else{
@@ -242,7 +264,7 @@ class AuctionController extends BaseController {
 				return Response::json(array('error' => 1,'msg' => $errorField ));
 			}
 		}
-	}    
+	}   
 
 
 

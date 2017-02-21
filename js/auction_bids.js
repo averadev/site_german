@@ -4,24 +4,33 @@ var bids = function (){
 	
 	var bindEvents = function(){
 		$("#submitBid").click(function(event) {
-			event.preventDefault();			
+			event.preventDefault();         
 			var formValidation = $( "#bidForm").valid();
 			console.log(formValidation);
 			if(formValidation){
 				var form = {
-					'name'			: $('#name_bid').val(),
-					'nickname'		: $('#nick_bid').val(),
-					'email'			: $('#email_bid').val(),
-					'amount'			: $('#amount_bid').val(),
-					'comment'		: $('#comment_bid').val()
+					'name'          : $('#name_bid').val(),
+					'nickname'      : $('#nick_bid').val(),
+					'email'         : $('#email_bid').val(),
+					'amount'            : $('#amount_bid').val(),
+					'comment'       : $('#comment_bid').val()
 				};
 				//console.log(form);
 				postBids(form);
 			}
 		});
 
+		$("#showMoreButton").click(function(event) {
+			$(".collection").animate({ scrollTop: 0 }, "fast");
+			$(".collection").toggleClass("showmore");
+		});
+
 	}
 
+	/*Check if there is new data each 10 seconds*/
+	window.setInterval(function(){
+		getCheckNewBids();
+	}, 10000);
 
 	var getBids = function(){
 		$.ajax({
@@ -31,10 +40,21 @@ var bids = function (){
 			data: {},
 		}).done(function(response) {
 
-			var bids_section = "<ul class='collection'>";
+			var bids_section = "<ul id='bidsList' class='collection'>";
 			var now = new Date(response.time*1000);
 			var bidDate = null;
 			var diffinhours = 0;
+			var boxTotalBids ='';
+			$totalAuctionBids = response.bids.length;
+			var totalBids = ((response.bids.length).toString()).split('');
+			$.each(totalBids, function(index, val) {
+				if(index>0){
+				boxTotalBids = boxTotalBids+"<span class='totalBids no-left-border' >"+val+"</span>"
+				}else{
+				boxTotalBids = boxTotalBids+"<span class='totalBids' >"+val+"</span>"
+				}
+			});
+			$("#boxdigits").html(boxTotalBids);
 
 			$.each(response.bids, function(index, val) {
 				bidDate = new Date(val.startDate*1000);
@@ -46,9 +66,7 @@ var bids = function (){
 				if(day <= 9){
 					day = '0'+day;
 				}
-
-				bidDate = day+' '+monthNames[month];
-	
+				bidDate = day+' '+monthNames[month];	
 				bids_section = bids_section +"<li class='collection-item avatar'>"+
 					"<i class='material-icons circle grey darken-1 md-30'>account_box</i>"+
 					"<span class='title'>"+val.nick+"</span>"+
@@ -57,11 +75,29 @@ var bids = function (){
 					"<p class='date'>"+bidDate+"</p>"+
 				"</li>";
 			});
-			$("#bid_div").html(bids_section);
 			bids_section = bids_section +"</ul>"
+
+			$("#bid_div").html(bids_section);			
+
 		}).fail(function(response) {
 			console.log(response);
-		});	
+		}); 
+	}
+
+	var getCheckNewBids = function(){
+		$.ajax({
+			url: HOST+'/subasta/check-bids',
+			type: 'GET',
+			dataType: 'json',
+			data: {totalbids:$totalAuctionBids},
+		}).done(function(response) {
+			if(response.change == 1){
+				getBids();
+			}
+
+		}).fail(function(response) {
+			console.log(response);
+		});
 	}
 
 	var postBids = function(form){
@@ -72,11 +108,33 @@ var bids = function (){
 			data: form,
 		}).done(function(response) {
 			console.log(response);
-			getBids();
+			if(!(response.error)){
+				$("#showmessageModal").text(response.msg);
+				$('#messageModal').modal('open');
+				getBids();
+			}else{
+				$("#showmessageModal").text(response.msg);
+				switch(response.error) {
+					case 1: 	/*poseedor de la oferta más alta*/
+						$('#messageModal').modal('open');
+						break;
+					case 2: 	/*Se envio un mensaje de verificacion a su correo*/
+						$('#messageModal').modal('open');
+						break;
+					case 3: 	/*Revisar correo*/
+						$('#messageModal').modal('open');
+						break;
+					case 4: 	/*Oferta tiene que ser mayor*/
+						$("#showmessageModal").text("Su oferta tiene que ser mayor a la actual de $"+response.msg);
+						$('#messageModal').modal('open');
+						break;
+				}
+			}
+			
 		}).fail(function(response) {
 			console.log(response);
-		});	
-	}	
+		}); 
+	}   
 
 	/*Form Validation*/
 	$("#bidForm").validate({
@@ -87,8 +145,8 @@ var bids = function (){
 			},
 			nick_bid: {
 				required: true,
-				maxlength: 45
-			},				
+				maxlength: 20
+			},              
 			email_bid: {
 				required: true,
 				valid_email: true,
@@ -98,7 +156,7 @@ var bids = function (){
 				required: true,
 				digits: true,
 				maxlength: 10
-			}					
+			}                   
 		},
 		messages: {
 			name_bid: {
@@ -107,8 +165,8 @@ var bids = function (){
 			},
 			nick_bid: {
 				required: "Requerido",
-				maxlength: "45 caracteres maximo"
-			},				
+				maxlength: "20 caracteres maximo"
+			},              
 			email_bid: {
 				required: "Requerido",
 				valid_email: "Ingresa un correo válido",
@@ -120,20 +178,20 @@ var bids = function (){
 				maxlength: ""
 			}
 		}
-	 });	
+	 });    
 
 	var onloadExec = function(){
 		bindEvents();
 		getBids();
-
 		$('#messageModal').modal({
 			dismissible: true, // Modal can be dismissed by clicking outside of the modal
-			opacity: .5, // Opacity of modal background
-			inDuration: 300, // Transition in duration
+			opacity: 0.5, // Opacity of modal background
+			inDuration: 0, // Transition in duration
 			outDuration: 200, // Transition out duration
 			starting_top: '4%', // Starting top style attribute
-			ending_top: '30%', // Ending top style attribute
-		});		
+			ending_top: '25%', // Ending top style attribute
+		});
+		$totalAuctionBids = 0;
 	}
 
 

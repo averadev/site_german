@@ -73,27 +73,27 @@ input{
 }
 
 textarea{
-  text-indent: 10px;
+  text-indent: 3px;
   border-radius: 5px;
 }
 
 .myform input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-	color: white ;
-	opacity: 1;
+  color: #b3b3b3 ;
+  opacity: 1;
 }
 .myform input::-moz-placeholder { /* Firefox 19+ */
-	color: white ;
-	opacity: 1;
+  color: #b3b3b3 ;
+  opacity: 1;
 
 }
 .myform input:-ms-input-placeholder { /* IE 10+ */
-	color: white ;
-	opacity: 1;
+  color: #b3b3b3 ;
+  opacity: 1;
 
 }
 .myform input:-moz-placeholder { /* Firefox 18- */
-	color: white ;
-	opacity: 1;
+  color: #b3b3b3 ;
+  opacity: 1;
 }
 
 

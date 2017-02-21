@@ -28,6 +28,8 @@ class Subasta extends Eloquent
 		$bids = DB::table('subasta')
 			->select('user.name as name','user.nickname as nick',DB::raw("UNIX_TIMESTAMP(created) as startDate, FORMAT(pujas.cantidad,0) as amount"))
 			->where('subasta.status',1)
+			->where('pujas.status',1)
+			->where('user.status',1)
 			->join('subasta_puja as pujas','subasta.id', '=', 'pujas.subasta_id')
 			->join('subasta_user as user','user.id', '=', 'pujas.subasta_user_id')
 			->orderBy('pujas.created','DESC')

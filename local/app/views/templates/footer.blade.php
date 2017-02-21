@@ -4,11 +4,12 @@
 			<div class="row">
 				<div class="col l4 s12">
 					<ul class="footer-info" >
-						<li><a class="white-text" href="#!">INICIO</a></li>
-						<li><a class="white-text" href="#!">ESCULTURAS</a></li>
-						<li><a class="white-text" href="#!">NOTAS DE PRENSA</a></li>
-						<li><a class="white-text" href="#!">GERMAN ARZATE</a></li>
-						<li><a class="white-text" href="#!">CONTACTO</a></li>
+						<li><a class="white-text" href="{{ url('/') }}" >INICIO</a></li>
+						<li><a class="white-text" href="{{ url('/subasta') }}" >SUBASTA</a></li>
+						<li><a class="white-text" href="{{ url('servicios/monumental') }}" >SERVICIOS EXTRA</a></li>
+						<li><a class="white-text" href="#" >NOTAS DE PRENSA</a></li>
+						<li><a class="white-text" href="{{ url('/german') }}" >GERMAN ARZATE</a></li>
+						<li><a class="white-text" href="{{ url('/contacto') }}" >CONTACTO</a></li>
 						<li class="white-text" style="margin-top: 1em;" >SÍGUEME EN: <img class="social-button" alt="facebook" id="goface" src="{{ URL::asset('media/img/home/fb.png') }}"> <img class="social-button" alt="instagram" id="goinsta" src="{{ URL::asset('media/img/home/insta.png') }}"> <img class="social-button" alt="twitter" id="gotwitter" src="{{ URL::asset('media/img/home/twitter.png') }}"> </li>			
 					</ul>
 				</div>
@@ -27,13 +28,13 @@
 							</div>						
 							<input class="my-input" id="myname" required type="text" placeholder="Nombre Completo">
 							<input class="my-input" id="myemail" pattern="valemail" required type="text" placeholder="Correo electronico">
-							<button class="waves-effect white-border grey darken-3 waves-light btn">INSCRIBIRME</button>
+							<button style="font-size: 0.8rem; font-weight: bold; letter-spacing: 1px;  " class="waves-effect white-border grey darken-3 waves-light btn">INSCRIBIRME</button>
 						</form>	
 
 					</div>
 				</div>
 				<div class="col l4 s12">
-					<ul class="footer-info">
+					<ul class="adress-info">
 						<img style="width: 7em; margin-bottom: 20px;" src="{{ URL::asset('media/img/home/logoblanco.png') }}" alt="logo footer">
 						<li class="white-text" href="#!" >Calle Niebla No.5 S.M.18,</a></li>
 						<li class="white-text" href="#!" >77580 Cancún, Q. Roo, México</a></li>
@@ -44,7 +45,7 @@
 			</div>
 		</div>
 		<div class="footer-copyright">
-			<div class="container center">
+			<div class="container center" style="font-size: 0.8rem;" >
 				Todos los derechos reservados German Arzate c 2015
 			</div>
 		</div>

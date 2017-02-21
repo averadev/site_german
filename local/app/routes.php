@@ -31,5 +31,7 @@
 	Route::post('/subasta/coming', 'AuctionController@SendmailContactUS');
 	Route::get('/subasta/bids', 'AuctionController@getAuctionBids');
 	Route::post('/subasta/submit-bid', 'AuctionController@postAuctionBid');
-
+	/*check bids*/
+	Route::get('/subasta/check-bids', 'AuctionController@getNewBids');
+	
 	Route::controller('/', 'HomeController');

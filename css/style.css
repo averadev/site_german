@@ -197,7 +197,7 @@ img.txt-over{
 /*TOP BAR*/
 
 .gray-color{
-	background-color: #C2C2C2;
+	background-color: #848484;
 }
 
 ul.desktop a:hover {
@@ -225,6 +225,11 @@ ul.desktop a {
     padding: 0 0px;
 }
 
+ul.adress-info li{
+	margin-bottom: 10px;
+	font-size: 0.8rem
+}
+
 .grey-border{
 	color: gray;
 	border-style: solid;
@@ -244,6 +249,20 @@ ul.desktop a {
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	box-shadow: none;
+}
+
+.small-lineheight{
+	line-height: 0.5rem;
+}
+
+.card-image img{
+	min-width: 344px;
+}
+
+@media only screen and (max-width : 600px) {
+	.card-image img{
+		min-width: 100px;
+	}
 }
 
 .med-lineheight{
@@ -423,34 +442,20 @@ footer.page-footer {
 
 
 .whiteform textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-	color: black ;
+	color: #b3b3b3 ;
 }
 .whiteform textarea::-moz-placeholder { /* Firefox 19+ */
-	color: black ;
+	color: #b3b3b3 ;
 
 }
 .whiteform textarea:-ms-input-placeholder { /* IE 10+ */
-	color: black ;
+	color: #b3b3b3 ;
 
 }
 .whiteform textarea:-moz-placeholder { /* Firefox 18- */
-	color: black ;
+	color: #b3b3b3 ;
 }
 
-.whiteform input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-	color: black ;
-}
-.whiteform input::-moz-placeholder { /* Firefox 19+ */
-	color: black ;
-
-}
-.whiteform input:-ms-input-placeholder { /* IE 10+ */
-	color: black ;
-
-}
-.whiteform input:-moz-placeholder { /* Firefox 18- */
-	color: black ;
-}
 
 /* General Font */
 .fontCrimson{

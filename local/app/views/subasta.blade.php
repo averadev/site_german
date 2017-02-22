@@ -329,15 +329,24 @@ textarea {
 							</div>
 							<div class="col s12 l4">
 								<div class="row">
-									<h5 class="light left-align">Autoridad</h5>
-									<p class="light left-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptas deserunt amet magnam consectetur praesentium nam animi facilis eius rem, neque molestiae a, dolorum velit ipsam, inventore maxime numquam laudantium.</p>
+									<div class="gb_content_text1">
+										<h4 class="light right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+										<p class="light left-align line_piece1">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
+									</div>
 								</div>
 								<div class="row">
-									<h4 style="font-family: 'Crinsom Text'; ">Fuerza, templanza y resistencia <br> ante la adversidad de la noche.</h4>
+									<div class="gb_content_text2">
+										<h4>Fuerza, <span>templanza y resistencia</span></h4>
+										<div class="gb_content_head gb_content_left">
+											<span>ante la adversidad de la noche.</span>
+										</div>
+									</div>
 								</div>
 								<div class="row">
-									<h5 class="light right-align">Visión</h5>
-									<p class="light right-align">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam voluptas deserunt amet magnam consectetur praesentium nam animi facilis eius rem, neque molestiae a, dolorum velit ipsam, inventore maxime numquam laudantium.</p>
+									<div class="gb_content_text3">
+										<h4 class="light left-align">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+										<p class="light left-align">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
+									</div>
 								</div>
 							</div>
 							<div class="col 12 l4">

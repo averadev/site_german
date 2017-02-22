@@ -695,6 +695,68 @@ nav.mymenu ul a {
 	position: absolute;
 	top: 13.4em;
 	right: 0;
+	margin-right: 14em;
+}
+.gb_content_text1 {
+	width: 50%;
+	margin: 15px auto;
+	margin-left: -8em;
+	margin-top: 4em;
+}
+.gb_content_text1 p {
+	line-height: 1.4em;
+	text-align: right;
+}
+.gb_content_text2 {
+	width: 120%;
+	max-width: 1000px;
+	margin: 15px auto;
+}
+.gb_content_text2 h4 {
+	font-family: "Crimson Text";
+	font-size: 5.5em;
+	font-style: italic;
+	font-weight: bold;
+	margin-left: -1em;
+	color: #2d332c;
+}
+.gb_content_text2 h4 > span {
+	font-family: "Crimson Text";
+	font-size: .5em;
+	font-style: italic;
+	font-weight: bold;
+	color: #2d332c;
+}
+.gb_content_head > span {
+	font-family: "Crimson Text";
+	font-size: 2.5em;
+	font-style: italic;
+	font-weight: bold;
+	color: #2d332c;
+}
+.gb_content_left {
+	margin-top: -3em;
+	margin-left: 7em;
+}
+.gb_content_text3 {
+	width: 50%;
+	margin: 15px auto;
+	margin-left: 12em;
+	margin-top: 4em;
+}
+.gb_content_text3 p {
+	line-height: 1.4em;
+	text-align: left;
+}
+p.line_piece1:after {
+	border-right-color: #ffffff;
+	border-width: 24px;
+	margin-top: -24px;
+}
+p.line_piece1:before {
+	border-bottom: red !important;
+	border-width: 24px;
+	margin-top: -24px;
 }
 /* Proceso Media RD */
 @media screen and (max-width: 1024px){
@@ -956,6 +1018,24 @@ nav.mymenu ul a {
 	.gb_arrow_box:after, .gb_arrow_box:before {
 		border: none !important;
 	}
+	.gb_content_text1 {
+		width: 100%;
+		margin: 15px auto;
+		margin-top: 4em;
+	}
+	.gb_content_text1 h4, p {
+		line-height: 1.4em;
+		text-align: center;
+	}
+	.gb_content_text3 {
+		width: 100%;
+		margin: 15px auto;
+		margin-top: 4em;
+	}
+	.gb_content_text3 h4, p {
+		line-height: 1.4em;
+		text-align: center;
+	}
 }
 @media screen and (max-width: 320px){
 	.img_ga_pq {
@@ -1001,6 +1081,53 @@ nav.mymenu ul a {
 	}
 	.gb_arrow_box:after, .gb_arrow_box:before {
 		border: none !important;
+	}
+	.gb_content_text1 {
+		width: 100%;
+		margin: 15px auto;
+		margin-top: 4em;
+	}
+	.gb_content_text1 p {
+		line-height: 1.4em;
+		text-align: center;
+	}
+	.gb_content_text2 {
+		width: 100%;
+		max-width: 1000px;
+		margin: 15px auto;
+	}
+	.gb_content_text2 h4 {
+		font-family: "Crimson Text";
+		font-size: 3em;
+		font-style: italic;
+		font-weight: bold;
+		margin-left: -1em;
+		margin: 0 auto;
+	}
+	.gb_content_text2 h4 > span {
+		font-family: "Crimson Text";
+		font-size: .5em;
+		font-style: italic;
+		font-weight: bold;
+	}
+	.gb_content_head > span {
+		font-family: "Crimson Text";
+		font-size: 2.5em;
+		font-style: italic;
+		font-weight: bold;
+	}
+	.gb_content_left {
+		margin-top: -2em;
+		margin-left: 1em;
+	}
+	.gb_content_text3 {
+		width: 100%;
+		margin: 15px auto;
+		margin-top: 4em;
+	}
+	.gb_content_text3 p {
+		line-height: 1.4em;
+		text-align: center;
 	}
 }
 .txt_left p {

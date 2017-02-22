@@ -6,7 +6,6 @@ var bids = function (){
 		$("#submitBid").click(function(event) {
 			event.preventDefault();         
 			var formValidation = $( "#bidForm").valid();
-			console.log(formValidation);
 			if(formValidation){
 				var form = {
 					'name'          : $('#name_bid').val(),
@@ -15,7 +14,6 @@ var bids = function (){
 					'amount'            : $('#amount_bid').val(),
 					'comment'       : $('#comment_bid').val()
 				};
-				//console.log(form);
 				postBids(form);
 			}
 		});
@@ -80,7 +78,7 @@ var bids = function (){
 			$("#bid_div").html(bids_section);			
 
 		}).fail(function(response) {
-			console.log(response);
+
 		}); 
 	}
 
@@ -96,7 +94,7 @@ var bids = function (){
 			}
 
 		}).fail(function(response) {
-			console.log(response);
+
 		});
 	}
 
@@ -107,32 +105,39 @@ var bids = function (){
 			dataType: 'json',
 			data: form,
 		}).done(function(response) {
-			console.log(response);
+
 			if(!(response.error)){
 				$("#showmessageModal").text(response.msg);
 				$('#messageModal').modal('open');
 				getBids();
 			}else{
-				$("#showmessageModal").text(response.msg);
+				var message = response.msg;
+				$("#titleModal").text('');
 				switch(response.error) {
 					case 1: 	/*poseedor de la oferta más alta*/
 						$('#messageModal').modal('open');
 						break;
 					case 2: 	/*Se envio un mensaje de verificacion a su correo*/
+						message = "Con el fin de registrar tu oferta y ser considerado para la venta. <br/> Se te ha enviado un correo electronico con el fin de verificar tus datos."
+						$("#titleModal").text('¡Gracias por ofertar!');
 						$('#messageModal').modal('open');
 						break;
 					case 3: 	/*Revisar correo*/
 						$('#messageModal').modal('open');
 						break;
 					case 4: 	/*Oferta tiene que ser mayor*/
-						$("#showmessageModal").text("Su oferta tiene que ser mayor a la actual de $"+response.msg);
+						message = "Su oferta tiene que ser mayor a la actual de $"+response.msg;
 						$('#messageModal').modal('open');
 						break;
+					case 5: 	/*Nickname duplicado*/
+						$('#messageModal').modal('open');
+						break;						
 				}
+				$("#showmessageModal").html(message);
 			}
 			
 		}).fail(function(response) {
-			console.log(response);
+
 		}); 
 	}   
 
@@ -186,8 +191,8 @@ var bids = function (){
 		$('#messageModal').modal({
 			dismissible: true, // Modal can be dismissed by clicking outside of the modal
 			opacity: 0.5, // Opacity of modal background
-			inDuration: 0, // Transition in duration
-			outDuration: 200, // Transition out duration
+			inDuration: 1000, // Transition in duration
+			outDuration: 1000, // Transition out duration
 			starting_top: '4%', // Starting top style attribute
 			ending_top: '25%', // Ending top style attribute
 		});

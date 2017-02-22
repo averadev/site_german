@@ -7,7 +7,6 @@ class Auction_user extends Eloquent
 {
 
 	protected $table = "subasta_user";
-	public $timestamps = false;
 	protected $SoftDelete = false;
 
 	public function addAuctionUser($data){
@@ -18,7 +17,7 @@ class Auction_user extends Eloquent
 		$this->email 				= $data->email;
 		$this->confirmation_code 	= $code;
 		if($this->save()){
-			return $code;
+			return $this;
 		}
 			return false;
 		
@@ -31,6 +30,18 @@ class Auction_user extends Eloquent
 		->first();
 		
 		return $data;
+	}
+
+	public static function checkNickName($nickname,$id){
+		$nick = DB::table('subasta_user')
+		->where('nickname', $nickname)
+		->where('id','!=',$id)
+		->first();
+		if ($nick) {
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

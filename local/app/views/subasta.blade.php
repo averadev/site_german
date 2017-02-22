@@ -109,25 +109,23 @@
 		}
 	}
 
-	input:not([type]),
-	input[type=text],
-	input[type=password],
-	input[type=email],
-	input[type=number],
-	input[type=search],
-	textarea.materialize-textarea {
+	.modal .notification {
+		padding: 2rem 3rem 0px;
+	}
+
+
+	.contract input[type=text],
+	.contract input[type=email],
+	.contract textarea{
 		height: 2.2rem;
 		width: 100%;
 	}
 
 	/* Text inputs */
-	input:not([type]),
-	input[type=text],
-	input[type=password],
-	input[type=email],
-	input[type=number],
-	input[type=search],
-	textarea.materialize-textarea {
+
+	.contract input[type=text],
+	.contract input[type=email],
+	.contract textarea{
 		margin: 0 0 10px 0;
 	}
 	
@@ -494,7 +492,7 @@ textarea {
 					</div>
 					<div class="row">
 						<div style="padding: 10px; margin-top: 2em;"  >
-							<form id="bidForm" class="white top_arrow_box whiteform">
+							<form id="bidForm" class="white top_arrow_box whiteform contract">
 								<p style="margin: 3px 0 5px 10px;  " class="size30">Me interesa esta escultura:</p>
 								<div class="row no-margin-bottom">
 									<div class="col s12">
@@ -518,7 +516,7 @@ textarea {
 													<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
 												</div>
 											</div>
-											<button id="submitBid" class="btn col l12 s6 left btn-small green waves-effect">OFERTAR</button>
+											<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect">OFERTAR</button>
 										</div>
 									</div>
 								</div>
@@ -531,7 +529,7 @@ textarea {
 						<span class="date_current"></span>
 						<div style="margin-top: 2em;">
 							<div style="position: relative; ">
-								<p class="med-light size45" >Numero de ofertas totales:  </p>
+								<p style="font-weight: 300;" class="size45" >Número de ofertas totales:  </p>
 								<p id="boxdigits" class="med-light size45 digitsBox" > </p>
 							</div>
 							<p style="line-height: 1em;" >Últimas ofertas: </p> 
@@ -548,13 +546,13 @@ textarea {
 
 	<!-- Modal auction notifications -->
 
-	<div id="messageModal" class="modal">
-		<div class="modal-content">
-			<h4>Mensaje</h4>
-			<h5 id="showmessageModal"></h5>
+	<div id="messageModal" class="modal border-radius-10">
+		<div class="notification">
+			<h4 style="text-align: center;" id="titleModal"></h4>
+			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmessageModal"></p>
 		</div>
-		<div class="modal-footer">
-			<button class="modal-action blue modal-close waves-effect waves-blue btn-flat ">ok</button>
+		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
+			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
 		</div>
 	</div>
 

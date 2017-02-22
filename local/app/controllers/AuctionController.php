@@ -204,14 +204,78 @@ class AuctionController extends BaseController {
 				'name'			=> 'required|max:50',
 				'nickname'		=> 'required|max:20',
 				'email' 		=> 'required|email|max:50',
-				'amount' 		=> 'required|digits_between:1,9',
-				'comment' 		=> 'required|max:200'
+				'amount' 		=> 'required|digits_between:1,9'
 			];
 			$validator = Validator::make($data, $rules);
 			if($validator->passes()){
 				$credentials = $data;
 				$data = (object)$data;
-				$user = Auction_user::isActive($data->email);
+				
+				
+				/*Obtener datos subasta activa*/
+				$auction = Subasta::getActiveAuction();
+				$auction_id = $auction->id;
+
+						
+				$bid = Auction_bid::getHighestBid($auction_id); /*Traer el monto actual mas grande de la suabasta activa*/
+				$highestBid = $bid->amount;
+				if($data->amount <= $highestBid){ /*Si la cantidad a ofertar es menor o igual que la cantidad mayor ofertada mandar mensaje de generar una ofertar mayor*/
+					return Response::json(array('error' => 4,'msg' => number_format($highestBid) ));
+				}else{	/*Guardar usuario y puja*/
+					$user = Auction_user::isActive($data->email); /*Checar si el usuario existe*/
+					if($user){ /*Si el usuario existe*/
+
+						$duplicateNickName = Auction_user::checkNickName($data->nickname,$user->id);
+						if($duplicateNickName){
+							return Response::json(array('error' => 5,'msg' => 'Este apodo ya esta en uso, por favor elige otro.' ));
+						}
+
+						$user_status = $user->status;
+						if($user_status){ /* Si el usuario es válido registrar puja */
+							$auction = Subasta::getActiveAuction();
+							$auction_id = $auction->id;
+							$user_id = $user->id;
+							$highestBidUser = $bid->user_id;
+							if($highestBidUser == $user_id){ /*Si la oferta a registrar pertenece al mismo usuario con la mayor oferta actual*/
+								return Response::json(array('error' => 1,'msg' => 'Su oferta no se registro ya que en este momento posee la más alta.' ));
+							}else{ /*Registrar puja*/
+								$auction_bid = new Auction_bid;
+								$auction_bid = $auction_bid->addBid($data,$auction_id,$user_id,true);
+								/*Update name & nickname*/
+								$user = Auction_user::whereEmail($data->email)->first();
+								$user->name 	= $data->name;
+								$user->nickname = $data->nickname;
+								$user->save();
+
+								if($auction_bid){
+									return Response::json(array('error' => 0,'msg' => 'Oferta registrada correctamente'));
+								}
+							}
+						}else{	/*Si el usuario existe pero no es válido mandar aviso que revise su email, sin guardar la puja*/
+							return Response::json(array('error' => 3,'msg' => 'Por favor revise su bandeja de entrada, ya se le ha enviado un E-mail de verificación.' ));
+						}
+					}else{ /*Si el usuario no existe, registrarlo, guardar la puja, ponerlo inactivo y mandar email de validación*/
+						$duplicateNickName = Auction_user::checkNickName($data->nickname,0);
+						if($duplicateNickName){
+							return Response::json(array('error' => 5,'msg' => 'Este apodo ya esta en uso, por favor elige otro.' ));
+						}
+						$newUser = new Auction_user;
+						$newUser = $newUser->addAuctionUser($data); /*get the user*/
+						$credentials['code'] = $newUser->confirmation_code;
+						
+						$auction_bid = new Auction_bid;
+						$auction_bid = $auction_bid->addBid($data,$auction_id,$newUser->id,false);
+
+						Mail::send('emails.verification', $credentials, function($message) use ($data) {
+							$message->to($data->email, $data->name)
+						->subject('Verifica tu dirección de correo');
+						});
+						return Response::json(array('error' => 2,'msg' => 'Mensaje de verificacion enviado'));
+					}
+
+				}
+
+
 				if($user){ /*Si el usuario existe*/
 					$user_status = $user->status;
 					if($user_status){ /* Si el usuario es válido registrar puja */
@@ -222,7 +286,7 @@ class AuctionController extends BaseController {
 						$highestBid = $bid->amount;
 						$highestBidUser = $bid->user_id;
 						if($highestBidUser == $user_id){ /*Si la mayor oferta pertenece al mismo usuario que en el momento tiene la mejor oferta mandar mensaje*/
-							return Response::json(array('error' => 1,'msg' => 'En este momento posee la oferta más alta' ));
+							return Response::json(array('error' => 1,'msg' => 'En este momento posee la oferta más alta.' ));
 						}else if($data->amount <= $highestBid){ /*Si la cantidad a ofertar es menor o igual que la cantidad mayor ofertada mandar mensaje de generar una ofertar mayor*/
 							return Response::json(array('error' => 4,'msg' => number_format($highestBid) ));
 						}else{ /*Registrar puja si la cantidad ofertada es mayor*/
@@ -233,7 +297,7 @@ class AuctionController extends BaseController {
 							}
 						}
 					}else{	/*Si el usuario existe pero no es válido mandar aviso que revise su email, sin guardar la puja*/
-						return Response::json(array('error' => 3,'msg' => 'Por favor revise su bandeja de entrada ya se envío un E-mail de verificación' ));
+						return Response::json(array('error' => 3,'msg' => 'Por favor revise su bandeja de entrada, ya se le ha enviado un E-mail de verificación.' ));
 					}
 				}else{ /*Si el usuario no existe, registrarlo, guardar la puja, ponerlo inactivo y mandar email de validación*/
 
@@ -244,7 +308,7 @@ class AuctionController extends BaseController {
 						$message->to($data->email, $data->name)
 					->subject('Verifica tu dirección de correo');
 					});
-					return Response::json(array('error' => 2,'msg' => 'Un mensaje de verificación ha sido enviado a su correo'));
+					return Response::json(array('error' => 2,'msg' => 'Mensaje de verificacion enviado'));
 				}
 				return Response::json(array('user' => $user));
 			}else{

@@ -27,7 +27,7 @@ class Auction_bid extends Eloquent
 		$this->comment 			= $data->comment;
 		$this->subasta_id 		= $id_auction;
 		$this->subasta_user_id 	= $id_user;
-		$this->status 			= 1;
+		$this->status 			= $active;
 		if($this->save()){
 			return true;
 		}

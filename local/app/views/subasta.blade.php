@@ -172,10 +172,10 @@ textarea {
 								<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="gb_top_x1 img_ga_pq">
 							</div>
 							<div class="col s12 m12 l2 offset-l2 gb_mg">
-								<p class="gb_line_x1">{{$submodule_section_data->Desc1PorQue}}</p>
+								<p class="gb_line_x1 gb_gray">{{$submodule_section_data->Desc1PorQue}}</p>
 							</div>
 							<div class="col s12 m12 l2 offset-l4 gb_top_x7 gb_mg2">
-								<p class="gb_line_x1">{{$submodule_section_data->Desc2PorQue}}</p>
+								<p class="gb_line_x1 gb_gray">{{$submodule_section_data->Desc2PorQue}}</p>
 							</div>
 						</div>
 					</div>
@@ -328,7 +328,10 @@ textarea {
 							<div class="col s12 l4">
 								<div class="row">
 									<div class="gb_content_text1">
-										<h4 class="light right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+										<div class="gb_content_line">
+											<img class="hide-on-med-and-down responsive-img gb_img_line1" src="media/img/subasta/bg_line1.png" alt="">
+										</div>
+										<h4 class="light gb_gray right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
 										<p class="light left-align line_piece1">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 									</div>
 								</div>
@@ -343,7 +346,10 @@ textarea {
 								</div>
 								<div class="row">
 									<div class="gb_content_text3">
-										<h4 class="light left-align">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+										<div class="gb_content_line">
+											<img class="hide-on-med-and-down gb_img_line2" src="media/img/subasta/bg_line2.png" alt="">
+										</div>
+										<h4 class="light gb_gray left-align">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
 										<p class="light left-align">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
 									</div>
 								</div>

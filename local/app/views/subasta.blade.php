@@ -334,10 +334,11 @@ textarea {
 								</div>
 								<div class="row">
 									<div class="gb_content_text2">
-										<h4>Fuerza, <span>templanza y resistencia</span></h4>
+										{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}
+										<!-- <h4>Fuerza, <span>templanza y resistencia</span></h4>
 										<div class="gb_content_head gb_content_left">
 											<span>ante la adversidad de la noche.</span>
-										</div>
+										</div> -->
 									</div>
 								</div>
 								<div class="row">

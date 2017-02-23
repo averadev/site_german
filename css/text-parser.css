@@ -27,7 +27,7 @@ span.size-x2-left2 {
 span.size-x8-left {
 	font-size: 40px;
 	color: #2d332c;
-	margin-left: 8rem;
+	margin-left: 4rem;
 	line-height: 140%;
 }
 
@@ -79,4 +79,5 @@ span.size-x5 {
 	font-style: italic;
 	color: #2d332c;
 	line-height: 0rem;
+	margin-left: -1em;
 }

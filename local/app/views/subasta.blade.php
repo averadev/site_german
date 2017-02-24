@@ -157,25 +157,38 @@ textarea {
 	</div>
 
 	<!-- Start ¿Porque? -->
+	
 	<div id="tab4" class="bg_porque">
-		<div class="section no-pad-bot">
-			<div class="container">
-				<div class="row gb_bottom_x7">
-					<div class="col s12 l12">
-						<div class="row">
-							<div class="col s12 m12 l12 center light">
-								<p class="gb_top_x6 gb_top_left_x4" style="margin-bottom: 0rem;">{{$submodule_section_data->TitlePorQue}}</p>
+		<div class="gb_container_pq">
+			<div class="section no-pad-bot">
+				<div class="container">
+					<div class="row gb_bottom_x7">
+						<div class="col s12 l12">
+							<div class="row">
+								<div class="col s12 m12 l12 center light">
+									<p class="gb_top_x6 gb_top_left_x4 gb_title_pqx1" style="margin-bottom: 0rem;">{{$submodule_section_data->TitlePorQue}}</p>
+								</div>
 							</div>
-						</div>
-						<div class="row gb_bottom_x7">
-							<div class="col s12 m12 l4">
-								<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="gb_top_x1 img_ga_pq">
-							</div>
-							<div class="col s12 m12 l2 offset-l2 gb_mg">
-								<p class="gb_line_x1 gb_gray">{{$submodule_section_data->Desc1PorQue}}</p>
-							</div>
-							<div class="col s12 m12 l2 offset-l4 gb_top_x7 gb_mg2">
-								<p class="gb_line_x1 gb_gray">{{$submodule_section_data->Desc2PorQue}}</p>
+							<div class="row gb_bottom_x7">
+								<div class="gb_content_pq">
+									<div class="gb_content_pq1 gb_uno">
+										<div class="col s12 m12 l4">
+											<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="gb_top_x1 gb_img_pq">
+										</div>
+									</div>
+									<div class="gb_content_pq1 gb_dos">
+										<div class="col s12 m12 l2 offset-l2 gb_mg gb_cont1">
+											<div class="gb_content_text4">
+												<p class="gb_text_pqx1 gb_gray">{{$submodule_section_data->Desc1PorQue}}</p>
+											</div>
+										</div>
+									</div>
+									<div class="gb_content_pq1 gb_tres">
+										<div class="col s12 m12 l2 offset-l4 gb_top_x7 gb_mg2 gb_cont2">
+											<p class="gb_text_pqx1 gb_gray">{{$submodule_section_data->Desc2PorQue}}</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -337,11 +350,7 @@ textarea {
 								</div>
 								<div class="row">
 									<div class="gb_content_text2">
-										{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}
-										<!-- <h4>Fuerza, <span>templanza y resistencia</span></h4>
-										<div class="gb_content_head gb_content_left">
-											<span>ante la adversidad de la noche.</span>
-										</div> -->
+										<p class="gb_title_eqtcx2">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
 									</div>
 								</div>
 								<div class="row">
@@ -628,7 +637,7 @@ textarea {
 									<div style="padding: 10px; margin-top: 2em;">
 										<form id="FormCS" class="col s12 white gb_arrow_box" action="http://localhost:8080/site_german.git/subasta" method="post">
 											<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
-											<p style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
+											<p class="gb_textcs_x1" style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
 											<div class="row no-margin-bottom">
 												<div class="col s12">
 													<div class="col s12 l4">

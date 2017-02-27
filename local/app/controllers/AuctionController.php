@@ -150,9 +150,9 @@ class AuctionController extends BaseController {
 			} else {
 
 				$send = Mail::send('subastas.email_send', $input, function($message) use ($input) {
-					$message->to('tu_correo@dominio.com')
-					->from(Input::get('email'), 'German Arzate | Próximamente')
-					->subject(Input::get('comment'));
+					$message->to(Input::get('email'))
+					//->from(Input::get('email'), 'German Arzate | Próximamente')
+					->subject('German Arzate | Próximamente');
 				});
 				return $send;
 

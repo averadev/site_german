@@ -128,10 +128,45 @@
 	.contract textarea{
 		margin: 0 0 10px 0;
 	}
+
+	.modal_content{
+		padding: 2rem 2rem 0.5rem 2rem;
+	}
 	
-textarea {
-	margin: 0 0 10px 0;
-}	
+	.modal_img{
+		width: 100%;
+		padding-bottom: 0%;
+		margin-bottom: 0%;
+		display: block;
+	}
+
+	.modal_md {
+		display: none;
+		position: fixed;
+		left: 0;
+		right: 0;
+		background-color: #fafafa;
+		padding: 0;
+		max-height: 70%;
+		width: 40%;
+		margin: auto;
+		overflow-y: auto;
+		border-radius: 2px;
+	}	
+
+	textarea {
+		margin: 0 0 10px 0;
+	}
+	.img_proceso {
+	    border-radius: 1%;
+	    margin-left: -80px;
+	    margin-top: 160px;
+	    padding-bottom: 10px;
+	}
+
+	h5.proceso_top{
+		margin-top: 52px
+	}
 
 
 </style>
@@ -158,44 +193,37 @@ textarea {
 
 	<!-- Start ¿Porque? -->
 	
-	<div id="tab4" class="bg_porque">
-		<div class="gb_container_pq">
+	<div id="tab4" class="bg_porque" style="position: relative;  z-index: 0;  height: 700px;" >
+		<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" style="position: absolute; width: 800px; bottom: 0; z-index: -1; ">
+		<div class="">
 			<div class="section no-pad-bot">
 				<div class="container">
-					<div class="row gb_bottom_x7">
+					<div class="row">
 						<div class="col s12 l12">
 							<div class="row">
 								<div class="col s12 m12 l12 center light">
-									<p class="gb_top_x6 gb_top_left_x4 gb_title_pqx1" style="margin-bottom: 0rem;">{{$submodule_section_data->TitlePorQue}}</p>
+									<p class="gb_top_x6 gb_top_left_x4 gb_title_pqx1" style="margin-bottom: -1.5rem;">{{$submodule_section_data->TitlePorQue}}</p>
 								</div>
 							</div>
-							<div class="row gb_bottom_x7">
-								<div class="gb_content_pq">
-									<div class="gb_content_pq1 gb_uno">
-										<div class="col s12 m12 l4">
-											<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" alt="" class="gb_top_x1 gb_img_pq">
+							<div class="row">
+								<div class="col l12">
+									<div class="col l6 right" style="margin-top: 0px;">
+										<div class="col l6">
+											<p class="gb_text_pqx1 gb_gray">{{$submodule_section_data->Desc1PorQue}}</p>	
 										</div>
-									</div>
-									<div class="gb_content_pq1 gb_dos">
-										<div class="col s12 m12 l2 offset-l2 gb_mg gb_cont1">
-											<div class="gb_content_text4">
-												<p class="gb_text_pqx1 gb_gray">{{$submodule_section_data->Desc1PorQue}}</p>
-											</div>
-										</div>
-									</div>
-									<div class="gb_content_pq1 gb_tres">
-										<div class="col s12 m12 l2 offset-l4 gb_top_x7 gb_mg2 gb_cont2">
-											<p class="gb_text_pqx1 gb_gray">{{$submodule_section_data->Desc2PorQue}}</p>
+										<div class="col l6">
+											<p class="gb_text_pqx2 gb_gray">{{$submodule_section_data->Desc2PorQue}}</p>	
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>					
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<!-- Start ¿Porque? -->
 
 	<!-- Start Proceso -->
@@ -204,29 +232,27 @@ textarea {
 			<div class="container">
 				<div class="row">
 					<div class="col s12 l12">
-						<section class="cd-horizontal-timeline">
-							<div class="events-content">
+						<section class="cd-horizontal-timeline" style="position: relative;">
+							<div class="events-content" style="height: 479px;">
 								<ol>
 									<li class="selected" data-date="16/01/2014">
-										<div class="col s12">
-											<div class="row">
-												<div class="col s12 m10">
+									
+
 													<p>{{$submodule_section_data->SeccionTituloProceso}}</p>
-												</div>
-											</div>
+
 											<div class="row">
 												<div class="col l4">
 		      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 												</div>
 												<div class="col l3">
-													<h5 class="light">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
+													<h5 class="light proceso_top">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
 													<p>{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
 												</div>
 												<div class="col l5">
 		      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto2}}" width="591" height="600" alt="" class="hide-on-med-and-down img_proceso_2">
 												</div>
 											</div>
-										</div>
+										
 									</li>
 
 									<li data-date="28/02/2014">
@@ -236,7 +262,7 @@ textarea {
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
 											<div class="col l3">
-												<h5 class="light">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
+												<h5 class="light proceso_top">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
 											</div>
 											<div class="col l5">
@@ -252,7 +278,7 @@ textarea {
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
 											<div class="col l3">
-												<h5 class="light">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
+												<h5 class="light proceso_top">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
 											</div>
 											<div class="col l5">
@@ -268,7 +294,7 @@ textarea {
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
 											<div class="col l3">
-												<h5 class="light">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
+												<h5 class="light proceso_top">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
 											</div>
 											<div class="col l5">
@@ -284,7 +310,7 @@ textarea {
 	      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" width="250" height="250" alt="" class="img_proceso">
 											</div>
 											<div class="col l3">
-												<h5 class="light">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
+												<h5 class="light proceso_top">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
 												<p>{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
 											</div>
 											<div class="col l5">
@@ -298,22 +324,16 @@ textarea {
 							<!-- .events-content -->
 
 							<!-- Start .timeline -->
-							<div class="timeline">
+							<div class="timeline" style="width:500px; position: absolute; bottom: -1em; margin-left: auto; margin-right: auto; left: 200px;  right: 0; z-index: 1000;" >
 								<!-- Start .events-wrapper -->
 								<div class="events-wrapper">
-									<div class="events">
+									<div class="events" style="min-width: 350px;transform: translateX(-86px); ">
 										<ol>
 											<li><a href="#0" data-date="16/01/2014" class="selected">{{$submodule_section_data->SeccionSubTProcesoConcepto}}</a></li>
 											<li><a href="#0" data-date="28/02/2014">{{$submodule_section_data->SeccionSubTProcesoSuenos}}</a></li>
 											<li><a href="#0" data-date="20/04/2014">{{$submodule_section_data->SeccionSubTProcesoMagia}}</a></li>
 											<li><a href="#0" data-date="20/05/2014">{{$submodule_section_data->SeccionSubTProcesoPasion}}</a></li>
 											<li><a href="#0" data-date="09/07/2014">{{$submodule_section_data->SeccionSubTProcesoLuz}}</a></li>
-											<li><a href="#0" data-date="30/08/2014"></a></li>
-											<li><a href="#0" data-date="15/09/2014"></a></li>
-											<li><a href="#0" data-date="01/11/2014"></a></li>
-											<li><a href="#0" data-date="10/12/2014"></a></li>
-											<li><a href="#0" data-date="19/01/2015"></a></li>
-											<li><a href="#0" data-date="03/03/2015"></a></li>
 										</ol>
 										<span class="filling-line" aria-hidden="true"></span>
 									</div> <!-- .events -->
@@ -329,48 +349,36 @@ textarea {
 	<!-- Start Proceso -->
 
 	<!-- Start ¿En Que Te Convierte? -->
-	<div id="tab6" class="bg_queteconvierte">
-		<div class="section">
-			<div class="container">
+	<div id="tab6" class="bg_queteconvierte" style="position: relative;  z-index: 0;  height: 700px;">
+		<img style="position: absolute; bottom: 0; left: 0; width: 300px;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
+		<img style="position: absolute; bottom: 0; right: 0; width: 300px;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}">			
+			<div class="container" style="padding-top: 100px;" >
 				<div class="row">
-					<div class="col s12">
-						<div class="row">
-							<div class="col s12 l4">
-								<img class="hide-on-med-and-down responsive-img gb_img_piece1 gb_bottom_x8" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
-							</div>
-							<div class="col s12 l4">
-								<div class="row">
-									<div class="gb_content_text1">
-										<div class="gb_content_line">
-											<img class="hide-on-med-and-down responsive-img gb_img_line1" src="media/img/subasta/bg_line1.png" alt="">
-										</div>
-										<h4 class="light gb_gray right-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
-										<p class="light left-align line_piece1">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
-									</div>
+					<div class="col l8 offset-l2 ">
+						<div class="col l6">
+							<h4 style="text-align: right; margin-bottom: 0; " class="gb_gray light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+							<div class="col l9 right">
+								<div class="row" style="position: relative;" >
+									<img class="hide-on-med-and-down responsive-img gb_img_line1" src="media/img/subasta/bg_line1.png" alt="">
+									<p  style="text-align: right; line-height: 130%; margin-top: 0.5rem; " class="light">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 								</div>
-								<div class="row">
-									<div class="gb_content_text2">
-										<p class="gb_title_eqtcx2">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
-									</div>
-								</div>
-								<div class="row">
-									<div class="gb_content_text3">
-										<div class="gb_content_line">
-											<img class="hide-on-med-and-down gb_img_line2" src="media/img/subasta/bg_line2.png" alt="">
-										</div>
-										<h4 class="light gb_gray left-align">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
-										<p class="light left-align">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>
-									</div>
-								</div>
-							</div>
-							<div class="col 12 l4">
-								<img class="hide-on-med-and-down responsive-img gb_img_piece2 gb_bottom_x8 gb_piece_x2" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" width="400" height="300" alt="">
 							</div>
 						</div>
 					</div>
+					<div class="col l12">
+						<p style=" margin-left: 30%;  margin-top: 50px; " >{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>					
+					</div>
+					<div class="col l8 offset-l2 ">
+						<div class="col l6 right">
+							<div class="col l9 right" style="position: relative;" >
+								<img class="hide-on-med-and-down gb_img_line2" src="media/img/subasta/bg_line2.png" alt="">
+								<h4 style="margin-bottom: 0; " class="gb_gray light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+								<p  style="line-height: 130%; margin-top: 0.5rem; " class="light">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>								
+							</div>
+						</div>
+					</div>					
 				</div>
-			</div>
-		</div>
+			</div>	
 	</div>
 	<!-- End ¿En Que Te Convierte? -->
 
@@ -381,89 +389,94 @@ textarea {
 				<div class="row">
 					<div class="col s12">
 						<div class="row">
-							<div class="col s12 col m6 col l10 offset-l1 light">
-								<p class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
+							<div class="col s12" style="margin-top: 4%;">
+								<p style="margin-left: 7.5%;" class="gb_top_x3">{{$submodule_section_data->SeccionEncabezadoEspecificaciones}}</p>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col s12 col m6 col l4 offset-l1">
-								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" alt="">
+							<div class="col s12 col m6 col l4"> <!-- img subasta -->
+							<div style="position: relative; margin-bottom: 110%; ">
+								<img  style="position: absolute; left: 25%; width: 110%; "  src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones}}" alt="">								
 							</div>
-							<div class="col s12 col m6 col l3">
-								<div class="gb_top_x3">
-									<h5 class="">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
-									<p style="" class="left-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>
+							</div>
+							<div class="col s12 col m6 col l3"> <!-- text materiales -->
+								<div style="position: relative; padding-top: 13% " >								
+									<div style=" position: absolute; left: 20%; " class="col l11">
+										<div style="position: relative;">
+											<img style="position: absolute; top: 8px; left:-58%; width: 50%; " src="media/img/subasta/left_sign.png">
+											<h5 class="light" >{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</h5>
+										</div>										
+										<p style="margin-top: 0px;" class="left-align light med-lineheight">{{$submodule_section_data->SeccionDescEspecificaciones}}</p>		
+									</div>
 								</div>
 							</div>
 							<div class="col l4 s12">
 								<div class="row">
-									<div class="col l3">
-										<a class="modal-trigger" href="#modal1"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" width="139" height="139" alt=""></a>
-										<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col l3 s12">
-										<a class="modal-trigger2" href="#modal2"><img class="hide-on-med-and-down circle responsive-img img_right" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" width="139" height="139" alt=""></a>
-										<h5 class="hide-on-med-and-down light txt_fright">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h5>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col l3 s12" style="margin-left: -2em;">
-										<a class="modal-trigger3" href="#modal3"><img class="hide-on-med-and-down circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" width="139" height="139" alt=""></a>
-										<h5 class="hide-on-med-and-down light txt_fright" style="margin-right: -7em">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h5>
+									<div class="col l12 s12">
+										<div class="hide-on-med-and-down " style="position: relative; margin-top: -8%; margin-left: 12%;">
+											<a class="modal-trigger" href="#modal1"><img style=" width:35%;  " class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones1}}" alt=""></a>
+											<img style="position: absolute; top: 0%; left:31%; width: 6%; " src="media/img/subasta/plus_sign.png">
+											<h4 style="margin-top: 10%; margin-bottom: 0%; font-size: 42px; float: right; " class="hide-on-med-and-down thin ">{{$submodule_section_data->PorcentajeMaterialEspecificacion1}}</h4>
+										</div>
+										<div class="hide-on-med-and-down " style="position: relative; margin-top: 17%; margin-left: 33%;">
+											<a class="modal-trigger2" href="#modal2"><img  style=" width:45%;  " class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones2}}" alt=""></a>
+											<img style="position: absolute; top: 0%; left:39%; width: 7.5%; " src="media/img/subasta/plus_sign.png">
+											<h4 style="margin-top: 10%; margin-bottom: 0%; font-size: 42px; float: right; " class="hide-on-med-and-down thin ">{{$submodule_section_data->PorcentajeMaterialEspecificacion2}}</h4>
+										</div>
+										<div class="hide-on-med-and-down " style="position: relative;">
+											<a class="modal-trigger3" href="#modal3"><img style="width:31%; position: absolute;" class="circle responsive-img" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEspecificaciones3}}" alt=""></a>
+											<img style="position: absolute; top: 0%; left:27%; width: 5.5%; " src="media/img/subasta/plus_sign.png">										
+											<h4 style="margin-top: 10%; margin-bottom: 0%; font-size: 42px; float: right; " class="hide-on-med-and-down thin ">{{$submodule_section_data->PorcentajeMaterialEspecificacion3}}</h4>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<!-- Start Modal -->
-				<div id="modal1" class="modal_md">
-					<div class="modal_dialog">
-						<div class="modal_content">
-							<h3>{{$submodule_section_data->SecccionTiuloEspecificacion1}}</h3>
-							<p>{{$submodule_section_data->SecccionDescEspecificacion1}}</p>
-							<div class="col l4 center">
-								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion1}}" alt="">
-							</div>
-							<!-- modal close button -->
-							<a href="#" class="modal_close btn_modal_close modal-close">x</a>
-						</div>
-					</div>
-				</div>
 
-				<div id="modal2" class="modal_md">
-					<div class="modal_dialog">
-						<div class="modal_content">
-							<h3>{{$submodule_section_data->SecccionTiuloEspecificacion2}}</h3>
-							<p>{{$submodule_section_data->SecccionDescEspecificacion2}}</p>
-							<div class="col l4 center">
-								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion2}}" alt="">
-							</div>
-							<!-- modal close button -->
-							<a href="#" class="modal_close btn_modal_close modal-close">x</a>
-						</div>
-					</div>
 				</div>
-
-				<div id="modal3" class="modal_md">
-					<div class="modal_dialog">
-						<div class="modal_content">
-							<h3>{{$submodule_section_data->SecccionTiuloEspecificacion3}}</h3>
-							<p>{{$submodule_section_data->SecccionDescEspecificacion3}}</p>
-							<div class="col l4 center">
-								<img class="responsive-img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion3}}" alt="">
-							</div>
-							<!-- modal close button -->
-							<a href="#" class="modal_close btn_modal_close modal-close">x</a>
-						</div>
-					</div>
-				</div>
-				<!-- End Modal -->
 			</div>
 		</div>
 	</div>
+
+	<!-- Start Modal -->
+	<div id="modal1" class="modal_md">
+					<div class="modal_dialog">
+						<div class="modal_content">
+							<h4 style="margin-bottom: -2%; margin-top: 1%;" >{{$submodule_section_data->SecccionTiuloEspecificacion1}}</h4 >
+							<p class="light" style="line-height: 1.5rem; font-size: 1.2rem; " >{{$submodule_section_data->SecccionDescEspecificacion1}}</p>
+							<!-- modal close button -->
+							<a class="modal_close btn_modal_close modal-close">x</a>
+						</div>
+					</div>
+					<img class="modal_img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion1}}" alt="">
+	</div>
+
+	<div id="modal2" class="modal_md">
+		<div class="modal_dialog">
+			<div class="modal_content">
+				<h4 style="margin-bottom: -2%; margin-top: 1%;" >{{$submodule_section_data->SecccionTiuloEspecificacion2}}</h4 >
+				<p class="light" style="line-height: 1.5rem; font-size: 1.2rem; " >{{$submodule_section_data->SecccionDescEspecificacion2}}</p>
+				<!-- modal close button -->
+				<a class="modal_close btn_modal_close modal-close">x</a>
+			</div>
+		</div>
+		<img class="modal_img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion2}}" alt="">
+	</div>
+
+	<div id="modal3" class="modal_md">
+		<div class="modal_dialog">
+			<div class="modal_content">
+				<h4 style="margin-bottom: -2%; margin-top: 1%;" >{{$submodule_section_data->SecccionTiuloEspecificacion3}}</h4 >
+				<p class="light" style="line-height: 1.5rem; font-size: 1.2rem; " >{{$submodule_section_data->SecccionDescEspecificacion3}}</p>
+				<!-- modal close button -->
+				<a class="modal_close btn_modal_close modal-close">x</a>
+			</div>
+		</div>
+		<img class="modal_img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion3}}" alt="">
+	</div>
+				<!-- End Modal -->
+
 	<!-- End Especificaciones -->
 
 	<!-- INFO SUBASTA -->
@@ -620,9 +633,9 @@ textarea {
 					</div>
 					<div class="col s12 l6">
 						<div class="row">
-							<div class="col s12 m8 l6 right">
+							<div class="col l12">
 								<div class="row">
-									<span id="" class="right gb_gray date_current hide-on-med-and-down"></span>
+									<p  style="text-align: right; padding-right: 2rem; " class="gb_gray date_current hide-on-med-and-down"></p>
 								</div>
 							</div>
 							<div class="col s12 m12 l12 gb_mlf_2" style="margin-left: -5.6em; margin-top: 2em;">

@@ -16,7 +16,7 @@
 				<div class="col l4 s12">
 					<div class="row">
 						<div class="col s12">
-							<p style="margin-bottom: 1em; font-size: 14px; letter-spacing: 1px; " class="footer-color"> ¡INSCRÍBITE A MI NEWSLETTER! </p>
+							<p style="margin-bottom: 1em; font-size: 14px; letter-spacing: 1px; " class="footer-color"> ¡INSCRÍBETE A MI NEWSLETTER! </p>
 						</div>
 						<form class="myform col s11 l9 center" data-abide id="mailform">
 						

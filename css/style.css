@@ -670,7 +670,7 @@ nav.mymenu ul a {
 .img_proceso_2 {
 	position: absolute;
 	top: -172px;
-	width: 40%;
+
 }
 .img_proceso_3 {
 	position: absolute;
@@ -745,6 +745,10 @@ nav.mymenu ul a {
 .gb_text_pqx1 {
 	line-height: inherit;
 }
+.gb_text_pqx2 {
+	line-height: inherit;
+	margin-top: 50%;
+}
 .gb_mg {
 	margin-left: 16em;
 }
@@ -779,16 +783,16 @@ nav.mymenu ul a {
 }
 .gb_img_line1 {
 	position: absolute;
-	margin-left: -7.5em;
-	margin-top: 3.7em;
+	margin-left: -12em;
+	margin-top: 0.4em;
 	width: 160px;
 	max-width: 100%;
 }
 .gb_img_line2 {
 	position: absolute;
 	width: 286px;
-	margin-left: 8em;
-	margin-top: 1em;
+	margin-left: 7em;
+	margin-top: 2.3em;
 	z-index: 1;
 }
 .gb_piece_x2 {

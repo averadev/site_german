@@ -1,13 +1,13 @@
 jQuery(document).ready(function($){
-	$('.button-collapse').sideNav({
+	$('.button-collapse').sideNav({/*materializecss nav*/
 	    menuWidth: 300, // Default is 300
 	    edge: 'left', // Choose the horizontal origin
 	    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
 	    draggable: true // Choose whether you can drag to open on touch screens
 	  }
-	);
-	var timelines = $('.cd-horizontal-timeline'),
-		eventsMinDistance = 60;
+	);	
+    var timelines = $('.cd-horizontal-timeline'),
+		eventsMinDistance = 30;
 
 	(timelines.length > 0) && initTimeline(timelines);
 
@@ -129,16 +129,18 @@ jQuery(document).ready(function($){
 		var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
 			eventLeft = eventStyle.getPropertyValue("left"),
 			eventWidth = eventStyle.getPropertyValue("width");
-		eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
+		//eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
 		var scaleValue = eventLeft/totWidth;
 		setTransformValue(filling.get(0), 'scaleX', scaleValue);
 	}
 
 	function setDatePosition(timelineComponents, min) {
+		var plus = 0;
 		for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
-		    var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
-		    	distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
-		    timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
+			plus = plus +26.8;
+			//var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
+			//	distanceNorm = plus;
+			timelineComponents['timelineEvents'].eq(i).css('left', plus+'%');
 		}
 	}
 
@@ -273,3 +275,4 @@ jQuery(document).ready(function($){
 		return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
 	}
 });
+

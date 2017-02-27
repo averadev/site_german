@@ -20,14 +20,15 @@
   position: relative;
   height: 100px;
   width: 90%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
 }
 .cd-horizontal-timeline .events-wrapper {
   position: relative;
   height: 100%;
   margin: 0 40px;
-  overflow: hidden;
+  /*overflow: hidden;*/
+
 }
 .cd-horizontal-timeline .events-wrapper::after, .cd-horizontal-timeline .events-wrapper::before {
   /* these are used to create a shadow effect at the sides of the timeline */
@@ -36,24 +37,24 @@
   z-index: 2;
   top: 0;
   height: 100%;
-  width: 20px;
+  width: 0px;
 }
 .cd-horizontal-timeline .events-wrapper::before {
   left: 0;
   /*background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
   background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));*/
   top: 44px;
-  height: 12px;
+  height: 0px;
   width: 2px;
-  border: 1px solid #919493;
+  /*border: 1px solid #919493;*/
   background-color: #919493;
 }
 .cd-horizontal-timeline .events-wrapper::after {
   right: 0;
   top: 44px;
-  height: 12px;
+  height: 0px;
   width: 2px;
-  border: 1px solid #919493;
+  /*border: 1px solid #919493;*/
   background-color: #919493;
   /*background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
   background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));*/
@@ -105,6 +106,7 @@
   font-weight: bold;
   text-transform: uppercase;
   padding-bottom: 15px;
+  margin-left: -38%;
   color: #898a8c;
   /* fix bug on Safari - text flickering while timeline translates */
   -webkit-transform: translateZ(0);
@@ -300,6 +302,7 @@
 .cd-horizontal-timeline .events-content li > * {
   /*max-width: 800px;*/
   margin: 0 auto;
+
 }
 .cd-horizontal-timeline .events-content h2  {
   font-weight: bold;
@@ -348,6 +351,66 @@
 .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
   line-height: 1.6;
 }
+/* Start Background */
+.bg_porque {
+  background-image: url("../media/img/subasta/bg_porque.jpg");
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bgg_proceso {
+  background-image: url("../media/img/subasta/bg_proceso.jpg");
+  width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bg_queteconvierte {
+  background-image: url("../media/img/subasta/bg_enqueteconvierte.jpg");
+  width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bg_especificaciones {
+  background-image: url("../media/img/subasta/bg_especificaciones.jpg");
+  width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.bg_comingsoon {
+  background-image: url("../media/img/subasta/bg_comingsoon.jpg");
+  width: 100%;
+  background-position: center center;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.img_proceso {
+  border-radius: 1%;
+  margin-top: 59px;
+}
+.img_proceso_2 {
+  /*border-radius: 50%;
+  margin-top: 0px;
+  border: 3px solid #2f332d;*/
+  position: absolute;
+  top: -172px;
+  width: 40%;
+  /*right: 0;*/
+}
+.img_proceso_3 {
+  position: absolute;
+  top: -172px;
+  width: 40%;
+}
+/* End Background */
 @media screen and (max-width: 1024px) {
 
 }
@@ -489,4 +552,8 @@
     -o-transform: translateX(0%);
     transform: translateX(0%);
   }
+}
+
+li{
+  list-style-type: none;
 }

@@ -621,7 +621,6 @@ nav.mymenu ul a {
 }
 .bgg_proceso {
 	background-image: url("../media/img/subasta/bg_proceso.jpg");
-	width: 100%;
 	background-position: center center;;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -663,20 +662,6 @@ nav.mymenu ul a {
 	-o-background-size: cover;
 	background-size: cover;
 }
-.img_proceso {
-	border-radius: 1%;
-	margin-top: 59px;
-}
-.img_proceso_2 {
-	position: absolute;
-	top: -172px;
-
-}
-.img_proceso_3 {
-	position: absolute;
-	top: -172px;
-	width: 40%;
-}
 /* End Background */
 .gb_title_auction {
 	font-family: "Crimson Text";
@@ -710,9 +695,6 @@ nav.mymenu ul a {
 }
 .gb_top_left_x3 {
 	margin-left: -12rem;
-}
-.gb_top_left_x4 {
-	margin-left: 13rem;
 }
 .gb_top_left_x5 {
 	margin-left: 11rem;
@@ -924,7 +906,7 @@ p.line_piece1:after {
 		margin-left: 0em !important;
 		margin-top: -1em !important;
 	}
-	.gb_title_pqx1, span.size-x5 {
+	.gb_title_pqx1{
 		font-size: 5em;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1052,7 +1034,7 @@ p.line_piece1:after {
 		margin-bottom: 0;
 		margin: 0 auto;
 	}
-	.gb_title_pqx1, span.size-x5 {
+	.gb_title_pqx1{
 		font-size: 5em;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1148,7 +1130,7 @@ p.line_piece1:after {
 		max-width: 100%;
 		margin: 0 auto;
 	}
-	.gb_title_pqx1, span.size-x5 {
+	.gb_title_pqx1{
 		font-size: 4em;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1247,7 +1229,7 @@ p.line_piece1:after {
 		max-width: 100%;
 		margin: 0 auto;
 	}
-	.gb_title_pqx1, span.size-x5 {
+	.gb_title_pqx1{
 		font-size: 3.3em;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1326,7 +1308,7 @@ p.line_piece1:after {
 		margin-bottom: 1rem;
 	}
 	/* ¿EQTC? */
-	.gb_title_eqtcx2, span.size-x5 {
+	.gb_title_eqtcx2{
 		font-size: 3.3em !important;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1382,7 +1364,7 @@ p.line_piece1:after {
 		max-width: 100%;
 		margin: 0 auto;
 	}
-	.gb_title_pqx1, span.size-x5 {
+	.gb_title_pqx1{
 		font-size: 2.8em;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1458,7 +1440,7 @@ p.line_piece1:after {
 		margin-bottom: 1rem;
 	}
 	/* ¿EQTC? */
-	.gb_title_eqtcx2, span.size-x5 {
+	.gb_title_eqtcx2{
 		font-size: 3em !important;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1515,7 +1497,7 @@ p.line_piece1:after {
 		margin: 0 auto;
 		padding: 15px 2px 0px 10px;
 	}
-	.gb_title_pqx1, span.size-x5 {
+	.gb_title_pqx1{
 		font-size: 2em !important;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1587,7 +1569,7 @@ p.line_piece1:after {
 		margin-top: -11em !important;
 	}
 	/* ¿EQTC?*/
-	.gb_title_eqtcx2, span.size-x5 {
+	.gb_title_eqtcx2{
 		font-size: 2em !important;
 		margin: 25px auto;
 		margin-top: 1.5em;
@@ -1765,7 +1747,7 @@ p.line_piece1:after {
 	margin-top: 1rem;
 }
 .gb_mgr_2 {
-	margin-top: 1.6rem;
+	margin-top: 23%;
 	margin-bottom: 1rem;
 }
 .gb_mleft_x10 {
@@ -1899,6 +1881,9 @@ label.error {
 .adress-info li{
 	color: #bfbfbf;
 }
+.adress-info a{
+	color: #bfbfbf;
+}
 
 .footer-color{
 	color: #bfbfbf;
@@ -1907,3 +1892,55 @@ label.error {
 .border-radius-10{
 	border-radius: 10px;
 }
+
+p.title-porque{
+	font-size: 2.5rem;
+	line-height: 110%;
+	font-family: "Crimson Text";
+	font-weight: bold;
+	font-style: italic;
+	text-indent: -15rem;
+	color: #2d332c;
+	margin-left: 29rem;
+
+}
+
+p.title-espec{
+	font-family: 'Crimson Text';
+	font-style: italic; line-height: 250%;
+	text-indent: -7rem;
+	margin-left: 18%; 
+}
+
+p.add-right-ident-x3:before {
+	content: ' ';
+	width: 16%;
+	float: right;
+	height: 5px
+}
+
+p.justify-text{
+	text-align: justify;
+	text-justify: inter-word;
+}
+
+p.proceso-text{
+	font-size: 1rem;
+	line-height: 140%;
+	color: #787878;
+}
+
+p.title_proceso{
+	font-family: "Crimson Text";
+	font-size: 2.3rem;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 110%;
+	text-indent: -3rem;
+	margin-left: 10%;
+}
+
+
+
+
+

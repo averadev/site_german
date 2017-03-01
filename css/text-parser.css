@@ -7,7 +7,6 @@ span.size-x2 {
 	font-weight: bold;
 	font-style: italic;
 	color: #2d332c;
-	line-height: 0rem;
 }
 
 span.size-x2-left {
@@ -46,6 +45,10 @@ span.size-x3-right {
 	margin-left: 11rem;
 }
 
+span.size-x25 {
+	font-size: 2.5rem;
+}
+
 span.size-x3{
 	font-size: 3rem;
 }
@@ -69,15 +72,9 @@ span.size-x45 {
 	font-weight: bold;
 	font-style: italic;
 	color: #2d332c;
-	line-height: 0rem;
 }
 
 span.size-x5 {
 	font-family: "Crimson Text";
 	font-size: 5rem;
-	font-weight: bold;
-	font-style: italic;
-	color: #2d332c;
-	line-height: 0rem;
-	margin-left: -1em;
 }

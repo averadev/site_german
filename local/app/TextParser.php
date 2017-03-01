@@ -11,6 +11,7 @@ class TextParser {
 	public static function change($string){
 
 		$parttern = array(
+			"/<size-x25>/",
 			"/<size-x3>/",
 			"/<size-x35>/",
 			"/<size-x4>/",
@@ -26,6 +27,7 @@ class TextParser {
 		);
 
 		$replace = array(
+			"<span class='size-x25'>",
 			"<span class='size-x3'>",
 			"<span class='size-x35'>",
 			"<span class='size-x4'>",

@@ -895,7 +895,7 @@
 
 	<!-- Start Comments -->
 	<div class="bg_porque">
-		<div id="tab8" class="parallax-container">
+		<div id="tab8" class="parallax-containers">
 			<div class="section">
 				<div class="container">
 					<div class="row">
@@ -904,12 +904,56 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="s12 m6 l12">
-							<p style="color: #2d332c;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid optio illum quo fuga tempore, pariatur animi consectetur ex repudiandae delectus? Harum aliquid repellat tempora, quod atque saepe numquam sed cum.</p>
-							<br>
-							<p style="color: #2d332c;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est veritatis amet, qui iste asperiores dignissimos odit nam doloremque minus, at obcaecati quas delectus repudiandae quidem maxime, dicta, molestiae ex cumque!</p>
-							<br>
-							<p style="color: #2d332c;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel beatae quos eaque saepe eum, placeat enim temporibus. Eius, porro! Sint, magnam doloremque. Nulla velit voluptate sed explicabo repellat, debitis itaque.</p>
+						<div class="s12 l4">
+							<div class="gb_container_comments gb_gray3">
+								<div class="gb_container_header">
+									<h4>POSEIDÓN</h4>
+								</div>
+								<div class="gb_comments_rs gb_facebook">
+									<div class="gb_text_rs">
+										<span>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un</span>
+										<div class="gb_profile">
+											<img src="media/img/subasta/profile_1.png" alt="">
+											<span><strong>Martha Rodríguez. -</strong></span><span class="gb_italic"><strong>30 de junio de 2016</strong></span>
+										</div>
+									</div>
+								</div>
+								<div class="social_img"><img src="media/img/subasta/facebook-logo.png" alt=""></div>
+							</div>
+						</div>
+						<div class="s12 l4">
+							<div class="gb_container_comments gb_gray4">
+								<div class="gb_container_header">
+									<h4>TORITO NEGRO</h4>
+								</div>
+								<div class="gb_comments_tw gb_twitter">
+									<div class="gb_text_rs">
+										<span class="gb_text_white">Centellea sobre la impenetrable sombra.</span>
+										<div class="gb_profile">
+											<img src="media/img/subasta/profile_2.png" alt="">
+											<span class="gb_text_white"><strong>Mario Canales. -</strong></span><span class="gb_text_white gb_italic"><strong>10 de agosto de 2016</strong></span>
+										</div>
+									</div>
+								</div>
+								<div class="social_img"><img src="media/img/subasta/twitter-logo.png" alt=""></div>
+							</div>
+						</div>
+						<div class="s12 l4">
+							<div class="gb_container_comments gb_gray5">
+								<div class="gb_container_header gb_white">
+									<h4 class="gb_text_color1">POSEIDÓN</h4>
+								</div>
+								<div class="gb_comments_inst gb_instagram">
+									<div class="gb_text_rs">
+										<span class="gb_text_color1">Cuando siento más cerca de mi corazon los rumores de vida de ese pequeño mundo que palpita en mí tallos de las hojas.</span>
+										<div class="gb_profile">
+											<img src="media/img/subasta/profile_3.png" alt="">
+											<span class="gb_text_color1"><strong>Daniel Beltrán. -</strong></span><span class="gb_text_color1 gb_italic"><strong>12 de octubre de 2016</strong></span>
+										</div>
+									</div>
+								</div>
+								<div class="social_img"><img src="media/img/subasta/instagram-logo.png" alt=""></div>
+							</div>
 						</div>
 					</div>
 				</div>

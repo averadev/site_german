@@ -58,6 +58,7 @@ class AuctionController extends BaseController {
     public function getSectionSubPQ () {
     	// objeto vacio
     	$submodule_section_data = new stdClass();
+    	//$comments_data = new stdClass();
 		
     	$submodule_section = DB::table('module')
 		->join('submodule', 'module.id', '=', 'submodule.idModule')
@@ -111,10 +112,11 @@ class AuctionController extends BaseController {
 		*/
 			$CurrentAuctionPics = Subasta::getImages();
 
-		/*  */
+		/* Mostrar los comentarios de la subasta activa */	
+		$comments = Comments::getComments();
 
 
-        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour)->with('auctionpics',$CurrentAuctionPics)->with('date_coming', $date_coming);
+        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour)->with('auctionpics',$CurrentAuctionPics)->with('date_coming', $date_coming)->with('comments', $comments);
     }
 
     /**
@@ -329,6 +331,18 @@ class AuctionController extends BaseController {
 			}
 		}
 	}   
+
+	/**
+	 * Funcion getAllComments para traer todos los comentarios de la subasta
+	 */
+	public function getAllComments(){
+
+		if(Request::ajax()){
+			$comments = Comments::getComments();
+			return Response::json(array('comments' => $comments));
+		}
+
+	}
 
 
 

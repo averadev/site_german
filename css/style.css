@@ -276,7 +276,7 @@ ul.adress-info li{
 }
 
 div.bottomRule {
-	border-bottom:1px solid #787A77;
+	border-bottom:1px solid #e5eaee;
 }
 
 .small-spacing{
@@ -651,6 +651,17 @@ nav.mymenu ul a {
 	-o-background-size: cover;
 	background-size: cover;
 }
+.bg_comentario {
+	background-image: url("../media/img/subasta/bg_comentario.jpg");
+	width: 100%;
+	background-position: center center;;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 .bg_comingsoon {
 	background-image: url("../media/img/subasta/bg_comingsoon.jpg");
 	width: 100%;
@@ -841,9 +852,76 @@ p.line_piece1:after {
 	margin-top: -24px;
 }
 /* Start Comments Socials */
+.gb_date2 {
+	color: white;
+	padding-left: 9px;
+	padding-top: 8px;
+	display: inline-block;
+}
+.midH {
+	height: 150px;
+	/*max-height: 150px;*/
+}
+.midH2 {
+	height: 300px;
+}
+.fullH {
+	height:300px;
+}
+.row .col {
+	/*padding: 0px 0px;*/
+}
+.no_padd1 {
+	padding: 0px 0px !important;
+	/*border: 1px solid #ffffff;*/
+}
+.no_margin1 {
+	margin: 1px auto;
+}
+/* Start Comments Home */
+.grey.lighten-2 {
+    background-color: #b0b0b0 !important;
+}
+ul.showmoreComments{
+	height: 19em;
+	overflow: overlay;
+	width: 100%;
+}
+.underline {
+	text-decoration: underline;
+}
+.collection .collection-item {
+	background-color: #fff;
+	line-height: 1rem; 
+	padding: 18px 10px;
+	margin: 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+.collection .collection-item.avatar {
+    height: 40px;
+}
+.collection .collection-item.avatar .title {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 300;
+}
+.collection .collection-item.avatar .circle2 {
+	position: absolute;
+	width: 54px;
+	height: 54px;
+	overflow: hidden;
+	left: 11px;
+	display: inline-block;
+	vertical-align: middle;
+	top: 23%;
+}
+.circle2 {
+	border-radius: 2%;
+}
+/* End Comments Home */
 .gb_container_comments {
 	width: 100%;
-	max-width: 600px;
+	/*max-width: 600px;*/
 	padding: 15px;
 	position: relative;
 	border: 1px solid #ffffff;
@@ -853,6 +931,7 @@ p.line_piece1:after {
 	max-width: 450px;
 	padding: 15px;
 	margin: 50px auto;
+	height: 100%;
 }
 .gb_comments_tw {
 	width: 100%;
@@ -869,9 +948,6 @@ p.line_piece1:after {
 .gb_container_comments .gb_comments_rs {
 	padding: 15px;
     position: relative;
-    -webkit-border-radius: 3px;
-       -moz-border-radius: 3px;
-            border-radius: 3px;
 }
 .gb_container_comments .gb_comments_rs:after {
 	content: "";
@@ -882,6 +958,30 @@ p.line_piece1:after {
 	border-style: solid;
 	border-color: #d9d8d6 transparent transparent transparent;
 	bottom: -68px;
+	left: 50%;
+	margin-left: -30px;
+}
+.card-content .gb_text_rs:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 34px;
+	border-style: solid;
+	border-color: #d9d8d6 transparent transparent transparent;
+	bottom: 40px;
+	left: 50%;
+	margin-left: -30px;
+}
+.card-content .gb_text_tw:after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-width: 34px;
+	border-style: solid;
+	border-color: #7c7e7b transparent transparent transparent;
+	bottom: 40px;
 	left: 50%;
 	margin-left: -30px;
 }
@@ -926,14 +1026,30 @@ p.line_piece1:after {
 	margin-left: -30px;
 }
 .gb_text_rs {
-	width: 350px;
+	width: 100%;
+	max-width: 350px;
 	margin: 0 auto;
 	padding: 15px 0 15px 0px;
 }
-.gb_text_rs span {
+.gb_text_rs p {
 	font-size: 16px;
 	font-style: italic;
 	color: #2d2f2a;
+	height:90px;
+	overflow:hidden;
+}
+.gb_text_tw {
+	width: 100%;
+	max-width: 350px;
+	margin: 0 auto;
+	padding: 15px 0 15px 0px;
+}
+.gb_text_tw p {
+	font-size: 16px;
+	font-style: italic;
+	color: #2d2f2a;
+	height:90px;
+	overflow:hidden;
 }
 .gb_profile {
 	margin-top: 3%;
@@ -956,12 +1072,23 @@ p.line_piece1:after {
 	color: #ffffff !important;
 }
 .gb_container_comments .social_img img {
-    width: 32px;
-    height: 32px;
-    margin: -20px auto 0;
+	width: 32px;
+	height: 32px;
+	margin: -20px auto 0;
 	position: relative;
 	margin-top: 0em;
-	margin-left: 18.2em;
+	margin-left: 12.5em;
+}
+.card-content .social_img img {
+	width: 32px;
+	height: 32px;
+	margin: -20px auto 0;
+	position: relative;
+	margin-top: 0em;
+	margin-left: auto;
+	margin-right: auto;
+	left: 48%;
+	right: 10%;
 }
 .gb_container_header {
 	width: 30%;

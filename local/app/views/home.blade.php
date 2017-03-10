@@ -123,23 +123,23 @@ p.trunc{
 					</div>
 					<div class="row">
 						<div class="col s12" style="margin-top: -45px;" >
-							
 							<a href="{{ url('/subasta#tab9') }}" style="margin-left: 1em;" class="waves-effect green right btn">OFERTAR</a>
 							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>VER ESCULTURA</a>
 						</div>
-						
 					</div>
 				</div>
 				<div class="col s12 m12 l4 margin-top-1">
-				<div style="position: relative;">
-					<h5 class="light">Comentarios</h5>
-					<img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="media/img/home/fb.png">
-					<img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="media/img/home/insta.png">
-					<img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="media/img/home/twitter.png">
-				</div>
-					
-					
+					<div style="position: relative;">
+						<h5 class="light">Comentarios</h5>
+						<img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="media/img/home/fb.png">
+						<img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="media/img/home/insta.png">
+						<img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="media/img/home/twitter.png">
+					</div>
 					<div class="bottomRule">
+					</div>
+					<div class="col s12">
+						<div id="listCommentsHome"></div>
+						<div class="right-align"><a href="{{ url('/subasta#tab8') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
 					</div>
 						<?php
 							/**
@@ -210,4 +210,5 @@ p.trunc{
 	<script src="js/init.js"></script>
 	<script src="js/tabModule.js"></script>
 	<script src="vendor/js/jquery.smooth-scroll.min.js"></script>
+	<script src="js/script.js"></script>
 @stop

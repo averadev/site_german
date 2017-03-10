@@ -894,65 +894,216 @@
 	<!-- ENF INFO SUBASTA -->
 
 	<!-- Start Comments -->
-	<div class="bg_porque">
-		<div id="tab8" class="parallax-containers">
-			<div class="section">
-				<div class="container">
-					<div class="row">
-						<div class="s12 m6 l12 center" style="margin-top: 1rem;">
-							<span class="size-x4">Comentarios</span>
+	<div id="tab8" class="bg_comentario">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+					<span style="margin-top: 2em; font-size: 3.5em; font-weight: bold; font-style: italic; color: #2d332c; line-height: 0rem;" class="fontCrimson header col s12 light">Comentarios</span>
+				</div>
+				<br><br>
+			</div>
+		</div>
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row no_padd1 no-margin-bottom">
+					<div class="col s12 m12 l8 no_padd1">
+						<div class="card no_margin1 gb_gray3">
+							<div class="gb_container_header">
+								<h4>POSEIDÓN</h4>
+							</div>
+							<div class="card-content">
+								<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
+									<div class="gb_text_rs">
+										<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+										<div style="display: flex; align-items: center;">
+											<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+											<div style="padding: 7px;">
+												<span><strong>Martha Rodríguez.. -</strong></span><span class="gb_italic"><strong>30 de junio de 2016</strong></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="s12 l4">
-							<div class="gb_container_comments gb_gray3">
+					<div class="col s12 m12 l4 no_padd1">
+						<div class="card no_margin1 gb_gray4">
+							<div class="gb_container_header">
+								<h4>POSEIDÓN</h4>
+							</div>
+							<div class="card-content">
+								<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
+									<div class="gb_text_tw">
+										<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un</p>...
+										<div style="display: flex; align-items: center;">
+											<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+											<div style="padding: 7px;">
+												<span class="gb_text_white"><strong>Mario Canales. -</strong></span><span class="gb_text_white gb_italic"><strong>10 de agosto de 2016</strong></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m12 l7 no_padd1">
+						<div class="col s12 m12 l6 no_padd1">
+							<div class="card no_margin1 gb_gray3">
 								<div class="gb_container_header">
 									<h4>POSEIDÓN</h4>
 								</div>
-								<div class="gb_comments_rs gb_facebook">
-									<div class="gb_text_rs">
-										<span>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un</span>
-										<div class="gb_profile">
-											<img src="media/img/subasta/profile_1.png" alt="">
-											<span><strong>Martha Rodríguez. -</strong></span><span class="gb_italic"><strong>30 de junio de 2016</strong></span>
+								<div class="card-content">
+									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_rs">
+											<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span><strong>Daniel Beltrán. -</strong></span><span class="gb_italic"><strong>12 de octubre de 2016</strong></span>
+												</div>
+											</div>
 										</div>
 									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
 								</div>
-								<div class="social_img"><img src="media/img/subasta/facebook-logo.png" alt=""></div>
 							</div>
 						</div>
-						<div class="s12 l4">
-							<div class="gb_container_comments gb_gray4">
+						<div class="col s12 m12 l6 no_padd1">
+							<div class="card no_margin1 gb_gray4">
 								<div class="gb_container_header">
-									<h4>TORITO NEGRO</h4>
+									<h4>POSEIDÓN</h4>
 								</div>
-								<div class="gb_comments_tw gb_twitter">
-									<div class="gb_text_rs">
-										<span class="gb_text_white">Centellea sobre la impenetrable sombra.</span>
-										<div class="gb_profile">
-											<img src="media/img/subasta/profile_2.png" alt="">
-											<span class="gb_text_white"><strong>Mario Canales. -</strong></span><span class="gb_text_white gb_italic"><strong>10 de agosto de 2016</strong></span>
+								<div class="card-content">
+									<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_tw">
+											<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span class="gb_text_white"><strong>Lorena Mejía. -</strong></span><span class="gb_text_white gb_italic"><strong>29 de septiembre de 2016</strong></span>
+												</div>
+											</div>
 										</div>
 									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
 								</div>
-								<div class="social_img"><img src="media/img/subasta/twitter-logo.png" alt=""></div>
 							</div>
 						</div>
-						<div class="s12 l4">
-							<div class="gb_container_comments gb_gray5">
-								<div class="gb_container_header gb_white">
-									<h4 class="gb_text_color1">POSEIDÓN</h4>
+					</div>
+					<div class="col s12 m12 l5 no_padd1">
+						<div class="col s12 m12 no_padd1">
+							<div class="card no_margin1 gb_gray3">
+								<div class="gb_container_header">
+									<h4>POSEIDÓN</h4>
 								</div>
-								<div class="gb_comments_inst gb_instagram">
-									<div class="gb_text_rs">
-										<span class="gb_text_color1">Cuando siento más cerca de mi corazon los rumores de vida de ese pequeño mundo que palpita en mí tallos de las hojas.</span>
-										<div class="gb_profile">
-											<img src="media/img/subasta/profile_3.png" alt="">
-											<span class="gb_text_color1"><strong>Daniel Beltrán. -</strong></span><span class="gb_text_color1 gb_italic"><strong>12 de octubre de 2016</strong></span>
+								<div class="card-content">
+									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_rs">
+											<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span><strong>Fer Sánchez. -</strong></span><span class="gb_italic"><strong>13 de octubre de 2016</strong></span>
+												</div>
+											</div>
 										</div>
 									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
 								</div>
-								<div class="social_img"><img src="media/img/subasta/instagram-logo.png" alt=""></div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m12 l6 no_padd1">
+						<div class="col s12 m12 no_padd1">
+							<div class="card no_margin1 gb_gray4">
+								<div class="gb_container_header">
+									<h4>POSEIDÓN</h4>
+								</div>
+								<div class="card-content">
+									<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_tw">
+											<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span class="gb_text_white"><strong>Alejandra Estrada. -</strong></span><span class="gb_text_white gb_italic"><strong>14 de septiembre de 2016</strong></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m12 l6 no_padd1">
+						<div class="col s12 m12 no_padd1">
+							<div class="card no_margin1 gb_gray3">
+								<div class="gb_container_header">
+									<h4>POSEIDÓN</h4>
+								</div>
+								<div class="card-content">
+									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_rs">
+											<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span><strong>Monica Bonilla. -</strong></span><span class="gb_italic"><strong>17 de octubre de 2016</strong></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m12 l8 no_padd1">
+						<div class="col s12 m12 no_padd1">
+							<div class="card no_margin1 gb_gray3">
+								<div class="gb_container_header">
+									<h4>POSEIDÓN</h4>
+								</div>
+								<div class="card-content">
+									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_rs">
+											<p class="">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span class=""><strong>Martha Rodríguez. -</strong></span><span class=" gb_italic"><strong>30 de junio de 2016</strong></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col s12 m12 l4 no_padd1">
+						<div class="col s12 m12 no_padd1">
+							<div class="card no_margin1 gb_gray4">
+								<div class="gb_container_header">
+									<h4>POSEIDÓN</h4>
+								</div>
+								<div class="card-content">
+									<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
+										<div class="gb_text_tw">
+											<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
+											<div style="display: flex; align-items: center;">
+												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+												<div style="padding: 7px;">
+													<span class="gb_text_white"><strong>Rodrigo Olvera. -</strong></span><span class="gb_text_white gb_italic"><strong>12 de octubre de 2016</strong></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+								</div>
 							</div>
 						</div>
 					</div>

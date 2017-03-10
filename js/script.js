@@ -97,7 +97,7 @@ function showLoadCommentsHome () {
 			var months = new Array();
 			months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 			// list ul html
-			var ul_list = "<ul class='collection showmoreComments'>";
+			var ul_list = "<ul class='collectionn showmoreComments'>";
             $("#listCommentsHome").empty();
 			$.each(data.comments, function(data, value) {
 					var date = new Date(value.Fecha);
@@ -109,7 +109,7 @@ function showLoadCommentsHome () {
 						day = '0'+day;
 					}
 					date_out = day +' de '+ months[month] +' '+ year;
-					ul_list += '<li class="collection-item avatar grey lighten-2">'+
+					ul_list += '<li class="collection-itemm avatar grey lighten-22">'+
 									'<img src="media/img/subasta/bg_avatar.jpg" alt="" class="circle2">'+
 									'<div style="height:40px; overflow:hidden;"><span class="title gb_text_white">'+ value.Comentario +'</span><span class="title gb_text_white">...</span></div>'+
 									'<span class="title gb_text_white">'+ value.NombreNick +'. - '+ date_out +'</span>'+

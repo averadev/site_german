@@ -1129,7 +1129,7 @@ ul.showmoreComments{
 }
 .gb_container_header {
 	width: 30%;
-	height: 30px;
+	height: 37px;
 	position: absolute;
 	background-color: #2e332d;
 	left: 70%;
@@ -1137,12 +1137,14 @@ ul.showmoreComments{
 	z-index:9999;
 }
 .gb_container_header h4 {
-	font-size: 16px;
+	font-size: 14px;
+	padding-top: 0.5em;
 	position: relative;
 	text-transform: uppercase;
 	color: #ffffff;
 	text-align: center;
 	margin-top: 2.5%;
+	line-height: 1;
 }
 .gb_facebook {
 	background-color: #d9d8d6;

@@ -1054,7 +1054,7 @@
 								</div>
 								<div class="row">
 									<div style="">
-										<form style="padding-bottom: 12px;" id="FormCS" class="col s12 gb_arrow_box whiteform contract" action="http://localhost:8080/site_german.git/subasta" method="post">
+										<form style="padding-bottom: 12px;" id="FormCS" class="col s12 gb_arrow_box whiteform contract" action="http://hostyourgeek.com/beta/germanArzate/subasta/coming" method="post">
 											<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
 											<p class="gb_textcs_x1" style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
 											<div class="row no-margin-bottom">

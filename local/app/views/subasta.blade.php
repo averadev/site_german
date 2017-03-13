@@ -906,207 +906,106 @@
 		<div class="section no-pad-bot">
 			<div class="container">
 				<div class="row no_padd1 no-margin-bottom">
-					<div class="col s12 m12 l8 no_padd1">
-						<div class="card no_margin1 gb_gray3">
-							<div class="gb_container_header">
-								<h4>POSEIDÓN</h4>
-							</div>
-							<div class="card-content">
-								<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
-									<div class="gb_text_rs">
-										<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-										<div style="display: flex; align-items: center;">
-											<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-											<div style="padding: 7px;">
-												<span><strong>Martha Rodríguez.. -</strong></span><span class="gb_italic"><strong>30 de junio de 2016</strong></span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l4 no_padd1">
-						<div class="card no_margin1 gb_gray4">
-							<div class="gb_container_header">
-								<h4>POSEIDÓN</h4>
-							</div>
-							<div class="card-content">
-								<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
-									<div class="gb_text_tw">
-										<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un</p>...
-										<div style="display: flex; align-items: center;">
-											<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-											<div style="padding: 7px;">
-												<span class="gb_text_white"><strong>Mario Canales. -</strong></span><span class="gb_text_white gb_italic"><strong>10 de agosto de 2016</strong></span>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l7 no_padd1">
-						<div class="col s12 m12 l6 no_padd1">
-							<div class="card no_margin1 gb_gray3">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_rs">
-											<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span><strong>Daniel Beltrán. -</strong></span><span class="gb_italic"><strong>12 de octubre de 2016</strong></span>
+				<?php
+						$sectionComments = $comments;
+						$row = null;
+						$numberRows = [2,2,3];
+
+						$styles1 = [
+							['col s12 m12 l8 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2'],
+							['col s12 m12 l8 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
+							['col s12 m12 l6 no_padd1 comment-type1','col s12 m12 l6 no_padd1 comment-type2'],
+							['col s12 m12 l6 no_padd1 comment-type2','col s12 m12 l6 no_padd1 comment-type1']
+						];
+			
+						$styles2 = [
+							['col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
+							['col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2']
+						];
+							shuffle($styles1);
+							shuffle($styles2);
+							$rows2 = $styles1;
+							$rows3 = $styles2;
+						// while( count($sectionComments) >1 ){
+						// 	shuffle($numberRows);
+						// 	if(!$rows2){
+						// 		shuffle($styles1);
+						// 		$rows2 = $styles1;
+						// 	}
+						// 	if(!$rows3){
+						// 		shuffle($styles2);
+						// 		$rows3 = $styles2;
+						// 	}
+							while( count($sectionComments) >1 ){
+                            shuffle($numberRows);
+                            if(count($rows2) < 1){
+                                shuffle($styles1);
+                                $rows2 = $styles1;
+                            }
+                            if(count($rows3) < 1){
+                                shuffle($styles2);
+                                $rows3 = $styles2;
+                            }
+							$render2rows = (array_pop($rows2));
+							$render3rows = (array_pop($rows3));
+							$row = array_splice( $sectionComments,0,current($numberRows) );
+							if(count($row) == 2){ /*Cuando es un row de 2 columnas*/
+								foreach ($row as $key => $value) {
+								/*Render two rows div*/
+									?> 
+										<div class="{{$render2rows[$key]}} ">
+											<div class="card no_margin1">
+												<div class="gb_container_header" style="background-color: #2e332d;">
+													<h4>{{$value->NombreEscultura}}</h4>
+												</div>
+												<div class="card-content">
+													<div style="margin-top: 40px; margin-bottom: 50px;">
+														<div class="gb_text_rs">
+															<p>{{$value->Comentario}}...</p>
+															<div style="display: flex; align-items: center;">
+																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+																<div style="padding: 7px;">
+																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
 												</div>
 											</div>
 										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-						<div class="col s12 m12 l6 no_padd1">
-							<div class="card no_margin1 gb_gray4">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_tw">
-											<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span class="gb_text_white"><strong>Lorena Mejía. -</strong></span><span class="gb_text_white gb_italic"><strong>29 de septiembre de 2016</strong></span>
+									<?php	
+								}
+							}else{ /*cuando es un row 3 columnas*/
+								foreach ($row as $key => $value) {
+								/*Render three rows div*/
+									?> 
+										<div class="{{$render3rows[$key]}} ">
+											<div class="card no_margin1">
+												<div class="gb_container_header" style="background-color: #2e332d;">
+													<h4>{{$value->NombreEscultura}}</h4>
+												</div>
+												<div class="card-content">
+													<div style="margin-top: 40px; margin-bottom: 50px;">
+														<div class="gb_text_rs">
+															<p>{{$value->Comentario}}...</p>
+															<div style="display: flex; align-items: center;">
+																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+																<div style="padding: 7px;">
+																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
 												</div>
 											</div>
-										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l5 no_padd1">
-						<div class="col s12 m12 no_padd1">
-							<div class="card no_margin1 gb_gray3">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_rs">
-											<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span><strong>Fer Sánchez. -</strong></span><span class="gb_italic"><strong>13 de octubre de 2016</strong></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l6 no_padd1">
-						<div class="col s12 m12 no_padd1">
-							<div class="card no_margin1 gb_gray4">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_tw">
-											<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span class="gb_text_white"><strong>Alejandra Estrada. -</strong></span><span class="gb_text_white gb_italic"><strong>14 de septiembre de 2016</strong></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l6 no_padd1">
-						<div class="col s12 m12 no_padd1">
-							<div class="card no_margin1 gb_gray3">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_rs">
-											<p>Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span><strong>Monica Bonilla. -</strong></span><span class="gb_italic"><strong>17 de octubre de 2016</strong></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l8 no_padd1">
-						<div class="col s12 m12 no_padd1">
-							<div class="card no_margin1 gb_gray3">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_facebook" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_rs">
-											<p class="">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span class=""><strong>Martha Rodríguez. -</strong></span><span class=" gb_italic"><strong>30 de junio de 2016</strong></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col s12 m12 l4 no_padd1">
-						<div class="col s12 m12 no_padd1">
-							<div class="card no_margin1 gb_gray4">
-								<div class="gb_container_header">
-									<h4>POSEIDÓN</h4>
-								</div>
-								<div class="card-content">
-									<div class="gb_twitter" style="margin-top: 40px; margin-bottom: 50px;">
-										<div class="gb_text_tw">
-											<p class="gb_text_white">Ahora no sabría dibujar, ni siquiera hacer una línea con el lápiz; y sin embargo, jamás he sido mejor pintor cuando el valle se vela en torno mío con un </p>...
-											<div style="display: flex; align-items: center;">
-												<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-												<div style="padding: 7px;">
-													<span class="gb_text_white"><strong>Rodrigo Olvera. -</strong></span><span class="gb_text_white gb_italic"><strong>12 de octubre de 2016</strong></span>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-								</div>
-							</div>
-						</div>
-					</div>
+										</div>	
+									<?php	
+								}
+							} //end else
+						}
+					?>
 				</div>
 			</div>
 		</div>

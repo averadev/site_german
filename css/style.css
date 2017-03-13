@@ -932,6 +932,30 @@ ul.showmoreComments{
 	border-radius: 2%;
 }
 /* End Comments Home */
+.comment-type1 div:nth-child(1)  {
+	background-color: #BFBEBA;
+}
+
+.comment-type1 div:nth-child(1) div:nth-child(1){
+	background-color: #D9D8D6;
+	color: #2d2f2a;
+}
+
+.comment-type1 div:nth-child(1):after {
+	border-color: #D9D8D6 transparent transparent transparent;
+}
+
+.comment-type2 div:nth-child(1)  {
+	background-color: #595B58;
+}
+
+.comment-type2 div:nth-child(1) div:nth-child(1){
+	background-color: #7C7E7B;
+	color: white;
+}
+.comment-type2 div:nth-child(1):after {
+	border-color: #7C7E7B transparent transparent transparent;
+}
 .gb_container_comments {
 	width: 100%;
 	/*max-width: 600px;*/

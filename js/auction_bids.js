@@ -108,6 +108,7 @@ var bids = function (){
 
 			if(!(response.error)){
 				$("#showmessageModal").text(response.msg);
+				$("#bidForm")[0].reset();
 				$('#messageModal').modal('open');
 				getBids();
 			}else{

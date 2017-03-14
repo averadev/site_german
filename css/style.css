@@ -1215,6 +1215,17 @@ ul.showmoreComments{
 	.gb_textcs_x1 {
 		font-size: 14px;
 	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
+	}
 }
 @media only screen and (min-width: 981px) and (max-width: 1024px){
 	/* ¿PQ? */
@@ -1357,6 +1368,17 @@ ul.showmoreComments{
 		margin-left: -8em;
 		margin-top: 4.5em;
 	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
+	}
 }
 @media only screen and (min-width: 769px) and (max-width: 980px){
 	/* ¿PQ? */
@@ -1453,6 +1475,17 @@ ul.showmoreComments{
 		margin: 15px auto;
 		margin-left: 23em;
 		margin-top: 4em;
+	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
 	}
 }
 @media only screen and (min-width: 601px) and (max-width: 768px){
@@ -1552,6 +1585,17 @@ ul.showmoreComments{
 		margin: 15px auto;
 		margin-left: 23em;
 		margin-top: 4em;
+	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
 	}
 }
 @media only screen and (min-width: 481px) and (max-width: 600px){
@@ -1688,6 +1732,17 @@ ul.showmoreComments{
 		text-align: justify;
 		padding: 0px 5px 0px 5px;
 	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
+	}
 }
 @media only screen and (min-width: 400px) and (max-width: 480px){
 	/* ¿PQ? */
@@ -1819,6 +1874,17 @@ ul.showmoreComments{
 		line-height: 1.4em;
 		text-align: justify;
 		padding: 0px 5px 0px 5px;
+	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
 	}
 }
 @media only screen and (min-width: 220px) and (max-width: 320px){
@@ -1968,6 +2034,17 @@ ul.showmoreComments{
 		line-height: 1.4em;
 		text-align: justify;
 		padding: 0px 5px 0px 5px;
+	}
+	/* Proceso */
+	.justify-text2 {
+		text-align: justify;
+	}
+	h5.proceso_top {
+		text-align: center;
+	}
+	.gb_margin10 {
+		margin: 0 auto !important;
+		margin-top: 2em !important;
 	}
 }
 /* End MQ CSS */

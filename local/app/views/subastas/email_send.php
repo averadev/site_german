@@ -291,9 +291,9 @@
                                 <table border="0" cellpadding="0" cellspacing="0">
                                     <tr>
                                         <td>
-                                            <h2>Hola, <span><strong>{{$message}}!!</strong></span></h2>
+                                            <h2>Hola</h2>
                                             <p>Tan pronto como tengamos nosotros la información con gusto te la haremos llegar a tu correo electrónico.</p>
-                                            <p>mientras tanto te invito a que visites mi <a href="http://hostyourgeek.com/beta/germanArzate/">pagina web</a> y te enteres de mis proximas subastas o bien puedes ir directamente en el siguiente botón.</p>
+                                            <p>mientras tanto te invito a que visites mi <a href="http://hostyourgeek.com/beta/germanArzate/">página web</a> y te enteres de mis proximas subastas o bien puedes ir directamente haciendo clic en el siguiente botón.</p>
                                             <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                                 <tbody>
                                                 <tr>

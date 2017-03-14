@@ -473,17 +473,17 @@
 										<div class="container top-pad-80">
 											<div class="row">
 												<div class="col l12 s12">
-													<p class="title_proceso" >{{$submodule_section_data->SeccionTituloProceso}}</p>
+													<p class="title_proceso">{{$submodule_section_data->SeccionTituloProceso}}</p>
 												</div>
 												<div class="col l4 s12 ">
-		      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="img_proceso" >
+		      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso" >
 												</div>
 												<div class="col l3 s12 text-padding" >
 													<h5 class="light proceso_top">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
-													<p class="proceso-text">{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
+													<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
 												</div>
 												<div class="col l5 s12">
-													<img class="img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto2}}">
+													<img class="hide-on-med-and-down img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto2}}">
 												</div>
 											</div>
 										</div>
@@ -495,14 +495,14 @@
 													<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoSuenos}}</p>
 												</div>											
 												<div class="col l4 s12">
-	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="img_proceso">
+	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
 												</div>
 												<div class="col l3 s12 text-padding">
 													<h5 class="light proceso_top">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
-													<p class="proceso-text">{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
+													<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
 												</div>
 												<div class="col l5 s12">
-	      											<img class="img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}">
+	      											<img class="hide-on-med-and-down img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}">
 												</div>
 											</div>
 										</div>
@@ -514,14 +514,14 @@
 													<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoMagia}}</p>
 												</div>											
 												<div class="col l4 s12">
-	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="img_proceso">
+	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="hide-on-med-and-down img_proceso">
 												</div>
 												<div class="col l3 s12 text-padding">
 													<h5 class="light proceso_top">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
-													<p class="proceso-text">{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
+													<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
 												</div>
 												<div class="col l5 s12">
-	      											<img class="img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}">
+	      											<img class="hide-on-med-and-down img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}">
 												</div>
 											</div>
 										</div>
@@ -533,14 +533,14 @@
 													<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoPasion}}</p>
 												</div>											
 												<div class="col l4 s12">
-	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="img_proceso">
+	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="hide-on-med-and-down img_proceso">
 												</div>
 												<div class="col l3 s12 text-padding">
 													<h5 class="light proceso_top">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
-													<p class="proceso-text">{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
+													<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
 												</div>
 												<div class="col l5 s12">
-	      											<img class="img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}">
+	      											<img class="hide-on-med-and-down img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}">
 												</div>
 											</div>
 										</div>
@@ -552,14 +552,14 @@
 													<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoLuz}}</p>
 												</div>
 												<div class="col l4 s12">
-	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="img_proceso">
+	      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="hide-on-med-and-down img_proceso">
 												</div>
 												<div class="col l3 s12 text-padding">
 													<h5 class="light proceso_top">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
-													<p class="proceso-text">{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
+													<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
 												</div>
 												<div class="col l5 s12">
-	      											<img class="img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}">
+	      											<img class="hide-on-med-and-down img2_proceso" src="media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}">
 												</div>
 											</div>
 										</div>
@@ -571,7 +571,7 @@
 							<!-- Start .timeline -->
 							<div class="timeline" style="z-index: 1000;" >
 								<!-- Start .events-wrapper -->
-								<div class="events-wrapper" >
+								<div class="events-wrapper gb_margin10">
 									<div class="events">
 										<ol>
 											<li><a href="#0" data-date="16/01/2014" class="selected">{{$submodule_section_data->SeccionSubTProcesoConcepto}}</a></li>
@@ -631,25 +631,25 @@
 			<div  class="container" style="padding-bottom: 10%; padding-top: 10%" >
 				<div class="row">
 					<div class="col s6">
-						<img style="width: 100%;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
+						<img class="hide-on-med-and-down" style="width: 100%;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
 					</div>
-					<div class="col s6">
-						<h4 class="gb_gray light">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
+					<div class="col s12 m12 l6">
+						<h4 class="gb_gray light center-align">{{$submodule_section_data->SeccionTituloEnQueTeConvierte}}</h4>
 						<p style="line-height: 130%" class="light">{{$submodule_section_data->SeccionDescEnQueTeConvierte}}</p>
 					</div>					
 				</div>
 				<div class="row no-margin-bottom">
 					<div class="col s12">
-						<p class="title-convierte">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
+						<p class="title-convierte center-align">{{$submodule_section_data->SeccionEncabezadoEnQueTeConvierte}}</p>
 					</div>					
 				</div>
 				<div class="row no-margin-bottom">
-					<div class="col s6" >
-						<h4 class="gb_gray light">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
+					<div class="col s12 m12 l6">
+						<h4 class="gb_gray light center-align">{{$submodule_section_data->SeccionTitulo2EnQueTeConvierte}}</h4>
 						<p style="line-height: 130%" class="light">{{$submodule_section_data->SeccionDesc2EnQueTeConvierte}}</p>						
 					</div>
 					<div class="col s6">
-						<img style="width: 100%;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" alt="">
+						<img class="hide-on-med-and-down" style="width: 100%;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}" alt="">
 					</div>
 					
 				</div>
@@ -1014,80 +1014,89 @@
 
 	<!-- Start Coming Soon -->
 	<div id="tab10" class="bg_comingsoon">
-		
-			<div class="container" style="padding-bottom: 8%" >
-				<div class="row no-margin-bottom">
-					<div class="col s12 l5 margin-left-4" >
-						<div class="row">
-							<div class="col s12 m12 l12 center" style="position: relative;" >								
-									<div style="position: absolute; top: 27%; height: 100px; left: 50%;">
-										<div style="position: relative; left: -50%;">
-											@foreach ($date_coming as $key=> $value)
-											<div class="col s6 " style="height: 100px;" >
-												<p class="fontCrimson" style="text-align: right; line-height: 80%; font-size: 500%; font-weight: bold; margin-top: 0%; margin-bottom: 0%  " >{{$value->Dia}}</p>
-											</div>
-											<div class="col s6" style="height: 100px; margin-left: -8%; " >
-												<p class="fontCrimson" style="text-align: left; line-height: 110%; margin-top: 2%; font-size: 180%; font-weight: bold; margin-bottom: 0%; text-transform: uppercase; "   >{{$value->NombreMes}}</p>
-												<p class="fontCrimson" style="text-align: left; line-height: 110%; margin-top: 2%; font-size: 180%; font-weight: bold; margin-bottom: 0% "   >{{$value->Anio}}</p>
-											</div>
-											@endforeach
-										</div>
-									</div>
-								<img style="width: 100%" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
-							</div>
-						</div>
-					</div>
-					<div class="col s12 l6">
-						<div class="row">
-							<div class="col s12">
-								<div class="row">
-									<p class="gb_gray date_current"></p>
-								</div>
-							</div>
-							<div class="col s12 m12 l12 margin-top-20">
-								<div class="row">
-									<div class="col s12">
+		<div class="container" style="padding-bottom: 8%" >
+			<div class="row no-margin-bottom">
+				<div class="col s12 l5 margin-left-4" >
+					<div class="row">
+						<div class="col s12 m12 l12 center" style="position: relative;" >								
+								<div style="position: absolute; top: 27%; height: 100px; left: 50%;">
+									<div style="position: relative; left: -50%;">
 										@foreach ($date_coming as $key=> $value)
-										<p style="text-align: center;" class="light text-proxim">El desarrollo de la próxima <br> escultura comenzará a <br> transmitirse el próximo {{$value->Dia}} de <br> {{$value->NombreMes}} de {{$value->Anio}}, <br> y puedes seguirlo aquí.</p>
+										<div class="col s6 " style="height: 100px;" >
+											<p class="fontCrimson" style="text-align: right; line-height: 80%; font-size: 500%; font-weight: bold; margin-top: 0%; margin-bottom: 0%  " >{{$value->Dia}}</p>
+										</div>
+										<div class="col s6" style="height: 100px; margin-left: -8%; " >
+											<p class="fontCrimson" style="text-align: left; line-height: 110%; margin-top: 2%; font-size: 180%; font-weight: bold; margin-bottom: 0%; text-transform: uppercase; "   >{{$value->NombreMes}}</p>
+											<p class="fontCrimson" style="text-align: left; line-height: 110%; margin-top: 2%; font-size: 180%; font-weight: bold; margin-bottom: 0% "   >{{$value->Anio}}</p>
+										</div>
 										@endforeach
 									</div>
 								</div>
-								<div class="row">
-									<div style="">
-										<form style="padding-bottom: 12px;" id="FormCS" class="col s12 gb_arrow_box whiteform contract" action="http://hostyourgeek.com/beta/germanArzate/subasta/coming" method="post">
-											<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
-											<p class="gb_textcs_x1" style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
-											<div class="row no-margin-bottom">
-												<div class="col s12">
-													<div class="col s12 l4">
-														<input id="name" class="border_cs" type="text" name="name" required placeholder="NOMBRE">
-													</div>
-													<div class="col s12 l4">
-														<input id="email" class="border_cs" type="email" name="email" required placeholder="E-MAIL">
-													</div>
-													<div class="col s12 l4">
-														<input id="city" class="border_cs" type="text" name="city" required placeholder="CIUDAD">
-													</div>
+							<img style="width: 100%" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="col s12 l6">
+					<div class="row">
+						<div class="col s12">
+							<div class="row">
+								<p class="gb_gray date_current"></p>
+							</div>
+						</div>
+						<div class="col s12 m12 l12 margin-top-20">
+							<div class="row">
+								<div class="col s12">
+									@foreach ($date_coming as $key=> $value)
+									<p style="text-align: center;" class="light text-proxim">El desarrollo de la próxima <br> escultura comenzará a <br> transmitirse el próximo {{$value->Dia}} de <br> {{$value->NombreMes}} de {{$value->Anio}}, <br> y puedes seguirlo aquí.</p>
+									@endforeach
+								</div>
+							</div>
+							<div class="row">
+								<div style="">
+									<form style="padding-bottom: 12px;" id="FormCS" class="col s12 gb_arrow_box whiteform contract" action="http://localhost:8080/site_german.git/subasta/coming" method="post">
+										<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
+										<p class="gb_textcs_x1" style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
+										<div class="row no-margin-bottom">
+											<div class="col s12">
+												<div class="col s12 l4">
+													<input id="name" class="border_cs" type="text" name="name" required placeholder="NOMBRE">
 												</div>
-												<div class="col s12">
-													<div class="col s12 l8">
-														<textarea id="comment" style="height: 80px;" class="border_cs" maxlength="200" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
-													</div>
-													<div class="col s12 l4">
-														<button id="sendBtn" class="btn btn-small col s12 green waves-effect margin-top-13" type="submit">CONTÁCTENME</button>
-													</div>
+												<div class="col s12 l4">
+													<input id="email" class="border_cs" type="email" name="email" required placeholder="E-MAIL">
+												</div>
+												<div class="col s12 l4">
+													<input id="city" class="border_cs" type="text" name="city" required placeholder="CIUDAD">
 												</div>
 											</div>
-										</form>
-									</div>
+											<div class="col s12">
+												<div class="col s12 l8">
+													<textarea id="comment" style="height: 80px;" class="border_cs" maxlength="200" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
+												</div>
+												<div class="col s12 l4">
+													<button id="sendBtn" class="btn btn-small col s12 green waves-effect margin-top-13" type="submit">CONTÁCTENME</button>
+												</div>
+											</div>
+										</div>
+									</form>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		
+		</div>
 	</div>
+	<!-- Start Modal Proximamente Form -->
+	<div id="msgModal" class="modal border-radius-10">
+		<div class="notification">
+			<h4 style="text-align: center;" id="titleModalMsg"></h4>
+			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmsgModal"></p>
+		</div>
+		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
+			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
+		</div>
+	</div>
+	<!-- End Modal Proximamente Form -->
 	<!-- End Coming Soon -->
 @stop
 @section('addJs')

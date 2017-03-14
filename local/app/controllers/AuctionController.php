@@ -126,47 +126,60 @@ class AuctionController extends BaseController {
     	
     	if (Request::ajax()) {
 
-	    	$input = Input::all();
+	    	//$input = Input::all();
+	    	$data = [
+				'name'=> strip_tags(Input::get('name')),
+				'email'=> strip_tags(Input::get('email')),
+				'city'=> strip_tags(Input::get('city')),
+				'comment'=> strip_tags(Input::get('comment'))
+			];
 
-			$rules = array (
-					'name'=> 'required',
-					'email'=> 'required|email',
-					'city'=> 'required',
-					'comment'=> 'required'
-				);
+			$rules = [
+				'name'=> 'required',
+				'email'=> 'required|email',
+				'city'=> 'required',
+				'comment'=> 'required'
+			];
 			
 			$messages = array(
 				'required' => 'El campo :attribute es obligatorio.',
 				'email' =>'El campo :attribute no es un email valido',
 			);
 
-			$validation = Validator::make($input, $rules, $messages);
+			$validation = Validator::make($data, $rules);
 
-			if ($validation->fails()) {
+			if ($validation->passes()) {
+				// Enviar correo
+				Mail::send('subastas.email_send', $data, function($message) use ($data) {
+					$message->to(Input::get('email'))
+					->subject('German Arzate | Próximamente');
+				});
 
+				// Success message
 				return Response::json(array(
-						'success' => false,
-						'errors' => $validation->errors()->getMessageBag()->toArray()
+						'success' => true,
+						'msg' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'
 					));
 
 			} else {
+				// Error message
+				$messages = $validation->messages();
 
-				$send = Mail::send('subastas.email_send', $input, function($message) use ($input) {
-					$message->to(Input::get('email'))
-					//->from(Input::get('email'), 'German Arzate | Próximamente')
-					->subject('German Arzate | Próximamente');
-				});
-				return $send;
+				if($validation->messages()->has('name'))
+					$errorField = $validation->messages()->first('name');
+				else if($validation->messages()->has('email'))
+					$errorField = $validation->messages()->first('email');
+				else if($validation->messages()->has('city'))
+					$errorField = $validation->messages()->first('city');
+				else if($validation->messages()->has('comment'))
+					$errorField = $validation->messages()->first('comment');
 
 				return Response::json(array(
-						'success' => true,
-						'message' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'
+					'success'=> false,
+					'msg' => $errorField
 					));
 			}
 
-    	} else {
-
-    		return 'No se ha realizado una petición';
     	}
     	
     }

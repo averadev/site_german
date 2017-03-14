@@ -7,22 +7,31 @@ $(document).ready(function(){
 	var sendBtn = $("#sendBtn");
 	var msg_success = $("#msg_success");
 
-	ContactoCSForm.submit(function(e){
+	sendBtn.click(function(e){
 		e.preventDefault();
 		var formData = ContactoCSForm.serialize();
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		$("#FormCS").valid();
 
 		$.ajax({
-			url: HOST +'/subasta/coming',
+			url: HOST+'/subasta/coming',
 			type:'POST',
 			dataType: 'json',
 			data:formData,
 			success: function (data) {
-				if (data.success === true) {
-					formData.submit();
-					msj_success.html(data.messsage);
-					return false;
+
+				if (data.success == true) {
+					$("#titleModalMsg").html("!Gracias por ponerte en contacto!");
+					$("#showmsgModal").html(data.msg);
+					$("#FormCS")[0].reset();
+					$('#msgModal').modal('open');
+					console.log(data.msg);
 				} else {
-					console.log(data.errors);
+					$("#FormCS")[0].reset();
 				}
 				return false;
 			},
@@ -33,6 +42,19 @@ $(document).ready(function(){
 		});
 		return false;
 	});
+
+	// Form reset
+	$("#FormCS")[0].reset();
+
+	$("#msgModal").modal({
+			dismissible: true, // Modal can be dismissed by clicking outside of the modal
+			opacity: 0.5, // Opacity of modal background
+			inDuration: 1000, // Transition in duration
+			outDuration: 1000, // Transition out duration
+			starting_top: '4%', // Starting top style attribute
+			ending_top: '25%', // Ending top style attribute
+		});
+
 });
 
 /* Function showLoadComments */

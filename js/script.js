@@ -25,7 +25,7 @@ $(document).ready(function(){
 			success: function (data) {
 
 				if (data.success == true) {
-					$("#titleModalMsg").html("!Gracias por ponerte en contacto!");
+					$("#titleModalMsg").html("!Mensaje Enviado!");
 					$("#showmsgModal").html(data.msg);
 					$("#FormCS")[0].reset();
 					$('#msgModal').modal('open');

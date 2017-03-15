@@ -31,6 +31,7 @@ $(document).ready(function(){
 					$('#msgModal').modal('open');
 					console.log(data.msg);
 				} else {
+					// Form reset
 					$("#FormCS")[0].reset();
 				}
 				return false;
@@ -43,9 +44,7 @@ $(document).ready(function(){
 		return false;
 	});
 
-	// Form reset
-	$("#FormCS")[0].reset();
-
+	// Modal Settings
 	$("#msgModal").modal({
 			dismissible: true, // Modal can be dismissed by clicking outside of the modal
 			opacity: 0.5, // Opacity of modal background
@@ -134,7 +133,7 @@ function showLoadCommentsHome () {
 					ul_list += '<li class="collection-itemm avatar grey lighten-22">'+
 									'<img src="media/img/subasta/bg_avatar.jpg" alt="" class="circle2">'+
 									'<div style="height:40px; overflow:hidden;"><span class="title gb_text_white">'+ value.Comentario +'</span><span class="title gb_text_white">...</span></div>'+
-									'<span class="title gb_text_white">'+ value.NombreNick +'. - '+ date_out +'</span>'+
+									'<span class="title gb_text_white">'+ value.NombreNick +'. - '+ value.Dia + ' de '+ value.NombreMes +' '+ value.Anio +'</span>'+
 								'</li>';
 			});
 

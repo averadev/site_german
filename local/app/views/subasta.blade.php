@@ -383,35 +383,31 @@
 			text-align: center;
 			padding-right: 0rem;
 		}
-
-
 	}
-	
 </style>
 
 	<div class="container">
 		<div class="section">
-			<div class="row"  style="margin-bottom: 0em;">
+			<div class="row" style="margin-bottom: 0em;">
 				<div class="col s12">
 					<span class="nav-title gb_title_x2">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
 					<ul class="tabs black-tabs">
-						<li class="tab"><a href="#tab4">¿Por Qué?</a></li>
-						<li class="tab"><a href="#tab5">El Proceso</a></li>
-						<li class="tab"><a href="#tab6">¿En Qué Te Convierte?</a></li>
-						<li class="tab"><a href="#tab7">Especificaciones</a></li>
-						<li class="tab"><a href="#tab8">Comentarios</a></li>
-						<li class="tab"><a href="#tab9">Subasta</a></li>
-						<li class="tab"><a href="#tab10">Próximamente</a></li>
+						<li class="tab"><a class="" href="#tab1">¿Por Qué?</a></li>
+						<li class="tab"><a class="" href="#tab2">El Proceso</a></li>
+						<li class="tab"><a class="" href="#tab3">¿En Qué Te Convierte?</a></li>
+						<li class="tab"><a class="" href="#tab4">Especificaciones</a></li>
+						<li class="tab"><a class="" href="#tab5">Comentarios</a></li>
+						<li class="tab"><a class="" href="#tab6">Subasta</a></li>
+						<li class="tab"><a class="" href="#tab7">Próximamente</a></li>
 					</ul>
 				</div>
-		
 			</div>
 		</div>
 	</div>
 
 	<!-- Start ¿Porque? -->
-	
-	<div id="tab4" class="bg_porque">
+	<div id="tab1" class="scrollspy"></div>
+	<div id="" class="bg_porque">
 		<div class="hide-on-med-and-down" style="position: relative;  z-index: 0;  height: 700px;"> <!-- Desktop -->
 			<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" style="position: absolute; width: 800px; bottom: 0; z-index: -1; ">
 			<div class="">
@@ -457,11 +453,11 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- End ¿Porque? -->
 
 	<!-- Start Proceso -->
-	<div id="tab5" class="bgg_proceso">
+	<div id="tab2" class="scrollspy"></div>
+	<div id="" class="bgg_proceso" style="display: block !important">
 		<div class="">
 			<div class="">
 				<div class="">
@@ -590,12 +586,12 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 	<!-- End Proceso -->
 
 	<!-- Start ¿En Que Te Convierte? -->
-	<div id="tab6" class="bg_queteconvierte" >
+	<div id="tab3" class="scrollspy"></div>
+	<div id="" class="bg_queteconvierte" style="display: block;">
 		<div class="hide-on-med-and-down" style="position: relative;  z-index: 0;  height: 700px;">
 			<img style="position: absolute; bottom: 0; left: 0; width: 300px;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
 			<img style="position: absolute; bottom: 0; right: 0; width: 300px;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}">			
@@ -660,7 +656,8 @@
 	<!-- End ¿En Que Te Convierte? -->
 
 	<!-- Start Especificaciones -->
-	<div id="tab7" class="bg_especificaciones">
+	<div id="tab4" class="scrollspy"></div>
+	<div id="" class="bg_especificaciones">
 		<div class="container">
 			<div class="section">
 				<div class="row">
@@ -745,7 +742,7 @@
 		</div>
 	</div>
 
-	<!-- Start Modal -->
+	<!-- Start Modal Especificaciones -->
 	<div id="modal1" class="modal_md">
 		<div class="modal_dialog">
 			<div class="modal_content">
@@ -781,16 +778,126 @@
 		</div>
 		<img class="modal_img" src="media/img/subasta/{{$submodule_section_data->SecccionIMGEspecificacion3}}" alt="">
 	</div>
-				<!-- End Modal -->
+	<!-- End Modal Especificaciones -->
 
 	<!-- End Especificaciones -->
 
+	<!-- Start Comments -->
+	<div id="tab5" class="scrollspy"></div>
+	<div id="" class="bg_comentario">
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row center">
+					<span style="margin-top: 2em; font-size: 3.5em; font-weight: bold; font-style: italic; color: #2d332c; line-height: 0rem;" class="fontCrimson header col s12 light">Comentarios</span>
+				</div>
+				<br><br>
+			</div>
+		</div>
+		<div class="section no-pad-bot">
+			<div class="container">
+				<div class="row no_padd1 no-margin-bottom">
+				<?php
+						$sectionComments = $comments;
+						$row = null;
+						$numberRows = [2,2,3];
+
+						$styles1 = [
+							['col s12 m12 l8 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2'],
+							['col s12 m12 l8 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
+							['col s12 m12 l6 no_padd1 comment-type1','col s12 m12 l6 no_padd1 comment-type2'],
+							['col s12 m12 l6 no_padd1 comment-type2','col s12 m12 l6 no_padd1 comment-type1']
+						];
+			
+						$styles2 = [
+							['col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
+							['col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2']
+						];
+							shuffle($styles1);
+							shuffle($styles2);
+							$rows2 = $styles1;
+							$rows3 = $styles2;
+
+							while( count($sectionComments) >1 ){
+                            shuffle($numberRows);
+                            if(count($rows2) < 1){
+                                shuffle($styles1);
+                                $rows2 = $styles1;
+                            }
+                            if(count($rows3) < 1){
+                                shuffle($styles2);
+                                $rows3 = $styles2;
+                            }
+							$render2rows = (array_pop($rows2));
+							$render3rows = (array_pop($rows3));
+							$row = array_splice( $sectionComments,0,current($numberRows) );
+							if(count($row) == 2){ /*Cuando es un row de 2 columnas*/
+								foreach ($row as $key => $value) {
+								/*Render two rows div*/
+									?> 
+										<div class="{{$render2rows[$key]}} ">
+											<div class="card no_margin1">
+												<div class="gb_container_header" style="background-color: #2e332d; z-index: 9;">
+													<h4>{{$value->NombreEscultura}}</h4>
+												</div>
+												<div class="card-content">
+													<div style="margin-top: 40px; margin-bottom: 50px;">
+														<div class="gb_text_rs">
+															<p>{{$value->Comentario}}...</p>
+															<div style="display: flex; align-items: center;">
+																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+																<div style="padding: 7px;">
+																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+												</div>
+											</div>
+										</div>
+									<?php	
+								}
+							}else{ /*cuando es un row 3 columnas*/
+								foreach ($row as $key => $value) {
+								/*Render three rows div*/
+									?> 
+										<div class="{{$render3rows[$key]}} ">
+											<div class="card no_margin1">
+												<div class="gb_container_header" style="background-color: #2e332d; z-index: 9;">
+													<h4>{{$value->NombreEscultura}}</h4>
+												</div>
+												<div class="card-content">
+													<div style="margin-top: 40px; margin-bottom: 50px;">
+														<div class="gb_text_rs">
+															<p>{{$value->Comentario}}...</p>
+															<div style="display: flex; align-items: center;">
+																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
+																<div style="padding: 7px;">
+																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
+												</div>
+											</div>
+										</div>	
+									<?php	
+								}
+							} //end else
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Comments -->
+
 	<!-- INFO SUBASTA -->
-
-
-	<div style="background-image:url('media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="tab9">
+	<div id="tab6" class="scrollspy"></div>
+	<div style="background-image:url('media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="">
 		<div  class="container">
-			<div class="row no-margin-bottom" style="padding-top: 4%;" >
+			<div class="row no-margin-bottom" style="padding-top: 4%;">
 				<div class="col l6 s12"> <!-- LEFT SIDE -->
 					<div style="padding: 10px 0 0 20px; border: 1px solid black; border-radius: 5px;">
 						<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
@@ -821,14 +928,14 @@
 							</div>
 						</div>
 						<div style="margin-top: 52px; margin-bottom: 20px;" >
-							<p class="small-lineheight">Poseidón Diseñado por <b>Germán Arzate</b> / 2016</p>
-							<p class="small-lineheight">COLECCIÓN: <b>Mitologías Antigúas</b></p>
+							<p class="small-lineheight">Poseidón de <b>Germán Arzate</b> / 2017</p>
+							<p class="small-lineheight">Colección: <b>Obras Místicas</b></p>
 						</div>
 					</div>
 					<div class="row">
 						<div style="padding: 10px; margin-top: 2em;"  >
 							<form id="bidForm" class="white top_arrow_box whiteform contract">
-								<p style="margin: 3px 0 5px 10px;  " class="size30">Me interesa esta escultura:</p>
+								<p style="margin: 3px 0 5px 10px;  " class="size30">Quiero participar en la subasta:</p>
 								<div class="row no-margin-bottom">
 									<div class="col s12">
 										<div class="col s12 l4">
@@ -890,130 +997,11 @@
 			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
 		</div>
 	</div>
-
 	<!-- ENF INFO SUBASTA -->
 
-	<!-- Start Comments -->
-	<div id="tab8" class="bg_comentario">
-		<div class="section no-pad-bot">
-			<div class="container">
-				<div class="row center">
-					<span style="margin-top: 2em; font-size: 3.5em; font-weight: bold; font-style: italic; color: #2d332c; line-height: 0rem;" class="fontCrimson header col s12 light">Comentarios</span>
-				</div>
-				<br><br>
-			</div>
-		</div>
-		<div class="section no-pad-bot">
-			<div class="container">
-				<div class="row no_padd1 no-margin-bottom">
-				<?php
-						$sectionComments = $comments;
-						$row = null;
-						$numberRows = [2,2,3];
-
-						$styles1 = [
-							['col s12 m12 l8 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2'],
-							['col s12 m12 l8 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
-							['col s12 m12 l6 no_padd1 comment-type1','col s12 m12 l6 no_padd1 comment-type2'],
-							['col s12 m12 l6 no_padd1 comment-type2','col s12 m12 l6 no_padd1 comment-type1']
-						];
-			
-						$styles2 = [
-							['col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
-							['col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2']
-						];
-							shuffle($styles1);
-							shuffle($styles2);
-							$rows2 = $styles1;
-							$rows3 = $styles2;
-						// while( count($sectionComments) >1 ){
-						// 	shuffle($numberRows);
-						// 	if(!$rows2){
-						// 		shuffle($styles1);
-						// 		$rows2 = $styles1;
-						// 	}
-						// 	if(!$rows3){
-						// 		shuffle($styles2);
-						// 		$rows3 = $styles2;
-						// 	}
-							while( count($sectionComments) >1 ){
-                            shuffle($numberRows);
-                            if(count($rows2) < 1){
-                                shuffle($styles1);
-                                $rows2 = $styles1;
-                            }
-                            if(count($rows3) < 1){
-                                shuffle($styles2);
-                                $rows3 = $styles2;
-                            }
-							$render2rows = (array_pop($rows2));
-							$render3rows = (array_pop($rows3));
-							$row = array_splice( $sectionComments,0,current($numberRows) );
-							if(count($row) == 2){ /*Cuando es un row de 2 columnas*/
-								foreach ($row as $key => $value) {
-								/*Render two rows div*/
-									?> 
-										<div class="{{$render2rows[$key]}} ">
-											<div class="card no_margin1">
-												<div class="gb_container_header" style="background-color: #2e332d;">
-													<h4>{{$value->NombreEscultura}}</h4>
-												</div>
-												<div class="card-content">
-													<div style="margin-top: 40px; margin-bottom: 50px;">
-														<div class="gb_text_rs">
-															<p>{{$value->Comentario}}...</p>
-															<div style="display: flex; align-items: center;">
-																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-																<div style="padding: 7px;">
-																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-												</div>
-											</div>
-										</div>
-									<?php	
-								}
-							}else{ /*cuando es un row 3 columnas*/
-								foreach ($row as $key => $value) {
-								/*Render three rows div*/
-									?> 
-										<div class="{{$render3rows[$key]}} ">
-											<div class="card no_margin1">
-												<div class="gb_container_header" style="background-color: #2e332d;">
-													<h4>{{$value->NombreEscultura}}</h4>
-												</div>
-												<div class="card-content">
-													<div style="margin-top: 40px; margin-bottom: 50px;">
-														<div class="gb_text_rs">
-															<p>{{$value->Comentario}}...</p>
-															<div style="display: flex; align-items: center;">
-																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-																<div style="padding: 7px;">
-																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-												</div>
-											</div>
-										</div>	
-									<?php	
-								}
-							} //end else
-						}
-					?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Comments -->
-
 	<!-- Start Coming Soon -->
-	<div id="tab10" class="bg_comingsoon">
+	<div id="tab7" class="scrollspy"></div>
+	<div id="" class="bg_comingsoon">
 		<div class="container" style="padding-bottom: 8%" >
 			<div class="row no-margin-bottom">
 				<div class="col s12 l5 margin-left-4" >
@@ -1102,9 +1090,28 @@
 @section('addJs')
 <script src="vendor/plugins/simple-gal.js"></script>
 <script>
-	$(document).ready(function(){
-		serverdate = new Date(<?php echo time(); ?>*1000);
-	});
+$(document).ready(function(){
+	serverdate = new Date(<?php echo time(); ?>*1000);
+	// scrollspy
+	$('.scrollspy').scrollSpy();
+
+	// $("a").on('click', function(event) {
+
+	// 	if (this.hash !== "") {
+	// 		event.preventDefault();
+
+	// 		var hash = this.hash;
+
+	// 		$('html, body').animate({
+	// 			scrollTop: $(hash).offset().top
+	// 		}, 800, function(){
+
+	// 		window.location.hash = hash;
+	// 		});
+	// 	}
+	// });
+
+});
 </script>
 <script src="js/jquery_date.js"></script>
 <script src="js/script.js"></script>

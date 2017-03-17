@@ -13,56 +13,71 @@ class ContactoController extends BaseController {
 	}
 
 	/**
-	 * Function SendContactUS
+	 * Function SendContactUSGerman
 	 */
 	public function SendContactUSGerman () {
 
 		if (Request::ajax()) {
 
-	    	$input = Input::all();
+	    	$data = [
+				'name'=> strip_tags(Input::get('name')),
+				'email'=> strip_tags(Input::get('email')),
+				'company'=> strip_tags(Input::get('company')),
+				'asuntos'=> strip_tags(Input::get('asuntos')),
+				'comment'=> strip_tags(Input::get('comment'))
+			];
 
-			$rules = array (
-					'name'=> 'required',
-					'email'=> 'required|email',
-					'company'=> 'required',
-					'asuntos'=> 'required',
-					'comment'=> 'required'
-				);
+			$rules = [
+				'name'=> 'required',
+				'email'=> 'required|email',
+				'company'=> 'required',
+				'asuntos'=> 'required',
+				'comment'=> 'required'
+			];
 			
 			$messages = array(
 				'required' => 'El campo :attribute es obligatorio.',
 				'email' =>'El campo :attribute no es un email valido',
 			);
 
-			$validation = Validator::make($input, $rules, $messages);
+			$validation = Validator::make($data, $rules);
 
-			if ($validation->fails()) {
+			if ($validation->passes()) {
+				// Enviar correo
+				Mail::send('contacto_email_send', $data, function($message) use ($data) {
+					$message->to(Input::get('email'))
+					->subject('German Arzate | Contacto');
+				});
 
+				// Success message
 				return Response::json(array(
-						'success' => false,
-						'errors' => $validation->errors()->getMessageBag()->toArray()
+						'success' => true,
+						'msg' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'
 					));
 
 			} else {
+				// Error message
+				$messages = $validation->messages();
 
-				$send = Mail::send('subastas.email_send', $input, function($message) use ($input) {
-					$message->to('tu_correo@dominio.com')
-					->from(Input::get('email'), 'German Arzate | Contacto')
-					->subject(Input::get('asuntos'));
-				});
-				return $send;
+				if($validation->messages()->has('name'))
+					$errorField = $validation->messages()->first('name');
+				else if($validation->messages()->has('email'))
+					$errorField = $validation->messages()->first('email');
+				else if($validation->messages()->has('company'))
+					$errorField = $validation->messages()->first('company');
+				else if($validation->messages()->has('asuntos'))
+					$errorField = $validation->messages()->first('asuntos');
+				else if($validation->messages()->has('comment'))
+					$errorField = $validation->messages()->first('comment');
 
 				return Response::json(array(
-						'success' => true,
-						'message' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'
+					'success'=> false,
+					'msg' => $errorField
 					));
 			}
-
-    	} else {
-
-    		return 'No se ha realizado una petición';
-    	}
-
+		}
+		
 	}
+
 
 }

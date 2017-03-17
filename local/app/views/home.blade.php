@@ -5,6 +5,9 @@
  max-height: 250px;
  overflow: hidden;
 }
+.gb_bold {
+	font-weight: bold;
+}
 
 p.trunc{
 	height:90px;
@@ -34,6 +37,7 @@ p.trunc{
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
 					<p style="margin-top: 2.5em; font-weight: 600; font-style: italic;" class="titleservices size70 small-spacing">{{$data->homeBannerTxt}}</p>
+					<p style="font-weight: 600; font-style: italic;" class="titleservices size4 small-spacing">Escultor Mexicano</p>
 					<img id="movedown" style="width: 45px; margin-top: 2em; cursor: pointer; " src="media/img/home/scroll.png" alt="scroll">
 				</div>
 				<br><br>
@@ -44,12 +48,12 @@ p.trunc{
 	<div id="section1" class="container">
 		<div class="section">
 			<div class="row">
-				<div class="col s12 m8 l8 ">
+				<div class="col s12 m8 l8">
 					 <p class="par-title max-light">{{$data->auctionTitle}}</p>
 				</div>
-				<div class="col s12 m4 l4 ">
-					<p class="bold-normal">Hasta el 21 de Noviembre 2016</p>
-					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Ver subasta</a>
+				<div class="col s12 m4 l4">
+					<p class="bold-normal">Hasta el 21 de Noviembre de 2017</p>
+					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
 				</div>
 			</div>
 		</div>
@@ -60,7 +64,7 @@ p.trunc{
 			<div class="bottomRule">
 			</div>
 			<div class="row">
-				<div class="col s12 m12 l8  margin-top-1 ">
+				<div class="col s12 m12 l8  margin-top-1">
 					<div class="row">				
 						<div class="col s1"> <!-- required for floating -->
 							<!-- Nav tabs -->
@@ -79,32 +83,32 @@ p.trunc{
 											<div class="hide-on-small-only">
 												<div class="col s5">
 													<div class="row">
-														<h5  class="large-spacing" > POSEIDON </h5>
+														<h5 class="large-spacing fontCrimson gb_bold"> POSEIDÓN </h5>
 															At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
 													</div>
 												</div>
 												<div class="col s7">
 													<div class="row">
-														<img  style="width: 20em" src="media/img/esc1.jpg">
+														<img style="width: 20em" src="media/img/esc1.jpg">
 													</div>
 												</div>
 											</div>
-										<div class="col s11 hide-on-med-and-up" >
-											<div class="row">
-												<div class="card" style="background-color: #EBEBEB">
-													<div class="card-image waves-effect waves-block waves-light">
-														<img  style="width: 15em" class="activator" src="media/img/esc1.jpg">
-													</div>
-													<div class="card-content">
-														<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">POSEIDÓN<i class="material-icons right">more_vert</i></span>
-													</div>
-													<div class="card-reveal" style="background-color:#EBEBEB " >
-														<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">POSEIDÓN<i class="material-icons right">close</i></span>
-														<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+											<div class="col s11 hide-on-med-and-up">
+												<div class="row">
+													<div class="card" style="background-color: #EBEBEB">
+														<div class="card-image waves-effect waves-block waves-light">
+															<img  style="width: 15em" class="activator" src="media/img/esc1.jpg">
+														</div>
+														<div class="card-content">
+															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">POSEIDÓN<i class="material-icons right">more_vert</i></span>
+														</div>
+														<div class="card-reveal" style="background-color:#EBEBEB">
+															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">POSEIDÓN<i class="material-icons right">close</i></span>
+															<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+														</div>
 													</div>
 												</div>
-											</div>
-										</div>											
+											</div>											
 										</div>
 									</div>
 								</div>
@@ -118,22 +122,22 @@ p.trunc{
 										tab 3
 									</div>
 								</div>
-						  </div>
+						  	</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col s12" style="margin-top: -45px;" >
+						<div class="col s12" style="margin-top: -45px;">
 							<a href="{{ url('/subasta#tab9') }}" style="margin-left: 1em;" class="waves-effect green right btn">OFERTAR</a>
-							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>VER ESCULTURA</a>
+							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
 						</div>
 					</div>
 				</div>
 				<div class="col s12 m12 l4 margin-top-1">
 					<div style="position: relative;">
 						<h5 class="light">Comentarios</h5>
-						<img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="media/img/home/fb.png">
-						<img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="media/img/home/insta.png">
-						<img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="media/img/home/twitter.png">
+						<a href="#!" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="media/img/home/fb.png"></a>
+						<a href="#!" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="media/img/home/insta.png"></a>
+						<a href="#!" target="_blank"><img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="media/img/home/twitter.png"></a>
 					</div>
 					<div class="bottomRule">
 					</div>
@@ -185,8 +189,6 @@ p.trunc{
 									{{$feed->postdate}}
 								</div>
 							</div>
-
-								
 							</div>
 								<p class="trunc" >{{$feed->description}}</p>...
 							</div>

@@ -7,7 +7,7 @@
 		<div class="section">
 			<div class="row"  style="margin-bottom: 0em;">
 				<div class="col s12">
-					<ul class="tabs black-tabs">
+					<ul class="tabs black-tabs" id="tabsNavbar">
 						<li class="tab"><a class="" href="#tab1">¿QUIÉN SOY?</a></li>
 						<li class="tab"><a class="" href="#tab2">EL PENSADOR</a></li>
 						<li class="tab"><a class="" href="#tab3">EL ESCULTOR</a></li>
@@ -18,7 +18,7 @@
 		</div>
 	</div>
     <!-- SubMenu German -->
-        
+    
     <!-- Slider German -->
     <div id="tab1" class="scrollspy"></div>
     <div id="">
@@ -39,8 +39,9 @@
             <div class="row" style="margin: 50px 0 0 0;">
                 <div class="col s12 m12 l5">
                     <div class="row right" style="margin:70px 10px 0 0;">
-                        <div class="itaBold" style="font-size: 4rem; line-height: 120%;">German Arzate (Ciudad de México, 1967)</div>
-                        <div class="itaBold" style="font-size: 2.5rem; padding-left:60px; line-height: 110%;"></div>
+                        <div class="itaBold" style="font-size: 4rem; line-height: 120%;">German Arzate</div>
+                        <div class="itaBold" style="font-size: 2.1rem; line-height: 120%;">(Ciudad de México, 1967)</div>
+                        <!-- <div class="itaBold" style="font-size: 2.5rem; padding-left:60px; line-height: 110%;"></div> -->
                         <br/><br/>
                         <div style="font-size: 1.5rem; width:70%; padding-left:60px; line-height: 120%;">Escultor autodidacta, explorador de la forma desde temprana edad. Sus obras son fruto de la fusión de 2 figuras, elementos o conceptos donde una concepción dual es la constante.</div>
                     </div>
@@ -147,7 +148,21 @@
 <script>
 $(document).ready(function(){
     // scrollspy
-    $('.scrollspy').scrollSpy();
+    $('body').scrollSpy({target: ".tabs", offset: 50});   
+
+    $("#tabsNavbar a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function(){
+                window.location.hash = hash;
+            });
+        }
+    });
 });
 </script>
 @stop

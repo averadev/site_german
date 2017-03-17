@@ -36,7 +36,7 @@
                     <div class="row"><img class="algRC" src="media/img/contacto/logo.png"></div>
                 </div>
 				<div class="col s12 m6 l6">
-                    <form id="FormContactUS" action="http://hostyourgeek.com/beta/germanArzate/contacto/contacto-mail" method="post">
+                    <form id="FormContactUS" action="http://hostyourgeek.com/beta/germanArzate/contacto/contactomail" method="post">
                         <div class="row">
                             <input type="text" id="name" class="txtForm" name="name" required placeholder="NOMBRE COMPLETO" />
                         </div>

@@ -21,21 +21,38 @@
 				display: none;
 			}
 		}
+		.contenedor_submenu {
+			position: fixed;
+			width: 100%;
+			height: 80px;
+			background-color: #fff;
+			top: 0;
+			z-index: 10;
+			margin-top: 4em;
+		}
 	</style>
 </style>
-	<div class="container">
-		<div class="section">
-			<div class="row"  style="margin-bottom: 0em;">
-				<div class="col s12">
-					<ul class="tabs menuFont black-tabs">
-						<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
-						<li class="tab"><a class="active" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
-						<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
-					</ul>
+	<!-- start submenu fixed -->
+	<div class="contenedor_submenu">
+		<div class="container">
+			<div class="section">
+				<div class="row"  style="margin-bottom: 0em;">
+					<div class="col s12">
+						<ul class="tabs menuFont black-tabs">
+							<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
+							<li class="tab"><a class="active" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+							<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- end submenu fixed -->
+	<br>
+	<br>
+	<br>
+	<br>
 	<div>
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">
@@ -51,20 +68,20 @@
 					<br><br>
 				</div>
 			</div>
-			<div style="height: 300px; " class="parallax"><img src="../media/img/personalizadas/{{$data->per_banner_pic}}" alt="banner"></div>
+			<div style="height: 300px;" class="parallax"><img src="../media/img/personalizadas/{{$data->per_banner_pic}}" alt="banner"></div>
 		</div>
-		<div id="section1" class="container" >
-			<div class="section" >
+		<div id="section1" class="container">
+			<div class="section">
 				<div style="margin-top: 1%; margin-bottom: 9%;" class="row">
 					<div class="col s12">
 						<p class="center-align par-title max-light">{{$data->per_unico_title}}</p>
 					</div>
 					<div class="col l6 m10 s12 offset-l3 offset-m1">
-						<p style="font-size: 1.2em; " class="center-align light med-lineheight " >{{$data->per_unico_desc}}</p>
+						<p style="font-size: 1.2em;" class="center-align light med-lineheight">{{$data->per_unico_desc}}</p>
 					</div>					
 				</div>
 				<div class="row" >
-					<div class="col l10 m12 s12 offset-l1 ">
+					<div class="col l10 m12 s12 offset-l1">
 						<div class="right">
 							<div id="section2" class="col s12 right">
 								<p class="titleservices size4 italic right-align add-right-ident hide-on-med-and-down"><b>
@@ -138,8 +155,8 @@
 			</div>
 		</div>
 		<div style="background-image:url('../media/img/personalizadas/{{$data->per_form_bg}}')" class="bg-services-form">
-			<div class="container" >
-				<div class="section" >
+			<div class="container">
+				<div class="section">
 					<div style="margin-top: 36vw;" class="row">
 						<div id="formsection" style="background-color: transparent; width: 70%; margin-left:22.5%;" class="">	
 							<p style="color: white;" class="titleservices hide-on-med-and-down indent-after-first-s2 size45 italic"><b>
@@ -153,12 +170,12 @@
 									{{$data->per_form_title}}
 								</b></p>				
 							</div>
-							<p class="med-lineheight" style="margin-top: 2.4vw; margin-bottom: 2.4vw; color: white; font-size: 1.3rem; ">
+							<p class="med-lineheight" style="margin-top: 2.4vw; margin-bottom: 2.4vw; color: white; font-size: 1.3rem;">
 								{{$data->per_form_desc}}
 							</p>
 								<input id="myname"  class="black-input" required type="text" placeholder="Nombre Completo">
-								<input id="myemail" class="black-input" required type="text" placeholder="Correo electronico">
-								<input id="myemail" class="black-input" required type="text" placeholder="Compañia / Empresa">
+								<input id="myemail" class="black-input" required type="text" placeholder="Correo electrónico">
+								<input id="myemail" class="black-input" required type="text" placeholder="Compañía / Empresa">
 								<input id="myemail" class="black-input" required type="text" placeholder="Día para la cita">
 									<textarea  cols="100" style="height: 100px; color: white;" placeholder="Comentarios" ></textarea>							
 								<button style="margin-bottom: 10%;" class="waves-effect green right med-button light btn">HACER CITA</button>
@@ -173,4 +190,22 @@
 @section('addJs')
 <script src="../js/personalizadas.js"></script>
 <script src="../vendor/js/jquery.smooth-scroll.min.js"></script>
+<script src="../js/jquery.smooth.js"></script>
+<script>
+(function($){
+	$(window).on("load",function(){
+
+		$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"#tabsNavbar a"
+		});
+
+		$("a[rel='next']").click(function(e){
+			e.preventDefault();
+			var to=$(this).parent().parent("section").next().attr("id");
+			$.mPageScroll2id("scrollTo",to);
+		});
+
+	});
+})(jQuery);
+</script>
 @stop

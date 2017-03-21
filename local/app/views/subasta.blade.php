@@ -398,26 +398,44 @@
 		font-weight: 200 !important; 
 		float: right !important;
 	}
+	.contenedor_submenu {
+		position: fixed;
+		width: 100%;
+		height: 120px;
+		background-color: #fff;
+		top: 0;
+		z-index: 10;
+		margin-top: 4em;
+	}
+	#tabsNavbar a.mPS2id-highlight {
+	}
 </style>
-
-	<div class="container">
-		<div class="section">
-			<div class="row" style="margin-bottom: 0em;">
-				<div class="col s12">
-					<span class="nav-title gb_title_x2">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
-					<ul class="tabs black-tabs" id="tabsNavbar">
-						<li class="tab"><a class="" href="#tab1">¿Por Qué?</a></li>
-						<li class="tab"><a class="" href="#tab2">El Proceso</a></li>
-						<li class="tab"><a class="" href="#tab3">¿En Qué Te Convierte?</a></li>
-						<li class="tab"><a class="" href="#tab4">Especificaciones</a></li>
-						<li class="tab"><a class="" href="#tab5">Comentarios</a></li>
-						<li class="tab"><a class="" href="#tab6">Subasta</a></li>
-						<li class="tab"><a class="" href="#tab7">Próximamente</a></li>
-					</ul>
+	<!-- start submenu fixed -->
+	<div class="contenedor_submenu">
+		<div class="container">
+			<div class="section">
+				<div class="row" style="margin-bottom: 0em;">
+					<div class="col s12">
+						<span class="nav-title gb_title_x2">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
+						<ul class="tabs black-tabs" id="tabsNavbar">
+							<li class="tab"><a class="" href="#tab1">¿Por Qué?</a></li>
+							<li class="tab"><a class="" href="#tab2">El Proceso</a></li>
+							<li class="tab"><a class="" href="#tab3">¿En Qué Te Convierte?</a></li>
+							<li class="tab"><a class="" href="#tab4">Especificaciones</a></li>
+							<li class="tab"><a class="" href="#tab5">Comentarios</a></li>
+							<li class="tab"><a class="" href="#tab6">Subasta</a></li>
+							<li class="tab"><a class="" href="#tab7">Próximamente</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- end submenu fixed -->
+	<br>
+	<br>
+	<br>
+	<br>
 
 	<!-- Start ¿Porque? -->
 	<div id="tab1" class="scrollspy"></div>
@@ -579,7 +597,7 @@
 							<!-- .events-content -->
 
 							<!-- Start .timeline -->
-							<div class="timeline" style="z-index: 1000;">
+							<div class="timeline" style="z-index: 9;">
 								<!-- Start .events-wrapper -->
 								<div class="events-wrapper gb_margin10">
 									<div class="events">
@@ -917,7 +935,7 @@
 							</div> <!-- end events-content -->
 							<div class="hide-on-med-and-down"><br><br><br><br><br></div>
 
-							<div class="timeline" style="z-index: 1000;"> <!-- Start timeline especificaciones -->
+							<div class="timeline" style="z-index: 9;"> <!-- Start timeline especificaciones -->
 								<div class="events-wrapper gb_margin10"> <!-- Start events-wrapper -->
 									<div class="events"> <!-- start events -->
 										<ol>
@@ -1349,12 +1367,13 @@
 @stop
 @section('addJs')
 <script src="vendor/plugins/simple-gal.js"></script>
+<script src="js/jquery.smooth.js"></script>
 <script>
 $(document).ready(function(){
 	serverdate = new Date(<?php echo time(); ?>*1000);
 
 	// scrollspy
-	$('body').scrollSpy({target: ".tabs", offset: 50});   
+	$('body').scrollSpy({target: ".tab", offset: 50});
 
 	$("#tabsNavbar a").on('click', function(event) {
 		if (this.hash !== "") {
@@ -1371,6 +1390,23 @@ $(document).ready(function(){
 	});
 
 });
+</script>
+<script>
+(function($){
+	$(window).on("load",function(){
+
+		$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"#tabsNavbar a"
+		});
+
+		$("a[rel='next']").click(function(e){
+			e.preventDefault();
+			var to=$(this).parent().parent("section").next().attr("id");
+			$.mPageScroll2id("scrollTo",to);
+		});
+
+	});
+})(jQuery);
 </script>
 <script src="js/jquery_date.js"></script>
 <script src="js/script.js"></script>

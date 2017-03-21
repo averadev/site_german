@@ -21,22 +21,39 @@
 				display: none;
 			}
 		}
+		.contenedor_submenu {
+			position: fixed;
+			width: 100%;
+			height: 80px;
+			background-color: #fff;
+			top: 0;
+			z-index: 10;
+			margin-top: 4em;
+		}
 	</style>
-	<div class="container">
-		<div class="section">
-			<div class="row"  style="margin-bottom: 0em;">
-				<div class="col s12">   
-					<ul class="tabs menuFont black-tabs">
-						<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
-						<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
-						<li class="tab"><a class="active" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
-					</ul>
-				</div>				
+	<!-- start submenu fixed -->
+	<div class="contenedor_submenu">
+		<div class="container">
+			<div class="section">
+				<div class="row"  style="margin-bottom: 0em;">
+					<div class="col s12">   
+						<ul class="tabs menuFont black-tabs">
+							<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
+							<li class="tab"><a id="personalizadas" href="personalizadas">ESCULTURAS PERSONALIZADAS</a></li>
+							<li class="tab"><a class="active" href="interiores">ESCULTURAS PARA INTERIORES</a></li>
+						</ul>
+					</div>				
+				</div>
 			</div>
 		</div>
 	</div>
+	<!-- end submenu fixed -->
+	<br>
+	<br>
+	<br>
+	<br>
 	<div>
-		<div id="index-banner" class="parallax-container" >
+		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">
 				<div class="container">
 					<br><br>
@@ -50,18 +67,18 @@
 					<br><br>
 				</div>
 			</div>
-			<div style="height: 300px; " class="parallax"><img src="../media/img/interiores/{{$data->inter_banner_pic}}" alt="banner"></div>
+			<div style="height: 300px;" class="parallax"><img src="../media/img/interiores/{{$data->inter_banner_pic}}" alt="banner"></div>
 		</div>
-		<div id="section1" class="container" >
+		<div id="section1" class="container">
 			<div class="section" >
 				<div class="row">
 					<div class="col s12">
 						<p class="center-align par-title max-light">{{$data->inter_distincion_title}}</p>
 					</div>
 					<div class="col l6 m10 s12 offset-l3 offset-m1">
-						<p style="font-size: 1.2em; " class="center-align light med-lineheight " >{{$data->inter_distincion_desc}}</p>
+						<p style="font-size: 1.2em; " class="center-align light med-lineheight">{{$data->inter_distincion_desc}}</p>
 					</div>
-					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em; ">
+					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em;">
 						<img style="width: 31%; position: absolute; top:-22.5em; left:0em;" src="../media/img/interiores/{{$data->inter_distincion_pic}}" alt="escultura1">
 					</div>
 					<div class="hide-on-large-only">
@@ -69,13 +86,13 @@
 					</div>					
 				</div>
 				<div class="row" >
-					<div class="col l10 m12 s12 offset-l1 ">
+					<div class="col l10 m12 s12 offset-l1">
 						<div class="row no-margin-bottom"> 
 							<div id="section2" class="col s12 l12">
 								<p class="titleservices size4 italic indent-after-first-x hide-on-med-and-down"><b>
 									{{$data->inter_catalogo_title}}
 								</b></p>
-								<p class="titleservices size4 italic hide-on-large-only "><b>
+								<p class="titleservices size4 italic hide-on-large-only"><b>
 									{{$data->inter_catalogo_title}}
 								</b></p>								
 							</div>
@@ -99,7 +116,7 @@
 								<p class="titleservices size4 italic right-align add-right-ident-x2 hide-on-med-and-down"><b>
 									{{$data->inter_person_title}}
 								</b>
-								<p class="titleservices size4 italic right-align hide-on-large-only "><b>
+								<p class="titleservices size4 italic right-align hide-on-large-only"><b>
 									{{$data->inter_person_title}}
 								</b>								
 							</div>
@@ -173,8 +190,8 @@
 									<p><i class="fi-success"></i> Mensaje enviado.</p>
 								</div>
 								<input id="myname" required type="text" placeholder="Nombre Completo">
-								<input id="myemail" required type="text" placeholder="Correo electronico">
-								<input id="myemail" required type="text" placeholder="Compañia / Empresa">
+								<input id="myemail" required type="text" placeholder="Correo electrónico">
+								<input id="myemail" required type="text" placeholder="Compañía / Empresa">
 								<input id="myemail" required type="text" placeholder="Día para la cita">
 									<textarea  cols="100" style="height: 100px" placeholder="Comentarios" ></textarea>							
 								<button  class="waves-effect green right med-button light btn">HACER CITA</button>
@@ -189,4 +206,22 @@
 @section('addJs')
 <script src="../js/interiores.js"></script>
 <script src="../vendor/js/jquery.smooth-scroll.min.js"></script>
+<script src="../js/jquery.smooth.js"></script>
+<script>
+(function($){
+	$(window).on("load",function(){
+
+		$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"#tabsNavbar a"
+		});
+
+		$("a[rel='next']").click(function(e){
+			e.preventDefault();
+			var to=$(this).parent().parent("section").next().attr("id");
+			$.mPageScroll2id("scrollTo",to);
+		});
+		
+	});
+})(jQuery);
+</script>
 @stop

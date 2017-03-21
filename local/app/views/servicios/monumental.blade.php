@@ -19,20 +19,37 @@
 			}
 
 		}
+		.contenedor_submenu {
+			position: fixed;
+			width: 100%;
+			height: 80px;
+			background-color: #fff;
+			top: 0;
+			z-index: 10;
+			margin-top: 4em;
+		}
 	</style>
-	<div class="container">
-		<div class="section">
-			<div class="row"  style="margin-bottom: 0em;">
-				<div class="col s12">
-					<ul class="tabs menuFont black-tabs">
-						<li class="tab"><a class="active" href="#monumental">ESCULTURA MONUMENTAL</a></li>
-						<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
-						<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
-					</ul>
+	<!-- start submenu fixed -->
+	<div class="contenedor_submenu">
+		<div class="container">
+			<div class="section">
+				<div class="row" style="margin-bottom: 0em;">
+					<div class="col s12">
+						<ul class="tabs menuFont black-tabs">
+							<li class="tab"><a class="active" href="#monumental">ESCULTURA MONUMENTAL</a></li>
+							<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+							<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- end submenu fixed -->
+	<br>
+	<br>
+	<br>
+	<br>
 	<div>
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">
@@ -48,26 +65,26 @@
 					<br><br>
 				</div>
 			</div>
-			<div style="height: 300px; " class="parallax"><img src="../media/img/monumental/{{$data->mon_banner_pic}}" alt="banner"></div>
+			<div style="height: 300px;" class="parallax"><img src="../media/img/monumental/{{$data->mon_banner_pic}}" alt="banner"></div>
 		</div>
-		<div id="section1" class="container" >
+		<div id="section1" class="container">
 			<div class="section" >
 				<div class="row">
 					<div class="col s12">
 						<p class="center-align par-title max-light">{{$data->mon_unico_title}}</p>
 					</div>
 					<div class="col l6 m10 s12 offset-l3 offset-m1">
-						<p style="font-size: 1.2em; " class="center-align light med-lineheight " >{{$data->mon_unico_desc}}</p>
+						<p style="font-size: 1.2em;" class="center-align light med-lineheight">{{$data->mon_unico_desc}}</p>
 					</div>
-					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em; ">
+					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em;">
 						<img style="width: 28%; position: absolute; top:-25em; left:0em;" src="../media/img/monumental/{{$data->mon_unico_pic}}" alt="escultura1">
 					</div>
 					<div class="hide-on-large-only">
 						<img style="width: 30%; margin-left: 35%; margin-top: 5%;" src="../media/img/monumental/{{$data->mon_unico_pic}}" alt="escultura1">
 					</div>					
 				</div>
-				<div class="row" >
-					<div class="col l10 m12 s12 offset-l1 ">
+				<div class="row">
+					<div class="col l10 m12 s12 offset-l1">
 						<div class="right">
 							<div id="section2"  class="col s12 right">
 								<p class="titleservices hide-on-med-and-down size4 italic right-align add-right-ident"><b>
@@ -91,7 +108,7 @@
 							<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/monumental/{{$data->mon_entrevista_pic}}" alt="escultura1">
 						</div>		
 						<div class="row no-margin-bottom"> 
-							<div id="section3"  class="col s12">
+							<div id="section3" class="col s12">
 								<p class="titleservices hide-on-med-and-down size4 italic left-align indent-after-first"><b>
 									{{$data->mon_lluvia_title}}
 								</b></p>
@@ -141,10 +158,10 @@
 			</div>
 		</div>
 	<div style="background-image:url('../media/img/monumental/{{$data->mon_form_bg}}')" class="bg-services-form">
-		<div class="container" >
-			<div class="section" >
+		<div class="container">
+			<div class="section">
 				<div class="row">
-					<div class="col l12 m12 s12 center" >
+					<div class="col l12 m12 s12 center">
 						<p style="padding-top: 16vw; padding-bottom: 15vw;" class="titleservices med-spacing headerForm white-text light">{{$data->mon_form_header}}</p>
 					</div>
 				</div>
@@ -178,10 +195,27 @@
 			</div>
 		</div>
 	</div>
-
 	</div>
 @stop
 @section('addJs')
 	<script src="../js/monumental.js"></script>
 	<script src="../vendor/js/jquery.smooth-scroll.min.js"></script>
+	<script src="../js/jquery.smooth.js"></script>
+	<script>
+	(function($){
+		$(window).on("load",function(){
+
+			$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+				highlightSelector:"#tabsNavbar a"
+			});
+
+			$("a[rel='next']").click(function(e){
+				e.preventDefault();
+				var to=$(this).parent().parent("section").next().attr("id");
+				$.mPageScroll2id("scrollTo",to);
+			});
+
+		});
+	})(jQuery);
+	</script>
 @stop

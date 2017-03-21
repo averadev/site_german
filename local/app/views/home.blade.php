@@ -144,7 +144,7 @@ p.trunc{
 					</div>
 					<div class="col s12">
 						<div id="listCommentsHome"></div>
-						<div class="right-align"><a href="{{ url('/subasta#tab8') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
+						<div class="right-align"><a href="{{ url('/subasta#tab5') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
 					</div>
 						<?php
 							/**

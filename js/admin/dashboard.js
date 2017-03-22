@@ -2,10 +2,7 @@ var dashboard = function (){
 	var bindEvents = function(){
 	
 		$("#module").on("keydown change", function(){
-			getSubmodules($(this).val());
-		});
-		$("#submodule").on("keydown change", function(){
-			getSections($(this).val());
+			getComponents($(this).val());
 		});
 		$("#txtEditor").Editor(
 			{
@@ -43,97 +40,20 @@ var dashboard = function (){
 
 	}
 
-	var getSubmodules = function(number){
+	var getComponents = function(number){
 		$.ajax({
-			url: HOST+'/admin/submodules',
+			url: HOST+'/admin/components',
 			type: 'GET',
 			dataType: 'json',
 			data: {module: number},
 		}).done(function(response) {
-			$("#mainSections").empty();
-			var accordion = ''
-			var section = '';
-			var mainAccordion = '';
-			$.each(response.components, function(index1, section) {
-				accordion =  accordion +
-						"<li>"+
-							"<div class='collapsible-header'>"+
-								"<i class='material-icons'>library_books</i>"+section.name+"</div>"+
-							"<div class='collapsible-body'>"+
-								"<div class='container'>"+
-									"<ul class='collapsible' data-collapsible='expandable'>";				
-				//console.log(section.name);
-				$.each(section.components, function(index, component) {
-					section  = '';
-					 section  = "<li>"+
-								"<div class='collapsible-header'>"+
-									"<i class='material-icons'>book</i>"+component.name+"</div>"+
-								"<div class='collapsible-body'>"+
-									"<p>"+(component.value)+"</p>"+
-								"</div>"+
-							"</li>";
-					accordion =  accordion + section;
-					//console.log(component.name);
-				});
-				accordion = accordion + "</ul></div></div></li>";				
-			});
-
-			$("#mainSections").append(accordion);
-			$('.collapsible').collapsible();
-			$("#submodule").empty();
-			//$('#submodule').append($('<option value="" disabled selected>Seleccione</option>'));
-			$.each(response.data, function(index, val) {
-				$('#submodule').append($('<option></option>').val(val.id).html(val.name));
-			});
-			 $('#submodule').material_select();
+			if(response.component[0].type == 1){
+				$("#txtEditor").Editor("setText", response.component[0].element);
+			}
 		}).fail(function(response) {
 			console.log(response);
 		});	
 	}
-
-	var getSections = function(number){
-		$.ajax({
-			url: HOST+'/admin/sections',
-			type: 'GET',
-			dataType: 'json',
-			data: {submodule: number},
-		}).done(function(response) {
-			$("#mainSections").empty();
-			var accordion = ''
-			var section = '';
-			var mainAccordion = '';
-			$.each(response.components, function(index1, section) {
-				accordion =  accordion +
-						"<li>"+
-							"<div class='collapsible-header'>"+
-								"<i class='material-icons'>library_books</i>"+section.name+"</div>"+
-							"<div class='collapsible-body'>"+
-								"<div class='container'>"+
-									"<ul class='collapsible' data-collapsible='expandable'>";				
-				//console.log(section.name);
-				$.each(section.components, function(index, component) {
-					section  = '';
-					 section  = "<li>"+
-								"<div class='collapsible-header'>"+
-									"<i class='material-icons'>book</i>"+component.name+"</div>"+
-								"<div class='collapsible-body'>"+
-									"<p>"+(component.value)+"</p>"+
-								"</div>"+
-							"</li>";
-					accordion =  accordion + section;
-					//console.log(component.name);
-				});
-				accordion = accordion + "</ul></div></div></li>";				
-			});
-
-			$("#mainSections").append(accordion);
-			$('.collapsible').collapsible();
-
-		}).fail(function(response) {
-			console.log(response);
-		});	
-	}
-
 
 	var onloadExec = function(){
 		$("#module").prop('selectedIndex', 0);

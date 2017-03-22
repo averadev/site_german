@@ -1,23 +1,15 @@
 	<div class="navbar-fixed">	
-		<nav class="page-topbar">
-			<div class="nav-wrapper grey">
-			<a href="#!" style="margin-left: 30px;" class="brand-logo">Admin</a>
+		<nav class="page-topbar top-bar-grey">
+			<div class="nav-wrapper top-bar-grey">
+			<!--<a href="#!" style="margin-left: 30px;" class="brand-logo">Admin</a>-->
 				<div class="container">
-					
-						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-						<div style="margin-left: 240px;" >
-							<ul class="left hide-on-med-and-down">
-								<li><a href="sass.html">Home</a></li>
-								<li><a href="badges.html">Menu</a></li>
-								<li><a href="collapsible.html">Moudulos</a></li>
-							</ul>
+					<div class="row">
+						<div class="col s12 m10 l6 right">
+							<span style="font-size: 1.2rem; margin-left: 0%; " >Bienvenido Mauricio</span>
+							<a href="{{ url('/admin/logout') }}" style=" text-transform: none; font-size: 1.2rem; font-weight: bold; margin-top: 15px;" class="waves-effect btn-flat right "><i class="icon-log_out top-margin right"></i>Cerrar Sesión</a>	
+						
 						</div>
-						<ul class="side-nav" id="mobile-demo">
-							<li><a href="sass.html">Home</a></li>
-							<li><a href="badges.html">Menu</a></li>
-							<li><a href="collapsible.html">Modulos</a></li>
-						</ul>
-					
+					</div>
 				</div>
 			</div>
 		</nav>

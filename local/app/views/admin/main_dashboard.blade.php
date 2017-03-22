@@ -8,14 +8,14 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 	<link rel="stylesheet" href="{{ URL::asset('css/style-admin.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.16/css/perfect-scrollbar.min.css">
- 	<link rel="stylesheet" href="{{ URL::asset('vendor/plugins/line-editor/editor.css') }}">
+	<link rel="stylesheet" href="{{ URL::asset('vendor/plugins/line-editor/editor.css') }}">
 
 	<style type="text/css">
 		.side-nav a {
 			padding: 0 19px;
 		}
 		.side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a {
-		 	padding: 0 23.5px 0 0;
+			padding: 0 23.5px 0 0;
 		}
 		.collapsible-body {
 			padding: 0rem;
@@ -41,26 +41,25 @@
 
 <script type="text/javascript">
 
-		var HOST = "{{URL::to('/')}}";
-		$.ajaxSetup({
-			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
-if (typeof jQuery.fn.live == 'undefined' || !(jQuery.isFunction(jQuery.fn.live))) {
-  jQuery.fn.extend({
-      live: function (event, callback) {
-         if (this.selector) {
-              jQuery(document).on(event, this.selector, callback);
-          }
-      }
-  });
-}	
-		var f = $(".page-topbar").height();
-        var g = window.innerHeight - f;
-$(".leftside-navigation").height(g).perfectScrollbar({
-		suppressScrollX: !0
+	var HOST = "{{URL::to('/')}}";
+	$.ajaxSetup({
+		headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
 	});
-
-
+	if (typeof jQuery.fn.live == 'undefined' || !(jQuery.isFunction(jQuery.fn.live))) {
+		jQuery.fn.extend({
+			live: function (event, callback) {
+				if (this.selector) 
+				{
+					jQuery(document).on(event, this.selector, callback);
+				}
+			}
+		});
+	}
+	var f = $(".page-topbar").height();
+	var g = window.innerHeight - f;
+	$(".leftside-navigation").height(g).perfectScrollbar({
+	suppressScrollX: !0
+	});
 
 </script>
 @include('admin.footer')

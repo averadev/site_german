@@ -14,7 +14,8 @@
 	
 	/*Admin*/
 	Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
-		Route::controller('/admin/subasta', 'AuctionAdminController');	
+		Route::controller('/admin/subasta', 'AuctionAdminController');
+		Route::get('/admin/section/{id}', 'DashboardController@showSection');	
 		Route::controller('/admin', 'DashboardController');
 	});
 

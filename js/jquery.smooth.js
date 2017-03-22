@@ -56,7 +56,7 @@ THE SOFTWARE.
 			*/
 			layout:"vertical",
 			/* extra space in pixels for the target element position: Integer */
-			offset:0,
+			offset:130,
 			/* highlight the main/default selectors or insert a different set: Boolean, String */
 			highlightSelector:false,
 			/* class of the clicked element: String */

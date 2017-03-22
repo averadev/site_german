@@ -401,13 +401,41 @@
 	.contenedor_submenu {
 		position: fixed;
 		width: 100%;
-		height: 120px;
+		height: 135px;
 		background-color: #fff;
 		top: 0;
 		z-index: 10;
 		margin-top: 4em;
 	}
-	#tabsNavbar a.mPS2id-highlight {
+	#navigation-menu {
+		box-shadow: none;
+	}
+	#navigation-menu a {
+		color: #a6a6a6;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	#navigation-menu a:hover, a.mPS2id-highlight {
+		background-color: transparent;
+		color: black !important;
+		border-bottom: 2px solid black;
+	}
+	.tabs-menu {
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+	.tabs-menu {
+		position: relative;
+		overflow-x: auto;
+		overflow-y: hidden;
+		width: 100%;
+		background-color: #fff;
+		margin: 0 auto;
+		white-space: nowrap;
 	}
 </style>
 	<!-- start submenu fixed -->
@@ -417,15 +445,17 @@
 				<div class="row" style="margin-bottom: 0em;">
 					<div class="col s12">
 						<span class="nav-title gb_title_x2">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
-						<ul class="tabs black-tabs" id="tabsNavbar">
-							<li class="tab"><a class="" href="#tab1">¿Por Qué?</a></li>
-							<li class="tab"><a class="" href="#tab2">El Proceso</a></li>
-							<li class="tab"><a class="" href="#tab3">¿En Qué Te Convierte?</a></li>
-							<li class="tab"><a class="" href="#tab4">Especificaciones</a></li>
-							<li class="tab"><a class="" href="#tab5">Comentarios</a></li>
-							<li class="tab"><a class="" href="#tab6">Subasta</a></li>
-							<li class="tab"><a class="" href="#tab7">Próximamente</a></li>
-						</ul>
+						<nav id="navigation-menu" class="white">
+							<ul class="tabs-menu">
+								<li class="tab"><a class="" href="#tab1">¿Por Qué?</a></li>
+								<li class="tab"><a class="" href="#tab2">El Proceso</a></li>
+								<li class="tab"><a class="" href="#tab3">¿En Qué Te Convierte?</a></li>
+								<li class="tab"><a class="" href="#tab4">Especificaciones</a></li>
+								<li class="tab"><a class="" href="#tab5">Comentarios</a></li>
+								<li class="tab"><a class="" href="#tab6">Subasta</a></li>
+								<li class="tab"><a class="" href="#tab7">Próximamente</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</div>
@@ -439,6 +469,11 @@
 
 	<!-- Start ¿Porque? -->
 	<div id="tab1" class="scrollspy"></div>
+	<div class="hide-on-large-only">
+		<br>
+		<br>
+		<br>
+	</div>
 	<div id="" class="bg_porque">
 		<div class="hide-on-med-and-down" style="position: relative;  z-index: 0;  height: 700px;"> <!-- Desktop -->
 			<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" style="position: absolute; width: 800px; bottom: 0; z-index: -1; ">
@@ -623,7 +658,7 @@
 
 	<!-- Start ¿En Que Te Convierte? -->
 	<div id="tab3" class="scrollspy"></div>
-	<div id="" class="bg_queteconvierte" style="display: block;">
+	<div id="" class="bg_queteconvierte">
 		<div class="hide-on-med-and-down" style="position: relative;  z-index: 0;  height: 700px;">
 			<img style="position: absolute; bottom: 0; left: 0; width: 300px;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte1}}" alt="">
 			<img style="position: absolute; bottom: 0; right: 0; width: 300px;" src="media/img/subasta/{{$submodule_section_data->SeccionIMGEnQueTeConvierte2}}">			
@@ -1395,14 +1430,10 @@ $(document).ready(function(){
 (function($){
 	$(window).on("load",function(){
 
-		$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
-			highlightSelector:"#tabsNavbar a"
-		});
-
-		$("a[rel='next']").click(function(e){
-			e.preventDefault();
-			var to=$(this).parent().parent("section").next().attr("id");
-			$.mPageScroll2id("scrollTo",to);
+		$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"#navigation-menu a",
+			pageEndSmoothScroll: true,
+			forceSingleHighlight:true
 		});
 
 	});

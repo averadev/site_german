@@ -22,11 +22,41 @@
 		.contenedor_submenu {
 			position: fixed;
 			width: 100%;
-			height: 80px;
+			height: 90px;
 			background-color: #fff;
 			top: 0;
 			z-index: 10;
 			margin-top: 4em;
+		}
+		#navigation-menu {
+			box-shadow: none;
+		}
+		#navigation-menu a {
+			color: #a6a6a6;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		#navigation-menu a:hover, a.mPS2id-highlight {
+			background-color: transparent;
+			color: black !important;
+			border-bottom: 2px solid black;
+		}
+		.tabs-menu {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+		}
+		.tabs-menu {
+			position: relative;
+			overflow-x: auto;
+			overflow-y: hidden;
+			width: 100%;
+			background-color: #fff;
+			margin: 0 auto;
+			white-space: nowrap;
 		}
 	</style>
 	<!-- start submenu fixed -->
@@ -35,11 +65,13 @@
 			<div class="section">
 				<div class="row" style="margin-bottom: 0em;">
 					<div class="col s12">
-						<ul class="tabs menuFont black-tabs">
-							<li class="tab"><a class="active" href="#monumental">ESCULTURA MONUMENTAL</a></li>
-							<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
-							<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
-						</ul>
+						<nav id="navigation-menu" class="white">
+							<ul class="tabs-menu menuFont">
+								<li class="tab"><a class="active" href="#monumental">ESCULTURA MONUMENTAL</a></li>
+								<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+								<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</div>
@@ -50,6 +82,9 @@
 	<br>
 	<br>
 	<br>
+
+	<!-- start escultura monumental -->
+	<div id="monumental" class="scrollspy"></div>
 	<div>
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">
@@ -157,45 +192,54 @@
 				</div>
 			</div>
 		</div>
-	<div style="background-image:url('../media/img/obras_especiales/{{$data->mon_form_bg}}')" class="bg-services-form">
-		<div class="container">
-			<div class="section">
-				<div class="row">
-					<div class="col l12 m12 s12 center">
-						<p style="padding-top: 16vw; padding-bottom: 15vw;" class="titleservices med-spacing headerForm white-text light">{{$data->mon_form_header}}</p>
+		<div style="background-image:url('../media/img/obras_especiales/{{$data->mon_form_bg}}')" class="bg-services-form">
+			<div class="container">
+				<div class="section">
+					<div class="row">
+						<div class="col l12 m12 s12 center">
+							<p style="padding-top: 16vw; padding-bottom: 15vw;" class="titleservices med-spacing headerForm white-text light">{{$data->mon_form_header}}</p>
+						</div>
 					</div>
-				</div>
-				<div id="divform" class="row">
-					<div class="col s12 m12 l8 offset-l2 bg-white">	
-						<p style="padding-left: 4vw; margin-top: 3vw;" class="titleservices size45 indent-after-first-s italic hide-on-med-and-down"><b>
-							{{$data->mon_form_title}}
-						</b></p>
-						<p style="margin-top: 4%; margin-bottom: 7%; text-align: center;" class="titleservices size4 italic hide-on-large-only"><b>
-							{{$data->mon_form_title}}
-						</b></p>
-						<p class="med-lineheight" style="padding-left: 5.5vw; font-size: 1.3rem; padding-right: 4.5vw; margin-top: 2.4vw; margin-bottom: 2.4vw  ">
-							{{$data->mon_form_desc}}
-						</p>
-						<form class="whiteform col s12 m12 l10 offset-l1" data-abide id="mailform">							
-							<div data-abide-error class="alert callout" style="display: none;">
-								<p><i class="fi-alert"></i> Porfavor completa todos los campos.</p>
-							</div>
-							<div class="success callout" style="display: none;">
-								<p><i class="fi-success"></i> Mensaje enviado.</p>
-							</div>
-							<input id="myname" required type="text" placeholder="Nombre Completo">
-							<input id="myemail" required type="text" placeholder="Correo electronico">
-							<input id="myemail" required type="text" placeholder="Compañia / Empresa">
-							<input id="myemail" required type="text" placeholder="Día para la cita">
-								<textarea  cols="100" style="height: 100px" placeholder="Comentarios" ></textarea>							
-							<button  class="waves-effect green right med-button light btn">HACER CITA</button>
-						</form>
+					<div id="divform" class="row">
+						<div class="col s12 m12 l8 offset-l2 bg-white">	
+							<p style="padding-left: 4vw; margin-top: 3vw;" class="titleservices size45 indent-after-first-s italic hide-on-med-and-down"><b>
+								{{$data->mon_form_title}}
+							</b></p>
+							<p style="margin-top: 4%; margin-bottom: 7%; text-align: center;" class="titleservices size4 italic hide-on-large-only"><b>
+								{{$data->mon_form_title}}
+							</b></p>
+							<p class="med-lineheight" style="padding-left: 5.5vw; font-size: 1.3rem; padding-right: 4.5vw; margin-top: 2.4vw; margin-bottom: 2.4vw  ">
+								{{$data->mon_form_desc}}
+							</p>
+							<form class="whiteform col s12 m12 l10 offset-l1" data-abide id="mailform">							
+								<div data-abide-error class="alert callout" style="display: none;">
+									<p><i class="fi-alert"></i> Porfavor completa todos los campos.</p>
+								</div>
+								<div class="success callout" style="display: none;">
+									<p><i class="fi-success"></i> Mensaje enviado.</p>
+								</div>
+								<input id="myname" required type="text" placeholder="Nombre Completo">
+								<input id="myemail" required type="text" placeholder="Correo electrónico">
+								<input id="myemail" required type="text" placeholder="Compañía / Empresa">
+								<input id="myemail" required type="text" placeholder="Día para la cita">
+									<textarea  cols="100" style="height: 100px" placeholder="Comentarios" ></textarea>							
+								<button  class="waves-effect green right med-button light btn">HACER CITA</button>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
+	<!-- end escultura monumental -->
+
+	<!-- start escultura personalizada -->
+	<div id="personalizadas" class="scrollspy"></div>
+	<!-- end escultura personalizada -->
+
+	<!-- start escultura interiores -->
+	<div id="interiores" class="scrollspy"></div>
+	<!-- end escultura interiores -->
 @stop
 @section('addJs')
 	<script src="../js/monumental.js"></script>
@@ -205,14 +249,10 @@
 	(function($){
 		$(window).on("load",function(){
 
-			$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
-				highlightSelector:"#tabsNavbar a"
-			});
-
-			$("a[rel='next']").click(function(e){
-				e.preventDefault();
-				var to=$(this).parent().parent("section").next().attr("id");
-				$.mPageScroll2id("scrollTo",to);
+			$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+				highlightSelector:"#navigation-menu a",
+				pageEndSmoothScroll: true,
+				forceSingleHighlight:true
 			});
 
 		});

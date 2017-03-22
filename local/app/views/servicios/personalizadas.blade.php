@@ -24,11 +24,41 @@
 		.contenedor_submenu {
 			position: fixed;
 			width: 100%;
-			height: 80px;
+			height: 90px;
 			background-color: #fff;
 			top: 0;
 			z-index: 10;
 			margin-top: 4em;
+		}
+		#navigation-menu {
+			box-shadow: none;
+		}
+		#navigation-menu a {
+			color: #a6a6a6;
+			font-size: 14px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		#navigation-menu a:hover, a.mPS2id-highlight {
+			background-color: transparent;
+			color: black !important;
+			border-bottom: 2px solid black;
+		}
+		.tabs-menu {
+			display: -webkit-box;
+			display: -moz-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+		}
+		.tabs-menu {
+			position: relative;
+			overflow-x: auto;
+			overflow-y: hidden;
+			width: 100%;
+			background-color: #fff;
+			margin: 0 auto;
+			white-space: nowrap;
 		}
 	</style>
 </style>
@@ -36,13 +66,15 @@
 	<div class="contenedor_submenu">
 		<div class="container">
 			<div class="section">
-				<div class="row"  style="margin-bottom: 0em;">
+				<div class="row" style="margin-bottom: 0em;">
 					<div class="col s12">
-						<ul class="tabs menuFont black-tabs">
-							<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
-							<li class="tab"><a class="active" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
-							<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
-						</ul>
+						<nav id="navigation-menu" class="white">
+							<ul class="tabs-menu menuFont">
+								<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
+								<li class="tab"><a class="active" href="#personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+								<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</div>
@@ -53,6 +85,8 @@
 	<br>
 	<br>
 	<br>
+
+	<div id="personalizadas" class="scrollspy"></div>
 	<div>
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">
@@ -195,14 +229,10 @@
 (function($){
 	$(window).on("load",function(){
 
-		$("#tabsNavbar a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
-			highlightSelector:"#tabsNavbar a"
-		});
-
-		$("a[rel='next']").click(function(e){
-			e.preventDefault();
-			var to=$(this).parent().parent("section").next().attr("id");
-			$.mPageScroll2id("scrollTo",to);
+		$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+			highlightSelector:"#navigation-menu a",
+			pageEndSmoothScroll: true,
+			forceSingleHighlight:true
 		});
 
 	});

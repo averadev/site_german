@@ -213,7 +213,7 @@ ul.desktop li{
 	border-left-width: 1px;
 	border-color: white;
 	text-align: center;
-	width: 8.5em;
+	width: 8.9em;
 }
 ul.desktop li:first-child{
 	border-left-style: solid;
@@ -508,8 +508,8 @@ footer.page-footer {
 }
 
 nav.mymenu ul a {
-	font-family: 'Open Sans', sans-serif!important;
-	font-size: 0.8rem;
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 11px;
 	font-weight: bold;
 }
 
@@ -2347,9 +2347,22 @@ p.title_proceso{
 	line-height: 110%;
 	text-indent: -3rem;
 	margin-left: 10%;
+	color: #2d332c;
 }
 
+/* no box shadow */
+.gb_noboxshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
 
+.btn:hover {  
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
 
-
-
+.gb_nomarginbottom {
+	margin-bottom: -6px;
+}

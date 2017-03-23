@@ -34,12 +34,11 @@ p.trunc{
 		<div class="section no-pad-bot">
 			<div class="container">
 				<br><br>
-			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
 					<p style="margin-top: 2.5em; font-weight: 600; font-style: italic;" class="titleservices size70 small-spacing">{{$data->homeBannerTxt}}</p>
 					<!-- <p style="font-weight: 600; font-style: italic;" class="titleservices size4 small-spacing">Escultor Mexicano</p> -->
 					<p style="font-weight: 600; font-style: italic;" class="titleservices size4 small-spacing">{{$data->homeBannerTxt2}}</p>
-					<img id="movedown" style="width: 45px; margin-top: 2em; cursor: pointer; " src="media/img/home/scroll.png" alt="scroll">
+					<img id="movedown" style="width: 45px; margin-top: 2em; cursor: pointer;" src="media/img/home/scroll.png" alt="scroll">
 				</div>
 				<br><br>
 			</div>
@@ -54,7 +53,7 @@ p.trunc{
 				</div>
 				<div class="col s12 m4 l4">
 					<p class="bold-normal">Hasta el 21 de Noviembre de 2017</p>
-					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
+					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
 				</div>
 			</div>
 		</div>
@@ -128,8 +127,8 @@ p.trunc{
 					</div>
 					<div class="row">
 						<div class="col s12" style="margin-top: -45px;">
-							<a href="{{ url('/subasta#tab9') }}" style="margin-left: 1em;" class="waves-effect green right btn">OFERTAR</a>
-							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
+							<a href="{{ url('/subasta#tab9') }}" style="margin-left: 1em;" class="waves-effect green right btn gb_noboxshadow">OFERTAR</a>
+							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
 						</div>
 					</div>
 				</div>

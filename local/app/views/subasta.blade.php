@@ -974,11 +974,11 @@
 								<div class="events-wrapper gb_margin10"> <!-- Start events-wrapper -->
 									<div class="events"> <!-- start events -->
 										<ol>
-											<li><a href="#0" data-date="16/01/2014" class="selected">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</a></li>
-											<li><a href="#0" data-date="28/02/2014" style="display: none !important;">aaaaaa</a></li>
-											<li><a href="#0" data-date="20/04/2014">{{$submodule_section_data->SeccionSubTituloEspecificaciones2}}</a></li>
-											<li><a href="#0" data-date="20/05/2014" style="display: none !important;">aaaaaa</a></li>
-											<li><a href="#0" data-date="09/07/2014">{{$submodule_section_data->SeccionSubTituloEspecificaciones3}}</a></li>
+											<li><a href="#0" data-date="16/01/2014" class="selected" style="font-size: 0.9em !important;">{{$submodule_section_data->SeccionSubTituloEspecificaciones}}</a></li>
+											<li><a href="#0" data-date="28/02/2014" style="font-size: 0.9em !important; display: none !important;">aaaaaa</a></li>
+											<li><a href="#0" data-date="20/04/2014" style="font-size: 0.9em !important;">{{$submodule_section_data->SeccionSubTituloEspecificaciones2}}</a></li>
+											<li><a href="#0" data-date="20/05/2014" style="font-size: 0.9em !important; display: none !important;">aaaaaa</a></li>
+											<li><a href="#0" data-date="09/07/2014" style="font-size: 0.9em !important;">{{$submodule_section_data->SeccionSubTituloEspecificaciones3}}</a></li>
 										</ol>
 										<span class="filling-line" aria-hidden="true"></span>
 									</div> <!-- end events <--></-->
@@ -1271,7 +1271,7 @@
 													<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
 												</div>
 											</div>
-											<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect">OFERTAR</button>
+											<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect gb_noboxshadow">OFERTAR</button>
 										</div>
 									</div>
 								</div>
@@ -1374,7 +1374,7 @@
 													<textarea id="comment" style="height: 80px;" class="border_cs" maxlength="200" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
 												</div>
 												<div class="col s12 l4">
-													<button id="sendBtn" class="btn btn-small col s12 green waves-effect margin-top-13" type="submit">CONTÁCTENME</button>
+													<button id="sendBtn" class="btn btn-small col s12 green waves-effect margin-top-13 gb_noboxshadow" type="submit">CONTÁCTENME</button>
 												</div>
 											</div>
 										</div>

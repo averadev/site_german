@@ -12,6 +12,7 @@ var home = function (){
 			$.smoothScroll({
 				scrollTarget: $('#section1'),
 				speed: 1000,
+				offset: -50
 			});
 		});
  

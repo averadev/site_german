@@ -8,16 +8,15 @@
 				<br><br>
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
-					<p style="margin-top: 10%;" class="header col s12 light ContactT"><span style="font-size: 4.5rem;">C</span>ONTACTO</p>
-                    <p class="ContactSubT">Escríbeme si deseas más información</p>
+					<p style="margin-top: 10%;" class="header col s12 light ContactT"><span style="font-size: 3.5rem;">{{$contact_info->cont_sec1_titulo}}</span></p>
+                    <p class="ContactSubT">{{$contact_info->cont_sec1_subtitulo}}</p>
 				</div>
 				<div class="row center">
-					
 				</div>
 				<br><br>
 			</div>
 		</div>
-		<div class="parallax"><img src="media/img/contacto/contacto_slider.jpg"></div>
+		<div class="parallax"><img src="media/img/contacto/{{$contact_info->cont_sec1_img1}}"></div>
 	</div>
 	<!-- Slider -->
 
@@ -26,14 +25,19 @@
 		<div class="section" >
 			<div class="container row fontContact">
 				<div class="col s12 m6 l6">
-                    <div class="row"><img class="algRC" src="media/img/contacto/bull.png"></div>
                     <div class="row">
-                        <p class="algRC">Calle Niebla No.5 S.M.18<br/>
-                           77580 Cancún, Q. Roo, México<br/>
-                           Tel: 011 521 998 1068505<br/>
-                           E-mail: <a href="mailto:art@germanarzate.com">art@germanarzate.com</a></p>
+                        <img class="algRC" src="media/img/contacto/bull.png">
                     </div>
-                    <div class="row"><img class="algRC" src="media/img/contacto/logo.png"></div>
+                    <div class="row">
+                        <p class="algRC">{{$contact_info->cont_sec2_direccion}}<br/>
+                           {{$contact_info->cont_sec2_postal}}<br/>
+                           {{$contact_info->cont_sec2_telefono}}<br/>
+                           E-mail: <a href="mailto:{{$contact_info->cont_sec2_email}}" style="text-decoration: underline;">{{$contact_info->cont_sec2_email}}</a>
+                        </p>
+                    </div>
+                    <div class="row">
+                        <img class="algRC" src="media/img/contacto/{{$contact_info->cont_sec2_img2}}">
+                    </div>
                 </div>
 				<div class="col s12 m6 l6">
                     <form id="FormContactUS" action="http://hostyourgeek.com/beta/germanArzate/contacto/contactomail" method="post">
@@ -45,9 +49,8 @@
                             <input type="text" id="email" class="txtForm" name="email" required placeholder="CORREO ELECTRÓNICO" />
                         </div>
                         <div class="row">
-                            <input type="text" id="company" class="txtForm" name="company" required placeholder="COMPAÑIA" />
+                            <input type="text" id="company" class="txtForm" name="company" required placeholder="COMPAÑÍA" />
                         </div>
-                        
                         <div class="row">
                             <input type="text" class="txtForm" name="asuntos" required placeholder="ASUNTO --- ELIGE UNA OPCIÓN" list="asuntos" />
                             <datalist id="asuntos">
@@ -57,13 +60,12 @@
                                 <option value="ENTREVISTA">
                             </datalist> 
                         </div>
-                        
                         <div class="row">
                             <textarea id="comment" class="txtForm" name="comment" rows="8" required placeholder="COMENTARIOS"></textarea>
                         </div>
                         
                         <div class="row">
-                            <button id="sendBtnContact" class="button green btnRight" type="submit">ENVIAR</button>
+                            <button id="sendBtnContact" class="btn green btnRight gb_noboxshadow" type="submit">ENVIAR</button>
                             <!-- <a href="#"  id="sendBtnContact" class="button success btnRight">ENVIAR</a> -->
                         </div>
                     </form>

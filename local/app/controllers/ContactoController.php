@@ -9,7 +9,15 @@ class ContactoController extends BaseController {
 	*/
 
 	public function getIndex(){
-		return View::make('contacto');
+		$contact_info = new stdClass();
+
+		// query module -> Contacto
+		$query_contactUs = ContactUS::showContactUSInfo();
+
+		foreach ($query_contactUs as $key => $value) {
+			$contact_info->{$value->name} = TextParser::change(nl2br($value->value));
+		}
+		return View::make('contacto')->with('contact_info', $contact_info);
 	}
 
 	/**

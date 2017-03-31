@@ -9,6 +9,10 @@ class Auction_user extends Eloquent
 	protected $table = "subasta_user";
 	protected $SoftDelete = false;
 
+	function userbids() {	
+		return $this->hasMany('Auction_bid','subasta_user_id','id');
+	}
+
 	public function addAuctionUser($data){
 		$code = str_random(30);
 

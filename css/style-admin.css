@@ -1561,10 +1561,10 @@ tfoot {
 	}
 }
 
-.input-field label {
+/*.input-field label {
 	font-size: 1rem;
 	left: 0rem;
-}
+}*/
 
 .select-wrapper + label {
 	top: -30px;
@@ -1572,11 +1572,12 @@ tfoot {
 
 
 .select-wrapper input.select-dropdown {
-
 	margin: 0 0 50px;
-
 }
 
+.select-no-margin input.select-dropdown{
+	margin: 0 0 10px;
+}
 
 .top-bar-grey{
 	background-color: #F9F9F9;
@@ -1661,7 +1662,7 @@ ul.sub-menu li a{
 }
 
 .collapsible-body ul li:hover, .collapsible-body ul li.active{
-	background-color: #394048;
+	background-color: #394048 !important ;
 }
 
 .collapsible {
@@ -1672,10 +1673,9 @@ ul.sub-menu li a{
 }
 
 .input-field label {
-	color: black;
-	cursor: text;
-	font-size: 1.4rem;
-	font-weight: bold;
+    color: #808080;
+    cursor: text;
+    font-size: 1.2rem;
 }
 
 input.select-dropdown {
@@ -1686,9 +1686,89 @@ input.select-dropdown {
 	margin-bottom: 0em !important
 }
 
+.m-btm-10px{
+	margin-bottom: 10px;
+}
+
 div.titleForm{
 	color: black;
 	font-size: 1.4rem;
 	font-weight: bold;
 	padding-bottom: 6px;
+}
+
+input.file-path{
+	height: 43px !important;
+}
+
+img.auction-gallery{
+	width: 100%;
+	border-style: solid;
+	border-color: #808080;
+	border-width: 2px;
+	padding: 3px;
+}
+
+a.circle-button{
+	border-radius: 50px;
+}
+
+.img-wrap{
+	width: 30%;
+	position: relative;
+	display: inline-block;
+	margin-right: 3px;
+}
+
+.img-wrap .delete-image {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	z-index: 100;
+	background-color: #FFF;
+	padding: 5px 2px 2px;
+	color: #4F4F4F;
+	font-weight: bold;
+	cursor: pointer;
+	opacity: .5;
+	text-align: center;
+	font-size: 22px;
+	line-height: 10px;
+	border-radius: 50%;
+}
+
+.font-size-18px{
+	font-size: 18px !important;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	-o-user-select: none;
+	user-select: none;
+}
+
+.delete-image:hover {
+	opacity: 1;
+	background-color: #ff6666;
+}
+
+img.show-image{
+	max-width: 44%;
+	max-height: 130px;
+	border-style: solid;
+	border-color: #808080;
+	border-width: 2px;
+	padding: 3px;
+}
+
+.pujas td, th {
+	padding: 7px 5px;
+}
+
+.modal.modal-fixed-footer {
+	height: 180px;
+	padding: 0;
+}
+
+.modal{
+	width: 38%;
 }

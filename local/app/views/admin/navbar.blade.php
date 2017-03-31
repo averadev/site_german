@@ -1,7 +1,7 @@
 	
 	<aside id="left-sidebar-nav">
 
-		<ul id="slide-out" class="side-nav fixed collapsible collapsible-accordion" style="width: 240px; background-color: #4F4F4F; ">
+		<ul id="slide-out" class="side-nav fixed collapsible collapsible-accordion" style="width: 240px; background-color: #4F4F4F;">
 		
 			<div class="row">
 				<!--<div class="col col s4 m4 l4">
@@ -14,18 +14,24 @@
 					
 				</div>
 			</div>
-
-			<li><a a href="{{ url('/admin/subasta') }}" class="waves-effect">Subasta</a></li>
-				
+			<li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ $activeModule == 'a' ? 'active' : '' }}">Subastas Control</a>
+				<div class="collapsible-body">
+					<ul class="sub-menu" >
+						<li class="{{ $activeSubmodule == 'a1' ? 'active' : '' }}" ><a href="{{ url('/admin') }}" class="waves-effect">Subastas</a></li>
+						<li class="{{ $activeSubmodule == 'a2' ? 'active' : '' }}" ><a href="{{ url('/admin/pujas/0') }}" class="waves-effect">Pujas</a></li>
+						<li class="{{ $activeSubmodule == 'a3' ? 'active' : '' }}" ><a href="{{ url('/admin/usuarios') }}" class="waves-effect">Usuarios</a></li>
+					</ul>
+				</div>
+			</li>
 			@foreach ($modules as $key => $value)
 				@if (count($value->submodules) > 0)
-				<li class="bold"><a class="collapsible-header waves-effect waves-cyan">{{$value->name}}</a>
+				<li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ $value->id == $activeModule ? 'active' : '' }}">{{$value->name}}</a>
 					<div class="collapsible-body">
 						<ul class="sub-menu" >
 							@foreach ($value->submodules as $key => $submodules)
-								<li><a href="{{ url('/admin/section/'.$submodules->id.'') }}" class="waves-effect">{{$submodules->name}}</a>
+								<li class="{{ $submodules->id == $activeSubmodule ? 'active' : '' }}" ><a href="{{ url('/admin/section/'.$submodules->id.'') }}" class="waves-effect">{{$submodules->name}}</a>
 								</li>
-							@endforeach						
+							@endforeach
 						</ul>
 					</div>
 				</li>

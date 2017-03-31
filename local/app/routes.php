@@ -15,10 +15,11 @@
 	/*Admin*/
 	Route::group(array('namespace' => 'App\Controllers\Admin'), function () {
 		Route::controller('/admin/subasta', 'AuctionAdminController');
-		Route::get('/admin/section/{id}', 'DashboardController@showSection');	
+		Route::get('/admin/usuarios', 'UserAuctionController@showUsers');	
+		Route::get('/admin/pujas/{id}', 'BidsAdminController@showBids');
+		Route::get('/admin/section/{id}', 'DashboardController@showSection');
 		Route::controller('admin', 'DashboardController');
 	});
-
 	/*verificación usuario*/
 	Route::get('user/auth/{confirmationCode}','UserVerificationController@verify');	
 

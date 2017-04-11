@@ -13,6 +13,10 @@ class Subasta extends Eloquent
 	function images() {	
 		return $this->hasMany('Images','subasta_id','id');
 	}
+	function bids() {
+		return $this->hasMany('Auction_bid','subasta_id','id');
+	}
+
 	public static function getImages(){
 
 		$datos = DB::table('subasta')
@@ -42,5 +46,28 @@ class Subasta extends Eloquent
 				->where('status',1)
 				->first();
 		return $auction;
+	}
+
+	public function updateAuction($data){
+		$response = $this->find($data->idAuction);
+		$response->name 	= $data->name;
+		$response->detail	= $data->description;
+		$response->iniDate	= $data->startDate;
+		$response->endDate	= $data->endDate;
+		if($response->save()){
+			return $response;
+		}
+		return false;		
+	}
+
+	public function storeAuction($data){
+		$this->name 	= $data->name;
+		$this->detail 	= $data->description;
+		$this->iniDate	= $data->startDate;
+		$this->endDate	= $data->endDate;
+		if($this->save()){
+			return $this;
+		}
+		return false;
 	}
 }

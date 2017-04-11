@@ -1568,6 +1568,7 @@ tfoot {
 
 .select-wrapper + label {
 	top: -30px;
+	left: 0;
 }
 
 

@@ -51,6 +51,16 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $exception) {
+
+	// Log the error
+	Log::error($exception);
+
+	// Redirect to error route with any message
+	return Redirect::to('/admin')->with('message', $exception->getMessage());
+});
+
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
@@ -80,3 +90,4 @@ App::down(function()
 
 require app_path().'/filters.php';
 require app_path().'/TextParser.php';
+require app_path().'/helper.php';

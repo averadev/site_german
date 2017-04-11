@@ -8,7 +8,7 @@
 				<br><br>
 			<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 				<div class="row center">
-					<p style="margin-top: 10%;" class="header col s12 light ContactT"><span style="font-size: 3.5rem;">{{$contact_info->cont_sec1_titulo}}</span></p>
+					<p style="margin-top: 10%;" class="header col s12 light ContactT">{{$contact_info->cont_sec1_titulo}}</p>
                     <p class="ContactSubT">{{$contact_info->cont_sec1_subtitulo}}</p>
 				</div>
 				<div class="row center">
@@ -26,13 +26,13 @@
 			<div class="container row fontContact">
 				<div class="col s12 m6 l6">
                     <div class="row">
-                        <img class="algRC" src="media/img/contacto/bull.png">
+                        <img class="algRC" src="media/img/contacto/{{$contact_info->cont_sec2_escult1}}">
                     </div>
                     <div class="row">
                         <p class="algRC">{{$contact_info->cont_sec2_direccion}}<br/>
                            {{$contact_info->cont_sec2_postal}}<br/>
                            {{$contact_info->cont_sec2_telefono}}<br/>
-                           E-mail: <a href="mailto:{{$contact_info->cont_sec2_email}}" style="text-decoration: underline;">{{$contact_info->cont_sec2_email}}</a>
+                           E-mail: <a href="mailto:{{strip_tags($contact_info->cont_sec2_email)}}" style="text-decoration: underline;">{{$contact_info->cont_sec2_email}}</a>
                         </p>
                     </div>
                     <div class="row">

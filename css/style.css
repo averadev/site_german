@@ -13,6 +13,10 @@ form.whiteform input:focus{
 	box-shadow: 0 1px 0 0 #C2C2C2 ;
 }
 
+p.font12{
+	font-size: 1.2rem;
+}
+
 [type="text"].my-input, textarea {
   background-color: #5C5E5B !important;
 
@@ -48,6 +52,28 @@ ul.footer-info li{
 .fb-comments span{
 	width: 400px !important;
 	height: 400px !important;
+}
+
+p.subtitle-form{
+	padding-left: 5.5vw;
+	font-size: 1.3rem;
+	padding-right: 4.5vw;
+	margin-top: 2.4vw;
+	margin-bottom: 2.4vw  
+}
+
+p.subtitle-form-b{
+	margin-top: 2.4vw;
+	margin-bottom: 2.4vw;
+	color: white;
+	font-size: 1.3rem;
+}
+
+p.par-title {
+	font-size: 4rem;
+	letter-spacing: 4px;
+	line-height: 110%;
+	margin: 0.5rem 0 0.4rem;
 }
 
 p.size70{
@@ -289,13 +315,6 @@ div.bottomRule {
 
 .large-spacing{
 	letter-spacing: 6px;
-}
-
-p.par-title {
-	font-size: 4rem;
-	line-height: 110%;
-	margin: 0.5rem 0 0.4rem 0;
-	letter-spacing: 4px;
 }
 
 .tab-bg-color{
@@ -2311,7 +2330,6 @@ p.title-porque{
 	text-indent: -15rem;
 	color: #2d332c;
 	margin-left: 29rem;
-
 }
 
 p.title-espec{
@@ -2365,4 +2383,56 @@ p.title_proceso{
 
 .gb_nomarginbottom {
 	margin-bottom: -6px;
+}
+
+
+.events ol li a span {
+	font-size: 1rem;
+	color: #898a8c;
+}
+
+.events ol li a.selected span {
+	color: black;
+}
+
+/*Other styles*/
+
+
+
+
+p.title-home{
+	font-family: "Crimson Text";
+	font-size: 3.5rem;
+	margin-top: 3em;
+	line-height: 1rem;
+}
+
+p.subtitle-home{
+	line-height: 1.2rem;
+}
+
+.crimson-bold-italic{
+	font-family: "Crimson Text";
+	font-style: italic;
+	font-weight: 600;
+}
+
+p.par-title span{
+	line-height: 110%;
+	margin: 0.5rem 0 0.4rem 0;
+	letter-spacing: 4px;
+}
+
+p.header-blogs{
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+a.footer-blogs{
+	font-weight: 400;
+	color: black;
+	margin-bottom: 1.5em;
+	margin-top: 0.5em;
+	cursor: pointer;
+	text-decoration: underline;  
 }

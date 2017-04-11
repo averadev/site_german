@@ -35,10 +35,9 @@ p.trunc{
 			<div class="container">
 				<br><br>
 				<div class="row center">
-					<p style="margin-top: 2.5em; font-weight: 600; font-style: italic;" class="titleservices size70 small-spacing">{{$data->homeBannerTxt}}</p>
-					<!-- <p style="font-weight: 600; font-style: italic;" class="titleservices size4 small-spacing">Escultor Mexicano</p> -->
-					<p style="font-weight: 600; font-style: italic;" class="titleservices size4 small-spacing">{{$data->homeBannerTxt2}}</p>
-					<img id="movedown" style="width: 45px; margin-top: 2em; cursor: pointer;" src="media/img/home/scroll.png" alt="scroll">
+					<p class=" title-home crimson-bold-italic small-spacing">{{$data->homeBannerTxt}}</p>
+					<p class="subtitle-home crimson-bold-italic small-spacing">{{$data->homeBannerTxt2}}</p>
+					<img id="movedown" style="width: 45px; margin-top: 2.3em; cursor: pointer;" src="media/img/home/scroll.png" alt="scroll">
 				</div>
 				<br><br>
 			</div>
@@ -78,18 +77,19 @@ p.trunc{
 							<!-- Tab panes -->
 							<div class="tab-content tab-bg-color" style="margin-top: 2px;">
 								<div class="tab-pane active" id="home-v">
-									<div class="row">
+									<div class="row">									
 										<div style="min-height: 340px;" class="tab-space">
+										@if( count($auction)>0 )
 											<div class="hide-on-small-only">
 												<div class="col s5">
 													<div class="row">
-														<h5 class="large-spacing fontCrimson gb_bold"> POSEIDÓN </h5>
-															At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.
+														<h5 class="large-spacing fontCrimson gb_bold"> {{$auction->name}} </h5>
+															{{$auction->detail}}													
 													</div>
 												</div>
 												<div class="col s7">
-													<div class="row">
-														<img style="width: 20em" src="media/img/esc1.jpg">
+													<div class="row">													
+														<img style="width: 20em" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
 													</div>
 												</div>
 											</div>
@@ -97,19 +97,20 @@ p.trunc{
 												<div class="row">
 													<div class="card" style="background-color: #EBEBEB">
 														<div class="card-image waves-effect waves-block waves-light">
-															<img  style="width: 15em" class="activator" src="media/img/esc1.jpg">
+															<img  style="width: 15em" class="activator" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
 														</div>
 														<div class="card-content">
-															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">POSEIDÓN<i class="material-icons right">more_vert</i></span>
+															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{$auction->name}}<i class="material-icons right">more_vert</i></span>
 														</div>
 														<div class="card-reveal" style="background-color:#EBEBEB">
-															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">POSEIDÓN<i class="material-icons right">close</i></span>
-															<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{$auction->name}}<i class="material-icons right">close</i></span>
+															<p>{{$auction->detail}}</p>
 														</div>
 													</div>
 												</div>
-											</div>											
-										</div>
+											</div>
+											@endif											
+										</div>										
 									</div>
 								</div>
 								<div class="tab-pane" id="profile-v">
@@ -135,9 +136,9 @@ p.trunc{
 				<div class="col s12 m12 l4 margin-top-1">
 					<div style="position: relative;">
 						<h5 class="light">Comentarios</h5>
-						<a href="#!" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="media/img/home/fb.png"></a>
-						<a href="#!" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="media/img/home/insta.png"></a>
-						<a href="#!" target="_blank"><img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="media/img/home/twitter.png"></a>
+						<a href="#!" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="{{ URL::asset('media/img/home/'.$data->fbpic.'') }}"></a>
+						<a href="#!" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="{{ URL::asset('media/img/home/'.$data->instapic.'') }}"></a>
+						<a href="#!" target="_blank"><img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="{{ URL::asset('media/img/home/'.$data->twitterpic.'') }}"></a>
 					</div>
 					<div class="bottomRule">
 					</div>
@@ -172,7 +173,7 @@ p.trunc{
 			<div class="section no-pad">
 				<div class="row"  style="margin-bottom: 0em;">
 					<div class="col s12 center">
-						<h5 style="margin-top: 30px; margin-bottom: 20px;" class="header col s12 light">{{$data->titleBlogEntries}}</h5>
+						<p class="header-blogs col s12 light">{{$data->titleBlogEntries}}</p>
 					</div>
 			@foreach($feeds as $feed)			
 					<div class="col s12 m12 l4">
@@ -203,7 +204,7 @@ p.trunc{
 					</div>
 				@endforeach
 					<div class="col s12 center">
-						<a href="{{$bloglink}}" style="font-size: 1.1em; font-weight: 400; color: black; margin-bottom: 1.5em; margin-top: 0.5em; cursor: pointer; text-decoration: underline;  " class="header col s12 light">{{$data->footerBlogEntries}}</a>
+						<a href="{{$bloglink}}" class="footer-blogs col s12 light">{{$data->footerBlogEntries}}</a>
 					</div>
 				</div>
 			</div>

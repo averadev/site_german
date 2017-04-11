@@ -53,13 +53,17 @@ class HomeController extends BaseController {
 		/*Se añaden todo el conenido de las secciones a un objecto*/
 		
 		foreach ($dataHome as $key => $value) {
-			$block->{$value->name} = nl2br($value->value);
+			$block->{$value->name} = TextParser::change(nl2br($value->value));
 		}
+
+		$auction = Subasta::select('id','name','detail',DB::raw("DATE_FORMAT(iniDate, '%Y-%m-%d %H:%i') as iniDate, DATE_FORMAT(endDate, '%Y-%m-%d %H:%i') as endDate"))
+		->where('status',1)->with('images')->first();
 
 		return View::make('home')
 		->with('data',$block)
 		->with('feeds',$lastFeeds)
-		->with('bloglink',$blog);
+		->with('bloglink',$blog)
+		->with('auction',$auction);
 	}
 
 	private function returnImage ($text) {

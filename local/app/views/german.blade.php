@@ -91,12 +91,12 @@ p.gb_blockquote {
 			<div class="section no-pad-bot">
 				<div class="container">
 					<div class="row center">
-						<p style="margin-top: 100px;" class="header col s12 light ContactT"><span style="font-size: 4.5rem;">German</span> <span style="font-size: 4.5rem;">Arzate</span> - <span style="font-size: 2.8rem;">Escultor Mexicano</span></p>
+						<p style="margin-top: 100px;" class="header col s12 light ContactT">{{$data->ger_sec1_title}}</p>
 						<img id="movedown" style="width: 45px; margin-top: 2em; cursor: pointer;" src="media/img/home/scroll.png" alt="scroll">
 					</div>
 				</div>
 			</div>
-			<div class="parallax"><img src="media/img/german/slider1.jpg"></div>
+			<div class="parallax"><img src="media/img/german/{{$data->ger_sec1_bg}}"></div>
 		</div>
 		<!-- Slider German -->
 
@@ -106,15 +106,15 @@ p.gb_blockquote {
 				<div class="row" style="margin: 50px 0 0 0;">
 					<div class="col s12 m12 l5">
 						<div class="row right" style="margin:70px 10px 0 0;">
-							<div class="itaBold" style="font-size: 4rem; line-height: 120%;">German Arzate</div>
-							<div class="itaBold" style="font-size: 2.1rem; line-height: 120%;">(Ciudad de México, 1967)</div>
+							<div class="itaBold" style="font-size: 4rem; line-height: 120%;">{{$data->ger_sec2_txt1}}</div>
+							<div class="itaBold" style="font-size: 2.1rem; line-height: 120%;">{{$data->ger_sec2_txt2}}</div>
 							<!-- <div class="itaBold" style="font-size: 2.5rem; padding-left:60px; line-height: 110%;"></div> -->
 							<br/><br/>
-							<div style="font-size: 1.5rem; width:70%; padding-left:60px; line-height: 120%;">Escultor autodidacta, explorador de la forma desde temprana edad. Sus obras son fruto de la fusión de 2 figuras, elementos o conceptos donde una concepción dual es la constante.</div>
+							<div style="font-size: 1.5rem; width:70%; padding-left:60px; line-height: 120%;">{{$data->ger_sec2_txt3}}</div>
 						</div>
 					</div>
 					<div class="col s12 m12 l7">
-						<img class="imgFloat" src="media/img/german/escultura1.png">
+						<img class="imgFloat" src="media/img/german/{{$data->ger_sec2_img1}}">
 					</div>
 				</div>
 			</div>
@@ -131,11 +131,11 @@ p.gb_blockquote {
 			<div class="section no-pad-bot">
 				<div class="container">
 					<div class="row left">
-						<p style="margin-top: 100px;" class="header col s12 light ContactT"><span style="font-size: 4.5rem;">P</span>ENSADOR</p>
+						<p style="margin-top: 100px;" class="header col s12 light ContactT">{{$data->ger_sec3_title}}</p>
 					</div>
 				</div>
 			</div>
-			<div class="parallax"><img src="media/img/german/slider2.jpg"></div>
+			<div class="parallax"><img src="media/img/german/{{$data->ger_sec3_bg}}"></div>
 		</div>
 		<!-- Slider Pensador -->
 
@@ -144,14 +144,14 @@ p.gb_blockquote {
 			<div class="container fontCrimson">
 				<div class="row" style="margin: 50px 0 0 0;">
 					<div class="col s12 m12 l5 center gb_nomarginbottom">
-						<img class="imgFloat" src="media/img/german/escultura2.png">
+						<img class="imgFloat" src="media/img/german/{{$data->ger_sec4_img1}}">
 					</div>
 					<div class="col s12 m12 l7">
-						<div class="row left" style="margin:50px 20px 30px; 0;">
-							<div class="itaBold" style="font-size: 4rem; line-height: 120%;">Dualidad,</div>
-							<div class="itaBold" style="font-size: 2.5rem; padding-left:60px; line-height: 110%;">Ideas que pueblan la visión del escultor.</div>
+						<div class="row left" style="margin:50px 20px 30px;">
+							<div class="itaBold" style="font-size: 4rem; line-height: 120%;">{{$data->ger_sec4_txt1}}</div>
+							<div class="itaBold" style="font-size: 2.5rem; padding-left:60px; line-height: 110%;">{{$data->ger_sec4_txt2}}</div>
 							<br/><br/>
-							<div style="font-size: 1.5rem; width:70%; padding-left:60px; line-height: 120%;">"La dualidad de la existencia humana es una constante en mi escultura: el placer y el dolor; la felicidad y la tristeza; el hombre y la mujer; el sol y la luna; el amor y la desilusión..."</div>
+							<div style="font-size: 1.5rem; width:70%; padding-left:60px; line-height: 120%;">{{$data->ger_sec4_txt3}}</div>
 						</div>
 					</div>
 				</div>
@@ -169,11 +169,11 @@ p.gb_blockquote {
 			<div class="section no-pad-bot">
 				<div class="container">
 					<div class="row right">
-						<p style="margin-top: 100px;" class="header col s12 light ContactT"><span style="font-size: 4.5rem;">E</span>SCULTOR</p>
+						<p style="margin-top: 100px;" class="header col s12 light ContactT">{{$data->ger_sec5_title}}</p>
 					</div>
 				</div>
 			</div>
-			<div class="parallax"><img src="media/img/german/slider3.jpg"></div>
+			<div class="parallax"><img src="media/img/german/{{$data->ger_sec5_bg}}"></div>
 		</div>
 		<!-- Slider Escultor -->
 
@@ -206,14 +206,13 @@ p.gb_blockquote {
 						<div class="row center">
 							<div class="col s12 m12 l7 offset-l2">
 								<br><br>
-								<p class="gb_blockquote">"Soy un apasionado de la vida, del amor y todo lo que me rodea. Siempre estoy en búsqueda de situaciones y sé que todo lo que está afuera, en la naturaleza, <span class="gb_text_medium">es parte de mí...</span><br/><br/>
-								Quiero mostrar como legado todo lo que me apasiona, el legado persona del cual estoy enamorado."</p>
+								<p class="gb_blockquote">{{$data->ger_sec7_txt1}}</p>
 								<div class="row">
 									<div class="col s6 m6 l8 right">
 										<span class="fontCrimson gb_blockquoteAuthor">- German Arzate</span>
 									</div>
 								</div>
-								<img src="media/img/german/logo.png">
+								<img src="media/img/german/{{$data->ger_sec7_img1}}">
 								<br><br>
 							</div>
 						</div>

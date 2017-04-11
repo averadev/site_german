@@ -1,52 +1,51 @@
 /* Stylesheet utilizado para cambiar el tamaño del textro dinamicamente */
 
+span.size-x08{
+	font-size: 0.8rem;
+}
+
+span.size-x1{
+	font-size: 1rem;
+}
+
+span.size-x11{
+	font-size: 1.1rem;
+}
+
+span.size-x12{
+	font-size: 1.2rem;
+}
+
+span.size-x13{
+	font-size: 1.3rem;
+}
+
+span.size-x15{
+	font-size: 1.5rem;
+}
+
+span.size-x16{
+	font-size: 1.65rem;
+}
 
 span.size-x2 {
-	font-family: "Crimson Text";
 	font-size: 2rem;
-	font-weight: bold;
-	font-style: italic;
-	color: #2d332c;
 }
 
-span.size-x2-left {
-	font-size: 2rem;
-	color: #2d332c;
-	margin-left: 6rem;
-	line-height: 140%;
+span.size-x21 {
+	font-size: 2.1rem;
 }
 
-span.size-x2-left2 {
-	font-size: 2rem;
-	color: #2d332c;
-	margin-left: 3rem;
-	line-height: 140%;
-}
-
-span.size-x8-left {
-	font-size: 40px;
-	color: #2d332c;
-	margin-left: 4rem;
-	line-height: 140%;
-}
-
-span.size-x2-right {
-	font-size: 2rem;
-	color: #2d332c;
-	margin-right: -15%;
-	line-height: 140%;
-}
-
-span.size-x3-right {
-	font-size: 0.9em;
-	color: #2d332c;
-	margin-right: -15%;
-	line-height: 140%;
-	margin-left: 11rem;
+span.size-x23{
+	font-size: 2.3rem;
 }
 
 span.size-x25 {
 	font-size: 2.5rem;
+}
+
+span.size-x27 {
+	font-size: 2.7rem;
 }
 
 span.size-x3{
@@ -58,23 +57,97 @@ span.size-x35{
 }
 
 span.size-x4 {
-	font-family: "Crimson Text";
-	font-size: 40px;
-	font-weight: bold;
-	font-style: italic;
-	color: #2d332c;
-	line-height: 0rem;
+	font-size: 4rem;
 }
 
 span.size-x45 {
-	font-family: "Crimson Text";
 	font-size: 4.5rem;
-	font-weight: bold;
-	font-style: italic;
-	color: #2d332c;
 }
 
 span.size-x5 {
 	font-family: "Crimson Text";
 	font-size: 5rem;
+}
+
+
+
+/*Equivalencias*/
+font[color="#000001"] {
+	font-size: 0.8rem; /*8*/
+	color: black;
+}
+
+font[color="#000002"] {
+	font-size: 1rem; /*10*/
+	color: black;
+}
+
+font[color="#000003"] {
+	font-size: 1.1rem; /*11*/
+	color: black;
+}
+
+font[color="#000004"] {
+	font-size: 1.2rem; /*12*/
+	color: black;
+}
+
+font[color="#000005"] {
+	font-size: 1.3rem; /*13*/
+	color: black;
+}
+
+font[color="#000006"] {
+	font-size: 1.5rem; /*15*/
+	color: black;
+}
+
+font[color="#000007"] {
+	font-size: 1.65rem; /*17*/
+	color: black;
+}
+
+font[color="#000008"] {
+	font-size: 2rem; /*20*/
+	color: black;
+}
+
+font[color="#000009"] {
+	font-size: 2.1rem; /*21*/
+	color: black;
+}
+
+font[color="#000010"] {
+	font-size: 2.3rem; /*22*/
+	color: black;
+}
+
+font[color="#000011"] {
+	font-size: 2.5rem; /*25*/
+	color: black;
+}
+
+font[color="#000012"] {
+	font-size: 2.7rem; /*27*/
+	color: black;
+}
+font[color="#000013"] {
+	font-size: 3rem; /*30*/
+	color: black;
+}
+font[color="#000014"] {
+	font-size: 3.5rem; /*35*/
+	color: black;
+}
+font[color="#000015"] {
+	font-size: 4rem; /*40*/
+	color: black;
+}
+font[color="#000016"] {
+	font-size: 4.5rem; /*45*/
+	color: black;
+}
+font[color="#000017"] {
+	font-size: 5rem; /*50*/
+	color: black;
 }

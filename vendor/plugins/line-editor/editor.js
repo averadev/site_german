@@ -14,16 +14,16 @@ You should have received a copy of the GNU General Public License along with thi
 		saveSelection: function() {
 			//Function to save the text selection range from the editor
 			$(this).data('editor').focus();
-		    if (window.getSelection) {
-		        sel = window.getSelection();
-		        if (sel.getRangeAt && sel.rangeCount) {
-		            $(this).data('currentRange', sel.getRangeAt(0));
-		        }
-		    } else if (document.selection && document.selection.createRange) {
-		        $(this).data('currentRange',document.selection.createRange());
-		    }
-		    else
-		    	$(this).data('currentRange', null);
+			if (window.getSelection) {
+				sel = window.getSelection();
+				if (sel.getRangeAt && sel.rangeCount) {
+					$(this).data('currentRange', sel.getRangeAt(0));
+				}
+			} else if (document.selection && document.selection.createRange) {
+				$(this).data('currentRange',document.selection.createRange());
+			}
+			else
+				$(this).data('currentRange', null);
 		},
 
 		restoreSelection: function(text,mode) {
@@ -32,90 +32,90 @@ You should have received a copy of the GNU General Public License along with thi
 			typeof text !== 'undefined' ? text : false;
 			typeof mode !== 'undefined' ? mode : "";
 			var range = $(this).data('currentRange');
-		    if (range) {
-		        if (window.getSelection) {
-		        	if(text){
-		            	range.deleteContents();
-		            	if(mode=="html")
-	            		{
-    			            var el = document.createElement("div");
-				            el.innerHTML = text;
-				            var frag = document.createDocumentFragment(), node, lastNode;
-				            while ( (node = el.firstChild) ) {
-				                lastNode = frag.appendChild(node);
-				            }
-				            range.insertNode(frag);
-	            		}
-		            	else
-            				range.insertNode( document.createTextNode(text) );
+			if (range) {
+				if (window.getSelection) {
+					if(text){
+						range.deleteContents();
+						if(mode=="html")
+						{
+							var el = document.createElement("div");
+							el.innerHTML = text;
+							var frag = document.createDocumentFragment(), node, lastNode;
+							while ( (node = el.firstChild) ) {
+								lastNode = frag.appendChild(node);
+							}
+							range.insertNode(frag);
+						}
+						else
+							range.insertNode( document.createTextNode(text) );
 
-		            }
-		            sel = window.getSelection();
-		            sel.removeAllRanges();
-		            sel.addRange(range);		            
-		        }
-		        else if (document.selection && range.select) {
-		            range.select();
-		            if(text)
-		            {
-		            	if(mode=="html")
-		            		range.pasteHTML(text);
-		            	else
-		            		range.text = text;
-		            }
-		        }
-		    }
+					}
+					sel = window.getSelection();
+					sel.removeAllRanges();
+					sel.addRange(range);		            
+				}
+				else if (document.selection && range.select) {
+					range.select();
+					if(text)
+					{
+						if(mode=="html")
+							range.pasteHTML(text);
+						else
+							range.text = text;
+					}
+				}
+			}
 		},
 
 		restoreIESelection:function() {
 			//Function to restore the text selection range from the editor in IE
 			var range = $(this).data('currentRange');
-		    if (range) {
-		        if (window.getSelection) {
-		            sel = window.getSelection();
-		            sel.removeAllRanges();
-		            sel.addRange(range);
-		        } else if (document.selection && range.select) {
-		            range.select();
-		        }
-		    }
+			if (range) {
+				if (window.getSelection) {
+					sel = window.getSelection();
+					sel.removeAllRanges();
+					sel.addRange(range);
+				} else if (document.selection && range.select) {
+					range.select();
+				}
+			}
 		},
 
 		insertTextAtSelection:function(text,mode) {
-		    var sel, range, node ;
-		    typeof mode !== 'undefined' ? mode : "";
-		    if (window.getSelection) {
-		        sel = window.getSelection();
-		        if (sel.getRangeAt && sel.rangeCount) {
-		            range = sel.getRangeAt(0);
-		            range.deleteContents();
-		            var textNode = document.createTextNode(text); 
-		            
-		            if(mode=="html")
-		            { 
-		                var el = document.createElement("div");
-		                el.innerHTML = text;
-		                var frag = document.createDocumentFragment(), node, lastNode;
-		                while ( (node = el.firstChild) ) {
-		                    lastNode = frag.appendChild(node);
-		                }
-		                range.insertNode(frag);
-		            }
-		            else
-		            { 
-		            	range.insertNode(textNode);
-		            	range.selectNode(textNode);
-		            }
-		            sel.removeAllRanges();
-		            range = range.cloneRange();		            
-		            range.collapse(false);
-		            sel.addRange(range);
-		        }
-		    } else if (document.selection && document.selection.createRange) { 
-		        range = document.selection.createRange();
-		        range.pasteHTML(text);
-		        range.select();
-		    }
+			var sel, range, node ;
+			typeof mode !== 'undefined' ? mode : "";
+			if (window.getSelection) {
+				sel = window.getSelection();
+				if (sel.getRangeAt && sel.rangeCount) {
+					range = sel.getRangeAt(0);
+					range.deleteContents();
+					var textNode = document.createTextNode(text); 
+					
+					if(mode=="html")
+					{ 
+						var el = document.createElement("div");
+						el.innerHTML = text;
+						var frag = document.createDocumentFragment(), node, lastNode;
+						while ( (node = el.firstChild) ) {
+							lastNode = frag.appendChild(node);
+						}
+						range.insertNode(frag);
+					}
+					else
+					{ 
+						range.insertNode(textNode);
+						range.selectNode(textNode);
+					}
+					sel.removeAllRanges();
+					range = range.cloneRange();		            
+					range.collapse(false);
+					sel.addRange(range);
+				}
+			} else if (document.selection && document.selection.createRange) { 
+				range = document.selection.createRange();
+				range.pasteHTML(text);
+				range.select();
+			}
 		},
 
 		imageWidget: function(){
@@ -146,7 +146,7 @@ You should have received a copy of the GNU General Public License along with thi
 			});
 
 			handleFileSelect = function(evt) {
-    			var files = evt.target.files; // FileList object
+				var files = evt.target.files; // FileList object
 				var output = [];
 				for (var i = 0, f; f = files[i]; i++) {
 					//Loop thorugh all the files
@@ -210,8 +210,8 @@ You should have received a copy of the GNU General Public License along with thi
 				var image = $('<img/>',{
 					src:url,
 				}).error(function(){
-				  	methods.showMessage.apply(this,["imgErrMsg","Invalid image url"]); 
-				  	return false;
+					methods.showMessage.apply(this,["imgErrMsg","Invalid image url"]); 
+					return false;
 				}).load( function() { $(this).appendTo(a).click(function(){
 					$('#imageList').data('current', $(this).attr('src'));
 				});
@@ -240,7 +240,7 @@ You should have received a copy of the GNU General Public License along with thi
 			var tblCntr = $('<div/>',{ //Outer Container Div
 				class:"row-fluid"
 				}).append($('<div/>',{ //Err Message Div
-				 	id :"tblErrMsg"+idExtn 
+					id :"tblErrMsg"+idExtn 
 				})).append($('<form/>',{ //Form 
 					id:"tblForm"+idExtn 
 					}).append($('<div/>',{ //Inner Container Div
@@ -258,8 +258,8 @@ You should have received a copy of the GNU General Public License along with thi
 							)).append($('<input/>',{
 								id:"tblColumns"+idExtn,
 								type:"text",
-							 	class:"form-control form-control-width",
-							 	value:2
+								class:"form-control form-control-width",
+								value:2
 							})).append($('<label/>',{ for:"tblWidth"+idExtn, text:"Width"}
 							)).append($('<input/>',{
 								id:"tblWidth"+idExtn,
@@ -311,7 +311,7 @@ You should have received a copy of the GNU General Public License along with thi
 			var edtTablecntr=$('<div/>',{ 
 				class:"row-fluid"}
 				).append($('<div/>',{ //Err Message Div
-				 	id :"imageErrMsg" 
+					id :"imageErrMsg" 
 				})).append($('<input/>',{ 
 						id:"imgAlt",
 						type:"text",
@@ -337,17 +337,17 @@ You should have received a copy of the GNU General Public License along with thi
 			for (var i = 0; i < attributes.length; i++){
 				if(attributes[i].value!=''){
 					if(attributes[i].attribute=="width" || attributes[i].attribute=="height")
-	                  	tableElement.css(attributes[i].attribute,attributes[i].value);
+						tableElement.css(attributes[i].attribute,attributes[i].value);
 					else
 						tableElement.attr(attributes[i].attribute,attributes[i].value);
 				}
 			}
 			for(var i=1; i<=tblRows; i++){
 				var tblRow = $('<tr/>');
-			 	for(var j=1; j<=tblColumns; j++){
-			 		var tblColumn = $('<td/>').html('&nbsp;');
-			 		tblColumn.appendTo(tblRow);
-			 	}				
+				for(var j=1; j<=tblColumns; j++){
+					var tblColumn = $('<td/>').html('&nbsp;');
+					tblColumn.appendTo(tblRow);
+				}				
 				tblRow.appendTo(tableElement);
 			}
 			return tableElement;
@@ -375,11 +375,23 @@ You should have received a copy of the GNU General Public License along with thi
 							"Heading 6":"<h6>",
 							"Paragraph":"<p>" };
 
-			var fontsizes = {	"Small"	:"2",
-								"Normal":"3",
-								"Medium":"4",
-								"Large"	:"5",
-								"Huge"	:"6" };
+			var fontsizes = {	"8"		:"#000001",
+								"10"	:"#000002",
+								"11"	:"#000003",
+								"12"	:"#000004",
+								"13"	:"#000005",
+								"15"	:"#000006",
+								"17"	:"#000007",
+								"20"	:"#000008",
+								"21"	:"#000009",
+								"22"	:"#000010",
+								"25"	:"#000011",
+								"27"	:"#000012",
+								"30"	:"#000013",
+								"35"	:"#000014",
+								"40"	:"#000015",
+								"45"	:"#000017"
+							};
 
 			var colors = [	{ name: 'Black', hex: '#000000' },
 							{ name: 'MediumBlack', hex: '#444444' },
@@ -531,7 +543,7 @@ You should have received a copy of the GNU General Public License along with thi
 							 'font_size': {	"select":true,
 											"default": "Tamaño de fuente",
 											"tooltip": "Tamaño de fuente",
-											"commandname":"fontSize", 
+											"commandname":"forecolor", 
 											"custom":null },
 
 							  'color'	: { "text":"A",
@@ -555,7 +567,7 @@ You should have received a copy of the GNU General Public License along with thi
 													if(flag==0){
 														for (var i = 0; i < colors.length; i++){
 															if(colors[i].hex!=null){
-															    palette.append($('<li />').css('background-color', colors[i].hex).mousedown(function(event){ event.preventDefault();}).click(function(){															
+																palette.append($('<li />').css('background-color', colors[i].hex).mousedown(function(event){ event.preventDefault();}).click(function(){															
 																	var hexcolor = methods.rgbToHex.apply(this,[$(this).css('background-color')]);
 																	methods.restoreSelection.apply(this);
 																	methods.setStyleWithCSS.apply(this);
@@ -596,67 +608,67 @@ You should have received a copy of the GNU General Public License along with thi
 											"commandname":"bold", 
 											"custom":null },
 
-						      'italics'	: { "text":"I", 
+							  'italics'	: { "text":"I", 
 											"icon":"fa fa-italic", 
 											"tooltip":"Italics", 
 											"commandname":"italic",
 											"custom":null },
 
-						     'underline': { "text":"U", 
+							 'underline': { "text":"U", 
 											"icon":"fa fa-underline", 
 											"tooltip":"Underline", 
 											"commandname":"underline",
 											"custom":null },
 											
-						     'strikeout': { "text": "Strikeout", 
+							 'strikeout': { "text": "Strikeout", 
 											"icon":"fa fa-strikethrough", 
 											"tooltip": "Strike Through", 
 											"commandname":"strikeThrough", 
 											"custom":null },
 
-						     'ol'		: { "text": "N", 
+							 'ol'		: { "text": "N", 
 											"icon": "fa fa-list-ol", 
 											"tooltip": "Insert/Remove Numbered List", 
 											"commandname":"insertorderedlist", 
 											"custom":null },
 
-						     'ul'		: { "text": "Bullet", 
+							 'ul'		: { "text": "Bullet", 
 											"icon": "fa fa-list-ul", 
 											"tooltip": "Insert/Remove Bulleted List", 
 											"commandname":"insertunorderedlist", 
 											"custom":null },
 
-						     'undo'		: { "text": "undo", 
+							 'undo'		: { "text": "undo", 
 											"icon": "fa fa-undo", 
 											"tooltip": "Undo", 
 											"commandname":"undo", 
 											"custom":null },
 
-						     'redo'		: { "text": "redo", 
+							 'redo'		: { "text": "redo", 
 											"icon": "fa fa-repeat", 
 											"tooltip": "Redo", 
 											"commandname":"redo", 
 											"custom":null },
 
-						     'l_align'	: { "text": "leftalign", 
+							 'l_align'	: { "text": "leftalign", 
 											"icon": "fa fa-align-left", 
 											"tooltip": "Align Left", 
 											"commandname":"justifyleft", 
 											"custom":null },
 
-						     'r_align'	: { "text": "rightalign", 
+							 'r_align'	: { "text": "rightalign", 
 											"icon": "fa fa-align-right", 
 											"tooltip": "Align Right", 
 											"commandname":"justifyright", 
 											"custom":null },
 
-						     'c_align'	: { "text": "centeralign", 
+							 'c_align'	: { "text": "centeralign", 
 											"icon": "fa fa-align-center", 
 											"tooltip": "Align Center", 
 											"commandname":"justifycenter", 
 											"custom":null },
 
-						     'justify'	: { "text": "justify", 
+							 'justify'	: { "text": "justify", 
 											"icon": "fa fa-align-justify", 
 											"tooltip": "Justify", 
 											"commandname":"justifyfull", 
@@ -669,7 +681,7 @@ You should have received a copy of the GNU General Public License along with thi
 											"custom":null },
 
 						   'insert_link': { "modal": true,
-						   					"modalId": "InsertLink", 
+											"modalId": "InsertLink", 
 											"icon":"fa fa-link", 
 											"tooltip": "Insert Link", 
 											"modalHeader": "Insert Hyperlink",
@@ -718,7 +730,7 @@ You should have received a copy of the GNU General Public License along with thi
 													methods.restoreSelection.apply(editorObj,[targetLink,'html']);
 												}
 												else{
-												    methods.restoreSelection.apply(editorObj, [targetText]);																																		
+													methods.restoreSelection.apply(editorObj, [targetText]);																																		
 													document.execCommand('createLink',false,targetURL);
 												}
 												$(editorObj).data("editor").find('a[href="'+targetURL+'"]').each(function(){ $(this).attr("target", "_blank"); });
@@ -729,7 +741,7 @@ You should have received a copy of the GNU General Public License along with thi
 											}},
 
 						   'insert_img'	: { "modal": true,
-						   					"modalId": "InsertImage", 
+											"modalId": "InsertImage", 
 											"icon":"fa fa-picture-o", 
 											"tooltip": "Insert Image", 
 											"modalHeader": "Insert Image",
@@ -759,7 +771,7 @@ You should have received a copy of the GNU General Public License along with thi
 											}},
 
 						'insert_table'	: { "modal": true,
-					   						"modalId": "InsertTable", 
+											"modalId": "InsertTable", 
 											"icon":"fa fa-table", 
 											"tooltip": "Insert Table", 
 											"modalHeader": "Insert Table",
@@ -900,9 +912,9 @@ You should have received a copy of the GNU General Public License along with thi
 												}
 												if($(this).data("editor").parent().hasClass('fullscreen'))
 													$(this).data("editor").css({"height":$(this).data("editor").parent().height()-($(this).data("menuBar").height()+statusdBarHeight)-13});
-						                        else
+												else
 													$(this).data("editor").css({"height":""});
-						                    }},
+											}},
 
 							'splchars'	: { "text": "S", 
 											"icon": "fa fa-asterisk", 
@@ -1005,110 +1017,110 @@ You should have received a copy of the GNU General Public License along with thi
 				'togglescreen':true
 			},options);
 
-	       	var containerDiv = $("<div/>",{ class : "row-fluid Editor-container" });
+			var containerDiv = $("<div/>",{ class : "row-fluid Editor-container" });
 			var $this = $(this).hide();	       	
-	       	$this.after(containerDiv); 
+			$this.after(containerDiv); 
 
-	       	var menuBar = $( "<div/>",{ id : "menuBarDiv",
-								  		class : "row-fluid"
+			var menuBar = $( "<div/>",{ id : "menuBarDiv",
+										class : "row-fluid"
 							}).prependTo(containerDiv);
-	       	var editor  = $( "<div/>",{	class : "Editor-editor",
+			var editor  = $( "<div/>",{	class : "Editor-editor",
 										css : {overflow: "auto"},
 										contenteditable:"true"
-						 	}).appendTo(containerDiv);
+							}).appendTo(containerDiv);
 			var statusBar = $("<div/>", {	id : "statusbar",
 											class: "row-fluid",
 											unselectable:"on",
 							}).appendTo(containerDiv);
-	       	$(this).data("menuBar", menuBar);
-	       	$(this).data("editor", editor);
-	       	$(this).data("statusBar", statusBar);
-	       	var editor_Content = this;
-	       	if(settings['status_bar']){
+			$(this).data("menuBar", menuBar);
+			$(this).data("editor", editor);
+			$(this).data("statusBar", statusBar);
+			var editor_Content = this;
+			if(settings['status_bar']){
 				editor.keyup(function(event){
 					var wordCount = methods.getWordCount.apply(editor_Content);
 					var charCount = methods.getCharCount.apply(editor_Content);
 					$(editor_Content).data("statusBar").html('<div class="label">'+'Words : '+wordCount+'</div>');
 					$(editor_Content).data("statusBar").append('<div class="label">'+'Characters : '+charCount+'</div>');
-            	});
-	        }	        
-	       	
-	       	
-	       	for(var item in menuItems){
-	       		if(!settings[item] ){ //if the display is not set to true for the button in the settings.	       		
-	       			if(settings[item] in menuGroups){
-	       				for(var each in menuGroups[item]){
-	       					settings[each] = false;
-	       				}
-	       			}
-	       			continue;
-	       		}
-	       		if(item in menuGroups){
-	       			var group = $("<div/>",{class:"btn-group"});	       			
-	       			for(var index=0;index<menuGroups[item].length;index++){
-	       				var value = menuGroups[item][index];	       				
-	       				if(settings[value]){
-       						var menuItem = methods.createMenuItem.apply(this,[menuItems[value], settings[value], true]);
-       						group.append(menuItem);
-       					}
-       					settings[value] = false;
-	       			}
-	       			menuBar.append(group);	       				       			
-	       		}
-	       		else{
-	       			var menuItem = methods.createMenuItem.apply(this,[menuItems[item], settings[item],true]);
-	       			menuBar.append(menuItem);
-	       		}	       		
-	       	}
+				});
+			}	        
+			
+			
+			for(var item in menuItems){
+				if(!settings[item] ){ //if the display is not set to true for the button in the settings.	       		
+					if(settings[item] in menuGroups){
+						for(var each in menuGroups[item]){
+							settings[each] = false;
+						}
+					}
+					continue;
+				}
+				if(item in menuGroups){
+					var group = $("<div/>",{class:"btn-group"});	       			
+					for(var index=0;index<menuGroups[item].length;index++){
+						var value = menuGroups[item][index];	       				
+						if(settings[value]){
+							var menuItem = methods.createMenuItem.apply(this,[menuItems[value], settings[value], true]);
+							group.append(menuItem);
+						}
+						settings[value] = false;
+					}
+					menuBar.append(group);	       				       			
+				}
+				else{
+					var menuItem = methods.createMenuItem.apply(this,[menuItems[item], settings[item],true]);
+					menuBar.append(menuItem);
+				}	       		
+			}
 
-	       	//For contextmenu	       	
-		    $(document.body).mousedown(function(event) {
-		        var target = $(event.target);
-		        if (!target.parents().andSelf().is('#context-menu')) { // Clicked outside
-		            $('#context-menu').remove();
-		        } 
-		        if (!target.parents().andSelf().is('#specialchar') && (target.closest('a').html()!='<i class="fa fa-asterisk"></i>')) { //Clicked outside
-		        	if($("#specialchar").is(':visible'))
-		            {
+			//For contextmenu	       	
+			$(document.body).mousedown(function(event) {
+				var target = $(event.target);
+				if (!target.parents().andSelf().is('#context-menu')) { // Clicked outside
+					$('#context-menu').remove();
+				} 
+				if (!target.parents().andSelf().is('#specialchar') && (target.closest('a').html()!='<i class="fa fa-asterisk"></i>')) { //Clicked outside
+					if($("#specialchar").is(':visible'))
+					{
 						$(editor_Content).data("editor").data("splcharsBtn", null);
 						$('#specialchar').remove();
-		           	}
-		        }
-		        if (!target.parents().andSelf().is('#paletteCntr') && (target.closest('a').html()!='<i class="fa fa-font"></i>')) { //Clicked outside
-		        	if($("#paletteCntr").is(':visible'))
-		            {
+					}
+				}
+				if (!target.parents().andSelf().is('#paletteCntr') && (target.closest('a').html()!='<i class="fa fa-font"></i>')) { //Clicked outside
+					if($("#paletteCntr").is(':visible'))
+					{
 						$(editor_Content).data("editor").data("colorBtn", null);
 						$('#paletteCntr').remove();
-		           	}
-		        }
-		    });
-		    editor.bind("contextmenu", function(e){
-	       		if($('#context-menu').length)
-	       			$('#context-menu').remove();
-	       		var cMenu 	= $('<div/>',{id:"context-menu"
-	       						}).css({position:"absolute", top:e.pageY, left: e.pageX, "z-index":9999
-	       						}).click(function(event){
-								    event.stopPropagation();
+					}
+				}
+			});
+			editor.bind("contextmenu", function(e){
+				if($('#context-menu').length)
+					$('#context-menu').remove();
+				var cMenu 	= $('<div/>',{id:"context-menu"
+								}).css({position:"absolute", top:e.pageY, left: e.pageX, "z-index":9999
+								}).click(function(event){
+									event.stopPropagation();
 								});
-	       		var cMenuUl = $('<ul/>',{ class:"dropdown-menu on","role":"menu"});
-	       		e.preventDefault();
-	       		if($(e.target).is('a')){
-	       			methods.createLinkContext.apply(this,[e,cMenuUl]);
-	       			cMenuUl.appendTo(cMenu);
-	       		    cMenu.appendTo('body');
-	       		}
-	       		else if($(e.target).is('td') || $(e.target).is("th")){
-	       			methods.createTableContext.apply(this,[e,cMenuUl]);
-	       			cMenuUl.appendTo(cMenu);
-	       		    cMenu.appendTo('body');
-	       		}
-	       		else if($(e.target).is('img')){
-	       				       			
-	       			methods.createImageContext.apply(this,[e,cMenuUl]);
-	       			cMenuUl.appendTo(cMenu);
-	       			cMenu.appendTo('body');
-	       		}
-	       	});
+				var cMenuUl = $('<ul/>',{ class:"dropdown-menu on","role":"menu"});
+				e.preventDefault();
+				if($(e.target).is('a')){
+					methods.createLinkContext.apply(this,[e,cMenuUl]);
+					cMenuUl.appendTo(cMenu);
+					cMenu.appendTo('body');
+				}
+				else if($(e.target).is('td') || $(e.target).is("th")){
+					methods.createTableContext.apply(this,[e,cMenuUl]);
+					cMenuUl.appendTo(cMenu);
+					cMenu.appendTo('body');
+				}
+				else if($(e.target).is('img')){
+										
+					methods.createImageContext.apply(this,[e,cMenuUl]);
+					cMenuUl.appendTo(cMenu);
+					cMenu.appendTo('body');
+				}
+			});
 		},
 		createLinkContext: function(event,cMenuUl){
 			var cMenuli = $('<li/>').append($('<a/>',{
@@ -1141,47 +1153,47 @@ You should have received a copy of the GNU General Public License along with thi
 					return false;
 				}
 				if($("#imgHidden").val()!=""){
-                        var imgId = $("#imgHidden").val();
-	       				$("#"+imgId).attr('alt',imageAlt);
-	       				if(imageTarget!="")
-	       				{
-	       				 if($("#wrap_"+imgId).length)
-	       				 $("#wrap_"+imgId).attr("href",imageTarget);	
-	       				 else
-					     $("#"+imgId).wrap($('<a/>',{ id:"wrap_"+imgId,href:imageTarget,target:"_blank"}));
-					    }
-					    else
-					    {
-					    	if($("#wrap_"+imgId).length)
-					    	$("#"+imgId).unwrap();
-					    }
-	       		}	       		
+						var imgId = $("#imgHidden").val();
+						$("#"+imgId).attr('alt',imageAlt);
+						if(imageTarget!="")
+						{
+						 if($("#wrap_"+imgId).length)
+						 $("#wrap_"+imgId).attr("href",imageTarget);	
+						 else
+						 $("#"+imgId).wrap($('<a/>',{ id:"wrap_"+imgId,href:imageTarget,target:"_blank"}));
+						}
+						else
+						{
+							if($("#wrap_"+imgId).length)
+							$("#"+imgId).unwrap();
+						}
+				}	       		
 				$("#imgAttribute").modal("hide");
 				$(this).data("editor").focus();
 			};
 			methods.createModal.apply(this,[cModalId,cModalHeader, imgModalBody, onSave]);
 			var modalTrigger = $('<a/>',{	href:"#"+cModalId,
-       										"text":"Image Attributes",
+											"text":"Image Attributes",
 											"data-toggle":"modal"
 			}).click( function(e){ 
 				return function(){	
-			        $('#context-menu').remove();
-			        var stamp   = (new Date).getTime();			        
-			        $('#imgAlt').val($(e.target).closest("img").attr("alt"));
-			        $('#imgTarget').val('');
+					$('#context-menu').remove();
+					var stamp   = (new Date).getTime();			        
+					$('#imgAlt').val($(e.target).closest("img").attr("alt"));
+					$('#imgTarget').val('');
 
-			        if(typeof $(e.target).closest("img").attr("id")!=="undefined"){	
-			            var identifier = $(e.target).closest("img").attr("id");		        	
-			        	$('#imgHidden').val(identifier);
-			        	if($('#wrap_'+identifier).length)
-			        		$('#imgTarget').val($('#wrap_'+identifier).attr("href"));
-			        	else
-			        	 	$('#imgTarget').val('');	
-			        }
-			    	else{			    		
-			    		$(e.target).closest("img").attr("id","img_"+stamp)
-			    		$('#imgHidden').val("img_"+stamp);
-			    	}
+					if(typeof $(e.target).closest("img").attr("id")!=="undefined"){	
+						var identifier = $(e.target).closest("img").attr("id");		        	
+						$('#imgHidden').val(identifier);
+						if($('#wrap_'+identifier).length)
+							$('#imgTarget').val($('#wrap_'+identifier).attr("href"));
+						else
+							$('#imgTarget').val('');	
+					}
+					else{			    		
+						$(e.target).closest("img").attr("id","img_"+stamp)
+						$('#imgHidden').val("img_"+stamp);
+					}
 					
 			}}(event));
 			cMenuUl.append($('<li/>').append(modalTrigger))
@@ -1195,15 +1207,15 @@ You should have received a copy of the GNU General Public License along with thi
 		createTableContext: function(event,cMenuUl){
 			$('#editProperties').remove();
 			var modalId="editProperties";
-       		var modalHeader="Table Properties";
-       		var tblModalBody= methods.tableWidget.apply(this,["edit"]);
-       		var onSave = function(){ 
-       			var tblWidthEdt			= $('#tblWidthEdt').val();
-       			var tblHeightEdt		= $('#tblHeightEdt').val();
-       			var tblBorderEdt		= $('#tblBorderEdt').val();
-       			var tblAlignEdt	        = $('#tblAlignEdt').val();
-       			var tblCellspacingEdt	= $('#tblCellspacingEdt').val();
-       			var tblCellpaddingEdt	= $('#tblCellpaddingEdt').val();
+			var modalHeader="Table Properties";
+			var tblModalBody= methods.tableWidget.apply(this,["edit"]);
+			var onSave = function(){ 
+				var tblWidthEdt			= $('#tblWidthEdt').val();
+				var tblHeightEdt		= $('#tblHeightEdt').val();
+				var tblBorderEdt		= $('#tblBorderEdt').val();
+				var tblAlignEdt	        = $('#tblAlignEdt').val();
+				var tblCellspacingEdt	= $('#tblCellspacingEdt').val();
+				var tblCellpaddingEdt	= $('#tblCellpaddingEdt').val();
 				var tblEdtCssReg 		= /^auto$|^[+-]?[0-9]+\.?([0-9]+)?(px|em|ex|%|in|cm|mm|pt|pc)?$/ig;
 				var tblEdtNumReg 		= /^[0-9]+\.?([0-9])?$/;
 				if(tblWidthEdt!="" && !tblWidthEdt.match(tblEdtCssReg)){
@@ -1229,37 +1241,37 @@ You should have received a copy of the GNU General Public License along with thi
 				$(event.target).closest('table').css('width',tblWidthEdt);
 				if(tblHeightEdt!="")
 				$(event.target).closest('table').css('height',tblHeightEdt);
-			    $(event.target).closest('table').attr('align',tblAlignEdt);
-			    $(event.target).closest('table').attr('border',tblBorderEdt);
-			    $(event.target).closest('table').attr('cellspacing',tblCellspacingEdt);
-			    $(event.target).closest('table').attr('cellpadding',tblCellpaddingEdt);
-			    $("#editProperties").modal("hide");
+				$(event.target).closest('table').attr('align',tblAlignEdt);
+				$(event.target).closest('table').attr('border',tblBorderEdt);
+				$(event.target).closest('table').attr('cellspacing',tblCellspacingEdt);
+				$(event.target).closest('table').attr('cellpadding',tblCellpaddingEdt);
+				$("#editProperties").modal("hide");
 				$(this).data("editor").focus();
-       		};
-       		methods.createModal.apply(this,[modalId,modalHeader, tblModalBody, onSave]);
-       		var modalTrigger = $('<a/>',{	href:"#"+modalId,
-       										"text":"Table Properties",
+			};
+			methods.createModal.apply(this,[modalId,modalHeader, tblModalBody, onSave]);
+			var modalTrigger = $('<a/>',{	href:"#"+modalId,
+											"text":"Table Properties",
 											"data-toggle":"modal"
 			}).click( function(e){ return function(){	
-			        $('#context-menu').remove();			
+					$('#context-menu').remove();			
 					$('#tblRowsEdt').val($(e.target).closest('table').prop('rows').length);			
-				    $('#tblColumnsEdt').val($(e.target).closest('table').find('tr')[0].cells.length);
-				    $('#tblRowsEdt').attr('disabled','disabled');   
-				    $('#tblColumnsEdt').attr('disabled','disabled');
-				    $('#tblWidthEdt').val($(e.target).closest('table').get(0).style.width);
-				    $('#tblHeightEdt').val($(e.target).closest('table').get(0).style.height);
-				    $('#tblAlignEdt').val($(e.target).closest('table').attr("align"));
-				    $('#tblBorderEdt').val($(e.target).closest('table').attr("border"));
-				    $('#tblCellspacingEdt').val($(e.target).closest('table').attr("cellspacing"));
-				    $('#tblCellpaddingEdt').val($(e.target).closest('table').attr("cellpadding"));
+					$('#tblColumnsEdt').val($(e.target).closest('table').find('tr')[0].cells.length);
+					$('#tblRowsEdt').attr('disabled','disabled');   
+					$('#tblColumnsEdt').attr('disabled','disabled');
+					$('#tblWidthEdt').val($(e.target).closest('table').get(0).style.width);
+					$('#tblHeightEdt').val($(e.target).closest('table').get(0).style.height);
+					$('#tblAlignEdt').val($(e.target).closest('table').attr("align"));
+					$('#tblBorderEdt').val($(e.target).closest('table').attr("border"));
+					$('#tblCellspacingEdt').val($(e.target).closest('table').attr("cellspacing"));
+					$('#tblCellpaddingEdt').val($(e.target).closest('table').attr("cellpadding"));
 
-				    
+					
 			}}(event));
-       		
+			
 			cMenuUl.append($('<li/>',{class:"dropdown-submenu",css:{display:"block"}})
-       						.append($('<a/>',{"tabindex":"-1", href:"javascript:void(0)","text":"Row"}))
-       						.append($('<ul/>',{class:"dropdown-menu"})
-       								.append($('<li/>').append($('<a/>',{
+							.append($('<a/>',{"tabindex":"-1", href:"javascript:void(0)","text":"Row"}))
+							.append($('<ul/>',{class:"dropdown-menu"})
+									.append($('<li/>').append($('<a/>',{
 											id:"tbl_addrow",
 											"href":"javascript:void(0)",
 											"text":"Add Row"
@@ -1275,15 +1287,15 @@ You should have received a copy of the GNU General Public License along with thi
 													selectedRow.after(newRow);
 												}
 											}(event))))
-       								.append($('<li/>').append($('<a/>',{text:"Remove Row"}).click( 
+									.append($('<li/>').append($('<a/>',{text:"Remove Row"}).click( 
 											function(e) { return function(){ 
 													$('#context-menu').remove();
 													$(e.target).closest("tr").remove(); 
 											}}(event))))
-       			)).append($('<li/>',{class:"dropdown-submenu",css:{display:"block"}})
-   						.append($('<a/>',{"tabindex":"-1", href:"javascript:void(0)","text":"Column"}))
-   						.append($('<ul/>',{class:"dropdown-menu"})
-   								.append($('<li/>').append($('<a/>',{
+				)).append($('<li/>',{class:"dropdown-submenu",css:{display:"block"}})
+						.append($('<a/>',{"tabindex":"-1", href:"javascript:void(0)","text":"Column"}))
+						.append($('<ul/>',{class:"dropdown-menu"})
+								.append($('<li/>').append($('<a/>',{
 										id:"tbl_addcolumn",
 										"href":"javascript:void(0)",
 										"text":"Add Column",
@@ -1299,7 +1311,7 @@ You should have received a copy of the GNU General Public License along with thi
 												});
 											}
 										}(event))))
-   								.append($('<li/>').append($('<a/>',{text:"Remove Column"}).click( 
+								.append($('<li/>').append($('<a/>',{text:"Remove Column"}).click( 
 										function(e) { return function(){ 
 												$('#context-menu').remove();
 												var selectedCell = $(e.target);
@@ -1308,7 +1320,7 @@ You should have received a copy of the GNU General Public License along with thi
 													$(this).children(":eq(" + columnIndex + ")").remove();
 												});
 										}}(event))))
-   						));
+						));
 			cMenuUl.append($('<li/>').append(modalTrigger))
 					.append($('<li/>',{class:"divider"}))
 					.append($('<li/>').append($('<a/>',{text:"Remove Table"}).click( 
@@ -1327,46 +1339,46 @@ You should have received a copy of the GNU General Public License along with thi
 											"data-toggle":"modal"
 			});
 			var modalElement = $('<div/>',{ id: modalId,
-								           class: "modal fade",
-								              tabindex: "-1",
-								              role: "dialog",
-								              "aria-labelledby":"h3_"+modalId,
-								              "aria-hidden":"true"
-								          }).append($('<div>',{
-								            	class:"modal-dialog"
-								         		}).append($('<div>',{
-							            			class:"modal-content"
-									         		}).append($('<div>',{
-									           			class:"modal-header"
-									           			}).append($('<button/>',{
-										                	type:"button",
-										                	class:"close",
-										                	"data-dismiss":"modal",
-										                	"aria-hidden":"true"
-										               		}).html('x')
-									            		).append($('<h3/>',{
-									                		id:"h3_"+modalId
-									           				}).html(modalHeader))
-									         		).append($('<div>',{
-									           			class:"modal-body"
-									           			}).append(modalBody)
-									          		).append($('<div>',{
-									            		class:"modal-footer"
-									         			}).append($('<button/>',{
-									                		type:"button",
-									                		class:"btn btn-default",
-									                		"data-dismiss":"modal",
-									                		"aria-hidden":"true"
-									               			}).html('Cancel')
-								           	  			).append($('<button/>',{
-								                			type:"button",
-								                			class:"btn btn-success",
-								               				}).html('Done').mousedown(function(e){
-								                			e.preventDefault();
-								               				}).click(function(obj){return function(){onSave.apply(obj)}}(this)))
-	         								  		)
-       											)	
-       									);	
+										   class: "modal fade",
+											  tabindex: "-1",
+											  role: "dialog",
+											  "aria-labelledby":"h3_"+modalId,
+											  "aria-hidden":"true"
+										  }).append($('<div>',{
+												class:"modal-dialog"
+												}).append($('<div>',{
+													class:"modal-content"
+													}).append($('<div>',{
+														class:"modal-header"
+														}).append($('<button/>',{
+															type:"button",
+															class:"close",
+															"data-dismiss":"modal",
+															"aria-hidden":"true"
+															}).html('x')
+														).append($('<h3/>',{
+															id:"h3_"+modalId
+															}).html(modalHeader))
+													).append($('<div>',{
+														class:"modal-body"
+														}).append(modalBody)
+													).append($('<div>',{
+														class:"modal-footer"
+														}).append($('<button/>',{
+															type:"button",
+															class:"btn btn-default",
+															"data-dismiss":"modal",
+															"aria-hidden":"true"
+															}).html('Cancel')
+														).append($('<button/>',{
+															type:"button",
+															class:"btn btn-success",
+															}).html('Done').mousedown(function(e){
+															e.preventDefault();
+															}).click(function(obj){return function(){onSave.apply(obj)}}(this)))
+													)
+												)	
+										);	
 			modalElement.appendTo("body");
 			return modalTrigger;
 		},
@@ -1391,23 +1403,23 @@ You should have received a copy of the GNU General Public License along with thi
 										}));
 				$.each(options,function(i,v){
 					var option = $('<li/>')
-		            $("<a/>",{
-		              tabindex : "-1",
-		              href : "javascript:void(0)"
-		            }).html(i).appendTo(option);
+					$("<a/>",{
+					  tabindex : "-1",
+					  href : "javascript:void(0)"
+					}).html(i).appendTo(option);
 
-		            option.click(function(){
-		            	$(this).parent().parent().data("value", v);
-		            	$(this).parent().parent().trigger("change")
-		            });
-		            menuElement.append(option);		            
-		        });
+					option.click(function(){
+						$(this).parent().parent().data("value", v);
+						$(this).parent().parent().trigger("change")
+					});
+					menuElement.append(option);		            
+				});
 				var action = "change";
-		    }
-		    else if(itemSettings["modal"]){
-		    	var menuWrapElement = methods.createModal.apply(this,[itemSettings["modalId"], itemSettings["modalHeader"], itemSettings["modalBody"], itemSettings["onSave"]]);		    			    	
-		    	var menuElement = $("<i/>");
-		    	if(itemSettings["icon"])
+			}
+			else if(itemSettings["modal"]){
+				var menuWrapElement = methods.createModal.apply(this,[itemSettings["modalId"], itemSettings["modalHeader"], itemSettings["modalBody"], itemSettings["onSave"]]);		    			    	
+				var menuElement = $("<i/>");
+				if(itemSettings["icon"])
 					menuElement.addClass(itemSettings["icon"]);
 				else
 					menuElement.html(itemSettings["text"]);
@@ -1418,12 +1430,12 @@ You should have received a copy of the GNU General Public License along with thi
 						methods.saveSelection.apply(obj);
 						if(beforeLoad){		    	    
 							beforeLoad.apply(obj); 					
-				    	}
+						}
 					}
 				}(this, methods,itemSettings["beforeLoad"]));
 				menuWrapElement.attr('title', itemSettings['tooltip']);
 				return menuWrapElement;
-		    }
+			}
 			else{
 				var menuWrapElement = $("<a/>",{href:'javascript:void(0)', class:'btn btn-default'});
 				var menuElement = $("<i/>");
@@ -1454,12 +1466,11 @@ You should have received a copy of the GNU General Public License along with thi
 			$(this).data("menuBar").append(menuWrapElement);
 		},
 
-		setTextFormat: function(){			
-			//Function to run the text formatting options using execCommand.
-			methods.setStyleWithCSS.apply(this);
+		setTextFormat: function(){
+
 			document.execCommand($(this).data("commandName"), false, $(this).data("value") || null);
-			$(this).data("editor").focus();
-			return false;
+			
+			return true;
 		},
 
 		getSource: function(button, params){
@@ -1498,7 +1509,7 @@ You should have received a copy of the GNU General Public License along with thi
 		countWords: function(node){
 			//Function to count the number of words recursively as the text grows in the editor.
 			var count = 0;	
-    		var textNodes = node.contents().filter(function() { 
+			var textNodes = node.contents().filter(function() { 
 				return (this.nodeType == 3); 
 			});			
 			for(var index=0;index<textNodes.length;index++){
@@ -1516,7 +1527,7 @@ You should have received a copy of the GNU General Public License along with thi
 		countChars: function(node){
 			//Function to count the number of characters recursively as the text grows in the editor.
 			var count = 0;
-    		var textNodes = node.contents().filter(function() { 
+			var textNodes = node.contents().filter(function() { 
 				return (this.nodeType == 3); 
 			});
 			for(var index=0;index<textNodes.length;index++){
@@ -1580,18 +1591,18 @@ You should have received a copy of the GNU General Public License along with thi
 		setStyleWithCSS:function(){
 			if(navigator.userAgent.match(/MSIE/i)){	//for IE10
 				try {
-                	Editor.execCommand("styleWithCSS", 0, false);
-            	} catch (e) {
-	                try {
-	                    Editor.execCommand("useCSS", 0, true);
-	                } catch (e) {
-	                    try {
-	                        Editor.execCommand('styleWithCSS', false, false);
-	                    }
-	                    catch (e) {
-	                    }
-	                }
-            	}
+					Editor.execCommand("styleWithCSS", 0, false);
+				} catch (e) {
+					try {
+						Editor.execCommand("useCSS", 0, true);
+					} catch (e) {
+						try {
+							Editor.execCommand('styleWithCSS', false, false);
+						}
+						catch (e) {
+						}
+					}
+				}
 			}
 			else{
 				document.execCommand("styleWithCSS", null, true);

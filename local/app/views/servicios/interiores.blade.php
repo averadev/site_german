@@ -110,7 +110,7 @@
 						<p class="center-align par-title max-light">{{$data->inter_distincion_title}}</p>
 					</div>
 					<div class="col l6 m10 s12 offset-l3 offset-m1">
-						<p style="font-size: 1.2em; " class="center-align light med-lineheight">{{$data->inter_distincion_desc}}</p>
+						<p class="center-align font12 light med-lineheight">{{$data->inter_distincion_desc}}</p>
 					</div>
 					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em;">
 						<img style="width: 31%; position: absolute; top:-22.5em; left:0em;" src="../media/img/obras_especiales/{{$data->inter_distincion_pic}}" alt="escultura1">

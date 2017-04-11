@@ -81,6 +81,16 @@ Route::filter('guest', function()
 |
 */
 
+
+/*Fail on finding model id*/
+
+App::missing(function($exception)
+{
+	return View::make('errors.404');
+});
+
+
+
 Route::filter('csrf', function()
 {
 	if (Session::token() != Input::get('_token'))
@@ -88,3 +98,5 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+

@@ -148,10 +148,14 @@ var upauction = function (){
 				});
 				$("#divAuction").html(comptype);
 				$(".delete-image").click(function(event) {
+					$('#modalConfirm').modal('open');
 					var imgDiv = $(this).parent();
 					var id = $(this).data('id');
-					sendDeleteImage(id,imgDiv);
-				});			
+					$confirmImage = {
+						'imgDiv' :imgDiv,
+						'imgId' :id
+					};
+				});	
 				Materialize.toast(response.msg, 4000,'green'); // 4000 is the duration of the toast
 				$('#formImage')[0].reset();
 			}else{

@@ -204,7 +204,7 @@
 									{{$data->per_form_title}}
 								</b></p>				
 							</div>
-							<p class="med-lineheight" style="margin-top: 2.4vw; margin-bottom: 2.4vw; color: white; font-size: 1.3rem;">
+							<p class="med-lineheight subtitle-form-b">
 								{{$data->per_form_desc}}
 							</p>
 								<input id="myname"  class="black-input" required type="text" placeholder="Nombre Completo">

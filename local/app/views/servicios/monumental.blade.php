@@ -109,7 +109,7 @@
 						<p class="center-align par-title max-light">{{$data->mon_unico_title}}</p>
 					</div>
 					<div class="col l6 m10 s12 offset-l3 offset-m1">
-						<p style="font-size: 1.2em;" class="center-align light med-lineheight">{{$data->mon_unico_desc}}</p>
+						<p class="center-align font12 light med-lineheight">{{$data->mon_unico_desc}}</p>
 					</div>
 					<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em;">
 						<img style="width: 28%; position: absolute; top:-25em; left:0em;" src="../media/img/obras_especiales/{{$data->mon_unico_pic}}" alt="escultura1">
@@ -208,7 +208,7 @@
 							<p style="margin-top: 4%; margin-bottom: 7%; text-align: center;" class="titleservices size4 italic hide-on-large-only"><b>
 								{{$data->mon_form_title}}
 							</b></p>
-							<p class="med-lineheight" style="padding-left: 5.5vw; font-size: 1.3rem; padding-right: 4.5vw; margin-top: 2.4vw; margin-bottom: 2.4vw  ">
+							<p class="med-lineheight subtitle-form">
 								{{$data->mon_form_desc}}
 							</p>
 							<form class="whiteform col s12 m12 l10 offset-l1" data-abide id="mailform">							

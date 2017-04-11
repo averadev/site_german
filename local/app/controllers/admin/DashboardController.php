@@ -13,6 +13,7 @@ use Request;
 use Section;
 use Component;
 use DB;
+use Helper;
 
 /*models*/
 use Module;
@@ -23,7 +24,7 @@ use Images;
 class DashboardController extends BaseController {
 	function __construct(){
 		$this->beforeFilter('auth');
-		$this->beforeFilter('csrf',array('except'=>array('getIndex','getSections','getComponents','showSection','getElement')));
+		$this->beforeFilter('csrf',array('except'=>array('getIndex','getSections','getComponents','showSection','getElement','putSaveText','postSaveImage')));
 	}
 
 	public function getIndex(){
@@ -52,6 +53,72 @@ class DashboardController extends BaseController {
 			return Response::json(array('component' => $component ));
 		}		
 	}
+
+	public function putSaveText(){
+		if(Request::ajax()){
+			$data = [
+				'id' 		=> strip_tags(trim(Input::get('id_element'))),
+				'value' 	=> trim(Input::get('value'))
+			];
+			$rules = [
+				'id' 		=> 'required|integer',
+				'value' 	=> 'required|max:500',
+			];
+			$validator = Validator::make($data,$rules);
+			if( $validator->passes() ){
+				$data = (object)$data;
+				$component = new Component;
+				$update = $component->upElement($data);
+				if($update){
+					return Response::json(array('error' => 0,'msg' =>  'Actualización Correcta'));
+				}
+			}else{
+				if($validator->messages()->has('id'))
+					$errorField = 'Por favor reinicie el navegador y vuelva a intentar';
+				else if($validator->messages()->has('value'))
+					$errorField = 'Texto: '.$validator->messages()->first('value');
+				return Response::json(array('error' => 1,'msg' => $errorField ));
+			}
+		}
+	}
+
+	public function postSaveImage(){
+		if(Request::ajax()){
+			$data = [
+				'id' 		=> strip_tags(trim(Input::get('element_id'))),
+				'module' 	=> strip_tags(trim(Input::get('moduleid'))),
+				'value' 	=> trim(Input::get('value')),
+				'image' 	=> Input::file('imagen')
+			];
+			$rules = [
+				'id' 		=> 'required',
+				'module' 	=> 'required|integer',
+				'image'		=> 'required|image'
+			];
+			$validator = Validator::make($data,$rules);
+			if( $validator->passes() ){
+				$data = (object)$data;
+
+				$file = $data->image;
+				$pathFile = Helper::getFilePath($data->module);
+				$extension = $file->getMimeType();
+				$extensionName = Helper::getExtensionMime($extension);
+				$name = Helper::saveImgElement($file,$pathFile,$extensionName);
+				$data->value = $name;
+				$component = new Component;
+				$update = $component->upElement($data);
+				if($update){
+					return Response::json(array('error' => 0,'msg' =>  'Actualización Correcta'));
+				}
+			}else{
+				if($validator->messages()->has('id'))
+					$errorField = 'Por favor reinicie el navegador y vuelva a intentar';
+				else if($validator->messages()->has('image'))
+					$errorField = 'imagen: '.$validator->messages()->first('image');
+				return Response::json(array('error' => 1,'msg' => $errorField ));
+			}
+		}
+	}	
 
 	public function showSection($idSubmodule){
 		$sections =  Section::with('components')->where('section.idSubmodule',$idSubmodule)->get();

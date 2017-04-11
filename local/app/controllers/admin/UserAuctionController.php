@@ -32,6 +32,7 @@ class UserAuctionController extends BaseController {
 			,'email'
 			,'status'
 			,DB::raw("date_format((created_at),'%d-%m-%Y %H:%i') as creado"))
+		->orderBy('created_at','DESC')
 		->paginate(10);
 		$modules  = Module::with('submodules')->get();
 		return View::make('admin.user.show')

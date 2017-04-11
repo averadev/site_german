@@ -1,5 +1,6 @@
 	<!-- F O O T E R -->
 	<footer class="page-footer darker">
+	<?php $data = Component::footer();  ?>
 		<div class="container" style="margin-top: 40px;">
 			<div class="row">
 				<div class="col l4 s12">
@@ -10,7 +11,7 @@
 						<li><a href="#">NOTAS DE PRENSA</a></li>
 						<li><a href="{{ url('/german') }}">GERMAN ARZATE</a></li>
 						<li><a href="{{ url('/contacto') }}">CONTACTO</a></li>
-						<li style="margin-top: 1em;">SÍGUEME EN: <a href="#!" target="_blank"><img class="social-button" alt="facebook" id="goface" src="{{ URL::asset('media/img/home/fb.png') }}"></a> <a href="#!" target="_blank"><img class="social-button" alt="instagram" id="goinsta" src="{{ URL::asset('media/img/home/insta.png') }}"></a> <a href="#!" target="_blank"><img class="social-button" alt="twitter" id="gotwitter" src="{{ URL::asset('media/img/home/twitter.png') }}"></a></li>			
+						<li style="margin-top: 1em;">{{$data->sociales_texto}}<a href="#!" target="_blank"><img class="social-button" alt="facebook" id="goface"  src="{{ URL::asset('media/img/home/'.$data->facebook_img.'') }}" ></a> <a href="#!" target="_blank"><img class="social-button" alt="instagram" id="goinsta" src="{{ URL::asset('media/img/home/'.$data->instagram_img.'') }}" ></a> <a href="#!" target="_blank"><img class="social-button" alt="twitter" id="gotwitter" src="{{ URL::asset('media/img/home/'.$data->twitter_img.'') }}"></a></li>			
 					</ul>
 				</div>
 				<div class="col l4 s12">
@@ -36,17 +37,17 @@
 				<div class="col l4 s12">
 					<ul class="adress-info">
 						<img style="width: 7em; margin-bottom: 20px;" src="{{ URL::asset('media/img/home/logoblanco.png') }}" alt="logo footer">
-						<li href="#!" >Calle Niebla No.5 S.M.18,</a></li>
-						<li href="#!" >77580 Cancún, Q. Roo, México</a></li>
-						<li href="#!" >Tel.: 011 521 998 1068505</a></li>
-						<li href="#!">E-mail: <a style="color: #039be5; text-decoration: underline;" href="mailto:art@germanarzate.com">art@germanarzate.com</a></li>
+						<li>{{$data->footer_direccion}}</a></li>
+						<li>{{$data->footer_postal}}</a></li>
+						<li>{{$data->footer_telefono}}</a></li>
+						<li>E-mail: <a href="mailto:{{strip_tags($data->footer_email)}}" style="text-decoration: underline;">{{$data->footer_email}}</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-copyright">
 			<div class="container footer-color center" style="font-size: 0.8rem;">
-				Todos los derechos reservados German Arzate c 2017
+				{{$data->copyright_txt}}
 			</div>
 		</div>
 	</footer>	

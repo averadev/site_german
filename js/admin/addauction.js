@@ -78,7 +78,7 @@ var addauction = function (){
 			data: form,
 		}).done(function(response) {
 			if(!(response.error)){
-				Materialize.toast(response.msg, 4000,'green'); // 4000 is the duration of the toast
+				Materialize.toast(response.msg, 4000,'green'); 
 					setTimeout(function () {
 						window.location.href=HOST+"/admin/subasta/edit/"+response.subasta;
 					}, 1000);

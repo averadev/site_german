@@ -33,6 +33,9 @@
 	/** Subasta **/
 	Route::get('/subasta', 'AuctionController@showSubmodule');
 	Route::get('/subasta', 'AuctionController@getSectionSubPQ');
+	Route::get('/subasta/comentarios', 'AuctionController@getSectionComments');
+	Route::get('/subasta/subastas', 'AuctionController@getSectionAuction');
+	Route::get('/subasta/proximamente', 'AuctionController@getSectionComingSoon');
 	Route::post('/subasta/coming', 'AuctionController@SendmailContactUS');
 	Route::get('/subasta/allComments', 'AuctionController@getAllComments');
 	Route::get('/subasta/bids', 'AuctionController@getAuctionBids');

@@ -451,9 +451,9 @@
 								<li class="tab"><a class="" href="#tab2">El Proceso</a></li>
 								<li class="tab"><a class="" href="#tab3">¿En Qué Te Convierte?</a></li>
 								<li class="tab"><a class="" href="#tab4">Especificaciones</a></li>
-								<li class="tab"><a class="" href="#tab5">Comentarios</a></li>
-								<li class="tab"><a class="" href="#tab6">Subasta</a></li>
-								<li class="tab"><a class="" href="#tab7">Próximamente</a></li>
+								<li class="tab"><a class="tab5" href="#tab5">Comentarios</a></li>
+								<li class="tab"><a class="tab6" href="#tab6">Subasta</a></li>
+								<li class="tab"><a class="tab7" href="#tab7">Próximamente</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -475,7 +475,7 @@
 		<br>
 	</div>
 	<div id="" class="bg_porque">
-		<div class="hide-on-med-and-down" style="position: relative;  z-index: 0;  height: 700px;"> <!-- Desktop -->
+		<div class="hide-on-med-and-down" style="position: relative; z-index: 0;  height: 700px;"> <!-- Desktop -->
 			<img src="media/img/subasta/{{$submodule_section_data->Img_porque_german}}" style="position: absolute; width: 800px; bottom: 0; z-index: -1; ">
 			<div class="">
 				<div class="section no-pad-bot">
@@ -1094,311 +1094,9 @@
 	<!-- End Modal Especificaciones -->
 
 	<!-- End Especificaciones -->
-
-	<!-- Start Comments -->
 	<div id="tab5" class="scrollspy"></div>
-	<div id="" class="bg_comentario">
-		<div class="section no-pad-bot">
-			<div class="container">
-				<div class="row center">
-					<span style="margin-top: 2em; font-size: 3.5em; font-weight: bold; font-style: italic; color: #2d332c; line-height: 0rem;" class="fontCrimson header col s12 light">Comentarios</span>
-				</div>
-				<br><br>
-			</div>
-		</div>
-		<div class="section no-pad-bot">
-			<div class="container">
-				<div class="row no_padd1 no-margin-bottom">
-				<?php
-						$sectionComments = $comments;
-						$row = null;
-						$numberRows = [2,2,3];
-
-						$styles1 = [
-							['col s12 m12 l8 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2'],
-							['col s12 m12 l8 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
-							['col s12 m12 l6 no_padd1 comment-type1','col s12 m12 l6 no_padd1 comment-type2'],
-							['col s12 m12 l6 no_padd1 comment-type2','col s12 m12 l6 no_padd1 comment-type1']
-						];
-			
-						$styles2 = [
-							['col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1'],
-							['col s12 m12 l4 no_padd1 comment-type2','col s12 m12 l4 no_padd1 comment-type1','col s12 m12 l4 no_padd1 comment-type2']
-						];
-							shuffle($styles1);
-							shuffle($styles2);
-							$rows2 = $styles1;
-							$rows3 = $styles2;
-
-							while( count($sectionComments) >1 ){
-                            shuffle($numberRows);
-                            if(count($rows2) < 1){
-                                shuffle($styles1);
-                                $rows2 = $styles1;
-                            }
-                            if(count($rows3) < 1){
-                                shuffle($styles2);
-                                $rows3 = $styles2;
-                            }
-							$render2rows = (array_pop($rows2));
-							$render3rows = (array_pop($rows3));
-							$row = array_splice( $sectionComments,0,current($numberRows) );
-							if(count($row) == 2){ /*Cuando es un row de 2 columnas*/
-								foreach ($row as $key => $value) {
-								/*Render two rows div*/
-									?> 
-										<div class="{{$render2rows[$key]}} ">
-											<div class="card no_margin1">
-												<div class="gb_container_header" style="background-color: #2e332d; z-index: 9;">
-													<h4>{{$value->NombreEscultura}}</h4>
-												</div>
-												<div class="card-content">
-													<div style="margin-top: 40px; margin-bottom: 50px;">
-														<div class="gb_text_rs">
-															<p>{{$value->Comentario}}...</p>
-															<div style="display: flex; align-items: center;">
-																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-																<div style="padding: 7px;">
-																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-												</div>
-											</div>
-										</div>
-									<?php	
-								}
-							}else{ /*cuando es un row 3 columnas*/
-								foreach ($row as $key => $value) {
-								/*Render three rows div*/
-									?> 
-										<div class="{{$render3rows[$key]}} ">
-											<div class="card no_margin1">
-												<div class="gb_container_header" style="background-color: #2e332d; z-index: 9;">
-													<h4>{{$value->NombreEscultura}}</h4>
-												</div>
-												<div class="card-content">
-													<div style="margin-top: 40px; margin-bottom: 50px;">
-														<div class="gb_text_rs">
-															<p>{{$value->Comentario}}...</p>
-															<div style="display: flex; align-items: center;">
-																<div class="gb_date2"><img src="media/img/subasta/bg_avatar.jpg"></div>
-																<div style="padding: 7px;">
-																	<span style="font-weight: 500;">{{$value->NombreNick}}.- </span><span class="gb_italic">{{$value->Dia}} de {{$value->NombreMes}} de {{$value->Anio}}</span>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>
-												</div>
-											</div>
-										</div>	
-									<?php	
-								}
-							} //end else
-						}
-					?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Comments -->
-
-	<!-- INFO SUBASTA -->
 	<div id="tab6" class="scrollspy"></div>
-	<div style="background-image:url('media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="">
-		<div  class="container">
-			<div class="row no-margin-bottom" style="padding-top: 4%;">
-				<div class="col l6 s12"> <!-- LEFT SIDE -->
-					<div style="padding: 10px 0 0 20px; border: 1px solid black; border-radius: 5px;">
-						<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
-						<div class="row">
-							<ul class="thumbnails col l2 s12">
-								@foreach ($auctionpics as $key => $value)
-									@if($key == 0)
-										<li>
-											<a href="media/img/subasta_esculturas/{{$value->name}}">
-												<img src="media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction active" alt="Thumbnail">
-											</a>
-										</li>
-									@else
-										<li>
-											<a href="media/img/subasta_esculturas/{{$value->name}}">
-												<img src="media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction" alt="Thumbnail">
-											</a>
-										</li>
-									@endif
-								@endforeach
-							</ul>
-							<div class="col l10 s12">
-								@if($auctionpics)
-									<div class="main-image">
-										<img src="media/img/subasta_esculturas/{{$auctionpics[0]->name}}" alt="Placeholder" class="auction-image">
-									</div>
-								@endif
-							</div>
-						</div>
-						<div style="margin-top: 52px; margin-bottom: 20px;" >
-							<p class="small-lineheight">Poseidón de <b>Germán Arzate</b> / 2017</p>
-							<p class="small-lineheight">Colección: <b>Obras Místicas</b></p>
-						</div>
-					</div>
-					<div class="row">
-						<div style="padding: 10px; margin-top: 2em;"  >
-							<form id="bidForm" class="white top_arrow_box whiteform contract">
-								<p style="margin: 3px 0 5px 10px;  " class="size30">Quiero participar en la subasta:</p>
-								<div class="row no-margin-bottom">
-									<div class="col s12">
-										<div class="col s12 l4">
-											<input id="name_bid" class="border_cs" maxlength="50" required type="text" name="name_bid" placeholder="NOMBRE">
-										</div>
-										<div class="col s12 l4">
-											<input id="nick_bid" class="border_cs" maxlength="20" required type="text" name="nick_bid" placeholder="APODO">
-										</div>
-										<div class="col s12 l4">
-											<input id="email_bid" class="border_cs" maxlength="50" required type="text" name="email_bid" placeholder="E-MAIL">
-										</div>
-									</div>
-									<div class="col s12">
-										<div class="col s12 l8">
-											<textarea id="comment_bid" style="height: 100px;" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
-										</div>
-										<div class="col l4">
-											<div class="col s12">
-												<div class="row no-margin-bottom">
-													<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
-												</div>
-											</div>
-											<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect gb_noboxshadow">OFERTAR</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div class="col l6 s12">  <!-- RIGHT SIDE -->				
-					<div class="row">
-						<span class="date_current"></span>
-						<div style="margin-top: 2em;">
-							<div style="position: relative; ">
-								<p style="font-weight: 300;" class="size45" >Número de ofertas totales:  </p>
-								<p id="boxdigits" class="med-light size45 digitsBox" > </p>
-							</div>
-							<p style="line-height: 1em;" >Últimas ofertas: </p> 
-							<div id="bid_div">
-								
-							</div>
-							<p id="showMoreButton" class="showMore">Ver mas ofertas <i style="vertical-align: middle;" class="material-icons">keyboard_arrow_down</i> </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Modal auction notifications -->
-
-	<div id="messageModal" class="modal border-radius-10">
-		<div class="notification">
-			<h4 style="text-align: center;" id="titleModal"></h4>
-			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmessageModal"></p>
-		</div>
-		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
-			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
-		</div>
-	</div>
-	<!-- ENF INFO SUBASTA -->
-
-	<!-- Start Coming Soon -->
 	<div id="tab7" class="scrollspy"></div>
-	<div id="" class="bg_comingsoon">
-		<div class="container" style="padding-bottom: 8%" >
-			<div class="row no-margin-bottom">
-				<div class="col s12 l5 margin-left-4" >
-					<div class="row">
-						<div class="col s12 m12 l12 center" style="position: relative;" >								
-								<div style="position: absolute; top: 27%; height: 100px; left: 50%;">
-									<div style="position: relative; left: -50%;">
-										@foreach ($date_coming as $key=> $value)
-										<div class="col s6 " style="height: 100px;" >
-											<p class="fontCrimson" style="text-align: right; line-height: 80%; font-size: 500%; font-weight: bold; margin-top: 0%; margin-bottom: 0%  " >{{$value->Dia}}</p>
-										</div>
-										<div class="col s6" style="height: 100px; margin-left: -8%; " >
-											<p class="fontCrimson" style="text-align: left; line-height: 110%; margin-top: 2%; font-size: 180%; font-weight: bold; margin-bottom: 0%; text-transform: uppercase; "   >{{$value->NombreMes}}</p>
-											<p class="fontCrimson" style="text-align: left; line-height: 110%; margin-top: 2%; font-size: 180%; font-weight: bold; margin-bottom: 0% "   >{{$value->Anio}}</p>
-										</div>
-										@endforeach
-									</div>
-								</div>
-							<img style="width: 100%" src="media/img/subasta/bg_calendar_comingsoon.png" alt="">
-						</div>
-					</div>
-				</div>
-				<div class="col s12 l6">
-					<div class="row">
-						<div class="col s12">
-							<div class="row">
-								<p class="gb_gray date_current"></p>
-							</div>
-						</div>
-						<div class="col s12 m12 l12 margin-top-20">
-							<div class="row">
-								<div class="col s12">
-									@foreach ($date_coming as $key=> $value)
-									<p style="text-align: center;" class="light text-proxim">El desarrollo de la próxima <br> escultura comenzará a <br> transmitirse el próximo {{$value->Dia}} de <br> {{$value->NombreMes}} de {{$value->Anio}}, <br> y puedes seguirlo aquí.</p>
-									@endforeach
-								</div>
-							</div>
-							<div class="row">
-								<div style="">
-									<form style="padding-bottom: 12px;" id="FormCS" class="col s12 gb_arrow_box whiteform contract" action="http://hostyourgeek.com/beta/germanArzate/subasta/coming" method="post">
-										<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
-										<p class="gb_textcs_x1" style="margin: 3px 0 5px 10px;">Me interesa recibir información sobre la próxima escultura:</p>
-										<div class="row no-margin-bottom">
-											<div class="col s12">
-												<div class="col s12 l4">
-													<input id="name" class="border_cs" type="text" name="name" required placeholder="NOMBRE">
-												</div>
-												<div class="col s12 l4">
-													<input id="email" class="border_cs" type="email" name="email" required placeholder="E-MAIL">
-												</div>
-												<div class="col s12 l4">
-													<input id="city" class="border_cs" type="text" name="city" required placeholder="CIUDAD">
-												</div>
-											</div>
-											<div class="col s12">
-												<div class="col s12 l8">
-													<textarea id="comment" style="height: 80px;" class="border_cs" maxlength="200" name="comment" rows=5 required placeholder="COMENTARIOS"></textarea>
-												</div>
-												<div class="col s12 l4">
-													<button id="sendBtn" class="btn btn-small col s12 green waves-effect margin-top-13 gb_noboxshadow" type="submit">CONTÁCTENME</button>
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Start Modal Proximamente Form -->
-	<div id="msgModal" class="modal border-radius-10">
-		<div class="notification">
-			<h4 style="text-align: center;" id="titleModalMsg"></h4>
-			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmsgModal"></p>
-		</div>
-		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
-			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
-		</div>
-	</div>
-	<!-- End Modal Proximamente Form -->
-	<!-- End Coming Soon -->
 @stop
 @section('addJs')
 <script src="vendor/plugins/simple-gal.js"></script>
@@ -1422,6 +1120,18 @@ $(document).ready(function(){
 				window.location.hash = hash;
 			});
 		}
+	});
+
+	$(".tab5").click(function(event) {
+		window.location.href=HOST+"/subasta/comentarios#tab5";
+	});
+
+	$(".tab6").click(function(event) {
+		window.location.href=HOST+"/subasta/subastas#tab6";
+	});
+
+	$(".tab7").click(function(event) {
+		window.location.href=HOST+"/subasta/proximamente#tab7";
 	});
 
 });

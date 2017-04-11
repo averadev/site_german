@@ -11,7 +11,9 @@
 						<li><a href="#">NOTAS DE PRENSA</a></li>
 						<li><a href="{{ url('/german') }}">GERMAN ARZATE</a></li>
 						<li><a href="{{ url('/contacto') }}">CONTACTO</a></li>
-						<li style="margin-top: 1em;">{{$data->sociales_texto}}<a href="#!" target="_blank"><img class="social-button" alt="facebook" id="goface"  src="{{ URL::asset('media/img/home/'.$data->facebook_img.'') }}" ></a> <a href="#!" target="_blank"><img class="social-button" alt="instagram" id="goinsta" src="{{ URL::asset('media/img/home/'.$data->instagram_img.'') }}" ></a> <a href="#!" target="_blank"><img class="social-button" alt="twitter" id="gotwitter" src="{{ URL::asset('media/img/home/'.$data->twitter_img.'') }}"></a></li>			
+						<li style="margin-top: 1em;">{{$data->sociales_texto}}
+						<a href="https://www.facebook.com/GermanArzateSculptor/" target="_blank"><img class="social-button" alt="facebook" id="goface"  src="{{ URL::asset('media/img/home/'.$data->facebook_img.'') }}" ></a> 
+						<a href="https://www.instagram.com/germanarzatesculptor/" target="_blank"><img class="social-button" alt="instagram" id="goinsta" src="{{ URL::asset('media/img/home/'.$data->instagram_img.'') }}" ></a> </li>			
 					</ul>
 				</div>
 				<div class="col l4 s12">
@@ -39,7 +41,6 @@
 						<img style="width: 7em; margin-bottom: 20px;" src="{{ URL::asset('media/img/home/logoblanco.png') }}" alt="logo footer">
 						<li>{{$data->footer_direccion}}</a></li>
 						<li>{{$data->footer_postal}}</a></li>
-						<li>{{$data->footer_telefono}}</a></li>
 						<li>E-mail: <a href="mailto:{{strip_tags($data->footer_email)}}" style="text-decoration: underline;">{{$data->footer_email}}</a></li>
 					</ul>
 				</div>

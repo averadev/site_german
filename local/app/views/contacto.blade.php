@@ -21,8 +21,8 @@
 	<!-- Slider -->
 
 	<!-- Formulario -->
-	<div class="bg_contact" >
-		<div class="section" >
+	<div class="bg_contact">
+		<div class="section">
 			<div class="container row fontContact">
 				<div class="col s12 m6 l6">
                     <div class="row">
@@ -31,7 +31,6 @@
                     <div class="row">
                         <p class="algRC">{{$contact_info->cont_sec2_direccion}}<br/>
                            {{$contact_info->cont_sec2_postal}}<br/>
-                           {{$contact_info->cont_sec2_telefono}}<br/>
                            E-mail: <a href="mailto:{{strip_tags($contact_info->cont_sec2_email)}}" style="text-decoration: underline;">{{$contact_info->cont_sec2_email}}</a>
                         </p>
                     </div>

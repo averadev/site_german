@@ -52,7 +52,7 @@ p.trunc{
 				</div>
 				<div class="col s12 m4 l4">
 					<p class="bold-normal">Hasta el 21 de Noviembre de 2017</p>
-					<a href="{{ url('/subasta#tab9') }}" class="waves-effect grey lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
+					<a href="{{ url('/subasta#tab3') }}" class="waves-effect grey lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
 				</div>
 			</div>
 		</div>
@@ -128,23 +128,22 @@ p.trunc{
 					</div>
 					<div class="row">
 						<div class="col s12" style="margin-top: -45px;">
-							<a href="{{ url('/subasta#tab9') }}" style="margin-left: 1em;" class="waves-effect green right btn gb_noboxshadow">OFERTAR</a>
-							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
+							<a href="{{ url('/subasta/subastas#tab6') }}" style="margin-left: 1em;" class="waves-effect green right btn gb_noboxshadow">OFERTAR</a>
+							<a href="{{ url('/subasta#tab3') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
 						</div>
 					</div>
 				</div>
 				<div class="col s12 m12 l4 margin-top-1">
 					<div style="position: relative;">
 						<h5 class="light">Comentarios</h5>
-						<a href="#!" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="{{ URL::asset('media/img/home/'.$data->fbpic.'') }}"></a>
-						<a href="#!" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="{{ URL::asset('media/img/home/'.$data->instapic.'') }}"></a>
-						<a href="#!" target="_blank"><img style="position: absolute; right: 0; top: 3px;" class="social-button" alt="twitter" src="{{ URL::asset('media/img/home/'.$data->twitterpic.'') }}"></a>
+						<a href="https://www.facebook.com/GermanArzateSculptor/" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="{{ URL::asset('media/img/home/'.$data->fbpic.'') }}"></a>
+						<a href="https://www.instagram.com/germanarzatesculptor/" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="{{ URL::asset('media/img/home/'.$data->instapic.'') }}"></a>
 					</div>
 					<div class="bottomRule">
 					</div>
 					<div class="col s12">
 						<div id="listCommentsHome"></div>
-						<div class="right-align"><a href="{{ url('/subasta#tab5') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
+						<div class="right-align"><a href="{{ url('/subasta/comentarios#tab5') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
 					</div>
 						<?php
 							/**

@@ -470,120 +470,120 @@
 	<br>
 
 	<!-- INFO SUBASTA -->
-	<div id="tab6" class="scrollspy"></div>
-	<div class="hide-on-large-only">
-		<br>
-		<br>
-		<br>
-	</div>
-	<div style="background-image:url('../media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="">
-		<div  class="container">
-			<div class="row no-margin-bottom" style="padding-top: 4%;">
-				<div class="col l6 s12"> <!-- LEFT SIDE -->
-					<div style="padding: 10px 0 0 20px; border: 1px solid black; border-radius: 5px;">
-						<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
-						<div class="row">
-							<ul class="thumbnails col l2 s12">
-								@foreach ($auctionpics as $key => $value)
-									@if($key == 0)
-										<li>
-											<a href="../media/img/subasta_esculturas/{{$value->name}}">
-												<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction active" alt="Thumbnail">
-											</a>
-										</li>
-									@else
-										<li>
-											<a href="../media/img/subasta_esculturas/{{$value->name}}">
-												<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction" alt="Thumbnail">
-											</a>
-										</li>
+	<article id="tab6" class="scrollspy">
+		<div class="hide-on-large-only">
+			<br>
+			<br>
+			<br>
+		</div>
+		<div style="background-image:url('../media/img/subasta/bg_comingsoon.jpg'); background-size: cover;" id="">
+			<div  class="container">
+				<div class="row no-margin-bottom" style="padding-top: 4%;">
+					<div class="col l6 s12"> <!-- LEFT SIDE -->
+						<div style="padding: 10px 0 0 20px; border: 1px solid black; border-radius: 5px;">
+							<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
+							<div class="row">
+								<ul class="thumbnails col l2 s12">
+									@foreach ($auctionpics as $key => $value)
+										@if($key == 0)
+											<li>
+												<a href="../media/img/subasta_esculturas/{{$value->name}}">
+													<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction active" alt="Thumbnail">
+												</a>
+											</li>
+										@else
+											<li>
+												<a href="../media/img/subasta_esculturas/{{$value->name}}">
+													<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction" alt="Thumbnail">
+												</a>
+											</li>
+										@endif
+									@endforeach
+								</ul>
+								<div class="col l10 s12">
+									@if($auctionpics)
+										<div class="main-image">
+											<img src="../media/img/subasta_esculturas/{{$auctionpics[0]->name}}" alt="Placeholder" class="auction-image">
+										</div>
 									@endif
-								@endforeach
-							</ul>
-							<div class="col l10 s12">
-								@if($auctionpics)
-									<div class="main-image">
-										<img src="../media/img/subasta_esculturas/{{$auctionpics[0]->name}}" alt="Placeholder" class="auction-image">
-									</div>
-								@endif
-							</div>
-						</div>
-						<div style="margin-top: 52px; margin-bottom: 20px;" >
-							<p class="small-lineheight">Poseidón de <b>Germán Arzate</b> / 2017</p>
-							<p class="small-lineheight">Colección: <b>Obras Místicas</b></p>
-						</div>
-					</div>
-					<div class="row">
-						<div style="padding: 10px; margin-top: 2em;"  >
-							<form id="bidForm" class="white top_arrow_box whiteform contract">
-								<p style="margin: 3px 0 5px 10px;  " class="size30">Quiero participar en la subasta:</p>
-								<div class="row no-margin-bottom">
-									<div class="col s12">
-										<div class="col s12 l4">
-											<input id="name_bid" class="border_cs" maxlength="50" required type="text" name="name_bid" placeholder="NOMBRE">
-										</div>
-										<div class="col s12 l4">
-											<input id="nick_bid" class="border_cs" maxlength="20" required type="text" name="nick_bid" placeholder="APODO">
-										</div>
-										<div class="col s12 l4">
-											<input id="email_bid" class="border_cs" maxlength="50" required type="text" name="email_bid" placeholder="E-MAIL">
-										</div>
-									</div>
-									<div class="col s12">
-										<div class="col s12 l8">
-											<textarea id="comment_bid" style="height: 100px;" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
-										</div>
-										<div class="col l4">
-											<div class="col s12">
-												<div class="row no-margin-bottom">
-													<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
-												</div>
-											</div>
-											<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect gb_noboxshadow">OFERTAR</button>
-										</div>
-									</div>
 								</div>
-							</form>
+							</div>
+							<div style="margin-top: 52px; margin-bottom: 20px;" >
+								<p class="small-lineheight">Poseidón de <b>Germán Arzate</b> / 2017</p>
+								<p class="small-lineheight">Colección: <b>Obras Místicas</b></p>
+							</div>
+						</div>
+						<div class="row">
+							<div style="padding: 10px; margin-top: 2em;"  >
+								<form id="bidForm" class="white top_arrow_box whiteform contract">
+									<p style="margin: 3px 0 5px 10px;  " class="size30">Quiero participar en la subasta:</p>
+									<div class="row no-margin-bottom">
+										<div class="col s12">
+											<div class="col s12 l4">
+												<input id="name_bid" class="border_cs" maxlength="50" required type="text" name="name_bid" placeholder="NOMBRE">
+											</div>
+											<div class="col s12 l4">
+												<input id="nick_bid" class="border_cs" maxlength="20" required type="text" name="nick_bid" placeholder="APODO">
+											</div>
+											<div class="col s12 l4">
+												<input id="email_bid" class="border_cs" maxlength="50" required type="text" name="email_bid" placeholder="E-MAIL">
+											</div>
+										</div>
+										<div class="col s12">
+											<div class="col s12 l8">
+												<textarea id="comment_bid" style="height: 100px;" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
+											</div>
+											<div class="col l4">
+												<div class="col s12">
+													<div class="row no-margin-bottom">
+														<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
+													</div>
+												</div>
+												<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect gb_noboxshadow">OFERTAR</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col l6 s12">  <!-- RIGHT SIDE -->				
-					<div class="row">
-						<span class="date_current"></span>
-						<div style="margin-top: 2em;">
-							<div style="position: relative; ">
-								<p style="font-weight: 300;" class="size45" >Número de ofertas totales:  </p>
-								<p id="boxdigits" class="med-light size45 digitsBox" > </p>
+					<div class="col l6 s12">  <!-- RIGHT SIDE -->				
+						<div class="row">
+							<span class="date_current"></span>
+							<div style="margin-top: 2em;">
+								<div style="position: relative; ">
+									<p style="font-weight: 300;" class="size45" >Número de ofertas totales:  </p>
+									<p id="boxdigits" class="med-light size45 digitsBox" > </p>
+								</div>
+								<p style="line-height: 1em;" >Últimas ofertas: </p> 
+								<div id="bid_div">
+									
+								</div>
+								<p id="showMoreButton" class="showMore">Ver más ofertas <i style="vertical-align: middle;" class="material-icons">keyboard_arrow_down</i> </p>
 							</div>
-							<p style="line-height: 1em;" >Últimas ofertas: </p> 
-							<div id="bid_div">
-								
-							</div>
-							<p id="showMoreButton" class="showMore">Ver mas ofertas <i style="vertical-align: middle;" class="material-icons">keyboard_arrow_down</i> </p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Modal auction notifications -->
+		<!-- Modal auction notifications -->
 
-	<div id="messageModal" class="modal border-radius-10">
-		<div class="notification">
-			<h4 style="text-align: center;" id="titleModal"></h4>
-			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmessageModal"></p>
+		<div id="messageModal" class="modal border-radius-10">
+			<div class="notification">
+				<h4 style="text-align: center;" id="titleModal"></h4>
+				<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmessageModal"></p>
+			</div>
+			<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
+				<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
+			</div>
 		</div>
-		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
-			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
-		</div>
-	</div>
-	<!-- ENF INFO SUBASTA -->
-
+		<!-- ENF INFO SUBASTA -->
+	</article>
 @stop
 @section('addJs')
-<script src="../vendor/plugins/simple-gal.js"></script>
-<script src="../js/jquery.smooth.js"></script>
+<script src="{{ URL::asset('vendor/plugins/simple-gal.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.smooth.js') }}"></script>
 <script>
 $(document).ready(function(){
 	serverdate = new Date(<?php echo time(); ?>*1000);
@@ -648,9 +648,9 @@ $(document).ready(function(){
 	});
 })(jQuery);
 </script>
-<script src="../js/jquery_date.js"></script>
-<script src="../js/script.js"></script>
-<script src="../js/auction_bids.js"></script>
-<script src="../js/jquery_validate.js"></script>
-<script src="../js/subasta.js"></script>
+<script src="{{ URL::asset('js/jquery_date.js') }}"></script>
+<script src="{{ URL::asset('js/script.js') }}"></script>
+<script src="{{ URL::asset('js/auction_bids.js') }}"></script>
+<script src="{{ URL::asset('js/jquery_validate.js') }}"></script>
+<script src="{{ URL::asset('js/subasta.js') }}"></script>
 @stop

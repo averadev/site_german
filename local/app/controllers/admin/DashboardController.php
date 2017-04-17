@@ -49,7 +49,7 @@ class DashboardController extends BaseController {
 	public function getElement(){
 		if(Request::ajax()){
 			$idComponent = Input::get('component');
-			$component = Component::select('id','idComponent as type','value')->where('id','=',$idComponent)->first();
+			$component = Component::select('id','idComponent as type','value', 'img_text_dimension')->where('id','=',$idComponent)->first();
 			return Response::json(array('component' => $component ));
 		}		
 	}

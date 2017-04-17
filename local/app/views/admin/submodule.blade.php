@@ -42,10 +42,20 @@
 									<textarea id="txtEditor"></textarea> 
 								</div>
 							</div>
+							<div class="row">
+								<div class="col l6 s12">
+									<label id="text_recommended" style="color: #757575;"></label>
+								</div>
+							</div>
 						</div>
 						<div id="imgElement" class="row hide">
 							<div class="col l6 s12 grey lighten-3" style="padding-top:10px; padding-bottom: 10px;">
 								<img id="idComponentPicture" style="max-height: 250px; max-width: 100%; " src="">
+								<div class="row">
+									<div class="col l6 s12">
+										<label id="img_recommended" style="color: #757575;"></label>
+									</div>
+								</div>
 							</div>
 							<div class="col l6 s12">
 								<div class="file-field input-field">
@@ -58,6 +68,7 @@
 									</div>
 								</div>
 							</div>
+							
 						</div>
 						<input id="element_id" name="element_id" type="hidden" value="">
 						<input id="element_type" name="element_type" type="hidden" value="">

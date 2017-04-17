@@ -135,6 +135,7 @@ var dashboard = function (){
 			if(response.component.type == 1){
 				$("#txtElement").removeClass('hide');
 				$("#imgElement").addClass('hide');
+				$("#text_recommended").html(response.component.img_text_dimension)
 				var component = response.component.value;
 				var newString = component.replace(/<\/[A-Za-z-0-9-]+>/g, "</font>");
 				newString = newString.replaceArray(pattern, replace);
@@ -144,6 +145,7 @@ var dashboard = function (){
 				$("#txtElement").addClass('hide');
 				$("#txtEditor").Editor("setText", '');
 				$("#idComponentPicture").attr("src",path[$currentModule]+response.component.value);
+				$("#img_recommended").html(response.component.img_text_dimension)
 			}
 		}).fail(function(response) {
 

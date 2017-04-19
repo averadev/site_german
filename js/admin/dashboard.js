@@ -1,5 +1,14 @@
 var dashboard = function (){
 	var bindEvents = function(){
+		/*Remover estilos al pegar texto*/
+		document.addEventListener("paste", function (e) {
+			setTimeout(function () {
+				var text = $("#txtEditor").Editor("getText");
+				text = text.replace(/<(?!\/?(font)(?=>|\s.*>))\/?.*?>/g, '');/*Dejar solo los tags font*/
+				text = text.replace(/(\r\n|\n|\r)/gm,"");/*Remover saltos de linea*/
+				$("#txtEditor").Editor("setText", text);
+			}, 100);
+		});
 		pattern = [
 			"<size-x08>",
 			"<size-x1>",
@@ -51,6 +60,7 @@ var dashboard = function (){
 
 		$("#saveElement").click(function(event) {
 			var text = $("#txtEditor").Editor("getText");
+			text = text.replace(/<(?!\/?(font)(?=>|\s.*>))\/?.*?>/g, '');
 			var newString = text.replace(/<\/[A-Za-z-0-9-]+>/g, "</size>");
 			newString.split('<font').join('<');
 			newString = newString.replaceArray(replace, pattern);

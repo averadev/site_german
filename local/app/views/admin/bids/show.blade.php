@@ -9,7 +9,7 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s6">
-							<select value="3" onchange="location = this.value;" class="select-no-margin">
+							<select id="selectAuction" value="3" onchange="location = this.value;" class="select-no-margin">
 								@foreach ($subastas as $key => $subasta)
 									<option {{ $subasta->id == $activeAuction ? 'selected = selected' : '' }} value="{{$subasta->id}}">{{$subasta->name}}</option>
 								@endforeach
@@ -17,7 +17,7 @@
 						 	<label>Subasta:</label>
 						</div>
 						<div class="col s6">
-							<a data-tooltip="Actualizar" data-position="left" href="{{url('/admin/pujas/'.$activeAuction.'')}}" style="float: right; margin-top: 3%; margin-right: 3%;" class="btn-floating btn-large waves-effect waves-light green darken-4 circle-button tooltipped" ><i style="font-size: 2.3rem;" class="material-icons">cached</i></a>
+							<a data-tooltip="Actualizar" data-position="left" href="{{url('/admin/pujas/'.$activeAuction.'')}}" style="float: right; margin-top: 3%; margin-right: 3%;" class="statusAction btn-floating btn-large waves-effect waves-light green darken-4 circle-button tooltipped" ><i style="font-size: 2.3rem;" class="material-icons">cached</i></a>
 						</div>
 					</div>
 					<div class="row">
@@ -58,5 +58,12 @@
 
 @stop
 @section('addJs')
-
+<script type="text/javascript">
+	$(".statusAction").click(function(event) {
+		$.blockUI({ message: $('#animationmatrix') });
+	});
+	$("#selectAuction").on('change', function() {
+		$.blockUI({ message: $('#animationmatrix') });
+	});
+</script>
 @stop

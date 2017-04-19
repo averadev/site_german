@@ -31,6 +31,9 @@
 
 </head>
 <body>
+<div id="animationmatrix" class="loader hideme" >
+
+</div>
 @include('admin.topmenu')
 <div id="main">
 	<div class="wrapper">	

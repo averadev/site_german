@@ -36,7 +36,7 @@ class AuctionAdminController extends BaseController {
 
 	function __construct(){
 		$this->beforeFilter('auth');
-		$this->beforeFilter('csrf',array('except'=>array('getIndex','getCreate','getShow','getEdit','putUpdateAuction','postSaveImage','postSetAuction','deleteDropImage','getActive','getStop')));
+		$this->beforeFilter('csrf',array('except'=>array('getIndex','getCreate','getShow','getEdit','putUpdateAuction','postSaveImage','postSetAuction','deleteDropImage','getActive','getNext','getStop')));
 	}
 
 	public function getIndex(){
@@ -74,13 +74,23 @@ class AuctionAdminController extends BaseController {
 
 	public function getActive($id = null) {
 		if($id){
-			$auction = Subasta::where('id', '>', 0)->update(array('status' => 0));
+			$auction = Subasta::where('status', '=', 1)->update(array('status' => 0));
 			$active = Subasta::find($id);
 			$active->status = 1;
 			$active->save();
 		}
 		return Redirect::to('/admin');
 	}
+
+	public function getNext($id = null) {
+		if($id){
+			$auction = Subasta::where('status', '=', 2)->update(array('status' => 0));
+			$active = Subasta::find($id);
+			$active->status = 2;
+			$active->save();
+		}
+		return Redirect::to('/admin');
+	}	
 
 	public function getStop() {
 		Subasta::where('id', '>', 0)->update(array('status' => 0));

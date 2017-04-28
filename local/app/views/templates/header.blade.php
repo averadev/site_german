@@ -14,7 +14,7 @@
 					<li><a class="homepage">INICIO</a></li>
 					<li><a class="subasta">SUBASTA</a></li>
 					<li><a class="extraservices">OBRAS ESPECIALES</a></li>
-					<li><a href="#!">NOTAS DE PRENSA</a></li>
+					<li><a href="#!">BLOG</a></li>
 					<li><a class="german">GERMAN ARZATE</a></li>
 					<li><a class="contacto">CONTACTO</a></li>
 				</ul>
@@ -22,7 +22,7 @@
 					<li><a class="homepage">INICIO</a></li>
 					<li><a class="subasta">SUBASTA</a></li>
 					<li><a class="extraservices">OBRAS ESPECIALES</a></li>
-					<li><a href="#!">NOTAS DE PRENSA</a></li>
+					<li><a href="#!">BLOG</a></li>
 					<li><a class="german">GERMAN ARZATE</a></li>
 					<li><a class="contacto">CONTACTO</a></li>
 	    		</ul>

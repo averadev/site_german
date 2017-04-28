@@ -60,7 +60,7 @@ var dashboard = function (){
 
 		$("#saveElement").click(function(event) {
 			var text = $("#txtEditor").Editor("getText");
-			text = text.replace(/<(?!\/?(font)(?=>|\s.*>))\/?.*?>/g, '');
+			text = text.replace(/<(?!\/?(font|br|)(?=>|\s.*>))\/?.*?>/g, '');
 			var newString = text.replace(/<\/[A-Za-z-0-9-]+>/g, "</size>");
 			newString.split('<font').join('<');
 			newString = newString.replaceArray(replace, pattern);

@@ -1,7 +1,6 @@
 @extends('templates.main')
 @section('content')
 <style type="text/css">
-
 	.center-abs-div {
 		position: absolute;
 		left: 50%;
@@ -537,7 +536,7 @@
 											<div class="container top-pad-80">
 												<div class="row">
 													<div class="col l12 s12">
-														<p class="title_proceso">{{$submodule_section_data->SeccionTituloProceso}}</p>
+														<p class="title_proceso">{{$submodule_section_data->SeccionTituloConcepto}}</p>
 													</div>
 													<div class="col l4 s12 ">
 			      										<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso" >
@@ -556,7 +555,7 @@
 											<div class="container top-pad-80">
 												<div class="row">
 													<div class="col l12 s12">
-														<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoSuenos}}</p>
+														<p class="title_proceso">{{$submodule_section_data->SeccionTituloSuenos}}</p>
 													</div>											
 													<div class="col l4 s12">
 		      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
@@ -575,7 +574,7 @@
 											<div class="container top-pad-80">
 												<div class="row">
 													<div class="col l12 s12">
-														<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoMagia}}</p>
+														<p class="title_proceso">{{$submodule_section_data->SeccionTituloMagia}}</p>
 													</div>											
 													<div class="col l4 s12">
 		      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="hide-on-med-and-down img_proceso">
@@ -594,7 +593,7 @@
 											<div class="container top-pad-80">
 												<div class="row">
 													<div class="col l12 s12">
-														<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoPasion}}</p>
+														<p class="title_proceso">{{$submodule_section_data->SeccionTituloPasion}}</p>
 													</div>											
 													<div class="col l4 s12">
 		      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="hide-on-med-and-down img_proceso">
@@ -613,7 +612,7 @@
 											<div class="container top-pad-80">
 												<div class="row">
 													<div class="col l12 s12">
-														<p class="title_proceso">{{$submodule_section_data->SeccionTituloProcesoLuz}}</p>
+														<p class="title_proceso">{{$submodule_section_data->SeccionTituloLuz}}</p>
 													</div>
 													<div class="col l4 s12">
 		      											<img src="media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" alt="" class="hide-on-med-and-down img_proceso">

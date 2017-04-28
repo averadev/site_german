@@ -502,7 +502,6 @@ footer.page-footer {
     max-width: 100%;
 }
 .bg_bottom {
-    background-image: url("../media/img/subasta/bg_porque.jpg");
     padding-top: 20px;
     width: 100%;
 }
@@ -546,7 +545,6 @@ nav.mymenu ul a {
     font-weight: bold;
 }
 .bg_contact {
-    background-image: url("../media/img/subasta/bg_porque.jpg");
     padding-top: 20px;
     width: 100%;
 }
@@ -2262,6 +2260,10 @@ span.year {
 .mobile-nav{
 	background-color: #40423F;
 	opacity: 0.9;
+}
+
+.drag-target{
+	width: 0% !important;
 }
 
 .mobile-nav li a{

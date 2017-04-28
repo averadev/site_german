@@ -482,35 +482,40 @@
 					<div class="col l6 s12"> <!-- LEFT SIDE -->
 						<div style="padding: 10px 0 0 20px; border: 1px solid black; border-radius: 5px;">
 							<span class="gb_title_auction">{{$submodule_section_data->SeccionSubastaTituloEscultura}}</span>
-							<div class="row">
+								<div class="row">
 								<ul class="thumbnails col l2 s12">
 									@foreach ($auctionpics as $key => $value)
-										@if($key == 0)
-											<li>
-												<a href="../media/img/subasta_esculturas/{{$value->name}}">
-													<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction active" alt="Thumbnail">
-												</a>
-											</li>
-										@else
-											<li>
-												<a href="../media/img/subasta_esculturas/{{$value->name}}">
-													<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction" alt="Thumbnail">
-												</a>
-											</li>
+										@if($value->name)
+											@if($key == 0)
+												<li>
+													<a href="../media/img/subasta_esculturas/{{$value->name}}">
+														<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction active" alt="Thumbnail">
+													</a>
+												</li>
+											@else
+												<li>
+													<a href="../media/img/subasta_esculturas/{{$value->name}}">
+														<img src="../media/img/subasta_esculturas/{{$value->name}}" class="thumb-auction" alt="Thumbnail">
+													</a>
+												</li>
+											@endif
 										@endif
 									@endforeach
 								</ul>
 								<div class="col l10 s12">
 									@if($auctionpics)
-										<div class="main-image">
-											<img src="../media/img/subasta_esculturas/{{$auctionpics[0]->name}}" alt="Placeholder" class="auction-image">
-										</div>
+										@if($auctionpics[0]->name)
+											<div class="main-image">
+												<img src="../media/img/subasta_esculturas/{{$auctionpics[0]->name}}" alt="Placeholder" class="auction-image">
+											</div>
+										@endif
 									@endif
 								</div>
 							</div>
+
 							<div style="margin-top: 52px; margin-bottom: 20px;" >
-								<p class="small-lineheight">Poseidón de <b>Germán Arzate</b> / 2017</p>
-								<p class="small-lineheight">Colección: <b>Obras Místicas</b></p>
+								<p class="small-lineheight">{{$submodule_section_data->SeccionDescSubasta1}}</p>
+								<p class="small-lineheight">{{$submodule_section_data->SeccionDescSubasta2}}</p>
 							</div>
 						</div>
 						<div class="row">

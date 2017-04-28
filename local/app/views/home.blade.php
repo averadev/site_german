@@ -115,12 +115,12 @@ p.trunc{
 								</div>
 								<div class="tab-pane" id="profile-v">
 									<div style="min-height: 340px;" class="tab-space">
-										tab 2
+										{{$data->ofertas}}
 									</div>
 								</div>
 								<div class="tab-pane" id="messages-v">
 									<div style="min-height: 340px;" class="tab-space">
-										tab 3
+										{{$data->german}}
 									</div>
 								</div>
 						  	</div>

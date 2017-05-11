@@ -1,26 +1,77 @@
+/*
+	Funciones para el envio de ofertas en subasta
+*/
+
 var bids = function (){
 	var monthNames = new Array();
 	monthNames = ["","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 	
 	var bindEvents = function(){
-		$("#submitBid").click(function(event) {
-			event.preventDefault();         
-			var formValidation = $( "#bidForm").valid();
-			if(formValidation){
-				var form = {
-					'name'          : $('#name_bid').val(),
-					'nickname'      : $('#nick_bid').val(),
-					'email'         : $('#email_bid').val(),
-					'amount'            : $('#amount_bid').val(),
-					'comment'       : $('#comment_bid').val()
-				};
-				postBids(form);
-			}
+
+		/*A N I M A T I O N S*/
+
+		$("#go_form_new_user").click(function(event) {
+			$("#bid_options").slideToggle('2000');
+			$("#new_user_bid").slideToggle('2000');
+		});
+
+		$("#go_login").click(function(event) {
+			$("#bid_options").slideToggle('2000');
+			$("#login_user").slideToggle('2000');
+		});
+
+		$("#login_user_back").click(function(event) {
+			$("#login_user").slideToggle('2000');
+			$("#bid_options").slideToggle('2000');
+		});
+
+		$("#new_user_back").click(function(event) {
+			$("#new_user_bid").slideToggle('2000');
+			$("#bid_options").slideToggle('2000');
 		});
 
 		$("#showMoreButton").click(function(event) {
 			$(".collection").animate({ scrollTop: 0 }, "fast");
 			$(".collection").toggleClass("showmore");
+		});
+
+		/*S U B M I T S*/
+
+
+		$("#userlogin").click(function(event) {
+			var formValidation = $( "#login").valid();
+			if(formValidation){
+				loginwithmail();
+			}			
+		});
+
+		$("#close-session").click(function(event) {
+			end_session();
+		});
+
+		$("#new-user").click(function(event) {
+			var formValidation = $( "#new_user_form").valid();
+			if(formValidation){
+				var form = {
+					'cardnumber' : $('#card_number').val(),
+					'type'		 : $('#selectCard').val(),
+					'email'		 : $('#email_user').val()
+				}
+				set_new_user(form);
+			}
+		});
+
+		$("#submit_bid").click(function(event) {
+			var formValidation = $( "#new_bid_form").valid();
+			if(formValidation){
+				var form = {
+					'name'      	: $('#name_bid').val(),
+					'nickname'  	: $('#nick_bid').val(),
+					'amount'    	: $('#amount_bid').val(),
+					'comment'   	: $('#comment_bid').val()
+				};
+				postBids(form);
+			}			
 		});
 
 	}
@@ -39,37 +90,26 @@ var bids = function (){
 		}).done(function(response) {
 
 			var bids_section = "<ul id='bidsList' class='collection'>";
-			var now = new Date(response.time*1000);
-			var bidDate = null;
-			var diffinhours = 0;
+
 			var boxTotalBids ='';
 			$totalAuctionBids = response.bids.length;
 			var totalBids = ((response.bids.length).toString()).split('');
 			$.each(totalBids, function(index, val) {
 				if(index>0){
-				boxTotalBids = boxTotalBids+"<span class='totalBids no-left-border' >"+val+"</span>"
+					boxTotalBids = boxTotalBids+"<span class='totalBids no-left-border' >"+val+"</span>"
 				}else{
-				boxTotalBids = boxTotalBids+"<span class='totalBids' >"+val+"</span>"
+					boxTotalBids = boxTotalBids+"<span class='totalBids' >"+val+"</span>"
 				}
 			});
 			$("#boxdigits").html(boxTotalBids);
 
 			$.each(response.bids, function(index, val) {
-				bidDate = new Date(val.startDate*1000);
-				diffinhours = Math.abs(now - bidDate) / 36e5;
-
-				var month = bidDate.getUTCMonth() + 1; //months from 1-12
-				var day = bidDate.getUTCDate();
-
-				if(day <= 9){
-					day = '0'+day;
-				}
-				bidDate = day+' '+monthNames[month];	
+				bidDate = val.dayDate+' '+monthNames[val.monthDate];	
 				bids_section = bids_section +"<li class='collection-item avatar'>"+
 					"<i class='material-icons circle grey darken-1 md-30'>account_box</i>"+
 					"<span class='title'>"+val.nick+"</span>"+
 					"<p class='bid-amount'>Oferta: $"+val.amount+"</p>"+
-					"<p class='time'>Hace "+parseInt(diffinhours)+" horas</p>"+
+					"<p class='time'>Hace "+val.hourAgo+" horas</p>"+
 					"<p class='date'>"+bidDate+"</p>"+
 				"</li>";
 			});
@@ -98,6 +138,28 @@ var bids = function (){
 		});
 	}
 
+	var set_new_user = function(form){
+		$.ajax({
+			url: HOST+'/subasta/new-auction-user',
+			type: 'POST',
+			dataType: 'json',
+			data: form,
+		}).done(function(response) {
+			if(!(response.error)){
+				$("#showmessageModal").text(response.msg);
+				$('#messageModal').modal('open');				
+				$("#new_user_form")[0].reset();
+			}else{
+				$("#titleModal").text('');
+				$("#showmessageModal").text(response.msg);
+				$('#messageModal').modal('open');
+			}
+
+		}).fail(function(response) {
+
+		});
+	}	
+
 	var postBids = function(form){
 		$.ajax({
 			url: HOST+'/subasta/submit-bid',
@@ -108,42 +170,70 @@ var bids = function (){
 
 			if(!(response.error)){
 				$("#showmessageModal").text(response.msg);
-				$("#bidForm")[0].reset();
+				$("#new_bid_form")[0].reset();
 				$('#messageModal').modal('open');
 				getBids();
 			}else{
 				var message = response.msg;
 				$("#titleModal").text('');
-				switch(response.error) {
-					case 1: 	/*poseedor de la oferta más alta*/
-						$('#messageModal').modal('open');
-						break;
-					case 2: 	/*Se envio un mensaje de verificacion a su correo*/
-						message = "Con el fin de registrar tu oferta y ser considerado para la venta. <br/> Se te ha enviado un correo electronico con el fin de verificar tus datos."
-						$("#titleModal").text('¡Gracias por ofertar!');
-						$('#messageModal').modal('open');
-						break;
-					case 3: 	/*Revisar correo*/
-						$('#messageModal').modal('open');
-						break;
-					case 4: 	/*Oferta tiene que ser mayor*/
-						message = "Su oferta tiene que ser mayor a la actual de $"+response.msg;
-						$('#messageModal').modal('open');
-						break;
-					case 5: 	/*Nickname duplicado*/
-						$('#messageModal').modal('open');
-						break;						
+				if(response.error == 1){
+					$("#new_bid_div").slideToggle('2000');
+					$("#login_user").slideToggle('2000');
+					$("#showmessageModal").text(message);
+					$('#messageModal').modal('open');
+				}else{
+					$("#showmessageModal").text(message);
+					$('#messageModal').modal('open');					
 				}
-				$("#showmessageModal").html(message);
 			}
 			
 		}).fail(function(response) {
 
 		}); 
-	}   
+	}
+
+	var loginwithmail = function(form){
+		$.ajax({
+			url: HOST+'/subasta/login',
+			type: 'POST',
+			dataType: 'json',
+			data: {email: $("#email_login").val() },
+		}).done(function(response) {
+			if(!(response.error)){
+				$("#login_user").slideToggle('2000');
+				$("#new_bid_div").slideToggle('2000');			
+			}else{
+				$("#titleModal").text('');
+				$("#showmessageModal").text(response.msg);
+				$('#messageModal').modal('open');
+			}
+		}).fail(function(response) {
+			console.log(response);
+		}); 
+	}
+
+	var end_session = function(form){
+		$.ajax({
+			url: HOST+'/subasta/log-out',
+			type: 'POST',
+			dataType: 'json',
+			data: {email: $("#email_login").val() },
+		}).done(function(response) {
+			if(!(response.error)){
+				$("#login_user").slideToggle('2000');
+				$("#new_bid_div").slideToggle('2000');
+			}else{
+				$("#titleModal").text('');
+				var message = response.msg;
+				$("#showmessageModal").html(message);
+			}
+		}).fail(function(response) {
+
+		}); 
+	}	
 
 	/*Form Validation*/
-	$("#bidForm").validate({
+	$("#new_bid_form").validate({
 		rules: {
 			name_bid: {
 				required: true,
@@ -152,11 +242,6 @@ var bids = function (){
 			nick_bid: {
 				required: true,
 				maxlength: 20
-			},              
-			email_bid: {
-				required: true,
-				valid_email: true,
-				maxlength: 50
 			},
 			amount_bid: {
 				required: true,
@@ -172,11 +257,6 @@ var bids = function (){
 			nick_bid: {
 				required: "Requerido",
 				maxlength: "20 caracteres maximo"
-			},              
-			email_bid: {
-				required: "Requerido",
-				valid_email: "Ingresa un correo válido",
-				maxlength: "50 caracteres maximo"
 			},
 			amount_bid: {
 				required: "Requerido",
@@ -184,7 +264,58 @@ var bids = function (){
 				maxlength: ""
 			}
 		}
-	 });    
+	 });
+
+
+	/*New user validation*/
+	$("#new_user_form").validate({
+		rules: {
+			card_number: {
+				required: true,
+				digits: true
+			},
+			email_user: {
+				required: true,
+				valid_email: true,
+				maxlength: 50
+			},
+			selectCard: {
+				required: true,
+			}
+		},
+		messages: {
+			card_number: {
+				required: "Requerido",
+				digits: "Solo numeros"
+			},              
+			email_user: {
+				required: "Requerido",
+				valid_email: "Ingresa un correo válido",
+				maxlength: "50 caracteres maximo"
+			},
+			selectCard: {
+				required: "Requerido",
+			}			
+		}
+	 });
+
+	$("#login").validate({
+		rules: {
+			email_login: {
+				required: true,
+				valid_email: true,
+				maxlength: 50
+			}
+		},
+		messages: {          
+			email_login: {
+				required: "Requerido",
+				valid_email: "Ingresa un correo válido",
+				maxlength: "50 caracteres maximo"
+			}		
+		}
+	 });	
+
 
 	var onloadExec = function(){
 		bindEvents();

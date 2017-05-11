@@ -78,10 +78,6 @@ p.gb_blockquote {
 		</div>
 	</div>
 	<!-- SubMenu German -->
-	<br>
-	<br>
-	<br>
-	<br>
 	
 	<!-- start ¿Quién Soy? -->
 	<article id="tab1" class="scrollspy">
@@ -202,11 +198,11 @@ p.gb_blockquote {
 	<!-- start ¿Qué Me Mueve? -->
 	<article id="tab4" class="scrollspy">
 		<div id="">
-			<div class="bg_bottom" style="background-image: url('media/img/german/{{$data->ger_sec7_bg}}'); height: 600px; overflow: hidden;">
+			<div class="bg_bottom" style="background-image: url('media/img/german/{{$data->ger_sec7_bg}}'); background-size: cover; overflow: hidden;">
 				<div class="section" style="padding: 0 0 40px 0;">
 					<div class="container fontCrimson">
-						<div class="row center">
-							<div class="row center">
+						<div class="row center no-margin-bottom">
+							<div class="row center no-margin-bottom">
 								<div class="col s12 m12 l7 offset-l2">
 									<br><br>
 									<p class="gb_blockquote">{{$data->ger_sec7_txt1}}</p>

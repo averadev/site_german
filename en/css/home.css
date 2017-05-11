@@ -1,0 +1,163 @@
+.crop {
+	max-height: 250px;
+	overflow: hidden;
+}
+.gb_bold {
+	font-weight: bold;
+}
+
+p.trunc{
+	height:90px;
+	overflow:hidden;
+}
+
+.tab-height{
+	min-height: 340px;
+}
+
+.auction-image{
+	width: 20em
+}
+
+#movedown{
+	width: 45px; margin-top: 2.3em; cursor: pointer;
+}
+
+@media only screen and (max-width : 992px) {
+	.crop {
+		max-height: 900px;
+		overflow: hidden;
+	}
+}
+
+	.center-abs-div {
+		position: absolute;
+		left: 50%;
+		top: 45%;
+		transform: translate(-50%, -50%);
+	}
+
+	.auction-image{
+		width: 80%;
+		margin-left: 7%;
+	}
+	.thumb-auction{
+		display: inline;
+		margin: 0 0 10px 0;
+		padding: 4px;
+		width: 60px;
+		border:2px solid white;
+	}
+	.thumb-auction.active{
+		border:2px solid gray;
+	}
+
+	.thumbnails li{
+		float: left;
+		margin-right: 10px;
+	}
+
+	.collection-item{
+		height: 50px;
+		line-height: 2rem !important;
+	}
+
+	.collection .collection-item.avatar {
+		min-height: 30px;
+		padding-left: 60px;
+	}
+
+	span.title{
+		font-weight: bold;
+	}
+
+	.no-left-border{
+		border-left: none !important;
+	}
+
+	span.totalBids{
+		border: 1px solid white;
+		padding-right: 6px;
+		padding-left: 4px;
+		padding-top: 2px; 
+	}
+
+	p.bid-amount{
+		font-weight: bold;
+		font-size: 1.2rem;
+		line-height: 2.3rem;
+		position: absolute;
+		right: 16px;
+		top: 8px;
+	}
+
+	.circle{
+		border-radius: 10%;
+	}
+
+	.collection {
+		border-bottom: 1px solid gray;
+		border-top: 1px solid gray;
+	}
+
+	.collection .collection-item{
+		background: transparent;
+		border-bottom: 1px solid gray;		
+	}
+
+	.collection .collection-item.avatar .total {
+		position: absolute;
+		color: red;
+		right: 16px;
+		top: 8px;
+	}
+
+	.collection .collection-item.avatar .date {
+		position: absolute;
+		right: 16px;
+		top: 30px;
+	}
+
+	p.digitsBox{
+		position: absolute; 
+		top: -15px; 
+		right: 0;
+		font-weight: 400;
+
+	}
+
+
+.collection .collection-item.avatar i.circle {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.collection .collection-item.avatar .circle {
+    height: 30px;
+    width: 30px;
+}
+
+
+@media only screen and (max-width : 600px) {
+	.bidlabel{
+		display: none;
+	}
+	.crop {
+		max-height: 600px;
+		overflow: hidden;
+	}
+	.tab-space{
+		padding-top: 0.5rem; 
+	}
+	.collection-item{
+		height: 43px;
+	}
+	.collection .collection-item.avatar {
+		padding-left: 10px;
+	}	
+	.collection .collection-item.avatar i.circle {
+		font-size: 18px;
+		line-height: 32px;
+		display: none;
+	}
+}

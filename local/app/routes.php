@@ -31,15 +31,21 @@
     Route::get('/contacto', 'ContactoController@getIndex');
     Route::post('/contacto/contactomail', 'ContactoController@SendContactUSGerman');
 	/** Subasta **/
-	Route::get('/subasta', 'AuctionController@showSubmodule');
-	Route::get('/subasta', 'AuctionController@getSectionSubPQ');
-	Route::get('/subasta/comentarios', 'AuctionController@getSectionComments');
-	Route::get('/subasta/subastas', 'AuctionController@getSectionAuction');
-	Route::get('/subasta/proximamente', 'AuctionController@getSectionComingSoon');
-	Route::post('/subasta/coming', 'AuctionController@SendmailContactUS');
-	Route::get('/subasta/allComments', 'AuctionController@getAllComments');
-	Route::get('/subasta/bids', 'AuctionController@getAuctionBids');
-	Route::post('/subasta/submit-bid', 'AuctionController@postAuctionBid');
+		Route::get('/subasta', 'AuctionController@showSubmodule');
+		Route::get('/subasta', 'AuctionController@getSectionSubPQ');
+		Route::get('/subasta/comentarios', 'AuctionController@getSectionComments');
+		Route::get('/subasta/subastas', 'AuctionController@getSectionAuction');
+		Route::get('/subasta/proximamente', 'AuctionController@getSectionComingSoon');
+		Route::post('/subasta/coming', 'AuctionController@SendmailContactUS');
+		Route::get('/subasta/allComments', 'AuctionController@getAllComments');
+		Route::get('/subasta/bids', 'AuctionController@getAuctionBids');
+		
+
+		/*User actions*/
+		Route::post('/subasta/login', 'AuctionController@postLogin');
+		Route::post('/subasta/log-out', 'AuctionController@postLogout');
+		Route::post('/subasta/new-auction-user', 'AuctionController@postAuctionUser');
+		Route::post('/subasta/submit-bid', 'AuctionController@postAuctionBid');
 	/*check bids*/
 	Route::get('/subasta/check-bids', 'AuctionController@getNewBids');
 	

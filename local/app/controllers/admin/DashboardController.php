@@ -54,7 +54,7 @@ class DashboardController extends BaseController {
 		}		
 	}
 
-	public function putSaveText(){
+	public function postSaveText(){
 		if(Request::ajax()){
 			$data = [
 				'id' 		=> strip_tags(trim(Input::get('id_element'))),

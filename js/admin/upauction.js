@@ -117,7 +117,7 @@ var upauction = function (){
 	var sendAuctionUpdate = function(form){
 		$.ajax({
 			url: HOST+'/admin/subasta/update-auction',
-			type: 'PUT',
+			type: 'POST',
 			dataType: 'json',
 			data: form,
 		}).done(function(response) {
@@ -171,7 +171,7 @@ var upauction = function (){
 	var sendDeleteImage = function(idimg,divImage){
 		$.ajax({
 			url: HOST+'/admin/subasta/drop-image',
-			type: 'DELETE',
+			type: 'POST',
 			dataType: 'json',
 			data: {image: idimg},
 		}).done(function(response) {

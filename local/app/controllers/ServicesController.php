@@ -28,6 +28,7 @@ class ServicesController extends BaseController {
 					->with('data',$block);
 	}
 	public function getPersonalizadas(){
+
 		/*Obtener los elementos de las secciones de esculturas personalizadas en servicios extras*/
 		$data = DB::table('xref_section_component as block')
 		->select('block.name','block.value','block.detail')

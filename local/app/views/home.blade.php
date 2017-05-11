@@ -1,35 +1,6 @@
 @extends('templates.main')
 @section('content')
-<style>
-.crop {
- max-height: 250px;
- overflow: hidden;
-}
-.gb_bold {
-	font-weight: bold;
-}
-
-p.trunc{
-	height:90px;
-    /* Height / no. of lines to display */
-    overflow:hidden;
-}
-
-@media only screen and (max-width : 992px) {
-	.crop {
-	 max-height: 900px;
-	 overflow: hidden;
-	}
-}
-
-@media only screen and (max-width : 600px) {
-	.crop {
-	 max-height: 600px;
-	 overflow: hidden;
-	}
-}
-
-</style>
+	<link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">	
 	<div id="index-banner" class="parallax-container">
 		<div class="section no-pad-bot">
 			<div class="container">
@@ -37,7 +8,7 @@ p.trunc{
 				<div class="row center">
 					<p class=" title-home crimson-bold-italic small-spacing">{{$data->homeBannerTxt}}</p>
 					<p class="subtitle-home crimson-bold-italic small-spacing">{{$data->homeBannerTxt2}}</p>
-					<img id="movedown" style="width: 45px; margin-top: 2.3em; cursor: pointer;" src="media/img/home/scroll.png" alt="scroll">
+					<img id="movedown" src="media/img/home/scroll.png" alt="scroll">
 				</div>
 				<br><br>
 			</div>
@@ -64,32 +35,32 @@ p.trunc{
 			</div>
 			<div class="row">
 				<div class="col s12 m12 l8  margin-top-1">
-					<div class="row">				
+					<div class="row">
 						<div class="col s1"> <!-- required for floating -->
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs tabs-left sideways">
-							<li class="active"><a href="#home-v" data-toggle="tab">ESCULTURA</a></li>
-							<li><a href="#profile-v" data-toggle="tab">OFERTAS</a></li>
-							<li><a href="#messages-v" data-toggle="tab">GERMAN</a></li>
-						  </ul>
-						</div>				
+								<li class="active"><a href="#home-v" data-toggle="tab">ESCULTURA</a></li>
+								<li><a href="#profile-v" data-toggle="tab">OFERTAS</a></li>
+								<li><a href="#messages-v" data-toggle="tab">GERMAN</a></li>
+							</ul>
+						</div>
 						<div class="col s11">
 							<!-- Tab panes -->
 							<div class="tab-content tab-bg-color" style="margin-top: 2px;">
 								<div class="tab-pane active" id="home-v">
-									<div class="row">									
-										<div style="min-height: 340px;" class="tab-space">
+									<div class="row">
+										<div class="tab-space tab-height">
 										@if( count($auction)>0 )
 											<div class="hide-on-small-only">
 												<div class="col s5">
 													<div class="row">
 														<h5 class="large-spacing fontCrimson gb_bold"> {{$auction->name}} </h5>
-															{{$auction->detail}}													
+															{{$auction->detail}}
 													</div>
 												</div>
 												<div class="col s7">
-													<div class="row">													
-														<img style="width: 20em" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
+													<div class="row">
+														<img class="auction-image" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
 													</div>
 												</div>
 											</div>
@@ -97,7 +68,7 @@ p.trunc{
 												<div class="row">
 													<div class="card" style="background-color: #EBEBEB">
 														<div class="card-image waves-effect waves-block waves-light">
-															<img  style="width: 15em" class="activator" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
+															<img  style="width: 15em" class="activator min-height-auto" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
 														</div>
 														<div class="card-content">
 															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{$auction->name}}<i class="material-icons right">more_vert</i></span>
@@ -109,21 +80,58 @@ p.trunc{
 													</div>
 												</div>
 											</div>
-											@endif											
-										</div>										
+											@endif
+										</div>
 									</div>
 								</div>
-								<div class="tab-pane" id="profile-v">
-									<div style="min-height: 340px;" class="tab-space">
-										{{$data->ofertas}}
+								<div class="tab-pane" id="profile-v"> <!--Tab ofertas -->
+									<div class="row no-margin-bottom">
+										<div style="min-height: 340px; padding-top: 0.5rem; " class="tab-space">
+											@if( count($auction)>0 )
+											<div class="col l5 s12" >
+												<div class="row no-margin-bottom">
+													<h5 class="large-spacing fontCrimson gb_bold" style="padding-top: 1.5rem;" > {{$auction->name}} </h5>
+													<div class="hide-on-med-and-down">
+														<h6 class="small-spacing fontCrimson gb_bold"> Número de ofertas totales: </h6>
+														<p id="boxdigits" class="med-light digitsBox">
+														@foreach($bidsFormat as $index => $val )
+															@if($index>0)
+																<span class="totalBids no-left-border">{{$val}}</span>
+															@else
+																<span class="totalBids">{{$val}}</span>@endif
+														@endforeach
+														</p>
+													</div>
+													<div class="hide-on-large-only">
+														<h6 class="small-spacing fontCrimson gb_bold"> Número de ofertas totales: {{$totalbids}} </h6>
+													</div>
+												</div>
+											</div>
+											<div class="col l7 s12">
+												<div id="bid_div" class="row no-margin-bottom" style="margin-right: 10px;" >
+												<label>Últimas ofertas:</label>
+													<ul id="bidsList" class="collection">
+													@foreach($bids as $bid)
+														<li class="collection-item avatar">
+															<span class="title">{{$bid->nick}}</span>
+															<p class="date-ago">{{$bid->dayDate}} de {{$bid->monthDate}}</p>
+															<p class="bid-amount">${{$bid->amount}}</p>
+														</li>
+													@endforeach
+													</ul>
+												</div>
+												<p id="showMoreButton" class="showMore">Ver más ofertas <i style="vertical-align: middle;" class="material-icons">keyboard_arrow_down</i> </p>
+											</div>
+											@endif
+										</div>
 									</div>
 								</div>
-								<div class="tab-pane" id="messages-v">
-									<div style="min-height: 340px;" class="tab-space">
+								<div class="tab-pane" id="messages-v"> <!-- Tab german -->
+									<div style="min-height: 340px; padding-right: 5%;" class="tab-space">
 										{{$data->german}}
 									</div>
 								</div>
-						  	</div>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -145,21 +153,6 @@ p.trunc{
 						<div id="listCommentsHome"></div>
 						<div class="right-align"><a href="{{ url('/subasta/comentarios#tab5') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
 					</div>
-						<?php
-							/**
-							
-							* Include widgets bootstrap file (Widgets.php).
-							
-							* Assuming that this currently executing script is located in the root of the library's /src directory.
-							
-							* Change the path depending on where you have copied contents of /src directory.
-							
-							*/
-							//include_once "./widgets/widgets/Widgets.php";							
-							//
-							//Catharsis\Web\Widgets::facebook()->initialize()->appId("1437917246425293")->render();
-							//Catharsis\Web\Widgets::facebook()->comments()->url("http://yandex.ru")->render();
-						?>
 				</div>
 			</div>
 
@@ -192,7 +185,7 @@ p.trunc{
 							</div>
 								<p class="trunc" >{{$feed->description}}</p>...
 							</div>
-							<div onclick="window.location.href='{{$feed->image_url}}';" class="card-action waves-effect hoverable" style="padding-top: 0px; padding-bottom: 0px;" >
+							<div onclick="window.open('{{$feed->image_url}}','_blank');" class="card-action waves-effect hoverable" style="padding-top: 0px; padding-bottom: 0px;" >
 								<div style="  display: flex; align-items: center;" >
 									<div class="square">
 										<i class="material-icons">expand_more</i>
@@ -203,7 +196,7 @@ p.trunc{
 					</div>
 				@endforeach
 					<div class="col s12 center">
-						<a href="{{$bloglink}}" class="footer-blogs col s12 light">{{$data->footerBlogEntries}}</a>
+						<a target="_blank" href="{{$bloglink}}" class="footer-blogs col s12 light">{{$data->footerBlogEntries}}</a>
 					</div>
 				</div>
 			</div>

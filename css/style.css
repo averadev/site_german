@@ -282,13 +282,18 @@ ul.adress-info li{
 }
 
 .card-image img{
-	min-width: 344px;
+	min-width: 565px;
 }
 
 .card-image{
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
+}
+
+.card .card-reveal{
+	margin-top: -10px;
+	background-color: red; 
 }
 
 @media only screen and (max-width : 600px) {
@@ -719,7 +724,8 @@ nav.mymenu ul a {
 	margin-top: -10rem;
 }
 .gb_top_x3 {
-	margin-top: 3rem;
+	padding-top: 3rem;
+	margin-top: 0;
 }
 .gb_top_left_x3 {
 	margin-left: -12rem;
@@ -2282,6 +2288,10 @@ span.year {
 	font-size: 30px !important;
 }
 
+.material-icons.md-24 {
+	font-size: 24px !important;
+}
+
 nav .button-collapse {
     float: left;
     position: relative;
@@ -2437,4 +2447,21 @@ a.footer-blogs{
 	margin-top: 0.5em;
 	cursor: pointer;
 	text-decoration: underline;  
+}
+
+div.choose-language{
+	position: fixed;
+	right: 10px;
+	top: 10px;
+	background-color: #595959;
+	padding: 7px; 
+}
+
+div.choose-language label{
+	color: white;
+}
+
+div.choose-language label a{
+	color: white;
+	font-weight: bold;
 }

@@ -9,6 +9,7 @@ class ContactoController extends BaseController {
 	*/
 
 	public function getIndex(){
+
 		$contact_info = new stdClass();
 
 		// query module -> Contacto

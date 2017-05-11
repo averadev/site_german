@@ -146,7 +146,7 @@ class AuctionAdminController extends BaseController {
 		}
 	}
 
-	public function deleteDropImage(){
+	public function postDropImage(){
 		if(Request::ajax()){
 			try{
 				$data = [
@@ -208,7 +208,7 @@ class AuctionAdminController extends BaseController {
 		}
 	}
 
-	public function putUpdateAuction(){
+	public function postUpdateAuction(){
 		if(Request::ajax()){
 			$data = [
 				'idAuction'		=> strip_tags(trim(Input::get('idAuction'))),

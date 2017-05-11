@@ -1,443 +1,6 @@
 @extends('templates.main')
 @section('content')
-<style type="text/css">
-
-	.center-abs-div {
-		position: absolute;
-		left: 50%;
-		top: 45%;
-		transform: translate(-50%, -50%);
-	}
-
-	.auction-image{
-		width: 80%;
-		margin-left: 7%;
-	}
-	.thumb-auction{
-		display: inline;
-		margin: 0 0 10px 0;
-		padding: 4px;
-		width: 60px;
-		border:2px solid white;
-	}
-	.thumb-auction.active{
-		border:2px solid gray;
-	}
-
-	.thumbnails li{
-		float: left;
-		margin-right: 10px;
-	}
-
-	.collection-item{
-		height: 65px;
-	}
-
-	.collection .collection-item.avatar {
-		min-height: 40px;
-	}
-
-	span.title{
-		font-weight: bold;
-	}
-
-	.no-left-border{
-		border-left: none !important;
-	}
-
-	span.totalBids{
-		border: 1px solid white;
-		padding-right: 6px;
-		padding-left: 4px;
-		padding-top: 2px; 
-	}
-
-	p.bid-amount{
-		font-weight: bold;
-		font-size: 1.2rem;
-		line-height: 1.5rem
-	}
-
-	.circle{
-		border-radius: 10%;
-	}
-
-	.collection {
-		border-bottom: 1px solid gray;
-		border-top: 1px solid gray;
-		height: 390px;
-	}
-
-	ul.showmore{
-		height: 37em ;
-		overflow: scroll;
-		width: 99.9%;
-	}
-
-	.collection .collection-item{
-		background: transparent;
-		border-bottom: 1px solid gray;
-		
-	}
-
-	.collection .collection-item.avatar .time {
-		position: absolute;
-		color: red;
-		right: 16px;
-		top: 8px;
-	}
-
-	.collection .collection-item.avatar .date {
-		position: absolute;
-		right: 16px;
-		top: 30px;
-	}
-
-	p.digitsBox{
-		position: absolute; 
-		top: -15px; 
-		right: 0;
-		font-weight: 400;
-
-	}
-
-	p.showMore{
-		line-height: 1em; float: right; margin-top: 0em; font-weight: bold; cursor: pointer;
-	}
-
-	label.error{
-		margin-top: -10px;
-		margin-bottom: 4px;
-		color: red;
-	}
-
-	@media only screen and (max-width : 600px) {
-		p.size45{
-			font-size: 1.5em;
-		}
-	}
-
-	.modal .notification {
-		padding: 2rem 3rem 0px;
-	}
-
-
-	.contract input[type=text],
-	.contract input[type=email],
-	.contract textarea{
-		height: 2.2rem;
-		width: 100%;
-	}
-
-	/* Text inputs */
-
-	.contract input[type=text],
-	.contract input[type=email],
-	.contract textarea{
-		margin: 0 0 10px 0;
-	}
-
-	.modal_content{
-		padding: 2rem 2rem 0.5rem 2rem;
-	}
-	
-	.modal_img{
-		width: 100%;
-		padding-bottom: 0%;
-		margin-bottom: 0%;
-		display: block;
-	}
-
-	.modal_md {
-		display: none;
-		position: fixed;
-		left: 0;
-		right: 0;
-		background-color: #fafafa;
-		padding: 0;
-		max-height: 70%;
-		width: 40%;
-		margin: auto;
-		overflow-y: auto;
-		border-radius: 2px;
-	}	
-
-	textarea {
-		margin: 0 0 10px 0;
-	}
-	.img_proceso {
-		margin-top: 50px;
-		padding-bottom: 10px;
-		margin-bottom: 50px;
-		width: 250px;
-	}
-
-	h5.proceso_top{
-		margin-top: 30px;
-		font-size: 1.6rem;
-		line-height: 100%;
-		color: #2f332f;
-	}
-	.img2_proceso{
-		width: 500px;
-		margin-top: -30%;
-		margin-left: 12%
-	}
-
-	.top-pad-80{
-		padding-top: 80px;
-	}
-	.top-pad-70{
-		padding-top: 70px;
-	}
-
-	.text-padding{
-		padding-left: 5% !important ;
-	}
-
-	.events-content{
-		height: 690px;
-	}
-
-	.events{
-		min-width: 350px;
-	}
-
-	img.espec-img{
-		position: absolute;
-		left: 25%;
-		width: 110%; 
-	}
-
-	.spec-marg-btm{
-		position: relative;
-		margin-bottom: 110%; 
-	}
-
-	.title-convierte{
-		font-family: 'Crimson Text';
-		font-style: italic; line-height: 250%;
-		text-indent: -7rem; 		
-		margin-left: 35%;
-		margin-top: 50px; 
-	}
-
-	.text-proxim {
-		font-family: "Crimson Text";
-		font-size: 1.5rem;
-		color: #363b35;
-		font-weight: 600;
-		line-height: 110%
-	}
-
-	.margin-top-20{
-		margin-top: 20%;
-	}
-
-	.margin-left-4{
-		margin-left: 4%;
-	}
-
-	.margin-top-13{
-		margin-top: 13% ;
-	}
-
-	.date_current{
-		text-align: right;
-		padding-right: 2rem;
-	}
-
-
-	@media only screen and (max-width : 992px) {
-		p.title-porque{
-			text-indent: 0rem;
-			margin-left: 0rem;
-		}
-	
-		p.title-porque br{
-			display: none;
-		}
-	
-		/*Proceso*/
-		p.title_proceso br{
-			display: none;
-		}
-	
-		p.title_proceso{
-			text-indent: 0rem;
-			margin-left: 0rem;
-		}
-	
-		.top-pad-80{
-			padding-top: 0px;
-		}
-		.top-pad-70{
-			padding-top: 0px;
-		}
-
-
-		.img_proceso {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			width:70% ;
-			display: block;
-			margin: 0 auto;
-		}
-
-		.img2_proceso{
-			width: 100%;
-			margin-top: 10px;
-			margin-bottom: 10px;
-			margin-left: 0px;			
-		}
-
-		li,ol{
-			padding: 0px; 
-
-		}
-
-		.events-content{
-			height: auto !important;
-		}		
-
-		.text-padding{
-			padding-left: 0px; ;
-		}
-
-		.cd-horizontal-timeline .events-wrapper {
-			/*move timeline*/
-			position: relative;
-			height: 100%;
-			margin-top: 30px;
-			margin-left: 15%;
-			/*overflow: hidden;*/
-		
-		}
-		.events-wrapper{
-			width: 150px;
-		}
-
-		.events{
-			max-width: 230px;
-			min-width: 230px;
-		}
-		.cd-horizontal-timeline .events a {
-			font-size: 70%;
-		}
-
-		#bidForm{
-			padding-bottom: 15px;
-		}
-
-		/*Especificaciones*/
-		p.title-espec{
-			margin-left: 0%;
-			font-family: 'Crimson Text';
-			text-indent: 0rem;
-		}
-	
-		p.title-espec br{
-			display: none;
-		}
-
-		p.title-convierte{
-			text-indent: 0rem;
-			margin-left: 0%;
-			margin-top: 10px;
-			margin-bottom: 10px; 
-		}
-		p.title-convierte br{
-			display: none;
-		}	
-
-		img.espec-img{
-			position: static;
-			left: 0;
-			width: 100%; 
-		}
-
-		.spec-marg-btm{
-			position: static;
-			margin-bottom: 0%; 
-		}
-
-		.modal_md{
-			width: 100%;
-			max-height: 100%;
-		}
-
-		.margin-top-20{
-			margin-top: 0%;
-		}
-		.margin-left-4{
-			margin-left: 0%;
-		}
-
-		.margin-top-13{
-			margin-top: 0%;
-		}
-		.gb_arrow_box:after, .gb_arrow_box:before {
-			border: none;
-		}
-
-		.text-proxim {
-			margin-bottom:4%;
-			margin-top: 0%;
-		}
-
-		.date_current{
-			text-align: center;
-			padding-right: 0rem;
-		}
-	}
-	.porcentaje {
-		margin-top: 10% !important; 
-		margin-bottom: 0% !important; 
-		font-size: 42px !important; 
-		font-family: inherit !important; 
-		font-weight: 200 !important; 
-		float: right !important;
-	}
-	.contenedor_submenu {
-		position: fixed;
-		width: 100%;
-		height: 135px;
-		background-color: #fff;
-		top: 0;
-		z-index: 10;
-		margin-top: 4em;
-	}
-	#navigation-menu {
-		box-shadow: none;
-	}
-	#navigation-menu a {
-		color: #a6a6a6;
-		font-size: 14px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	#navigation-menu a:hover, a.mPS2id-highlight {
-		background-color: transparent;
-		color: black !important;
-		border-bottom: 2px solid black;
-	}
-	.tabs-menu {
-		display: -webkit-box;
-		display: -moz-box;
-		display: -ms-flexbox;
-		display: -webkit-flex;
-		display: flex;
-	}
-	.tabs-menu {
-		position: relative;
-		overflow-x: auto;
-		overflow-y: hidden;
-		width: 100%;
-		background-color: #fff;
-		margin: 0 auto;
-		white-space: nowrap;
-	}
-</style>
+<link rel="stylesheet" href="{{ URL::asset('css/subasta.css') }}">	
 	<!-- start submenu fixed -->
 	<div class="contenedor_submenu">
 		<div class="container">
@@ -519,40 +82,134 @@
 							</div>
 						</div>
 						<div class="row">
-							<div style="padding: 10px; margin-top: 2em;"  >
-								<form id="bidForm" class="white top_arrow_box whiteform contract">
-									<p style="margin: 3px 0 5px 10px;  " class="size30">Quiero participar en la subasta:</p>
-									<div class="row no-margin-bottom">
-										<div class="col s12">
-											<div class="col s12 l4">
-												<input id="name_bid" class="border_cs" maxlength="50" required type="text" name="name_bid" placeholder="NOMBRE">
+							<div class="div-bids">
+								<div class="white top_arrow_box whiteform contract" style="padding-left: 1rem; padding-right: 1rem;">
+									
+										<div id="bid_options" class=" {{ Session::has('user_email') ? 'hideme' : '' }} ">  <!-- Seleccionar Opción -->
+											<p class="size30 center-align">Quiero participar en la subasta:</p>
+											<div class="row no-margin-bottom">
+												<div class="col l6 m6 s12">
+													<button id="go_form_new_user" class="bid-form-button btn col l12 left btn-small green waves-effect gb_noboxshadow">SOY NUEVO</button>
+												</div>
+												<div class="col l6 m6 s12">
+													<button id="go_login" class="bid-form-button btn col l12 left btn-small green waves-effect gb_noboxshadow">ESTOY REGISTRADO</button>
+												</div>											
 											</div>
-											<div class="col s12 l4">
-												<input id="nick_bid" class="border_cs" maxlength="20" required type="text" name="nick_bid" placeholder="APODO">
-											</div>
-											<div class="col s12 l4">
-												<input id="email_bid" class="border_cs" maxlength="50" required type="text" name="email_bid" placeholder="E-MAIL">
+											<div class="row no-margin-bottom">
+												<ul class="indicators">
+													<li class="indicator-item active"></li>
+													<li class="indicator-item"></li>
+												</ul>
 											</div>
 										</div>
-										<div class="col s12">
-											<div class="col s12 l8">
-												<textarea id="comment_bid" style="height: 100px;" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
-											</div>
-											<div class="col l4">
-												<div class="col s12">
-													<div class="row no-margin-bottom">
-														<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
+										<div id="new_user_bid" class="hideme" > <!-- Registrar Usuario -->
+											<div class="row no-margin-bottom">
+											<form id="new_user_form" class="my-form">
+												<p class="size30 par-div-bids">Para ofertar, primero permítenos registrar tu usuario:</p>
+												<div class="row no-margin-bottom">
+													<div class="col s12">
+														<div class="col s12 l5">
+															<input id="card_number" class="border_cs" maxlength="16" required type="text" name="card_number" placeholder="N° DE TARJETA">
+														</div>
+														<div class="col s12 l4">
+															<select id="selectCard" name="selectCard" class="browser-default">
+																<option value="" disabled selected>TIPO DE TARJETA</option>
+																<option value="1">Visa</option>
+																<option value="2">Mastercard</option>
+															</select>
+														</div>
+														<div class="col s12 l3" >
+															<input id="email_user" class="border_cs" maxlength="50" required type="text" name="email_user" placeholder="E-MAIL">
+														</div>
+													</div>
+													<div class="col s12">
+														<div class="col s7 m3 l4" style="margin-bottom: 0.5rem;" >
+															<a class="waves-effect waves-light col s2 l2 green bold600 btn gb_noboxshadow">?</a>
+															<p class="text-help left-boder-1px" >¿PORQUE DEBO INTRODUCIR UN NÚMERO DE TARJETA?</p>
+														</div>
+														<div class="col s6 m4 l4 right">
+															<a id="new-user" class="waves-effect waves-light col s12 m12 l12 green bold600 btn gb_noboxshadow">CONTINUAR</a>
+														</div>
+														<div class="col s6 m3 l3 right">
+															<a id="new_user_back" class="waves-effect waves-light col s12 m12 l12 grey lighten-1 bold600 btn gb_noboxshadow">REGRESAR</a>
+														</div>
 													</div>
 												</div>
-												<button id="submitBid" style="font-weight: bold;" class="btn col l12 s6 left btn-small green waves-effect gb_noboxshadow">OFERTAR</button>
+											</form>
+												<ul class="indicators ul-bids">
+													<li class="indicator-item"></li>
+													<li class="indicator-item active"></li>
+												</ul>
 											</div>
 										</div>
-									</div>
-								</form>
+										<div id="login_user" class="hideme" > <!-- ingresar Correo -->
+											<div class="row no-margin-bottom">
+												<div class="col l8 offset-l2 s10 offset-s1 m10 offset-m1">
+													<form id="login" class="my-form" style="margin-top: 1.5rem;" >
+														<div class="row no-margin-bottom">
+															<div class="col s12">
+																<div class="col s12">
+																	<input id="email_login" class="border_cs" maxlength="50" required type="text" name="email_login" placeholder="E-MAIL">
+																</div>
+															</div>
+															<div class="col s12">
+																<div class="col s6 m6 l5">
+																	<a id="login_user_back" class="waves-effect waves-light col s12 m12 l12 grey lighten-1 bold600 btn gb_noboxshadow">REGRESAR</a>
+																</div>
+																<div class="col s6 m6 l7">
+																	<a id="userlogin" class="waves-effect waves-light col s12 m12 l12 green bold600 btn gb_noboxshadow">CONTINUAR</a>
+																</div>															
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+											<div class="row no-margin-bottom">
+												<ul class="indicators ul-bids">
+													<li class="indicator-item"></li>
+													<li class="indicator-item active"></li>
+												</ul>
+											</div>
+										</div>
+										<!-- Nueva Oferta -->
+										<div id="new_bid_div" style="position: relative; padding: 0.5rem; " class=" {{ Session::has('user_email') ? '' : 'hideme' }} " > 
+											<div class="row no-margin-bottom">
+												<div class="row no-margin-bottom">
+													<div class="col l12 m12 s12">
+														<form id="new_bid_form" class="my-form">
+															<p class="size30 par-div-bids">Realice una oferta:</p>
+															<a id="close-session" class="btn-session waves-effect waves-light deep-orange btn btn-custom gb_noboxshadow">Cerrar Sesión</a>
+															<div class="row no-margin-bottom">
+																<div class="col s12 m6 l4" >
+																	<input id="name_bid" class="border_cs" maxlength="50" required="" name="name_bid" placeholder="NOMBRE" type="text">
+																</div>
+																<div class="col s12 m6 l4" >
+																	<input id="nick_bid" class="border_cs" maxlength="20" required type="text" name="nick_bid" placeholder="APODO">
+																</div>
+																<div class="col s12 m6 l4" >
+																	<input id="amount_bid" class="border_cs" maxlength="9" required type="text" name="amount_bid" placeholder="CANTIDAD">
+																</div>
+																<div class="col s12 m12 l12" >
+																	<textarea id="comment_bid" style="height: 5.3rem;" class="border_cs" maxlength="200" name="comment_bid" rows=5 placeholder="COMENTARIOS"></textarea>
+																</div>
+															</div>
+															<div class="row no-margin-bottom">
+																<div style="padding: 0 0rem;" class="col l9 s12 s12 right">
+																	<div class="col s8 m8 l8 right">
+																		<a id="submit_bid" class="waves-effect waves-light col s12 m12 l12 green bold600 btn gb_noboxshadow">OFERTAR</a>
+																	</div>
+																</div>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>									
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col l6 s12">  <!-- RIGHT SIDE -->				
+					<div class="col l6 s12">  <!-- RIGHT SIDE -->
 						<div class="row">
 							<span class="date_current"></span>
 							<div style="margin-top: 2em;">

@@ -189,7 +189,7 @@ var dashboard = function (){
 	var saveText = function(form){
 		$.ajax({
 			url: HOST+'/admin/save-text',
-			type: 'PUT',
+			type: 'POST',
 			dataType: 'json',
 			data: form,
 		}).done(function(response) {

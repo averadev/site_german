@@ -6,10 +6,8 @@
 class Auction_bid extends Eloquent
 {
 
-	const CREATED_AT = 'created';
-	const UPDATED_AT = null;
 	protected $table = "subasta_puja";
-	public $timestamps = true;
+	public $timestamps = false;
 	protected $SoftDelete = false;
 
 	function subastas(){
@@ -41,6 +39,7 @@ class Auction_bid extends Eloquent
 		$data = DB::table('subasta_puja')
 				->select('cantidad as amount','subasta_user_id as user_id')
 				->where('subasta_id',$id_auction)
+				->where('status',1)
 				->orderBy('cantidad','DESC')
 				->first();
 		return $data;

@@ -29,8 +29,7 @@
 						<img class="algRC" src="media/img/contacto/{{$contact_info->cont_sec2_escult1}}">
 					</div>
 					<div class="row">
-						<p class="algRC">{{$contact_info->cont_sec2_direccion}}<br/>
-							{{$contact_info->cont_sec2_postal}}<br/>
+						<p class="algRC">
 							E-mail: <a href="mailto:{{strip_tags($contact_info->cont_sec2_email)}}" style="text-decoration: underline;">{{$contact_info->cont_sec2_email}}</a>
 						</p>
 					</div>

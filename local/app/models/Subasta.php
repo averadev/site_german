@@ -30,7 +30,13 @@ class Subasta extends Eloquent
 
 	public static function getBids(){
 		$bids = DB::table('subasta')
-			->select('user.name as name','user.nickname as nick',DB::raw("UNIX_TIMESTAMP(created) as startDate, FORMAT(pujas.cantidad,0) as amount"))
+			->select('user.name as name',
+				'user.nickname as nick',
+				DB::raw("FORMAT(pujas.cantidad,0) as amount,
+					MONTH(created) as monthDate,
+					Day(created) as dayDate,
+					TIMESTAMPDIFF(HOUR, created, NOW()) AS hourAgo"
+			))
 			->where('subasta.status',1)
 			->where('pujas.status',1)
 			->where('user.status',1)

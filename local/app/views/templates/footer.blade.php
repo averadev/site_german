@@ -39,8 +39,6 @@
 				<div class="col l4 s12">
 					<ul class="adress-info">
 						<img style="width: 7em; margin-bottom: 20px;" src="{{ URL::asset('media/img/home/'.$data->footer_logo.'') }}" alt="logo footer">
-						<li>{{$data->footer_direccion}}</a></li>
-						<li>{{$data->footer_postal}}</a></li>
 						<li>E-mail: <a href="mailto:{{strip_tags($data->footer_email)}}" style="text-decoration: underline;">{{$data->footer_email}}</a></li>
 					</ul>
 				</div>

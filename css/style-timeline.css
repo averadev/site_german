@@ -380,14 +380,6 @@
 	background-attachment: fixed;
 	background-size: cover;
 }
-.bg_especificaciones {
-	background-image: url("../media/img/subasta/bg_especificaciones.jpg");
-	width: 100%;
-	background-position: center center;;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
 .bg_comingsoon {
 	background-image: url("../media/img/subasta/bg_comingsoon.jpg");
 	width: 100%;

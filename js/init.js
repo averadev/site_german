@@ -15,7 +15,11 @@ var home = function (){
 				offset: -50
 			});
 		});
- 
+
+		$("#showMoreButton").click(function(event) {
+			$(".collection").animate({ scrollTop: 0 }, "fast");
+			$(".collection").toggleClass("showmore");
+		}); 
 
 		$( "#topbar li:eq(0)").addClass('active'); 	
 

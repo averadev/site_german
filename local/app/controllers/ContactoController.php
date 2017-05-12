@@ -22,7 +22,7 @@ class ContactoController extends BaseController {
 	}
 
 	/**
-	 * Function SendContactUSGerman
+	 * Function SendContactUSGerman --> Formulario de Contacto
 	 */
 	public function SendContactUSGerman () {
 

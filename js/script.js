@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	/* Load Comments */
-	showLoadComments();
 	showLoadCommentsHome();
 
 	var ContactoCSForm = $("#FormCS");
@@ -55,56 +54,6 @@ $(document).ready(function(){
 		});
 
 });
-
-/* Function showLoadComments */
-function showLoadComments () {
-
-	$.ajax({
-		url: HOST+'/subasta/allComments',
-		type: 'GET',
-		dataType: 'json',
-		data: {},
-		success: function (data) {
-			var months = new Array();
-			months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-			var str_out = "";
-            $("#listComments").empty();
-			$.each(data.comments, function(data, value) {
-				var date = new Date(value.Fecha);
-				var day = date.getDate();
-				var month = date.getMonth();
-				var year = date.getFullYear();
-
-				if(day <= 9){
-					day = '0'+day;
-				}
-				date_out = day +' de '+ months[month] +' de '+ year;
-				str_out += '<div id="' + value.id + '" class="col s4 gb_container_comments gb_gray3 midH">'+
-					'<div class="gb_container_header">'+
-						'<h4 class="title_sculpture">' + value.NombreEscultura + '</h4>'+
-					'</div>'+
-					'<div class="gb_comments_rs gb_facebook">'+
-						'<div class="gb_text_rs">'+
-							'<span class="desc_comment">' + value.Comentario + '</span>'+
-							'<div class="gb_profile">'+
-								'<img src="media/img/subasta/profile_1.png" alt="">'+
-								'<span class=""><strong class="name_user">' + value.NombreNick + '. -</strong></span><span class="gb_italic"><strong class="date_comment">' + date_out + '</strong></span>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="social_img"><img src="media/img/subasta/comments.png" alt=""></div>'+
-				'</div>';
-			});
-
-			$('#listComments').append(str_out);
-
-		},
-		error: function (data) {
-			console.log('Ajax request failed');
-		}
-	});
-
-}
 
 /* Function showLoadCommentsHome */
 function showLoadCommentsHome () {

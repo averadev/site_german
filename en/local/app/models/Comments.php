@@ -6,7 +6,7 @@
 
 class Comments extends Eloquent {
 
-	protected $table = "subasta_pujas";
+	protected $table = "subasta_puja";
 
 	public static function getComments () {
 		$comments = DB::table('subasta_puja as sp')

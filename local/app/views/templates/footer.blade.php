@@ -8,7 +8,7 @@
 						<li><a href="{{ url('/') }}">INICIO</a></li>
 						<li><a href="{{ url('/subasta') }}">SUBASTA</a></li>
 						<li><a href="{{ url('servicios/monumental') }}">OBRAS ESPECIALES</a></li>
-						<li><a href="#">BLOG</a></li>
+						<li><a href="{{ url('/blog') }}">BLOG</a></li>
 						<li><a href="{{ url('/german') }}">GERMAN ARZATE</a></li>
 						<li><a href="{{ url('/contacto') }}">CONTACTO</a></li>
 						<li style="margin-top: 1em;">{{$data->sociales_texto}}

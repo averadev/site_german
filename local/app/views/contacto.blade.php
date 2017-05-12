@@ -1,6 +1,5 @@
 @extends('templates.main')
 @section('content')
-
 	<!-- Slider -->
 	<div id="index-banner" class="parallax-container fontContact">
 		<div class="section no-pad-bot">
@@ -38,7 +37,7 @@
 					</div>
 				</div>
 				<div class="col s12 m6 l6">
-					<form id="FormContactUS" action="http://hostyourgeek.com/beta/germanArzate/contacto/contactomail" method="post">
+					<form id="FormContactUS" action="{{URL::to('/contacto/contactomail')}}" method="post">
 						<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
 						<div class="row">
 							<input type="text" id="name" class="txtForm" name="name" required placeholder="NOMBRE COMPLETO" />

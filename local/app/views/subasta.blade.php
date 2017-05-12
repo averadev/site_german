@@ -448,7 +448,6 @@ $(document).ready(function(){
 	});
 })(jQuery);
 </script>
-<script src="js/jquery_date.js"></script>
 <script src="js/script.js"></script>
 <script src="js/auction_bids.js"></script>
 <script src="js/jquery_validate.js"></script>

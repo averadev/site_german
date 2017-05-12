@@ -4,15 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-	<meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+	<meta name="description" content="German Arzate, Escultor Mexicano">
+    <meta name="keywords" content="Escultor Mexicano">
+    <meta name="author" content="German Arzate">
 	<link rel="icon" href="{{ URL::asset('media/img/favicon.ico') }}">
 	<link rel="apple-touch-icon" sizes="152x152" href="{{ URL::asset('media/img/apple-touch-icon.png') }}">
 	<link rel="icon" type="image/png" href="{{ URL::asset('media/img/favicon-32x32.png') }}" sizes="32x32">
 	<link rel="icon" type="image/png" href="{{ URL::asset('media/img/favicon-16x16.png') }}" sizes="16x16">
 	<title>German Arzate</title>
-	<!-- CSS  -->
+	<!-- CSS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600i" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -36,10 +36,10 @@
 @include('templates.header')
 @yield('content')
 <script type="text/javascript">
-	    var HOST = "{{URL::to('/')}}";
-		$.ajaxSetup({
-			headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
+    var HOST = "{{URL::to('/')}}";
+	$.ajaxSetup({
+		headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+	});
 </script>
 @include('templates.footer')
 @yield('addJs')

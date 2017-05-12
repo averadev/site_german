@@ -293,7 +293,7 @@
                                         <td>
                                             <h2>Hola</h2>
                                             <p>Gracias por ponerte en contacto, pronto nos pondremos en contacto contigo a tu correo electrónico.</p>
-                                            <p>mientras tanto te invito a que visites mi <a href="http://hostyourgeek.com/beta/germanArzate/">página web</a> y te enteres de mis proximas subastas o bien puedes ir directamente haciendo clic en el siguiente botón.</p>
+                                            <p>mientras tanto te invito a que visites mi <a href="http://stg.germanarzate.com">página web</a> y te enteres de mis proximas subastas o bien puedes ir directamente haciendo clic en el siguiente botón.</p>
                                             <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                                 <tbody>
                                                 <tr>
@@ -301,7 +301,7 @@
                                                         <table border="0" cellpadding="0" cellspacing="0">
                                                             <tbody>
                                                             <tr>
-                                                                <td><a href="http://hostyourgeek.com/beta/germanArzate/subasta" target="_blank">Ir a subastas</a></td>
+                                                                <td><a href="http://stg.germanarzate.com/subasta" target="_blank">Ir a subastas</a></td>
                                                             </tr>
                                                             </tbody>
                                                         </table>
@@ -311,10 +311,9 @@
                                             </table>
                                             <br>
                                             <p>Atentamente</p>
-                                            <a href="http://hostyourgeek.com/beta/germanArzate/"><img src="http://hostyourgeek.com/beta/germanArzate/media/img/home/logo.png" width="165px" alt="German Arzate"></a>
-                                            <a href="#!" target="_blank"><img class="social-button" alt="facebook" id="goface" src="http://hostyourgeek.com/beta/germanArzate/media/img/home/fb.png"></a>
-                                            <a href="#!" target="_blank"><img class="social-button" alt="instagram" id="goinsta" src="http://hostyourgeek.com/beta/germanArzate/media/img/home/insta.png"></a>
-                                            <a href="#!" target="_blank"><img class="social-button" alt="twitter" id="gotwitter" src="http://hostyourgeek.com/beta/germanArzate/media/img/home/twitter.png"></a>
+                                            <a href="http://stg.germanarzate.com"><img src="http://stg.germanarzate.com/media/img/home/logo.png" width="165px" alt="German Arzate"></a>
+                                            <a href="https://www.facebook.com/GermanArzateSculptor/" target="_blank"><img class="social-button" alt="facebook" id="goface" src="http://stg.germanarzate.com/media/img/home/fb.png"></a>
+                                            <a href="https://www.instagram.com/germanarzatesculptor/" target="_blank"><img class="social-button" alt="instagram" id="goinsta" src="http://stg.germanarzate.com/media/img/home/insta.png"></a>
                                         </td>
                                     </tr>
                                 </table>
@@ -325,7 +324,7 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td class="content-block">
-                                        <span class="apple-link">German Arzate, Calle Niebla No. 5 S.M. 18, <br>77580 Cancún, Q. Roo, México, <br> Tel.: 011 521 998 1068505</span>
+                                        <span class="apple-link">Email: info@germanarzate.com</span>
                                     </td>
                                 </tr>
                                 <tr>

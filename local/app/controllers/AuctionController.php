@@ -12,53 +12,12 @@ class AuctionController extends BaseController {
 	|
 	*/
 
-	// public function getIndex(){
-	// 	return View::make('subasta');
-	// }
-
-	/**
-	 * Function showSubmodule
-	 */
-	public function showSubmodule () {
-		$submodule = DB::table('module', 'module.id', 'module.name')
-		->join('submodule', 'module.id', '=', 'submodule.idModule')
-		->where('module.id', '=', 2)
-		->get();
-        return View::make('subasta', array('submodule' => $submodule));
-    }
-
     /**
-     * Function getSubmodule --> Muestra los submodulos del modulo subasta
-     */
-    public function getSubmodule () {
-    	$submodule = DB::table('module', 'module.id', 'module.name')
-		->join('submodule', 'module.id', '=', 'submodule.idModule')
-		->where('module.id', '=', 2)
-		->get();
-        return View::make('subasta', array('submodule' => $submodule));
-    }
-
-    /**
-     * Function getSectionSubmodule --> Muestra las secciones del submodulo
-     */
-    public function getSectionSubmodule ($id) {
-    	$section_submodule = DB::table('module')
-		->join('submodule', 'module.id', '=', 'submodule.idModule')
-		->join('section', 'section.idSubmodule', '=', 'submodule.id')
-		->join('xref_section_component', 'section.id', '=', 'xref_section_component.idSection')
-		->where('module.id', '=', 2)
-		->where('section.idSubmodule', '=', $id)
-		->get();
-        return View::make('subasta', array('section_submodule' => $section_submodule));
-    }
-
-    /**
-     * Function getSectionSubPQ --> Muestra las secciones del submodulo Por Que
+     * Function getSectionSubPQ --> Muestra las secciones del submodulo ¿Por Que?, Proceso, ¿En que te convierte? y Especificaciones
      */
     public function getSectionSubPQ () {
     	// objeto vacio
     	$submodule_section_data = new stdClass();
-    	//$comments_data = new stdClass();
 		
     	$submodule_section = DB::table('module')
 		->join('submodule', 'module.id', '=', 'submodule.idModule')
@@ -66,66 +25,22 @@ class AuctionController extends BaseController {
 		->join('xref_section_component', 'section.id', '=', 'xref_section_component.idSection')
 		->where('module.id', '=', 2)
 		->get();
-
-		/**
-		 * query to the table subasta | extract Day, Month, Year and name of the month | Fecha proxima subasta afectuar
-		 */
-		$date_coming = DB::table('subasta as s')
-		->select('s.iniDate as FechaProximaSubasta', DB::raw('SUBSTRING(s.iniDate, 9,2) as Dia'), DB::raw('SUBSTRING(s.iniDate, 6,2) AS Mes'), DB::raw('SUBSTRING(s.iniDate, 1,4) AS Anio'), DB::raw('CASE WHEN MONTH(s.iniDate) = 1 THEN "Enero" 
-					WHEN MONTH(s.iniDate) = 2 THEN "Febrero" 
-					WHEN MONTH(s.iniDate) = 3 THEN "Marzo" 
-					WHEN MONTH(s.iniDate) = 4 THEN "Abril" 
-					WHEN MONTH(s.iniDate) = 5 THEN "Mayo" 
-					WHEN MONTH(s.iniDate) = 6 THEN "Junio" 
-					WHEN MONTH(s.iniDate) = 7 THEN "Julio" 
-					WHEN MONTH(s.iniDate) = 8 THEN "Agosto" 
-					WHEN MONTH(s.iniDate) = 9 THEN "Septiembre" 
-					WHEN MONTH(s.iniDate) = 10 THEN "Octubre" 
-					WHEN MONTH(s.iniDate) = 11 THEN "Noviembre" 
-					WHEN MONTH(s.iniDate) = 12 THEN "Diciembre" 
-					ELSE "" 
-				END AS NombreMes'), DB::raw('CASE WHEN s.status = 0 THEN "Inactivo" ELSE 
-											CASE WHEN s.status = 1 THEN "Activo" ELSE 
-												CASE WHEN s.status = 2 THEN "Proxima Subasta"
-												END 
-											END 
-										END AS StatusOferta'))
-		->where('s.status', '=', 2)
-		->orderBy('s.iniDate', 'desc')
-		->get();
-
-		/**
-		 * Date Current
-		 */
-		Carbon::setLocale('es');
-		$now = Carbon::now(new DateTimeZone('America/Mexico_City'));
-		$date = $now;
-		// $hour toTimeString('H:i:s') = (12:00:00)
-		$hour = $now->toTimeString();
-		//$date=$now->format('l jS \\of F Y h:i:s');
 		
 		foreach ($submodule_section as $key => $value) {
 			$submodule_section_data->{$value->name} = TextParser::change(nl2br($value->value));
 		}
-		/*
-			Datos Subasta
-		*/
-			$CurrentAuctionPics = Subasta::getImages();
 
-		/* Mostrar los comentarios de la subasta activa */	
-		$comments = Comments::getComments();
+		$CurrentAuctionPics = Subasta::getImages();
 
-
-        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('date', $date)->with('hour', $hour)->with('auctionpics',$CurrentAuctionPics)->with('date_coming', $date_coming)->with('comments', $comments);
+        return View::make('subasta')->with('submodule_section_data', $submodule_section_data)->with('auctionpics', $CurrentAuctionPics);
     }
 
     /**
-     * Function getSectionComments
+     * Function getSectionComments --> Muestra los comentarios realizados a la subasta activa actual en la seccion de comentarios
      */
     public function getSectionComments () {
     	// objeto vacio
     	$submodule_section_data = new stdClass();
-    	//$comments_data = new stdClass();
 		
     	$submodule_section = DB::table('module')
 		->join('submodule', 'module.id', '=', 'submodule.idModule')
@@ -138,7 +53,7 @@ class AuctionController extends BaseController {
 			$submodule_section_data->{$value->name} = TextParser::change(nl2br($value->value));
 		}
 
-		/* Mostrar los comentarios de la subasta activa */	
+		/* Muestra los comentarios de la subasta activa */	
 		$comments = Comments::getComments();
 
         return View::make('comments')->with('submodule_section_data', $submodule_section_data)->with('comments', $comments);
@@ -150,7 +65,6 @@ class AuctionController extends BaseController {
     public function getSectionAuction () {
     	// objeto vacio
     	$submodule_section_data = new stdClass();
-    	//$comments_data = new stdClass();
 		
     	$submodule_section = DB::table('module')
 		->join('submodule', 'module.id', '=', 'submodule.idModule')
@@ -162,21 +76,18 @@ class AuctionController extends BaseController {
 		foreach ($submodule_section as $key => $value) {
 			$submodule_section_data->{$value->name} = TextParser::change(nl2br($value->value));
 		}
-		/*
-			Datos Subasta
-		*/
-			$CurrentAuctionPics = Subasta::getImages();
+
+		$CurrentAuctionPics = Subasta::getImages();
 
         return View::make('subastas')->with('submodule_section_data', $submodule_section_data)->with('auctionpics',$CurrentAuctionPics);
     }
 
     /**
-     * Function getSectionComingSoon
+     * Function getSectionComingSoon --> Muestra la fecha de la proxima subasta a efectuar
      */
     public function getSectionComingSoon () {
     	// objeto vacio
     	$submodule_section_data = new stdClass();
-    	//$comments_data = new stdClass();
 		
     	$submodule_section = DB::table('module')
 		->join('submodule', 'module.id', '=', 'submodule.idModule')
@@ -189,7 +100,8 @@ class AuctionController extends BaseController {
 		 * query to the table subasta | extract Day, Month, Year and name of the month | Fecha proxima subasta afectuar
 		 */
 		$date_coming = DB::table('subasta as s')
-		->select('s.iniDate as FechaProximaSubasta', DB::raw('SUBSTRING(s.iniDate, 9,2) as Dia'), DB::raw('SUBSTRING(s.iniDate, 6,2) AS Mes'), DB::raw('SUBSTRING(s.iniDate, 1,4) AS Anio'), DB::raw('CASE WHEN MONTH(s.iniDate) = 1 THEN "Enero" 
+		->select('s.iniDate as FechaProximaSubasta', DB::raw('SUBSTRING(s.iniDate, 9,2) as Dia'), DB::raw('SUBSTRING(s.iniDate, 6,2) AS Mes'), 
+			DB::raw('SUBSTRING(s.iniDate, 1,4) AS Anio'), DB::raw('CASE WHEN MONTH(s.iniDate) = 1 THEN "Enero" 
 					WHEN MONTH(s.iniDate) = 2 THEN "Febrero" 
 					WHEN MONTH(s.iniDate) = 3 THEN "Marzo" 
 					WHEN MONTH(s.iniDate) = 4 THEN "Abril" 
@@ -202,7 +114,8 @@ class AuctionController extends BaseController {
 					WHEN MONTH(s.iniDate) = 11 THEN "Noviembre" 
 					WHEN MONTH(s.iniDate) = 12 THEN "Diciembre" 
 					ELSE "" 
-				END AS NombreMes'), DB::raw('CASE WHEN s.status = 0 THEN "Inactivo" ELSE 
+				END AS NombreMes'), 
+		DB::raw('CASE WHEN s.status = 0 THEN "Inactivo" ELSE 
 											CASE WHEN s.status = 1 THEN "Activo" ELSE 
 												CASE WHEN s.status = 2 THEN "Proxima Subasta"
 												END 
@@ -226,7 +139,6 @@ class AuctionController extends BaseController {
     	
     	if (Request::ajax()) {
 
-	    	//$input = Input::all();
 	    	$data = [
 				'name'=> strip_tags(Input::get('name')),
 				'email'=> strip_tags(Input::get('email')),
@@ -250,7 +162,7 @@ class AuctionController extends BaseController {
 
 			if ($validation->passes()) {
 				// Enviar correo
-				Mail::send('subastas.email_send', $data, function($message) use ($data) {
+				Mail::send('subastas.proximamente_email_send', $data, function($message) use ($data) {
 					$message->to(Input::get('email'))
 					->subject('German Arzate | Próximamente');
 				});
@@ -504,7 +416,7 @@ class AuctionController extends BaseController {
 
 
 	/**
-	 * Funcion getAllComments para traer todos los comentarios de la subasta
+	 * Funcion getAllComments --> para traer todos los comentarios de la subasta activa actual y mostrarlos en la pagina del Home
 	 */
 	public function getAllComments(){
 

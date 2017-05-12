@@ -1,75 +1,17 @@
 @extends('templates.main')
 @section('content')
-	<style type="text/css">
-		@media only screen and (max-width : 600px) {
-			span.size-x35{
-				font-size: 2.9rem;
-			}
-			p.size45{
-				font-size: 2.3em;
-			}
-			p.size4{
-				font-size: 1.5rem;
-				line-height: 130%;
-				margin: 1.14rem 0 0.912rem 0;
-
-			}
-			p.size4 br{
-				display: none;
-			}
-
-		}
-		.contenedor_submenu {
-			position: fixed;
-			width: 100%;
-			height: 90px;
-			background-color: #fff;
-			top: 0;
-			z-index: 10;
-			margin-top: 4em;
-		}
-		#navigation-menu {
-			box-shadow: none;
-		}
-		#navigation-menu a {
-			color: #a6a6a6;
-			font-size: 14px;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
-		#navigation-menu a:hover, a.mPS2id-highlight {
-			background-color: transparent;
-			color: black !important;
-			border-bottom: 2px solid black;
-		}
-		.tabs-menu {
-			display: -webkit-box;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
-			display: flex;
-		}
-		.tabs-menu {
-			position: relative;
-			overflow-x: auto;
-			overflow-y: hidden;
-			width: 100%;
-			background-color: #fff;
-			margin: 0 auto;
-			white-space: nowrap;
-		}
-	</style>
+<link rel="stylesheet" href="{{ URL::asset('css/obras_especiales.css') }}">
 	<!-- start submenu fixed -->
 	<div class="contenedor_submenu">
 		<div class="container">
 			<div class="section">
-				<div class="row" style="margin-bottom: 0em;">
+				<div class="row ga-margin-1">
 					<div class="col s12">
 						<nav id="navigation-menu" class="white">
 							<ul class="tabs-menu menuFont">
 								<li class="tab"><a class="active" href="#monumental">ESCULTURA MONUMENTAL</a></li>
-								<li class="tab"><a id="personalizadas" href="personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
-								<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
+								<li class="tab"><a id="personalizadas" href="personalizadas">ESCULTURAS PERSONALIZADAS</a></li>
+								<li class="tab"><a id="interiores" href="interiores">ESCULTURAS PARA INTERIORES</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -82,7 +24,6 @@
 	<br>
 	<br>
 	<br>
-
 	<!-- start escultura monumental -->
 	<article id="monumental" class="scrollspy">
 		<div>
@@ -90,7 +31,6 @@
 				<div class="section no-pad-bot">
 					<div class="container">
 						<br><br>
-					<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 						<div class="row center">
 							<p style="margin-top: 2em;" class="titleservices size45 med-spacing header col s12 light">{{$data->mon_banner_title}}</p>
 						</div>
@@ -103,7 +43,7 @@
 				<div style="height: 300px;" class="parallax"><img src="../media/img/obras_especiales/{{$data->mon_banner_pic}}" alt="banner"></div>
 			</div>
 			<div id="section1" class="container">
-				<div class="section" >
+				<div class="section">
 					<div class="row">
 						<div class="col s12">
 							<p class="center-align par-title max-light">{{$data->mon_unico_title}}</p>
@@ -211,19 +151,19 @@
 								<p class="med-lineheight subtitle-form">
 									{{$data->mon_form_desc}}
 								</p>
-								<form class="whiteform col s12 m12 l10 offset-l1" data-abide id="mailform">							
+								<form class="whiteform col s12 m12 l10 offset-l1" data-abide id="mailform" action="" method="POST">
 									<div data-abide-error class="alert callout" style="display: none;">
 										<p><i class="fi-alert"></i> Porfavor completa todos los campos.</p>
 									</div>
 									<div class="success callout" style="display: none;">
 										<p><i class="fi-success"></i> Mensaje enviado.</p>
 									</div>
-									<input id="myname" required type="text" placeholder="Nombre Completo">
-									<input id="myemail" required type="text" placeholder="Correo electrónico">
-									<input id="myemail" required type="text" placeholder="Compañía / Empresa">
-									<input id="myemail" required type="text" placeholder="Día para la cita">
-										<textarea  cols="100" style="height: 100px" placeholder="Comentarios" ></textarea>							
-									<button  class="waves-effect green right med-button light btn">HACER CITA</button>
+									<input id="myname" required type="text" name="name" placeholder="Nombre Completo">
+									<input id="myemail" required type="text" name="email" placeholder="Correo electrónico">
+									<input id="mycompany" required type="text" name="company" placeholder="Compañía / Empresa">
+									<input id="myday" required type="text" name="day" placeholder="Día para la cita">
+									<textarea id="comments" cols="100" style="height: 100px" name="comments" placeholder="Comentarios"></textarea>
+									<button id="btnForm" class="waves-effect green right med-button light btn">HACER CITA</button>
 								</form>
 							</div>
 						</div>
@@ -243,20 +183,8 @@
 	<!-- end escultura interiores -->
 @stop
 @section('addJs')
-	<script src="../js/monumental.js"></script>
-	<script src="../vendor/js/jquery.smooth-scroll.min.js"></script>
-	<script src="../js/jquery.smooth.js"></script>
-	<script>
-	(function($){
-		$(window).on("load",function(){
-
-			$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
-				highlightSelector:"#navigation-menu a",
-				pageEndSmoothScroll: true,
-				forceSingleHighlight:true
-			});
-
-		});
-	})(jQuery);
-	</script>
+<script src="{{ URL::asset('js/monumental.js') }}"></script>
+<script src="{{ URL::asset('vendor/js/jquery.smooth-scroll.min.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.smooth.js') }}"></script>
+<script src="{{ URL::asset('js/jquery-scroll.js') }}"></script>
 @stop

@@ -1,0 +1,125 @@
+/*
+	Sets the style of the image slider wrapper <div> to be centered horizontally and vertically.
+	It also sets its default dimensions and the overflowing hidden (to fix the IE image positioning bug).
+*/
+.threesixty {
+	position:absolute;
+	/* This one fixes the IE positioning bug */
+	top:0;
+	left:25%;
+	width:50%;
+	height:150px;
+	margin-left:0;
+	margin-top: 40px;
+}
+
+.resizedemo{
+	background-color: #14181C;
+	opacity: 0.5;
+	width: 50%;
+	margin-top: 40px;
+	margin-right: auto;
+	margin-bottom: 40px;
+	margin-left: auto;
+}
+
+
+/*
+	Defines the criteria for the max. 1024px wide tablets portrait mode and sets the image slider dimensions and centering according to it.
+*/
+@media	screen and (max-device-width: 1024px) and (orientation:portrait) {
+	.threesixty {
+		left:15%;
+		width:70%;
+	}
+
+	.resizedemo{
+		width: 70%;
+	}	
+
+}
+/*
+	Defines the criteria of the max. 480px wide mobiles' landscape mode and sets the image slider dimensions and centering according to it.
+*/
+@media	screen and (max-device-width: 480px) and (orientation:landscape),
+				screen and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {
+	.threesixty {
+		left:20%;
+		width:60%;
+		margin-top: 60px;
+	}
+	.resizedemo{
+		width: 60%;
+		margin-top: 60px;
+	}	
+
+}
+/*
+	Defines the criteria of the max. 480px wide mobiles' portrait mode and sets the image slider dimensions and centering according to it.
+*/
+@media	screen and (max-device-width: 480px) and (orientation:portrait),
+				screen and (-webkit-min-device-pixel-ratio: 2) and (orientation:portrait) {
+	.threesixty {
+		left:10%;
+		width:80%;
+		margin-top: 60px;
+	}
+	.resizedemo{
+		width: 80%;		
+		margin-top: 60px;	
+	}		
+}
+/*
+	Makes the image slider invisible by default
+*/
+.threesixty_images {
+	display: none;
+}
+/*
+	Sets every image in the slider to be absolute positioned and dynamically sized.
+*/
+.threesixty img {
+	position:absolute;
+	/* This one fixes the IE positioning bug */
+	top:0;
+	width:100%;
+	height:auto;
+}
+/*
+	Sets the style of the visible current frame of the image slider animation
+*/
+.current-image {
+	visibility:visible;
+	width:100%;
+}
+/*
+	Sets the style of the visible "previous" frame of the image slider animation
+*/
+.previous-image {
+	visibility:hidden;
+	width:0;
+}
+/*
+	Sets the dimensions of the CanvasLoader placeholder <div>, it also centeres it horizontally and vertically inside the wrapper and makes it invisible by default
+*/
+.threesixty .spinner {
+	width: 60px;
+	display: block;
+	margin: 0 auto;
+	height: 30px;
+	background: #333;
+	background: rgba(0, 0, 0, 0.7);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+}
+.threesixty .spinner span {
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #FFF;
+	text-align: center;
+	line-height: 30px;
+	display: block;
+}

@@ -1,6 +1,14 @@
 var esculturas = function (){
 	var bindEvents = function(){
-		//$('.button-collapse').sideNav();
+		
+		$("#movedown").click(function(event) {
+			$.smoothScroll({
+				scrollTarget: $('#tab2'),
+				speed: 1000,
+				offset: -133
+			});
+		});
+		$('.scrollspy').scrollSpy({scrollOffset: 135});	
 		$('.parallax').parallax();
 		$( "#topbar li:eq(4)").addClass('active');
 

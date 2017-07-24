@@ -11,7 +11,7 @@
 						<div class="input-field col s6">
 							<select id="selectAuction" value="3" onchange="location = this.value;" class="select-no-margin">
 								@foreach ($subastas as $key => $subasta)
-									<option {{ $subasta->id == $activeAuction ? 'selected = selected' : '' }} value="{{$subasta->id}}">{{$subasta->name}}</option>
+									<option {{ $subasta->id == $activeAuction ? 'selected = selected' : '' }} value="{{$subasta->id}}">{{ isset($subasta->languages->first()->name) ? $subasta->languages->first()->name : ''  }} </option>
 								@endforeach
 							</select>
 						 	<label>Subasta:</label>

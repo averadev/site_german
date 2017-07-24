@@ -6,9 +6,13 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"simplepie/simplepie": "dev-master",
+		"intervention/image": "dev-master",
 		"yangqi/htmldom": "dev-master",
 		"fguillot/picofeed": "@stable",
-		"inacho/php-credit-card-validator": "1.*"
+		"ollieread/multiauth": "dev-master",
+		"inacho/php-credit-card-validator": "1.*",
+		"cviebrock/eloquent-sluggable": "2.*",
+		"paypal/rest-api-sdk-php": "*"
 	},
 	"autoload": {
 		"classmap": [

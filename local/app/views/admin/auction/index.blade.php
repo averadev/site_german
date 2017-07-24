@@ -52,7 +52,6 @@
 						@endif
 							<h3 style="display: inline-block; " class="header">Subastas</h3>
 							<a data-tooltip="Añadir Subata" data-position="top" href="{{url('/admin/subasta/create')}}" style="float: right; margin-top: 2.5%; margin-right: 3%;" class="btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-2 circle-button "><i style="font-size: 2.3rem;" class="material-icons">add</i></a>
-							<a data-tooltip="Detener Subatas" data-position="left" href="{{url('/admin/subasta/stop')}}" style="float: right; margin-top: 2.5%; margin-right: 3%;" class="btn-floating btn-large tooltipped waves-effect waves-light deep-orange circle-button statusAction"><i style="font-size: 2.3rem;" class="material-icons">stop</i></a>
 							<div class="row">
 							  <div class="col s12">
 								<table class="highlight centered">
@@ -70,17 +69,18 @@
 									<tbody>
 									@foreach( $auctions as $key => $auction )
 										<tr>
-											<td>{{$key+1}}</td>
-											<td>{{$auction->name}}</td>
+											<td> {{ (Input::get('page', 1) - 1) * $auctions->getPerPage() + $key + 1 }}</td>
+											<td>{{ isset($auction->languages->first()->name) ? $auction->languages->first()->name : ''  }}</td>
 											<td>{{$auction->iniDate}}</td>
 											<td>{{$auction->endDate}}</td>
 											<td>
 												<div style="position: relative;">
 													<div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; display: inline-block; padding-right: 23%;">
-														<a class="btn-floating btn-large medium-button  {{ $auction->status == 0 ? 'grey darken-1' : '' }}  {{ $auction->status == 1 ? 'green' : 'yellow darken-2' }} {{ $auction->status == 2 ? 'green' : '' }} circle-button update-auction-status ">
+														<a class="btn-floating btn-large medium-button  {{ $auction->status == 0 ? 'grey darken-1' : '' }}  {{ $auction->status == 1 ? 'green' : '' }} {{ $auction->status == 2 ? 'yellow darken-2' : '' }} circle-button update-auction-status ">
 															<i class="large material-icons"></i>
 														</a>
 														<ul>
+															<li><a href="{{ url('/admin/subasta/stop/'.$auction->id.'') }}" style="margin-right: -10px; margin-top: -18px;" data-tooltip="Detener" data-position="top" class="btn-floating statusAction tooltipped grey darken-1"><i class="material-icons">stop</i></a></li>
 															<li><a href="{{ url('/admin/subasta/next/'.$auction->id.'') }}" style="margin-right: -10px; margin-top: -18px;" data-tooltip="Proxima" data-position="top" class="btn-floating statusAction tooltipped yellow darken-2"><i class="material-icons">query_builder</i></a></li>
 															<li><a href="{{ url('/admin/subasta/active/'.$auction->id.'') }}" style="margin-right: 7px; margin-top: -18px;" data-tooltip="Activar" data-position="top" class="btn-floating  statusAction tooltipped green" ><i class="material-icons">check</i></a></li>
 														</ul>

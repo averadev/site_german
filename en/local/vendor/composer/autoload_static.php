@@ -43,6 +43,10 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         array (
             'Monolog\\' => 8,
         ),
+        'I' => 
+        array (
+            'Inacho\\' => 7,
+        ),
         'C' => 
         array (
             'Carbon\\' => 7,
@@ -121,6 +125,10 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Inacho\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/inacho/php-credit-card-validator/src',
         ),
         'Carbon\\' => 
         array (
@@ -236,31 +244,27 @@ class ComposerStaticInit8678c6db333b1b41fba282f0016c0bcb
     );
 
     public static $classMap = array (
-        'App\\Controllers\\Admin\\AuctionAdminController' => __DIR__ . '/../..' . '/app/controllers/admin/AuctionAdminController.php',
-        'App\\Controllers\\Admin\\AuthController' => __DIR__ . '/../..' . '/app/controllers/admin/AuthController.php',
-        'App\\Controllers\\Admin\\BidsAdminController' => __DIR__ . '/../..' . '/app/controllers/admin/BidsAdminController.php',
-        'App\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/controllers/admin/DashboardController.php',
-        'App\\Controllers\\Admin\\UserAuctionController' => __DIR__ . '/../..' . '/app/controllers/admin/UserAuctionController.php',
         'AuctionController' => __DIR__ . '/../..' . '/app/controllers/AuctionController.php',
         'Auction_bid' => __DIR__ . '/../..' . '/app/models/Auction_bid.php',
         'Auction_user' => __DIR__ . '/../..' . '/app/models/Auction_user.php',
         'BaseController' => __DIR__ . '/../..' . '/app/controllers/BaseController.php',
         'Comments' => __DIR__ . '/../..' . '/app/models/Comments.php',
         'Component' => __DIR__ . '/../..' . '/app/models/Component.php',
-        'ContactUS' => __DIR__ . '/../..' . '/app/models/ContactUS.php',
         'ContactoController' => __DIR__ . '/../..' . '/app/controllers/ContactoController.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/app/database/seeds/DatabaseSeeder.php',
+        'Email' => __DIR__ . '/../..' . '/app/models/Email.php',
         'GermanController' => __DIR__ . '/../..' . '/app/controllers/GermanController.php',
         'HomeController' => __DIR__ . '/../..' . '/app/controllers/HomeController.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
         'Images' => __DIR__ . '/../..' . '/app/models/Images.php',
-        'LoginController' => __DIR__ . '/../..' . '/app/controllers/LoginController.php',
+        'Inbox' => __DIR__ . '/../..' . '/app/models/Inbox.php',
         'Module' => __DIR__ . '/../..' . '/app/models/Module.php',
         'Normalizer' => __DIR__ . '/..' . '/patchwork/utf8/src/Normalizer.php',
+        'Obra' => __DIR__ . '/../..' . '/app/models/Obra.php',
+        'Obra_lang' => __DIR__ . '/../..' . '/app/models/Obra_lang.php',
         'Section' => __DIR__ . '/../..' . '/app/models/Section.php',
         'ServicesController' => __DIR__ . '/../..' . '/app/controllers/ServicesController.php',
         'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
-        'Subasta' => __DIR__ . '/../..' . '/app/models/Subasta.php',
         'Submodule' => __DIR__ . '/../..' . '/app/models/Submodule.php',
         'TestCase' => __DIR__ . '/../..' . '/app/tests/TestCase.php',
         'User' => __DIR__ . '/../..' . '/app/models/User.php',

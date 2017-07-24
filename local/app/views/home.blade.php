@@ -1,6 +1,6 @@
 @extends('templates.main')
 @section('content')
-	<link rel="stylesheet" href="{{ URL::asset('css/home.css') }}">	
+	<link rel="stylesheet" href="{{ URL::asset('css/app/home.css') }}">	
 	<div id="index-banner" class="parallax-container">
 		<div class="section no-pad-bot">
 			<div class="container">
@@ -13,7 +13,7 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="parallax"><img src="media/img/home/{{$data->homeBanner}}" alt="banner"></div>
+		<div class="parallax"><img src="media/img/home/{{$data->homeBanner}}" alt="{{$data->homeBanner_alt}}"></div>
 	</div>
 	<div id="section1" class="container">
 		<div class="section">
@@ -22,8 +22,10 @@
 					 <p class="par-title max-light">{{$data->auctionTitle}}</p>
 				</div>
 				<div class="col s12 m4 l4">
-					<p class="bold-normal">Hasta el 21 de Noviembre de 2017</p>
-					<a href="{{ url('/subasta#tab3') }}" class="waves-effect grey lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
+					@if($auction)
+						<p class="bold-normal novisible">Hasta el {{$auctionEndDate[2]}} de {{$auctionEndDate[1]}} de {{$auctionEndDate[0]}}</p>
+					@endif	
+						<a href="{{ url('/subasta#tab5') }}" class="waves-effect grey lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>Ver obra</a>
 				</div>
 			</div>
 		</div>
@@ -40,7 +42,7 @@
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs tabs-left sideways">
 								<li class="active"><a href="#home-v" data-toggle="tab">ESCULTURA</a></li>
-								<li><a href="#profile-v" data-toggle="tab">OFERTAS</a></li>
+								<li class="hideme" ><a href="#profile-v" data-toggle="tab">OFERTAS</a></li>
 								<li><a href="#messages-v" data-toggle="tab">GERMAN</a></li>
 							</ul>
 						</div>
@@ -54,8 +56,8 @@
 											<div class="hide-on-small-only">
 												<div class="col s5">
 													<div class="row">
-														<h5 class="large-spacing fontCrimson gb_bold"> {{$auction->name}} </h5>
-															{{$auction->detail}}
+														<h5 class="large-spacing fontCrimson gb_bold"> {{isset($auction->languages->first()->name) ? $auction->languages->first()->name : ''}} </h5>
+															{{isset($auction->languages->first()->detail) ? $auction->languages->first()->detail : ''}}
 													</div>
 												</div>
 												<div class="col s7">
@@ -71,11 +73,11 @@
 															<img  style="width: 15em" class="activator min-height-auto" src="{{ count($auction->images)<1 ? 'media/img/no_image.jpg' : 'media/img/subasta_esculturas/'.$auction->images->first()->filename }}">
 														</div>
 														<div class="card-content">
-															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{$auction->name}}<i class="material-icons right">more_vert</i></span>
+															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{isset($auction->languages->first()->name) ? $auction->languages->first()->name : ''}}<i class="material-icons right">more_vert</i></span>
 														</div>
 														<div class="card-reveal" style="background-color:#EBEBEB">
-															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{$auction->name}}<i class="material-icons right">close</i></span>
-															<p>{{$auction->detail}}</p>
+															<span style="font-size: 1em; line-height: 100%;" class="large-spacing activator card-title">{{isset($auction->languages->first()->name) ? $auction->languages->first()->name : ''}}<i class="material-icons right">close</i></span>
+															<p>{{isset($auction->languages->first()->detail) ? $auction->languages->first()->detail : ''}}</p>
 														</div>
 													</div>
 												</div>
@@ -135,23 +137,23 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col s12" style="margin-top: -45px;">
-							<a href="{{ url('/subasta/subastas#tab6') }}" style="margin-left: 1em;" class="waves-effect green right btn gb_noboxshadow">OFERTAR</a>
-							<a href="{{ url('/subasta#tab3') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
+						<div class="col s12" style="margin-top: -70px;">
+							<a href="{{ url('/subasta#tab5') }}" style="margin-left: 1em;" class="waves-effect green hideme right btn gb_noboxshadow">OFERTAR</a>
+							<a href="{{ url('/subasta') }}" style="padding-left: 15px; padding-right: 10px;" class="waves-effect grey right lighten-5 grey-border btn gb_noboxshadow"><i class="material-icons right" style="margin-left: -3px;">navigate_next</i>VER ESCULTURA</a>
 						</div>
 					</div>
 				</div>
 				<div class="col s12 m12 l4 margin-top-1">
 					<div style="position: relative;">
 						<h5 class="light">Comentarios</h5>
-						<a href="https://www.facebook.com/GermanArzateSculptor/" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="facebook" src="{{ URL::asset('media/img/home/'.$data->fbpic.'') }}"></a>
-						<a href="https://www.instagram.com/germanarzatesculptor/" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="instagram" src="{{ URL::asset('media/img/home/'.$data->instapic.'') }}"></a>
+						<a href="https://www.facebook.com/GermanArzateSculptor/" target="_blank"><img style="position: absolute; right: 70px; top: 3px;" class="social-button" alt="{{$data->fbpic_alt}}" src="{{ URL::asset('media/img/home/'.$data->fbpic.'') }}"></a>
+						<a href="https://www.instagram.com/germanarzatesculptor/" target="_blank"><img style="position: absolute; right: 35px; top: 3px;" class="social-button" alt="{{$data->instapic_alt}}" src="{{ URL::asset('media/img/home/'.$data->instapic.'') }}"></a>
 					</div>
 					<div class="bottomRule">
 					</div>
 					<div class="col s12">
 						<div id="listCommentsHome"></div>
-						<div class="right-align"><a href="{{ url('/subasta/comentarios#tab5') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
+						<div class="right-align"><a href="{{ url('/subasta#tab6') }}" id="showMoreComments" class="showMore underline">Ver más comentarios</a></div>
 					</div>
 				</div>
 			</div>
@@ -160,7 +162,7 @@
 	</div>
 
 	<!-- N O T A S - D E - P R E N S A -->
-	<div class="grey-bg">
+	<div style="background-image: url('media/img/home/{{$data->background_notas}}');"  class="grey-bg">
 		<div class="container">
 			<div class="section no-pad">
 				<div class="row"  style="margin-bottom: 0em;">
@@ -170,7 +172,7 @@
 			@foreach($feeds as $feed)			
 					<div class="col s12 m12 l4">
 						<div class="card">
-							<div class="card-image crop">								
+							<div onclick="window.open('{{$feed->image_url}}','_blank');" class="card-image clickable crop">							
 								<img src="{{$feed->image}}">
 							</div>
 							<div class="card-content">
@@ -202,8 +204,14 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/init.js"></script>
-	<script src="js/tabModule.js"></script>
-	<script src="vendor/js/jquery.smooth-scroll.min.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/home.js"></script>
+	<script src="vendor/plugins/tabModule.js"></script>
+	<script src="vendor/plugins/jquery.smooth-scroll.min.js"></script>
+	<script src="js/loadcomments.js"></script>
+	<script>
+		window.intercomSettings = {
+			app_id: "arux4cfy"
+		};
+	</script>
+	<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/arux4cfy';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
 @stop

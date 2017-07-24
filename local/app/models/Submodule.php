@@ -11,7 +11,7 @@ class Submodule extends Eloquent
 	protected $SoftDelete = false;
 
 	function modules(){	
-	    return $this->belongsTo('Module');
+		return $this->belongsTo('Module');
 	}
 
 

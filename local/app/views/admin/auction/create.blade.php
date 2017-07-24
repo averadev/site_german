@@ -5,7 +5,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
-				<a href="{{ url('/admin')}}" style="margin: 10px 0 10px;" class="waves-effect waves-light light-blue accent-3 btn"><i class="material-icons left">arrow_back</i>Regresar</a>
+				<a href="{{ url('/admin')}}" class="waves-effect waves-light button-back light-blue accent-3 btn"><i class="material-icons left">arrow_back</i>Regresar</a>
+				<h5 class="title-auction" >Añadir Subasta</h5>
 			</div>
 			<div class="col l6 s12" style="margin-bottom: 15px;" >
 				<div class="row">

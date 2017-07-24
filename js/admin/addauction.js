@@ -80,6 +80,7 @@ var addauction = function (){
 			if(!(response.error)){
 				Materialize.toast(response.msg, 4000,'green'); 
 					setTimeout(function () {
+						$.blockUI({ message: $('#animationmatrix') });
 						window.location.href=HOST+"/admin/subasta/edit/"+response.subasta;
 					}, 1000);
 			}else{

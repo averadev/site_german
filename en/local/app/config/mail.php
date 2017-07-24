@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'demoGermanApp@gmail.com', 'name' => 'DemoApp'),
+	'from' => array('address' => 'demoGermanApp@gmail.com', 'name' => 'Subastas German'),
 
 	/*
 	|--------------------------------------------------------------------------

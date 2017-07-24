@@ -14,15 +14,15 @@
 								<strong>Nombre</strong>
 							</td>
 							<td>
-								{{$auctionElement->name}}
-							</td>						
+								{{ isset($auctionElement->languages->first()->name) ? $auctionElement->languages->first()->name : ''  }} 
+							</td>
 						</tr>
 						<tr>
 							<td style="width: 30%;">
 								<strong>Descripción</strong>
 							</td>
 							<td>
-								{{$auctionElement->detail}}
+								{{ isset($auctionElement->languages->first()->detail) ? $auctionElement->languages->first()->detail : ''  }} 
 							</td>
 						</tr>
 						<tr>

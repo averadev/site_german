@@ -10,19 +10,12 @@ class ContactoController extends BaseController {
 
 	public function getIndex(){
 
-		$contact_info = new stdClass();
-
-		// query module -> Contacto
-		$query_contactUs = ContactUS::showContactUSInfo();
-
-		foreach ($query_contactUs as $key => $value) {
-			$contact_info->{$value->name} = TextParser::change(nl2br($value->value));
-		}
-		return View::make('contacto')->with('contact_info', $contact_info);
+		$contactBlock = Component::getPageContent(6);
+		return View::make('contacto')->with('contact_info', $contactBlock);
 	}
 
 	/**
-	 * Function SendContactUSGerman --> Formulario de Contacto
+	 * Function SendContactUSGerman
 	 */
 	public function SendContactUSGerman () {
 
@@ -32,7 +25,7 @@ class ContactoController extends BaseController {
 				'name'=> strip_tags(Input::get('name')),
 				'email'=> strip_tags(Input::get('email')),
 				'company'=> strip_tags(Input::get('company')),
-				'asuntos'=> strip_tags(Input::get('asuntos')),
+				'subject'=> strip_tags(Input::get('asuntos')),
 				'comment'=> strip_tags(Input::get('comment'))
 			];
 
@@ -40,49 +33,40 @@ class ContactoController extends BaseController {
 				'name'=> 'required',
 				'email'=> 'required|email',
 				'company'=> 'required',
-				'asuntos'=> 'required',
+				'subject'=> 'required|integer|min:1|max:4',
 				'comment'=> 'required'
 			];
-			
-			$messages = array(
-				'required' => 'El campo :attribute es obligatorio.',
-				'email' =>'El campo :attribute no es un email valido',
-			);
 
 			$validation = Validator::make($data, $rules);
 
 			if ($validation->passes()) {
-				// Enviar correo
-				Mail::send('contacto_email_send', $data, function($message) use ($data) {
+				$datamail = (object)$data;
+				$datamail->email_id = 6; /*Contacto*/
+				$inbox = new Inbox;
+				$inbox = $inbox->addEmail($datamail);
+				Mail::send('emails.contacto', $data, function($message) use ($data) {
 					$message->to(Input::get('email'))
 					->subject('German Arzate | Contacto');
 				});
 
-				// Success message
-				return Response::json(array(
-						'success' => true,
-						'msg' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'
-					));
+				return Response::json(array('success' => true,'msg' => 'Gracias por ponerte en contacto, tú mensaje se ha enviado'));
 
 			} else {
-				// Error message
+
 				$messages = $validation->messages();
 
 				if($validation->messages()->has('name'))
-					$errorField = $validation->messages()->first('name');
+					$errorField = 'nombre: '.$validation->messages()->first('name');
 				else if($validation->messages()->has('email'))
-					$errorField = $validation->messages()->first('email');
+					$errorField = 'email: '.$validation->messages()->first('email');
 				else if($validation->messages()->has('company'))
-					$errorField = $validation->messages()->first('company');
+					$errorField = 'empresa: '.$validation->messages()->first('company');
 				else if($validation->messages()->has('asuntos'))
-					$errorField = $validation->messages()->first('asuntos');
+					$errorField = 'asunto: '.$validation->messages()->first('asuntos');
 				else if($validation->messages()->has('comment'))
-					$errorField = $validation->messages()->first('comment');
+					$errorField = 'comentario: '.$validation->messages()->first('comment');
 
-				return Response::json(array(
-					'success'=> false,
-					'msg' => $errorField
-					));
+				return Response::json(array('success'=> false,'msg' => $errorField));
 			}
 		}
 		

@@ -5,18 +5,19 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
-				<a href="{{ url('/admin')}}" style="margin: 10px 0 10px;" class="waves-effect waves-light light-blue accent-3 btn"><i class="material-icons left">arrow_back</i>Regresar</a>
+				<a href="{{ url('/admin')}}" class="waves-effect waves-light button-back light-blue accent-3 btn"><i class="material-icons left">arrow_back</i>Regresar</a>
+				<h5 class="title-auction" >Editar Subasta</h5>
 			</div>
 			<div class="col l6 s12" style="margin-bottom: 15px;" >
 				<div class="row">
 					<form class="col s12">
 						<div class="row m-btm-10px">
 							<div class="input-field col l12 m-btm-10px">
-								<input value="{{$auctionElement->name}}" id="name" type="text" class="validate">
+								<input value="{{ isset($auctionElement->languages->first()->name) ? $auctionElement->languages->first()->name : ''  }} " id="name" type="text" class="validate">
 								<label for="first_name">Nombre</label>
 							</div>
 							<div class="input-field col l12 m-btm-10px">
-								<input value="{{$auctionElement->detail}}" id="description" type="text" class="validate">
+								<input value="{{ isset($auctionElement->languages->first()->detail) ? $auctionElement->languages->first()->detail : ''  }} " id="description" type="text" class="validate">
 								<label for="last_name">Descripción</label>
 							</div>
 						</div>

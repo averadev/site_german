@@ -10,19 +10,17 @@ class HomeController extends BaseController {
 
 
 	public function getIndex(){
-		
-		$block = new stdClass();
-		$monthNames = ["","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
 		$lastFeeds = [];
 
 		/*Se inicializa el plugin para obtener los posts del blog*/
 		setlocale(LC_ALL,'es_ES');
-		$blog = 'http://stg.germanarzate.com/blog/';
+		$blog = 'http://germanarzate.com/blog/es';
 		$feed = new SimplePie();
-		$feed->set_feed_url("http://stg.germanarzate.com/blog/feed/");
+		$feed->set_feed_url("http://germanarzate.com/blog/es/feed");
 		$feed->enable_cache(true);
 		$feed->set_cache_location(storage_path().'/cache');
-		$feed->set_cache_duration(60*60*12);
+		$feed->set_cache_duration(60); /*60 minutes default*/
 		$feed->set_output_encoding('utf-8');
 		$feed->init();
 		$feed->handle_content_type();
@@ -42,31 +40,23 @@ class HomeController extends BaseController {
 			$blogFeed->image = $image;
 			$blogFeed->image_url = $item->get_permalink();
 			$blogFeed->description = strip_tags($item->get_content());
-			//return var_dump(strip_tags($item->get_content()));
 			$blogFeed->postdate = $this->setDate($item->get_date( 'm d, Y' ));
 			array_push($lastFeeds, $blogFeed);
 		}
 
 		/*Obtener los elementos de las secciones del home*/
-		$dataHome = DB::table('xref_section_component as block')
-		->select('block.name','block.value','block.detail')
-		->join('section','block.idSection','=','section.id')
-		->join('submodule','submodule.id','=','section.idSubmodule')
-		->where('submodule.idModule','=',1)
-		->get();
+		$block = Component::getPageContent(1);
 		
-		/*Se añaden todo el conenido de las secciones a un objecto*/
-		
-		foreach ($dataHome as $key => $value) {
-			$block->{$value->name} = TextParser::change(nl2br($value->value));
+		$auctionEndDate = [];
+		$auction = Obra::getActiveAuctionDetails();
+		if($auction){
+			$auctionEndDate = $auction->endDate;
+			$auctionEndDate = explode("-", $auctionEndDate);
+			$auctionEndDate[1] = Helper::getMonthName(intval($auctionEndDate[1]));
 		}
-
-		$auction = Subasta::select('id','name','detail',DB::raw("DATE_FORMAT(iniDate, '%Y-%m-%d %H:%i') as iniDate, DATE_FORMAT(endDate, '%Y-%m-%d %H:%i') as endDate"))
-		->where('status',1)->with('images')->first();
-		
-		$bids = Subasta::getBids();
+		$bids = Obra::getBids();
 		foreach ($bids as $key => $value) {
-			$value->monthDate = $monthNames[$value->monthDate];
+			$value->monthDate = Helper::getMonthName($value->monthDate);
 		}
 		$totalBids = count($bids);
 		$bidsFormat =  strval($totalBids);
@@ -78,7 +68,50 @@ class HomeController extends BaseController {
 		->with('bids',$bids)
 		->with('auction',$auction)
 		->with('totalbids',$totalBids)
-		->with('bidsFormat',$bidsFormat);
+		->with('bidsFormat',$bidsFormat)
+		->with('auctionEndDate',$auctionEndDate);
+	}
+
+	public function postNewsLetter(){
+    	if (Request::ajax()) {
+	    	$data = [
+				'name'		=> strip_tags(Input::get('name')),
+				'email'		=> strip_tags(Input::get('email'))
+			];
+
+			$rules = [
+				'name'=> 'required|max:50',
+				'email'=> 'required|email|max:50'
+			];
+
+			$validation = Validator::make($data, $rules);
+
+			if ($validation->passes()) {
+
+				$datamail = (object)$data;
+				$datamail->email_id = 1; /*newsletter*/
+				$inbox = new Inbox;
+				$inbox = $inbox->addEmail($datamail);
+				if($inbox){
+					Mail::send('emails.newsletter', $data, function($message) use ($data) {
+						$message->to(Input::get('email'))
+						->subject('German Arzate | NEWSLETTER');
+					});
+					return Response::json(array('success' => true));					
+				}
+
+			} else {
+				$messages = $validation->messages();
+
+				if($validation->messages()->has('name'))
+					$errorField = $validation->messages()->first('name');
+				else if($validation->messages()->has('email'))
+					$errorField = $validation->messages()->first('email');
+
+				return Response::json(array('success'=> false,'msg' => $errorField));
+			}
+
+    	}
 	}
 
 	private function returnImage ($text) {
@@ -111,6 +144,15 @@ class HomeController extends BaseController {
 		$image = '';
 		$html = file_get_contents($url);
 		preg_match_all( '|<img.*?src=[\'"](.*?)[\'"].*?>|i',$html, $matches ); /*buscar imagen*/
+		if( isset($matches[0][4]) ){
+			$imagesarr = explode(",", $matches[0][4]);
+			if( isset($imagesarr[4]) ){
+				$imagesarr = explode(" ", trim($imagesarr[4]));
+				if(isset($imagesarr[0])){
+					return $imagesarr[0];
+				}
+			}
+		}
 		if(isset($matches[1])){
 			foreach ($matches[1] as $key => $value) {
 				if (strpos($value, 'wp-content') !== false) {
@@ -124,11 +166,8 @@ class HomeController extends BaseController {
 	private function setDate($date){
 		$month = (int)substr($date, 0, 2);
 		$newDate = substr($date, 2);
-		$monthNames = ["","Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-		"Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Didciembre"];
-		$mName = $monthNames[$month];
+		$mName = Helper::getMonthName($month);
 		return ($mName.$newDate);	
-	}	    
-
+	}
 
 }

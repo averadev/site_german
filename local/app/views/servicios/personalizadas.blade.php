@@ -1,20 +1,17 @@
 @extends('templates.main')
 @section('content')
-<link rel="stylesheet" href="{{ URL::asset('css/obras_especiales.css') }}">
-	<!-- start submenu fixed -->
-	<div class="contenedor_submenu">
+	<link rel="stylesheet" href="{{ URL::asset('css/app/obras_especiales.css') }}">
+	<div class="contenedor_nav">
 		<div class="container">
-			<div class="section">
-				<div class="row ga-margin-1">
-					<div class="col s12">
-						<nav id="navigation-menu" class="white">
-							<ul class="tabs-menu menuFont">
-								<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
-								<li class="tab"><a class="active" href="#personalizadas">ESCULTURAS PERSONALIZADAS</a></li>
-								<li class="tab"><a id="interiores" href="interiores">ESCULTURAS PARA INTERIORES</a></li>
-							</ul>
-						</nav>
-					</div>
+			<div class="row no-margin-bottom">
+				<div class="col s12">
+					<nav id="navigation-menu">
+						<ul class="tabs-menu menuFont">
+							<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
+							<li class="tab"><a class="active" href="#personalizadas" >ESCULTURAS PERSONALIZADAS</a></li>
+							<li class="tab"><a id="interiores" href="interiores" >ESCULTURAS PARA INTERIORES</a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</div>
@@ -23,13 +20,14 @@
 	<br>
 	<br>
 	<br>
-	<br>
+
 	<article id="personalizadas" class="scrollspy">
 		<div>
 			<div id="index-banner" class="parallax-container">
 				<div class="section no-pad-bot">
 					<div class="container">
 						<br><br>
+					<!--	<h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
 						<div class="row center">
 							<p style="margin-top: 3em;" class="titleservices size45 med-spacing header col s12 light">{{$data->per_banner_title}}</p>
 						</div>
@@ -39,7 +37,7 @@
 						<br><br>
 					</div>
 				</div>
-				<div style="height: 300px;" class="parallax"><img src="../media/img/obras_especiales/{{$data->per_banner_pic}}" alt="banner"></div>
+				<div style="height: 300px;" class="parallax"><img src="../media/img/obras_especiales/{{$data->per_banner_pic}}" alt="{{$data->per_banner_pic_alt}}"></div>
 			</div>
 			<div id="section1" class="container">
 				<div class="section">
@@ -51,7 +49,7 @@
 							<p style="font-size: 1.2em;" class="center-align light med-lineheight">{{$data->per_unico_desc}}</p>
 						</div>					
 					</div>
-					<div class="row">
+					<div class="row" >
 						<div class="col l10 m12 s12 offset-l1">
 							<div class="right">
 								<div id="section2" class="col s12 right">
@@ -70,10 +68,10 @@
 								</div>
 							</div>
 							<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 70%;">
-								<img class="txt-over" style="width: 70%; position: absolute; top:7.5em; left:-3em;" src="../media/img/obras_especiales/{{$data->per_entrevista_pic}}" alt="escultura1">
+								<img class="txt-over" style="width: 70%; position: absolute; top:7.5em; left:-3em;" src="../media/img/obras_especiales/{{$data->per_entrevista_pic}}" alt="{{$data->per_entrevista_pic_alt}}">
 							</div>
 							<div class="hide-on-large-only">
-								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->per_entrevista_pic}}" alt="escultura1">
+								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->per_entrevista_pic}}" alt="{{$data->per_entrevista_pic_alt}}">
 							</div>		
 							<div class="row no-margin-bottom"> 
 								<div id="section3" class="col s12">
@@ -94,10 +92,10 @@
 								</div>
 							</div>
 							<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 40%;">
-								<img class="txt-over" style="width: 63%; position: absolute; top:-11em; right:0em;" src="../media/img/obras_especiales/{{$data->per_lluvia_pic}}" alt="escultura1">
+								<img class="txt-over" style="width: 63%; position: absolute; top:-11em; right:0em;" src="../media/img/obras_especiales/{{$data->per_lluvia_pic}}" alt="{{$data->per_lluvia_pic_alt}}">
 							</div>
 							<div class="hide-on-large-only">
-								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->per_lluvia_pic}}" alt="escultura1">
+								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->per_lluvia_pic}}" alt="{{$data->per_lluvia_pic_alt}}">
 							</div>												
 							<div class="right">
 								<div id="section4" class="col s12">
@@ -115,17 +113,17 @@
 									<a class="appointment small-button waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
 								</div>
 								<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 72%;">
-									<img class="txt-over" style="width: 90%; position: absolute; top:7.5em; left:-3em;" src="../media/img/obras_especiales/{{$data->per_materia_pic}}" alt="escultura1">
+									<img class="txt-over" style="width: 90%; position: absolute; top:7.5em; left:-3em;" src="../media/img/obras_especiales/{{$data->per_materia_pic}}" alt="{{$data->per_materia_pic_alt}}">
 								</div>
 								<div class="hide-on-large-only">
-									<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->per_materia_pic}}" alt="escultura1">
+									<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->per_materia_pic}}" alt="{{$data->per_materia_pic_alt}}">
 								</div>													
 							</div>
 						</div>
 					</div>			
 				</div>
 			</div>
-			<div style="background-image:url('../media/img/obras_especiales/{{$data->per_form_bg}}')" class="bg-services-form">
+			<div style="background-image:url('../media/img/obras_especiales/{{$data->per_form_bg}}')" title="{{$data->per_form_bg_alt}}" class="bg-services-form">
 				<div class="container">
 					<div class="section">
 						<div style="margin-top: 36vw;" class="row">
@@ -135,21 +133,23 @@
 								</b></p>
 							</div>
 							<div class="col black-section">	
-								<form class=" col s10 m10 l8 offset-m1 offset-s1 offset-l2" action="" method="POST">
-								<div class="hide-on-large-only">
-									<p style="color: white; text-align: center;" class="titleservices size4 italic"><b>
-										{{$data->per_form_title}}
-									</b></p>				
-								</div>
-								<p class="med-lineheight subtitle-form-b">
-									{{$data->per_form_desc}}
-								</p>
-									<input id="myname" class="black-input" required type="text" name="name" placeholder="Nombre Completo">
-									<input id="myemail" class="black-input" required type="text" name="email" placeholder="Correo electrónico">
-									<input id="mycompany" class="black-input" required type="text" name="company" placeholder="Compañía / Empresa">
-									<input id="myday" class="black-input" required type="text" name="day" placeholder="Día para la cita">
-									<textarea id="comments" cols="100" style="height: 100px; color: white;" name="comments" placeholder="Comentarios"></textarea>
-									<button id="btnForm" style="margin-bottom: 10%;" class="waves-effect green right med-button light btn">HACER CITA</button>
+								<form id="form_appt" class=" col s10 m10 l8 offset-m1 offset-s1 offset-l2">
+									<div class="hide-on-large-only">
+										<p style="color: white; text-align: center;" class="titleservices size4 italic"><b>
+											{{$data->per_form_title}}
+										</b></p>				
+									</div>
+									<p class="med-lineheight subtitle-form-b">
+										{{$data->per_form_desc}}
+									</p>
+										<input type="hidden" name="emailtype" value="4">
+										<input name="name" class="black-input" required type="text" placeholder="Nombre Completo">
+										<input name="email" class="black-input" required type="text" placeholder="Correo electrónico">
+										<input name="company" class="black-input" required type="text" placeholder="Compañía / Empresa">
+										<input name="date" class="black-input datepicker" required type="text" placeholder="Día para la cita">
+										<textarea name="comment" cols="100" style="height: 100px; color: white;" placeholder="Comentarios" ></textarea>							
+									<div id="progressdiv" class="progress hide"><div class="indeterminate"></div></div>
+									<a id="sendAppt" style="margin-bottom: 10%;" class="waves-effect green right med-button light btn">HACER CITA</a>
 								</form>
 							</div>
 						</div>
@@ -158,10 +158,19 @@
 			</div>
 		</div>
 	</article>
+	<!-- Modal-->
+	<div id="msgModal" class="modal border-radius-10">
+		<div class="notification">
+			<h4 style="text-align: center;" id="titleModalMsg"></h4>
+			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmsgModal"></p>
+		</div>
+		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
+			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
+		</div>
+	</div>
+	<!-- End Modal -->		
 @stop
 @section('addJs')
-<script src="{{ URL::asset('js/personalizadas.js') }}"></script>
-<script src="{{ URL::asset('vendor/js/jquery.smooth-scroll.min.js') }}"></script>
-<script src="{{ URL::asset('js/jquery.smooth.js') }}"></script>
-<script src="{{ URL::asset('js/jquery-scroll.js') }}"></script>
+	<script src="../vendor/plugins/jquery.smooth-scroll.min.js"></script>
+	<script src="../js/personalizadas.js"></script>	
 @stop

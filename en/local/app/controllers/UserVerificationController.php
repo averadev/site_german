@@ -18,10 +18,6 @@ class UserVerificationController extends BaseController {
 			$user->status = 1;
 			$user->confirmation_code = null;
 			$user->save();
-
-			$bid = Auction_bid::whereSubastaUserID($user->id)->first();
-			$bid->status = 1;
-			$bid->save();
 	
 			return View::make('successverification');
 	}

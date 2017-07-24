@@ -22,26 +22,34 @@ use Section;
 use Component;
 use DB;
 use Helper;
+use Session;
 
 
 /*models*/
 use Module;
 use Submodule;
-use Subasta;
+use Obra;
+use Obra_lang;
 use Images;
 
 
-
 class AuctionAdminController extends BaseController {
-
 	function __construct(){
-		$this->beforeFilter('auth');
+		$this->beforeFilter('auth.admin_user');
 		$this->beforeFilter('csrf',array('except'=>array('getIndex','getCreate','getShow','getEdit','putUpdateAuction','postSaveImage','postSetAuction','deleteDropImage','getActive','getNext','getStop')));
 	}
 
 	public function getIndex(){
 		$modules  = Module::with('submodules')->get();
-		$subastas  = Subasta::select('name','id','status',DB::raw("date_format((iniDate),'%d-%m-%Y %h:%i %p') as iniDate"),DB::raw("date_format((endDate),'%d-%m-%Y %h:%i %p') as endDate"))->orderBy('id','DESC')->with('images')->paginate(10);
+		$subastas  = Obra::select('id','status',DB::raw("date_format((iniDate),'%d-%m-%Y %h:%i %p') as iniDate"),DB::raw("date_format((endDate),'%d-%m-%Y %h:%i %p') as endDate"))
+		->with(array('languages'=>function($query){
+			$query->where('language_id','=',Session::get('lang'));
+		}))
+		->where('status',0)	//subasta finalizada
+		->orWhere('status',1) //subasta activa
+		->orWhere('status',2) //proxima subasta		
+		->orderBy('id','DESC')
+		->paginate(10);
 		return View::make('admin.auction.index')
 		->with('active', 'home')
 		->with('modules',$modules)
@@ -51,8 +59,15 @@ class AuctionAdminController extends BaseController {
 	}
 
 	public function getShow($id = null) {
-		$auction = Subasta::select('id','name','detail',DB::raw("DATE_FORMAT(iniDate, '%d-%m-%Y %h:%i %p') as iniDate, DATE_FORMAT(endDate, '%d-%m-%Y %h:%i %p') as endDate"))
-		->where('id',$id)->with('images')->firstOrFail();
+		$auction = Obra::select('id',DB::raw("DATE_FORMAT(iniDate, '%d-%m-%Y %h:%i %p') as iniDate, DATE_FORMAT(endDate, '%d-%m-%Y %h:%i %p') as endDate"))
+		->where('id',$id)
+		->with(array('images'=>function($query){
+			$query->where('images.type','=',1);
+		}))
+		->with(array('languages'=>function($query){
+			$query->where('language_id','=',Session::get('lang'));
+		}))
+		->firstOrFail();
 		$modules  = Module::with('submodules')->get();
 		return View::make('admin.auction.show')
 		->with('auctionElement',$auction)
@@ -62,8 +77,15 @@ class AuctionAdminController extends BaseController {
 	}
 
 	public function getEdit($id = null){
-		$auction = Subasta::select('id','name','detail',DB::raw("DATE_FORMAT(iniDate, '%Y-%m-%d %H:%i') as iniDate, DATE_FORMAT(endDate, '%Y-%m-%d %H:%i') as endDate"))
-		->where('id',$id)->with('images')->firstOrFail();
+		$auction = Obra::select('id',DB::raw("DATE_FORMAT(iniDate, '%Y-%m-%d %H:%i') as iniDate, DATE_FORMAT(endDate, '%Y-%m-%d %H:%i') as endDate"))
+		->where('id',$id)
+		->with(array('images'=>function($query){
+			$query->where('type','=',1);
+		}))
+		->with(array('languages'=>function($query){
+			$query->where('language_id','=',Session::get('lang'));
+		}))
+		->firstOrFail();
 		$modules  = Module::with('submodules')->get();
 		return View::make('admin.auction.update')
 		->with('auctionElement',$auction)
@@ -72,30 +94,37 @@ class AuctionAdminController extends BaseController {
 		->with('activeSubmodule','a1');
 	}
 
+	/*Activar Subasta*/
 	public function getActive($id = null) {
 		if($id){
-			$auction = Subasta::where('status', '=', 1)->update(array('status' => 0));
-			$active = Subasta::find($id);
+			$auction = Obra::where('status', '=', 1)->update(array('status' => 0));
+			$active = Obra::find($id);
 			$active->status = 1;
 			$active->save();
 		}
-		return Redirect::to('/admin');
+		return Redirect::back();
 	}
 
+	/*Activar Proxima Subasta*/
 	public function getNext($id = null) {
 		if($id){
-			$auction = Subasta::where('status', '=', 2)->update(array('status' => 0));
-			$active = Subasta::find($id);
-			$active->status = 2;
-			$active->save();
+			$auction = Obra::where('status', '=', 2)->update(array('status' => 0));
+			$next = Obra::find($id);
+			$next->status = 2;
+			$next->save();
 		}
-		return Redirect::to('/admin');
-	}	
-
-	public function getStop() {
-		Subasta::where('id', '>', 0)->update(array('status' => 0));
-		return Redirect::to('/admin');
+		return Redirect::back();
 	}
+
+	/*Desactivar Subasta*/
+	public function getStop($id = null) {
+		if($id){
+			$stop = Obra::find($id);
+			$stop->status = 0;
+			$stop->save();
+		}
+		return Redirect::back();
+	}	
 
 	public function getCreate(){
 		$modules  = Module::with('submodules')->get();
@@ -129,7 +158,7 @@ class AuctionAdminController extends BaseController {
 					$image = new Images;
 					$saveData = $image->addImage($data);
 					if($saveData){
-						$imagesData = Images::select('id','filename')->where('subasta_id',$data->idAuction)->get();
+						$imagesData = Images::getSalesAuctionImagesByAuctionID($data->idAuction);
 						return Response::json(array('error' => 0,'images'=>$imagesData ,'msg' =>  'Imagén Agregada'));
 					}
 					return Response::json(array('error' => 1,'msg' => 'Imagén no guardada, porvafor reinicie el navegador y vuelva a intentarlo'));
@@ -191,8 +220,11 @@ class AuctionAdminController extends BaseController {
 				$data = (object)$data;
 				$data->startDate = date("Y-m-d H:i:s", strtotime($data->startDate)); /*Convert Date*/
 				$data->endDate = date("Y-m-d H:i:s", strtotime($data->endDate)); /*Convert Date*/				
-				$subasta = new Subasta;
+				$subasta = new Obra;
+				$language = new Obra_lang;
 				$addAuction = $subasta->storeAuction($data);
+				$data->idAuction = $addAuction->id;
+				$language =  $language->saveObraLang($data);
 				return Response::json(array('subasta'=>$addAuction->id,'msg'=>'Subasta añadida','error'=>0));
 			}else{
 				if($validator->messages()->has('name'))
@@ -229,8 +261,10 @@ class AuctionAdminController extends BaseController {
 				$data = (object)$data;
 				$data->startDate = date("Y-m-d H:i:s", strtotime($data->startDate)); /*Convert Date*/
 				$data->endDate = date("Y-m-d H:i:s", strtotime($data->endDate)); /*Convert Date*/				
-				$subasta = new Subasta;
+				$subasta = new Obra;
+				$language = new Obra_lang;
 				$upAuction = $subasta->updateAuction($data);
+				$language =  $language->saveObraLang($data);
 				return Response::json(array('msg'=>'Subasta Actualizada','error'=>0));
 			}else{
 				if($validator->messages()->has('idAuction'))

@@ -1102,7 +1102,7 @@ You should have received a copy of the GNU General Public License along with thi
 								}).click(function(event){
 									event.stopPropagation();
 								});
-				var cMenuUl = $('<ul/>',{ class:"dropdown-menu on","role":"menu"});
+				var cMenuUl = $('<ul/>',{ class:"dropdown-menu-font on","role":"menu"});
 				e.preventDefault();
 				if($(e.target).is('a')){
 					methods.createLinkContext.apply(this,[e,cMenuUl]);
@@ -1270,7 +1270,7 @@ You should have received a copy of the GNU General Public License along with thi
 			
 			cMenuUl.append($('<li/>',{class:"dropdown-submenu",css:{display:"block"}})
 							.append($('<a/>',{"tabindex":"-1", href:"javascript:void(0)","text":"Row"}))
-							.append($('<ul/>',{class:"dropdown-menu"})
+							.append($('<ul/>',{class:"dropdown-menu-font"})
 									.append($('<li/>').append($('<a/>',{
 											id:"tbl_addrow",
 											"href":"javascript:void(0)",
@@ -1294,7 +1294,7 @@ You should have received a copy of the GNU General Public License along with thi
 											}}(event))))
 				)).append($('<li/>',{class:"dropdown-submenu",css:{display:"block"}})
 						.append($('<a/>',{"tabindex":"-1", href:"javascript:void(0)","text":"Column"}))
-						.append($('<ul/>',{class:"dropdown-menu"})
+						.append($('<ul/>',{class:"dropdown-menu-font"})
 								.append($('<li/>').append($('<a/>',{
 										id:"tbl_addcolumn",
 										"href":"javascript:void(0)",
@@ -1392,7 +1392,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 			if(itemSettings["select"]){
 				var menuWrapElement = $("<div/>", {class:"btn-group"});
-				var menuElement 	= $("<ul/>", {class:"dropdown-menu"});
+				var menuElement 	= $("<ul/>", {class:"dropdown-menu-font"});
 				menuWrapElement.append($('<a/>',{
 										class:"btn btn-default dropdown-toggle",
 										"data-toggle":"dropdown",

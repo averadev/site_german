@@ -1,0 +1,30 @@
+.picker__date-display {
+	display: none;
+}
+.picker__footer {
+	display: block;
+}
+label.error{
+	color: red;
+	margin-bottom: 0;
+	margin-top: -19px;
+}
+@media only screen and (max-width : 600px) {
+	span.size-x35{
+		font-size: 2.9rem;
+	}
+	p.size45{
+		font-size: 2.3em;
+	}
+	p.size4{
+		font-size: 1.5rem;
+		line-height: 130%;
+		margin: 1.14rem 0 0.912rem 0;
+	}
+	p.size4 br{
+		display: none;
+	}
+	p.size41 br{
+		display: none;
+	}
+}

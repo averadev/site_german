@@ -355,46 +355,6 @@
 .cd-horizontal-timeline .events-content em, .cd-horizontal-timeline .events-content p {
 /*  line-height: 1.6;*/
 }
-/* Start Background */
-.bg_porque {
-	background-image: url("../media/img/subasta/bg_porque.jpg");
-	width: 100%;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
-.bgg_proceso {
-	background-image: url("../media/img/subasta/bg_proceso.jpg");
-	width: 100%;
-	background-position: center center;;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
-.bg_queteconvierte {
-	background-image: url("../media/img/subasta/bg_enqueteconvierte.jpg");
-	width: 100%;
-	background-position: center center;;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
-.bg_comingsoon {
-	background-image: url("../media/img/subasta/bg_comingsoon.jpg");
-	width: 100%;
-	background-position: center center;;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-}
-/* End Background */
-@media screen and (max-width: 1024px) {
-
-}
-@media screen and (max-width: 900px){
-
-}
 @media only screen and (min-width: 768px) {
 	.cd-horizontal-timeline .events-content h2 {
 		font-size: 2.1em;

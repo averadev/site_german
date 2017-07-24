@@ -1,25 +1,45 @@
-	
 	<aside id="left-sidebar-nav">
-
 		<ul id="slide-out" class="side-nav fixed collapsible collapsible-accordion" style="width: 240px; background-color: #4F4F4F;">
-		
 			<div class="row">
-				<!--<div class="col col s4 m4 l4">
-					<img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
-				</div> -->
 				<div class="col s12" style="margin-top: 10%; margin-bottom: 5%; " >
 					<div class="col s10 offset-s1">
 						<img  style="width: 100%; padding: 20% 10% 20% 10%; background-color: black; " src="{{ URL::asset('media/img/home/logoblanco.png') }}" alt="logo">
 					</div>
-					
 				</div>
 			</div>
-			<li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ $activeModule == 'a' ? 'active' : '' }}">Subastas Control</a>
+			<div class="row">
+				<div class="col s12" style="padding: 1rem;" >
+					<div class="row">
+						<ul id="changelng" class="lang-switch">
+							@if(Session::get('lang') == 1 )
+								<li class="active"  ><a href="{{ url('/admin/language/1') }}">ESP</a></li>
+								<li><a href="{{ url('/admin/language/2') }}">ING</a></li>
+							@elseif(Session::get('lang') == 2 )
+								<li ><a href="{{ url('/admin/language/1') }}">ESP</a></li>
+								<li class="active" ><a href="{{ url('/admin/language/2') }}">ING</a></li>
+							@else
+								<li ><a href="{{ url('/admin/language/1') }}">ESP</a></li>
+								<li ><a href="{{ url('/admin/language/2') }}">ING</a></li>							
+							@endif
+						</ul>
+					</div>
+				</div>
+			</div>
+			<li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ $activeModule == 'a' ? 'active' : '' }}">Esculturas</a>
 				<div class="collapsible-body">
 					<ul class="sub-menu" >
-						<li class="{{ $activeSubmodule == 'a1' ? 'active' : '' }}" ><a href="{{ url('/admin') }}" class="waves-effect">Subastas</a></li>
+						<li class="{{ $activeSubmodule == 'a1' ? 'active' : '' }}" ><a href="{{ url('/admin') }}" class="waves-effect">En Subasta</a></li>
+						<li class="{{ $activeSubmodule == 'a4' ? 'active' : '' }}" ><a href="{{ url('/admin/sales') }}" class="waves-effect">En Venta</a></li>
 						<li class="{{ $activeSubmodule == 'a2' ? 'active' : '' }}" ><a href="{{ url('/admin/pujas/0') }}" class="waves-effect">Pujas</a></li>
 						<li class="{{ $activeSubmodule == 'a3' ? 'active' : '' }}" ><a href="{{ url('/admin/usuarios') }}" class="waves-effect">Usuarios</a></li>
+						<li class="{{ $activeSubmodule == 'a5' ? 'active' : '' }}" ><a href="{{ url('/admin/cupones') }}" class="waves-effect">Cupones</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="bold"><a class="collapsible-header waves-effect waves-cyan {{ $activeModule == 'b' ? 'active' : '' }}">Correo</a>
+				<div class="collapsible-body">
+					<ul class="sub-menu" >
+						<li class="{{ $activeSubmodule == 'b1' ? 'active' : '' }}" ><a href="{{ url('/admin/inbox') }}" class="waves-effect">Inbox</a></li>
 					</ul>
 				</div>
 			</li>
@@ -46,4 +66,8 @@
 		</ul>
 		</aside>
 
-	  <!-- END LEFT SIDEBAR NAV-->
+<script type="text/javascript">
+	$("#changelng").click(function(event) {
+		$.blockUI({ message: $('#animationmatrix') });
+	});
+</script>

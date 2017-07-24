@@ -1,81 +1,18 @@
 @extends('templates.main')
 @section('content')
-	<style type="text/css">
-		@media only screen and (max-width : 600px) {
-			span.size-x35{
-				font-size: 2.9rem;
-			}
-			p.size45{
-				font-size: 2.3em;
-			}
-			p.size4{
-				font-size: 1.5rem;
-				line-height: 130%;
-				margin: 1.14rem 0 0.912rem 0;
-
-			}
-			p.size4 br{
-				display: none;
-			}
-			p.size41 br{
-				display: none;
-			}
-		}
-		.contenedor_submenu {
-			position: fixed;
-			width: 100%;
-			height: 90px;
-			background-color: #fff;
-			top: 0;
-			z-index: 10;
-			margin-top: 4em;
-		}
-		#navigation-menu {
-			box-shadow: none;
-		}
-		#navigation-menu a {
-			color: #a6a6a6;
-			font-size: 14px;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
-		#navigation-menu a:hover, a.mPS2id-highlight {
-			background-color: transparent;
-			color: black !important;
-			border-bottom: 2px solid black;
-		}
-		.tabs-menu {
-			display: -webkit-box;
-			display: -moz-box;
-			display: -ms-flexbox;
-			display: -webkit-flex;
-			display: flex;
-		}
-		.tabs-menu {
-			position: relative;
-			overflow-x: auto;
-			overflow-y: hidden;
-			width: 100%;
-			background-color: #fff;
-			margin: 0 auto;
-			white-space: nowrap;
-		}
-	</style>
-	<!-- start submenu fixed -->
-	<div class="contenedor_submenu">
+	<link rel="stylesheet" href="{{ URL::asset('css/app/obras_especiales.css') }}">
+	<div class="contenedor_nav">
 		<div class="container">
-			<div class="section">
-				<div class="row" style="margin-bottom: 0em;">
-					<div class="col s12">
-						<nav id="navigation-menu" class="white">
-							<ul class="tabs-menu menuFont">
-								<li class="tab"><a id="monumental" href="monumental">ESCULTURA MONUMENTAL</a></li>
-								<li class="tab"><a id="personalizadas" href="personalizadas">ESCULTURAS PERSONALIZADAS</a></li>
-								<li class="tab"><a class="active" href="#interiores">ESCULTURAS PARA INTERIORES</a></li>
-							</ul>
-						</nav>
-					</div>				
-				</div>
+			<div class="row no-margin-bottom">
+				<div class="col s12">
+					<nav id="navigation-menu" class="white">
+						<ul class="tabs-menu menuFont">
+							<li class="tab"><a href="monumental">MONUMENTAL SCULPTURES</a></li>
+							<li class="tab"><a id="personalizadas" href="personalizadas" >CUSTOM SCULPTURES</a></li>
+							<li class="tab"><a class="active" id="interiores" href="interiores" >INTERIOR SCULPTURES</a></li>
+						</ul>
+					</nav>
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -83,8 +20,6 @@
 	<br>
 	<br>
 	<br>
-	<br>
-
 	<article id="interiores" class="scrollspy">
 		<div>
 			<div id="index-banner" class="parallax-container">
@@ -96,12 +31,12 @@
 							<p style="margin-top: 2em;" class="titleservices size45 med-spacing header col s12 light">{{$data->inter_banner_title}}</p>
 						</div>
 						<div class="row center">
-							<a style="margin-top: 1%;" class="appointment waves-effect transparent lighten-5 white-border noshadow btn">Hacer cita</a>
+							<a style="margin-top: 1%;" class="appointment waves-effect transparent lighten-5 white-border noshadow btn">Make an appointment</a>
 						</div>
 						<br><br>
 					</div>
 				</div>
-				<div style="height: 300px;" class="parallax"><img src="../media/img/obras_especiales/{{$data->inter_banner_pic}}" alt="banner"></div>
+				<div style="height: 300px;" class="parallax"><img src="../../media/img/obras_especiales/{{$data->inter_banner_pic}}" alt="{{$data->inter_banner_pic_alt}}"></div>
 			</div>
 			<div id="section1" class="container">
 				<div class="section" >
@@ -113,10 +48,10 @@
 							<p class="center-align font12 light med-lineheight">{{$data->inter_distincion_desc}}</p>
 						</div>
 						<div class="hide-on-med-and-down" style="position: relative; padding-bottom: 20em;">
-							<img style="width: 31%; position: absolute; top:-22.5em; left:0em;" src="../media/img/obras_especiales/{{$data->inter_distincion_pic}}" alt="escultura1">
+							<img style="width: 31%; position: absolute; top:-22.5em; left:0em;" src="../../media/img/obras_especiales/{{$data->inter_distincion_pic}}" alt="{{$data->inter_distincion_pic_alt}}">
 						</div>
 						<div class="hide-on-large-only">
-							<img style="width: 30%; margin-left: 35%; margin-top: 5%;" src="../media/img/obras_especiales/{{$data->inter_distincion_pic}}" alt="escultura1">
+							<img style="width: 30%; margin-left: 35%; margin-top: 5%;" src="../../media/img/obras_especiales/{{$data->inter_distincion_pic}}" alt="{{$data->inter_distincion_pic_alt}}">
 						</div>					
 					</div>
 					<div class="row" >
@@ -136,14 +71,14 @@
 									<p class="description-services light">
 										{{$data->inter_catalogo_desc}}
 									</p>
-									<a class="appointment small-button waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
+									<a class="appointment small-button waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Make an appointment</a>
 								</div>
 							</div>
 							<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 36%;">
-								<img class="txt-over" style="width: 65%; position: absolute; top:-14em; right:0em;" src="../media/img/obras_especiales/{{$data->inter_catalogo_pic}}" alt="escultura1">
+								<img class="txt-over" style="width: 65%; position: absolute; top:-14em; right:0em;" src="../../media/img/obras_especiales/{{$data->inter_catalogo_pic}}" alt="{{$data->inter_catalogo_pic_alt}}">
 							</div>
 							<div class="hide-on-large-only">
-								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->inter_catalogo_pic}}" alt="escultura1">
+								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../../media/img/obras_especiales/{{$data->inter_catalogo_pic}}" alt="{{$data->inter_catalogo_pic_alt}}">
 							</div>
 							<div class="right">
 								<div id="section3" class="col s12 l12 right">
@@ -158,13 +93,13 @@
 									<p class="description-services light">
 										{{$data->inter_person_desc}}
 									</p>
-									<a class="appointment small-button waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
+									<a class="appointment small-button waves-effect grey right lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Make an appointment</a>
 								</div>
 								<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 80%;">
-									<img class="txt-over" style="width: 90%; position: absolute; top:12em; left:-10em;" src="../media/img/obras_especiales/{{$data->inter_person_pic}}" alt="escultura1">
+									<img class="txt-over" style="width: 90%; position: absolute; top:12em; left:-10em;" src="../../media/img/obras_especiales/{{$data->inter_person_pic}}" alt="{{$data->inter_person_pic_alt}}">
 								</div>
 								<div class="hide-on-large-only">
-									<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->inter_person_pic}}" alt="escultura1">
+									<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../../media/img/obras_especiales/{{$data->inter_person_pic}}" alt="{{$data->inter_person_pic_alt}}">
 								</div>													
 							</div>
 
@@ -184,20 +119,20 @@
 									<p class="description-services light">
 										{{$data->inter_pieza_desc}}
 									</p>
-									<a class="appointment small-button waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>HACER CITA</a>
+									<a class="appointment small-button waves-effect grey lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>Make an appointment</a>
 								</div>
 							</div>
 							<div class="hide-on-med-and-down" style="position: relative; margin-bottom: 35%;">
-								<img class="txt-over" style="width: 66%; position: absolute; top:-16.5em; right:0em;" src="../media/img/obras_especiales/{{$data->inter_pieza_pic}}" alt="escultura1">
+								<img class="txt-over" style="width: 66%; position: absolute; top:-16.5em; right:0em;" src="../../media/img/obras_especiales/{{$data->inter_pieza_pic}}" alt="{{$data->inter_pieza_pic_alt}}">
 							</div>
 							<div class="hide-on-large-only">
-								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../media/img/obras_especiales/{{$data->inter_pieza_pic}}" alt="escultura1">
+								<img style="width: 80%; margin-left: 10%; margin-top: 10%;" src="../../media/img/obras_especiales/{{$data->inter_pieza_pic}}" alt="{{$data->inter_pieza_pic_alt}}">
 							</div>
 						</div>
 					</div>			
 				</div>
 			</div>
-			<div style="background-image:url('../media/img/obras_especiales/{{$data->inter_form_bg}}')" class="bg-services-form">
+			<div style="background-image:url('../../media/img/obras_especiales/{{$data->inter_form_bg}}')" title="{{$data->inter_form_bg_alt}}" class="bg-services-form">
 				<div class="container" >
 					<div class="section" >
 						<div class="row">
@@ -216,19 +151,15 @@
 								<p class="med-lineheight" style="padding-left: 5.5vw; font-size: 1.3rem; padding-right: 4.5vw; margin-top: 2.4vw; margin-bottom: 2.4vw ">
 									{{$data->inter_form_desc}}
 								</p>
-								<form class="whiteform col s12 m12 l10 offset-l1" data-abide id="mailform">							
-									<div data-abide-error class="alert callout" style="display: none;">
-										<p><i class="fi-alert"></i> Porfavor completa todos los campos.</p>
-									</div>
-									<div class="success callout" style="display: none;">
-										<p><i class="fi-success"></i> Mensaje enviado.</p>
-									</div>
-									<input id="myname" required type="text" placeholder="Nombre Completo">
-									<input id="myemail" required type="text" placeholder="Correo electrónico">
-									<input id="myemail" required type="text" placeholder="Compañía / Empresa">
-									<input id="myemail" required type="text" placeholder="Día para la cita">
-										<textarea  cols="100" style="height: 100px" placeholder="Comentarios" ></textarea>							
-									<button  class="waves-effect green right med-button light btn">HACER CITA</button>
+								<form class="whiteform col s12 m12 l10 offset-l1" id="form_appt">							
+									<input type="hidden" name="emailtype" value="5">
+									<input name="name" required type="text" placeholder="Name">
+									<input name="email" required type="text" placeholder="E-mail">
+									<input name="company" required type="text" placeholder="Company">
+									<input name="date" class="datepicker" required type="text" placeholder="Meeting date">
+									<textarea  name="comment" cols="100" style="height: 100px" placeholder="Comments" ></textarea>							
+									<div id="progressdiv" class="progress hide"><div class="indeterminate"></div></div>
+									<a id="sendAppt" class="waves-effect green right med-button light btn">Make an appointment</a>
 								</form>
 							</div>
 						</div>
@@ -237,22 +168,19 @@
 			</div>
 		</div>
 	</article>
+	<!-- Modal-->
+	<div id="msgModal" class="modal border-radius-10">
+		<div class="notification">
+			<h4 style="text-align: center;" id="titleModalMsg"></h4>
+			<p style="font-size: 1.4rem; line-height: 1.8rem; text-align: center;" id="showmsgModal"></p>
+		</div>
+		<div class="modal-footer" style="text-align: center; padding-bottom: 4.5em;">
+			<button style="float: inherit;" class="modal-action modal-close waves-effect grey center lighten-5 grey-border btn"><i class="material-icons right">navigate_next</i>ACEPTAR</button>
+		</div>
+	</div>
+	<!-- End Modal -->		
 @stop
 @section('addJs')
-<script src="../js/interiores.js"></script>
-<script src="../vendor/js/jquery.smooth-scroll.min.js"></script>
-<script src="../js/jquery.smooth.js"></script>
-<script>
-(function($){
-	$(window).on("load",function(){
-
-		$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
-			highlightSelector:"#navigation-menu a",
-			pageEndSmoothScroll: true,
-			forceSingleHighlight:true
-		});
-
-	});
-})(jQuery);
-</script>
+	<script src="../vendor/plugins/jquery.smooth-scroll.min.js"></script>
+	<script src="../js/interiores.js"></script>	
 @stop

@@ -1,0 +1,52 @@
+p.text-help{
+	font-size: 0.7rem;
+	line-height: 160%;
+	margin-left: 21%;
+	margin-top: 1px;
+}
+
+.left-boder-1px{
+	border-left: 1px solid black;
+	padding-left: 4%;
+}
+
+.hideme{
+	display: none;
+}
+
+.btn-custom{
+	border-radius: 2px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 1rem;
+	font-size: 0.8rem;
+}
+
+.btn-session{
+	position: absolute; 
+	top: 0;
+	right: -1rem; 
+}
+
+.bg_signin {
+	background-image: url("../../media/img/subasta/bg_comingsoon.jpg");
+	width: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-bottom: 2rem;
+}
+
+.div-user{
+	padding-bottom: 0.5%; padding-right:5%; padding-left:5%;
+}
+
+label.error{
+	margin-top: -17px;
+	margin-bottom: 4px;
+	color: red;
+}

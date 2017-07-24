@@ -28,8 +28,7 @@
 						<div class="row">
 							<div class="input-field">
 								<select id="component">
-									<option value="" disabled selected>Seleccione</option>
-	
+									<option value="" disabled selected>Seleccione</option>	
 								</select>
 								<label>Componente</label>
 							</div>
@@ -58,13 +57,19 @@
 								</div>
 							</div>
 							<div class="col l6 s12">
+								<div class="row">
+									<div class="input-field col l12 m-btm-10px">
+										<input name="tag_img" id="alt_tag" type="text" class="validate">
+										<label id="labeltag" for="alt_tag">Alt</label>
+									</div>
+								</div>
 								<div class="file-field input-field">
 									<div class="btn">
 										<span>Imagén</span>
-										<input name="imagen" type="file">
+										<input id="imgfile" name="imagen" type="file">
 									</div>
 										<div class="file-path-wrapper">
-										<input class="file-path validate" type="text">
+										<input id="imgname" class="file-path validate" type="text">
 									</div>
 								</div>
 							</div>
@@ -97,6 +102,6 @@ $(document).ready(function(){
 });
 </script>
 	{{HTML::script('/js/admin/dashboard.js')}}
-	{{HTML::script('/vendor/plugins/line-editor/editor.js')}}
+	{{HTML::script('/vendor/plugins/line-editor/editor.min.js')}}
 	{{HTML::script('/vendor/plugins/line-editor/dropdown.js')}}
 @stop

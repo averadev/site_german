@@ -1,5 +1,11 @@
 @extends('templates.main')
 @section('content')
+<style type="text/css">
+	label.error {
+		color: #ff0000 !important;
+		margin-bottom: -10px;
+	}
+</style>
 	<!-- Slider -->
 	<div id="index-banner" class="parallax-container fontContact">
 		<div class="section no-pad-bot">
@@ -15,17 +21,17 @@
 				<br><br>
 			</div>
 		</div>
-		<div class="parallax"><img src="media/img/contacto/{{$contact_info->cont_sec1_img1}}"></div>
+		<div class="parallax"><img src="media/img/contacto/{{$contact_info->cont_sec1_img1}}" alt="{{$contact_info->cont_sec1_img1_alt}}" ></div>
 	</div>
 	<!-- Slider -->
 
 	<!-- Formulario -->
-	<div class="bg_contact" style="background-image: url('media/img/contacto/{{$contact_info->cont_sec2_bg}}');" >
+	<div class="bg_contact" title="{{$contact_info->cont_sec2_bg_alt}}" style="background-image: url('media/img/contacto/{{$contact_info->cont_sec2_bg}}'); background-size: cover; " >
 		<div class="section">
 			<div class="container row fontContact">
 				<div class="col s12 m6 l6">
 					<div class="row">
-						<img class="algRC" src="media/img/contacto/{{$contact_info->cont_sec2_escult1}}">
+						<img class="algRC" alt="{{$contact_info->cont_sec2_escult1_alt}}" src="media/img/contacto/{{$contact_info->cont_sec2_escult1}}">
 					</div>
 					<div class="row">
 						<p class="algRC">
@@ -33,12 +39,11 @@
 						</p>
 					</div>
 					<div class="row">
-						<img class="algRC" src="media/img/contacto/{{$contact_info->cont_sec2_logo}}">
+						<img alt="{{$contact_info->cont_sec2_logo_alt}}" class="algRC" src="media/img/contacto/{{$contact_info->cont_sec2_logo}}">
 					</div>
 				</div>
 				<div class="col s12 m6 l6">
-					<form id="FormContactUS" action="{{URL::to('/contacto/contactomail')}}" method="post">
-						<input type="hidden" name="_token" id="_token"  value="<?= csrf_token(); ?>"> 
+					<form id="FormContactUS">
 						<div class="row">
 							<input type="text" id="name" class="txtForm" name="name" required placeholder="NOMBRE COMPLETO" />
 						</div>
@@ -49,21 +54,21 @@
 							<input type="text" id="company" class="txtForm" name="company" required placeholder="COMPAÑÍA" />
 						</div>
 						<div class="row">
-							<input type="text" class="txtForm" name="asuntos" required placeholder="ASUNTO --- ELIGE UNA OPCIÓN" list="asuntos" />
-							<datalist id="asuntos">
-								<option value="PROYECTO">
-								<option value="DISEÑO">
-								<option value="CONSULTA">
-								<option value="ENTREVISTA">
-							</datalist> 
+							<select id="asuntos" class="txtForm browser-default" name="asuntos">
+								<option value="" disabled selected>ASUNTO --- ELIGE UNA OPCIÓN</option>
+								<option value="1">PROYECTO</option>
+								<option value="2">DISEÑO</option>
+								<option value="3">CONSULTA</option>
+								<option value="4">ENTREVISTA</option>
+							</select>						
 						</div>
 						<div class="row">
 							<textarea id="comment" class="txtForm" name="comment" rows="8" required placeholder="COMENTARIOS"></textarea>
 						</div>
 						
 						<div class="row">
-							<button id="sendBtnContact" class="btn green btnRight gb_noboxshadow" type="submit">ENVIAR</button>
-							<!-- <a href="#"  id="sendBtnContact" class="button success btnRight">ENVIAR</a> -->
+							<div id="progressdiv" class="progress hide"><div class="indeterminate"></div></div>
+							<a id="sendBtnContact" class="btn green btnRight gb_noboxshadow">ENVIAR</a>
 						</div>
 					</form>
 				</div>
@@ -82,12 +87,7 @@
 	</div>
 	<!-- End Modal Proximamente Form -->
 	<!-- Formulario -->
-
-
 @stop
 @section('addJs')
-<script src="js/contacto.js"></script>
-<script src="js/script.js"></script>
-<script src="js/script_contactform.js"></script>
-<script src="js/jquery_validate.js"></script>
+	<script src="js/contacto.js"></script>
 @stop

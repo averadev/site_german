@@ -1,31 +1,45 @@
 @extends('templates.main')
 @section('content')
-<link rel="stylesheet" href="{{ URL::asset('css/style-ga.css') }}">
+<style>
+p.gb_blockquote {
+	font-family: "Crimson Text";
+	font-size: 2rem;
+	line-height: 140%;
+	font-weight: bold;
+	font-style: italic;
+	color: #2d332c;
+	text-indent: -2em;
+}
+.gb_blockquoteAuthor {
+	font-size: 24px; 
+	color: #2d332c;
+}
+.gb_text_medium {
+	font-size: 2em;
+}
+</style>
+
 	<!-- SubMenu German -->
-	<div class="contenedor_submenu">
-		<div class="container">
-			<div class="section">
-				<div class="row" style="margin-bottom: 0em;">
-					<div class="col s12">
-						<nav id="navigation-menu" class="white">
-							<ul class="tabs-menu">
-								<li class="tab"><a class="" href="#tab1">¿QUIÉN SOY?</a></li>
-								<li class="tab"><a class="" href="#tab2">EL PENSADOR</a></li>
-								<li class="tab"><a class="" href="#tab3">EL ESCULTOR</a></li>
-								<li class="tab"><a class="" href="#tab4">¿QUÉ ME MUEVE?</a></li>
-							</ul>
-						</nav>
-					</div>
+	<div class="contenedor_nav">
+		<div class="container">		
+			<div class="row">
+				<div class="col s12">
+					<nav id="navigation-menu">
+						<ul class="tabs-menu">
+							<li class="tab"><a class="" href="#tab1">¿QUIÉN SOY?</a></li>
+							<li class="tab"><a class="" href="#tab2">EL PENSADOR</a></li>
+							<li class="tab"><a class="" href="#tab3">EL ESCULTOR</a></li>
+							<li class="tab"><a class="" href="#tab4">¿QUÉ ME MUEVE?</a></li>
+						</ul>
+					</nav>
 				</div>
-			</div>
+			</div>		
 		</div>
 	</div>
 	<!-- SubMenu German -->
 	<br>
 	<br>
-	<br>
-	<br>
-	
+	<br>	
 	<!-- start ¿Quién Soy? -->
 	<article id="tab1" class="scrollspy">
 		<div id="">
@@ -39,7 +53,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="parallax"><img src="media/img/german/{{$data->ger_sec1_bg}}"></div>
+				<div class="parallax"><img src="media/img/german/{{$data->ger_sec1_bg}}" alt="{{$data->ger_sec1_bg_alt}}" ></div>
 			</div>
 			<!-- Slider German -->
 
@@ -51,12 +65,13 @@
 							<div class="row right" style="margin:70px 10px 0 0;">
 								<div class="itaBold" style="font-size: 4rem; line-height: 120%;">{{$data->ger_sec2_txt1}}</div>
 								<div class="itaBold" style="font-size: 2.1rem; line-height: 120%;">{{$data->ger_sec2_txt2}}</div>
+								<!-- <div class="itaBold" style="font-size: 2.5rem; padding-left:60px; line-height: 110%;"></div> -->
 								<br/><br/>
 								<div style="font-size: 1.5rem; width:70%; padding-left:60px; line-height: 120%;">{{$data->ger_sec2_txt3}}</div>
 							</div>
 						</div>
 						<div class="col s12 m12 l7">
-							<img class="imgFloat" src="media/img/german/{{$data->ger_sec2_img1}}">
+							<img class="imgFloat" alt="{{$data->ger_sec2_img1_alt}}" src="media/img/german/{{$data->ger_sec2_img1}}">
 						</div>
 					</div>
 				</div>
@@ -78,7 +93,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="parallax"><img src="media/img/german/{{$data->ger_sec3_bg}}"></div>
+				<div class="parallax"><img src="media/img/german/{{$data->ger_sec3_bg}}" alt="{{$data->ger_sec3_bg_alt}}" ></div>
 			</div>
 			<!-- Slider Pensador -->
 
@@ -87,7 +102,7 @@
 				<div class="container fontCrimson">
 					<div class="row" style="margin: 50px 0 0 0;">
 						<div class="col s12 m12 l5 center gb_nomarginbottom">
-							<img class="imgFloat" src="media/img/german/{{$data->ger_sec4_img1}}">
+							<img class="imgFloat" src="media/img/german/{{$data->ger_sec4_img1}}" alt="{{$data->ger_sec4_img1_alt}}" >
 						</div>
 						<div class="col s12 m12 l7">
 							<div class="row left" style="margin:50px 20px 30px;">
@@ -117,7 +132,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="parallax"><img src="media/img/german/{{$data->ger_sec5_bg}}"></div>
+				<div class="parallax"><img src="media/img/german/{{$data->ger_sec5_bg}}" alt="{{$data->ger_sec5_bg_alt}}" ></div>
 			</div>
 			<!-- Slider Escultor -->
 
@@ -144,7 +159,7 @@
 	<!-- start ¿Qué Me Mueve? -->
 	<article id="tab4" class="scrollspy">
 		<div id="">
-			<div class="bg_bottom" style="background-image: url('media/img/german/{{$data->ger_sec7_bg}}'); background-size: cover; overflow: hidden;">
+			<div class="bg_bottom" style="background-image: url('media/img/german/{{$data->ger_sec7_bg}}'); background-size: cover; overflow: hidden;" title="{{$data->ger_sec7_bg_alt}}" >
 				<div class="section" style="padding: 0 0 40px 0;">
 					<div class="container fontCrimson">
 						<div class="row center no-margin-bottom">
@@ -157,7 +172,7 @@
 											<span class="fontCrimson gb_blockquoteAuthor">- German Arzate</span>
 										</div>
 									</div>
-									<img src="media/img/german/{{$data->ger_sec7_img1}}">
+									<img src="media/img/german/{{$data->ger_sec7_img1}}" alt="{{$data->ger_sec7_img1_alt}}" >
 									<br><br>
 								</div>
 							</div>
@@ -168,10 +183,8 @@
 		</div>
 	</article>
 	<!-- end ¿Qué Me Mueve? -->
-
 @stop
 @section('addJs')
-<script src="js/german.js"></script>
-<script src="vendor/js/jquery.smooth-scroll.min.js"></script>
-<script src="js/jquery.smooth.js"></script>
+	<script src="js/german.js"></script>
+	<script src="vendor/plugins/jquery.smooth-scroll.min.js"></script>
 @stop

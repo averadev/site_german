@@ -140,6 +140,8 @@ var dashboard = function (){
 			dataType: 'json',
 			data: {component: number},
 		}).done(function(response) {
+			$('#imgfile').val('');
+			$('#imgname').val('');
 			$("#element_id").val(response.component.id);
 			$("#element_type").val(response.component.type);
 			if(response.component.type == 1){
@@ -155,6 +157,10 @@ var dashboard = function (){
 				$("#txtElement").addClass('hide');
 				$("#txtEditor").Editor("setText", '');
 				$("#idComponentPicture").attr("src",path[$currentModule]+response.component.value);
+				if(response.component.img_alt){
+					$("#labeltag").addClass('active');
+				}				
+				$("#alt_tag").val(response.component.img_alt);
 				$("#img_recommended").html(response.component.img_text_dimension)
 			}
 		}).fail(function(response) {
@@ -213,6 +219,8 @@ var dashboard = function (){
 			data:new FormData($("#formComponent")[0]),
 		}).done(function(response) {
 			if(!(response.error)){
+				$('#imgfile').val('');
+				$('#imgname').val('');				
 				Materialize.toast(response.msg, 4000,'green'); 
 			}else{
 				 Materialize.toast(response.msg, 4000,'red'); 

@@ -17,25 +17,25 @@ use DB;
 /*models*/
 use Module;
 use Submodule;
-use Subasta;
+use Obra;
 use Images;
 use Auction_bid;
 
 class BidsAdminController extends BaseController {
 	function __construct(){
-		$this->beforeFilter('auth');
+		$this->beforeFilter('auth.admin_user');
 		$this->beforeFilter('csrf',array('except'=>array('showBids')));
 	}
 
 	public function showBids($id = null){
 		if(!$id){
-			$activeAuction = Subasta::where('status',1)->firstOrFail();
+			$activeAuction = Obra::where('status',1)->firstOrFail();
 			$id = $activeAuction->id;
 		}
 
 		$bids = Auction_bid::getBids($id);
 	
-		$subastas = Subasta::get(); 
+		$subastas = Obra::get(); 
 		$modules  = Module::with('submodules')->get();
 		return View::make('admin.bids.show')
 		->with('active', 'home')

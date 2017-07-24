@@ -9,6 +9,7 @@ use Validator;
 use Cache;
 use Event;
 use Auth;
+use Session;
 use Sefa\Services\Mailer;
 
 class AuthController extends BaseController {
@@ -20,7 +21,7 @@ class AuthController extends BaseController {
 	 * @return View
 	 */
 	public function getLogin() {
-		if (!Auth::check()) return View::make('admin.login');
+		if (!Auth::admin_user()->check()) return View::make('admin.login');
 		else return Redirect::to('/admin');
 	}
 
@@ -43,38 +44,22 @@ class AuthController extends BaseController {
 		$validator = Validator::make($credentials,$rules);
 		if( $validator->passes() ){
 			if (!empty($rememberMe)) {
-				Auth::attempt($credentials,true);
+				Auth::admin_user()->attempt($credentials,true);
 			} else {
-				Auth::attempt($credentials,false);
+				Auth::admin_user()->attempt($credentials,false);
 			}
-			if(Auth::check()){
+			if(Auth::admin_user()->check()){
+				Session::put('lang', 1);
 				return Redirect::to('/admin');
 			}
-			return Redirect::back()->with('error_message', 'Usuario o contraseña no validas')->withInput();
-			//return Redirect::back()->withInput()->with('failure','username or password is invalid!');
+			return Redirect::back()->with('error_message', 'Usuario o contraseña no validos')->withInput();
+
 		}
 		if($validator->fails())
 		{
-			return Redirect::back()->withErrors($validator);
+			return Redirect::back()->with('error_message', 'Usuario y contraseña son requeridos')->withInput();
 		}
 
-
-		//try {
-//
-		//	if (!empty($rememberMe)) {
-		//		Auth::attempt($credentials,true);
-		//	} else {
-		//		Auth::attempt($credentials,false);
-		//	}
-//
-		//	if ($this->user) {
-//
-		//		Event::fire('user.login', $this->user);
-		//		return Redirect::route('admin.dashboard');
-		//	}
-		//} catch (\Exception $e) {
-		//	return Redirect::route('admin.login')->withErrors(array('login' => $e->getMessage()));
-		//}
 	}
 
 	/**
@@ -83,7 +68,7 @@ class AuthController extends BaseController {
 	 */
 	public function getLogout() {
 
-		Auth::logout();
+		Auth::admin_user()->logout();
     	return Redirect::to('/admin/login');
 	}
 

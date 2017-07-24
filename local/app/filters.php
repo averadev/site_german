@@ -33,9 +33,24 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
-{
-	if (Auth::guest())
+//Route::filter('auth', function()
+//{
+//	if (Auth::admin_user()->guest())
+//	{
+//		if (Request::ajax())
+//		{
+//			return Response::make('Unauthorized', 401);
+//		}
+//		else
+//		{
+//			return Redirect::guest('/admin/login');
+//		}
+//	}
+//});
+
+
+Route::filter('auth.admin_user', function(){
+	if (Auth::admin_user()->guest())
 	{
 		if (Request::ajax())
 		{
@@ -48,10 +63,24 @@ Route::filter('auth', function()
 	}
 });
 
+Route::filter('auth.auct_user', function(){
+	if (Auth::auct_user()->guest())
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			return Redirect::guest('/subasta/subastas');
+		}
+	}
+});
+
 
 Route::filter('auth.basic', function()
 {
-	return Auth::basic();
+	return Auth::admin_user()->basic();
 });
 
 /*
@@ -67,7 +96,7 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/');
+	if (Auth::admin_user()->check()) return Redirect::to('/');
 });
 
 /*

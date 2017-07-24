@@ -9,7 +9,7 @@
 		<div>
 			Gracias por crear una cuenta con nosotros.<br/>
 			Por favor sigue el siguiente link para verificar tu correo <br/>
-			y validar tu puja. <br/><br/>
+			<br/>
 			{{ URL::to('user/auth/' . $code) }}<br/>
 
 		</div>

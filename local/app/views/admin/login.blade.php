@@ -35,9 +35,7 @@
   <div id="login-page" style="margin-top:4vw;" class="row">
 	<div class="col s12 m6 l4 offset-m3 offset-l4 grey lighten-1">
 		<div class="col s12 m12 l10 offset-l1 card-panel">
-
 			<form class="login-form" role="form" method="POST" action="{{Request::root()}}/admin/login">
-
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="row">
 				  <div class="input-field col s12 center">

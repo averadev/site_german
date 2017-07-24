@@ -1,0 +1,739 @@
+
+.center-abs-div {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%, -50%);
+}
+
+.auction-image{
+	width: 80%;
+	margin-left: 7%;
+}
+.thumb-auction{
+	display: inline;
+	margin: 0 0 10px 0;
+	padding: 4px;
+	width: 60px;
+	border:2px solid white;
+}
+.thumb-auction.active{
+	border:2px solid gray;
+}
+
+.thumbnails li{
+	float: left;
+	margin-right: 10px;
+}
+
+.collection-item{
+	height: 65px;
+}
+
+.collection .collection-item.avatar {
+	min-height: 40px;
+}
+
+span.title{
+	font-weight: bold;
+}
+
+.no-left-border{
+	border-left: none !important;
+}
+
+span.totalBids{
+	border: 1px solid white;
+	padding-right: 6px;
+	padding-left: 4px;
+	padding-top: 2px; 
+}
+
+p.bid-amount{
+	font-weight: bold;
+	font-size: 1.2rem;
+	line-height: 1.5rem
+}
+
+.circle{
+	border-radius: 10%;
+}
+
+.collection {
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
+	height: 390px;
+}
+
+.collection.user{
+	height: 130px;
+}
+
+ul.showmore{
+	height: 37em !important;
+	overflow: scroll;
+	width: 99.9%;
+}
+
+ul.showmoreuser{
+	height: 15em !important;
+	overflow: scroll;
+	width: 99.9%;
+}
+
+.collection .collection-item{
+	background: transparent;
+	border-bottom: 1px solid gray;
+	
+}
+
+.collection .collection-item.avatar .time {
+	position: absolute;
+	color: red;
+	right: 16px;
+	top: 8px;
+}
+
+.collection .collection-item.avatar .date {
+	position: absolute;
+	right: 16px;
+	top: 30px;
+}
+
+p.digitsBox{
+	position: absolute; 
+	top: -15px; 
+	right: 0;
+	font-weight: 400;
+}
+
+p.showMore{
+	line-height: 1em; float: right; margin-top: 0em; font-weight: bold; cursor: pointer;
+}
+
+label.error{
+	margin-top: -10px;
+	margin-bottom: 4px;
+	color: red;
+}
+
+
+.modal .notification {
+	padding: 2rem 3rem 0px;
+}
+
+
+.contract input[type=text],
+.contract input[type=email],
+.contract textarea{
+	height: 2.2rem;
+	width: 100%;
+}
+
+/* Text inputs */
+
+.contract input[type=text],
+.contract input[type=email],
+.contract input[type=password],
+.contract textarea{
+	margin: 0 0 10px 0;
+}
+
+.modal_content{
+	padding: 2rem 2rem 0.5rem 2rem;
+}
+
+.modal_img{
+	width: 100%;
+	padding-bottom: 0%;
+	margin-bottom: 0%;
+	display: block;
+}
+
+#FormCS .col{
+	padding: 0 0.4rem;
+}
+
+#sendBtn{
+	font-size: 0.9rem;
+}
+
+.modal_md {
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-color: #fafafa;
+	padding: 0;
+	max-height: 70%;
+	width: 40%;
+	margin: auto;
+	overflow-y: auto;
+	border-radius: 2px;
+}	
+
+textarea {
+	margin: 0 0 10px 0;
+}
+.img_proceso {
+	margin-top: 50px;
+	padding-bottom: 10px;
+	margin-bottom: 50px;
+	width: 250px;
+}
+
+h5.proceso_top{
+	margin-top: 30px;
+	font-size: 1.6rem;
+	line-height: 100%;
+	color: #2f332f;
+}
+.img2_proceso{
+	width: 500px;
+	margin-top: -30%;
+	margin-left: 12%
+}
+
+.top-pad-80{
+	padding-top: 80px;
+}
+.top-pad-70{
+	padding-top: 70px;
+}
+
+.text-padding{
+	padding-left: 5% !important ;
+}
+
+.events-content{
+	height: 684px;
+}
+
+.events{
+	min-width: 350px;
+}
+
+img.espec-img{
+	position: absolute;
+	left: 25%;
+	width: 110%; 
+}
+
+.spec-marg-btm{
+	position: relative;
+	margin-bottom: 110%; 
+}
+
+.title-convierte{
+	font-family: 'Crimson Text';
+	font-style: italic; line-height: 250%;
+	text-indent: -7rem; 		
+	margin-left: 35%;
+	margin-top: 50px; 
+}
+
+.text-proxim {
+	font-family: "Crimson Text";
+	font-size: 1.5rem;
+	color: #363b35;
+	font-weight: 600;
+	line-height: 110%
+}
+
+.margin-top-20{
+	margin-top: 20%;
+}
+
+.margin-left-4{
+	margin-left: 4%;
+}
+
+.margin-top-13{
+	margin-top: 13% ;
+}
+
+.date_current{
+	text-align: right;
+	line-height: 0.1rem;
+}
+
+.porcentaje {
+	margin-top: 8.5% !important; 
+	margin-bottom: 0% !important; 
+	font-size: 42px !important; 
+	font-family: inherit !important; 
+	font-weight: 200 !important; 
+	float: right !important;
+}
+.div-bids{
+	padding: 10px; margin-top: 2em;
+}
+
+.par-div-bids{
+	margin: 3px 0 5px 10px; 
+}
+
+.bid-form-button{
+	font-weight: bold; margin: 0.2rem; width: 100%;
+}
+
+.indicators {
+
+    text-align: center;
+
+}
+
+.indicators .indicator-item.active {
+    background-color: #4CAF50;
+}
+
+.indicators .indicator-item {
+	display: inline-block;
+	height: 8px;
+	width: 8px;
+	margin: 1px 4px;
+	background-color: rgba(76,175,80,0.5);
+	border-radius: 50%;
+}
+
+ul.ul-bids{
+	margin-bottom: 0.5rem;
+	margin-top: 0;
+}
+
+
+p.text-help{
+	font-size: 0.5rem;
+	line-height: 0.8rem;
+	margin-left: 21%;
+	margin-top: 1px;
+}
+
+.left-boder-1px{
+	border-left: 1px solid black;
+	padding-left: 4%;
+}
+
+.my-form .col{
+	padding: 0 0.3rem;
+}
+
+.my-form{
+	padding: 3px;
+}
+
+.hideme{
+	display: none;
+}
+
+.btn-custom{
+	border-radius: 2px;
+	height: 26px;
+	line-height: 26px;
+	padding: 0 1rem;
+	font-size: 0.8rem;
+}
+
+.btn-session{
+	position: absolute; 
+	top: 0;
+	right: -1rem; 
+}
+
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #bfbfbf;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #999999;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+/* Style the close button */
+.topright {
+    float: right;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.topright:hover {color: red;}
+
+.thumbnail{
+
+	float: left;
+	width: 33.3%;
+	position: relative;
+	/*-webkit-box-shadow: 2px 2px 5px #999;
+	-moz-box-shadow: 2px 2px 5px #999;
+	filter: shadow(color=#999999, direction=135, strength=2);*/
+
+}
+
+.thumbnail-crop{
+	width: 80%;
+	position: relative;
+	height: 330px;
+	overflow: hidden;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 6rem;
+	background-size: cover;
+	-moz-box-shadow: 0px 3px 8px rgb(100,100,100);
+	-webkit-box-shadow: 0px 3px 8px rgb(100,100,100);
+	box-shadow: 0px 3px 8px rgb(100,100,100);
+	background: 
+	url("../../media/img/subasta/textura-clip.jpg");
+	cursor: pointer;
+
+}
+
+.thumbnail-crop:hover{
+	background: linear-gradient(
+		rgba(0, 0, 0, 0.2), 
+		rgba(0, 0, 0, 0.2)
+	),url("../../media/img/subasta/textura-clip.jpg");
+}
+
+.box-title{
+	width: 60%;
+	height: 95px;
+	margin-left: 20%;
+	margin-right: 20%;
+	background-color:rgba(0, 0, 0, 0.4);
+	color: white;
+	font-family: "Crimson Text";
+	margin-top: 5%;
+	margin-bottom: 5%;
+	font-weight: 600;
+	display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column; /* column | row */
+
+}
+
+p.box-desc{
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	text-align: center;
+	font-size: 1.5rem;
+	letter-spacing: 4px;
+}
+
+p.box-price{
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	font-size: 1.4rem;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+img.left-clip{
+	height: 16%;
+	left:15%;
+	width: auto;
+	position: absolute;
+	top: 0%;
+}
+
+img.right-clip{
+	height: 16%;
+	right:15%;
+	width: auto;
+	position: absolute;
+	top: 0%;
+}
+
+img.portrait{
+	position: absolute;
+	left: -1000%;
+	right: -1000%;
+	top: -1000%;
+	bottom: -1000%;
+	margin: auto;
+	width: 90%;
+}
+
+p.proceso-text{
+	font-size: 1rem;
+	line-height: 140%;
+	color: #787878;
+}
+
+p.title_proceso{
+	font-family: "Crimson Text";
+	font-size: 2.3rem;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 110%;
+	text-indent: -3rem;
+	margin-left: 10%;
+	color: #2d332c;
+}
+
+@media only screen and (max-width : 992px) {
+	p.title-porque{
+		text-indent: 0rem;
+		margin-left: 0rem;
+	}
+
+	p.title-porque br{
+		display: none;
+	}
+
+	/*Proceso*/
+	p.title_proceso br{
+		display: none;
+	}
+
+	p.title_proceso{
+		text-indent: 0rem;
+		margin-left: 0rem;
+	}
+
+	.top-pad-80{
+		padding-top: 0px;
+	}
+	.top-pad-70{
+		padding-top: 0px;
+	}
+
+
+	.img_proceso {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width:70% ;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.img2_proceso{
+		width: 100%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 0px;			
+	}
+
+	li,ol{
+		padding: 0px; 
+
+	}	
+
+	.text-padding{
+		padding-left: 0px; ;
+	}
+
+	.cd-horizontal-timeline .events-wrapper {
+		/*move timeline*/
+		position: relative;
+		height: 100%;
+		margin-top: 30px;
+		margin-left: 15%;
+		/*overflow: hidden;*/
+	
+	}
+	.events-wrapper{
+		width: 150px;
+	}
+
+	.events{
+		max-width: 230px;
+	}
+	.cd-horizontal-timeline .events a {
+		font-size: 70%;
+	}
+
+	#bidForm{
+		padding-bottom: 15px;
+	}
+
+	/*Especificaciones*/
+	p.title-espec{
+		margin-left: 0%;
+		font-family: 'Crimson Text';
+		text-indent: 0rem;
+	}
+
+	p.title-espec br{
+		display: none;
+	}
+
+	p.title-convierte{
+		text-indent: 0rem;
+		margin-left: 0%;
+		margin-top: 10px;
+		margin-bottom: 10px; 
+	}
+	p.title-convierte br{
+		display: none;
+	}	
+
+	img.espec-img{
+		position: static;
+		left: 0;
+		width: 100%; 
+	}
+
+	.spec-marg-btm{
+		position: static;
+		margin-bottom: 0%; 
+	}
+
+	.modal_md{
+		width: 100%;
+		max-height: 100%;
+	}
+
+	.margin-top-20{
+		margin-top: 0%;
+	}
+	.margin-left-4{
+		margin-left: 0%;
+	}
+
+	.margin-top-13{
+		margin-top: 0%;
+	}
+	.gb_arrow_box:after, .gb_arrow_box:before {
+		border: none;
+	}
+
+	.text-proxim {
+		margin-bottom:4%;
+		margin-top: 0%;
+	}
+
+	.date_current{
+		text-align: center;
+		padding-right: 0rem;
+	}
+
+	h4.esp-escultura{
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	h4.esp-escultura span{
+		font-size: 1.5rem;
+	}
+	.events-content{
+		height: 300px !important;
+	}
+
+	p.title_proceso{
+		margin-top: 20px;
+		margin-bottom: 0px;
+	}		
+}
+
+@media only screen and (max-width : 600px) {
+	p.size45{
+		font-size: 1.5em;
+	}
+	h4.esp-escultura{
+		font-size: 1.2rem !important;
+		text-align: center;
+	}
+	h4.esp-escultura span{
+		font-size: 1.2rem !important;
+	}
+	.events{
+		min-width: 280px !important;
+		margin-left: -12% !important;
+	}
+
+	.events-content{
+		height: 375px !important;
+	}
+
+	p.title_proceso{
+		margin-top: 10px;
+		margin-bottom: 0px;
+	}	
+
+}
+
+
+
+/*proximamente tmp*/
+
+
+.title-details{
+	font-size: 3.5rem;
+	text-align: center; 
+}
+.card-details{
+	margin: 2rem;
+	border-top-color: black;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-color: black;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	content: '';
+}
+
+.dis-table{
+	display: table;
+}
+
+.button-details{
+	font-size: 1.2rem;
+	font-weight: 300;
+}
+
+.font-details{
+	line-height: 1.5rem
+}
+
+#icon-details{
+	font-size: 2.5rem;
+}
+
+.padding-1{
+	padding: 1rem;
+}
+
+.form-detais{
+	padding-bottom: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem; 
+}
+
+.font-form{
+	margin: 3px 0 5px 10px;
+}
+
+#form_details{
+	padding-bottom: 12px;
+}

@@ -21,7 +21,7 @@ use Auction_user;
 
 class UserAuctionController extends BaseController {
 	function __construct(){
-		$this->beforeFilter('auth');
+		$this->beforeFilter('auth.admin_user');
 		$this->beforeFilter('csrf',array('except'=>array('showUsers')));
 	}
 

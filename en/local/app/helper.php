@@ -49,4 +49,11 @@ class Helper
 		return $name;
 	}
 
+	public static function getMonthName($month){
+		$monthNames = ["","January", "February", "March", "April", "May", "June",
+		"July", "August", "September", "October", "November", "December"];
+		$mName = $monthNames[$month];
+		return $mName;
+	}
+
 }

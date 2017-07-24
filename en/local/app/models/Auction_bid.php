@@ -6,14 +6,12 @@
 class Auction_bid extends Eloquent
 {
 
-	const CREATED_AT = 'created';
-	const UPDATED_AT = null;
 	protected $table = "subasta_puja";
-	public $timestamps = true;
+	public $timestamps = false;
 	protected $SoftDelete = false;
 
 	function subastas(){
-		return $this->belongsTo('Subasta');
+		return $this->belongsTo('Obra');
 	}
 
 	function auctionusers(){
@@ -29,9 +27,9 @@ class Auction_bid extends Eloquent
 		,'user.name as name'
 		,DB::raw("date_format((created),'%d-%m-%Y %H:%i') as biddate"))
 		->where('subasta_puja.status',1)
-		->where('subasta.id',$id)
+		->where('Obra.id',$id)
 		->join('subasta_user as user','user.id', '=', 'subasta_puja.subasta_user_id')
-		->join('subasta as subasta','subasta.id','=','subasta_puja.subasta_id')
+		->join('Obra as Obra','Obra.id','=','subasta_puja.subasta_id')
 		->orderBy('created','DESC')
 		->paginate(10);
 	return $data;
@@ -41,6 +39,7 @@ class Auction_bid extends Eloquent
 		$data = DB::table('subasta_puja')
 				->select('cantidad as amount','subasta_user_id as user_id')
 				->where('subasta_id',$id_auction)
+				->where('status',1)
 				->orderBy('cantidad','DESC')
 				->first();
 		return $data;

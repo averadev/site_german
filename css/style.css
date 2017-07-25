@@ -2473,20 +2473,7 @@ div.choose-language label a{
 		overflow: hidden;
 	}
 
-	.div-center{
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-		position: relative;
-		overflow: hidden;
-		margin-top: 8vh;
-		min-height: 84vh;
-		height: 84vh !important;
-		width: 70%;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: orange;
-	}
+
 
 	div.fullpage{
 		min-height: 100vh;

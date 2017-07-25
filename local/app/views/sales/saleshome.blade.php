@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="{{ URL::asset('css/materialize.min.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 
-		<link rel="stylesheet" href="{{ URL::asset('/vendor/plugins/fullscreen/style7.css') }}">
+		<link rel="stylesheet" href="{{ URL::asset('/vendor/plugins/fullscreen/menu.css') }}">
 		<style type="text/css">
 			#trigger-overlay{
 				position: absolute;
@@ -81,14 +81,13 @@
 			<button class="menu-icon" id="close-menu"><img src="media/img/ventas/menu-circular-button.svg"></button>
 			<nav id="nav-home">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Work</a></li>
-					<li><a href="#">Clients</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="#">Biografia</a></li>
+					<li><a href="#">Cv de artista</a></li>
+					<li><a href="#">Obras</a></li>
+					<li><a href="#">Contacto</a></li>
 				</ul>
 			</nav>
-		</div>		
+		</div>
 	</body>
 	
 	<script type="text/javascript">
@@ -97,7 +96,7 @@
 
 	{{HTML::script('/vendor/plugins/fullscreen/modernizr.js')}}
 	{{HTML::script('/vendor/plugins/fullscreen/classie.js')}}
-	{{HTML::script('/vendor/plugins/fullscreen/demo7.js')}}
+	{{HTML::script('/vendor/plugins/fullscreen/menu.js')}}
 
 </html>
 

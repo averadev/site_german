@@ -24,7 +24,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/plugins/threesixty/threesixty.css') }}">		
 		<link rel="stylesheet" href="{{ URL::asset('css/style-timeline.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('css/app/ventas.css') }}">
-		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		
 		
 	</head>
 	<body>
@@ -39,20 +39,24 @@
 			(document, 'script', 'facebook-jssdk'));
 		</script>	
 		<div  class="scrollspy" style="background-image: url('../../media/img/ventas/panorama_bg.jpg'); background-size: cover; position: relative; ">
-			<img id="left-arrow-icon" src="../../media/img/ventas/left_arrow.svg">
-			<img id="panorama-icon" src="../../media/img/ventas/panorama_icon.svg">
+			<div class="top-bar" >
+				<a href="{{ url('/ventas') }}" class="back-arrow"><img src="../../media/img/ventas/left_arrow.svg"></a>
+			</div>
+			<img id="left-arrow-icon" class="hide" src="../../media/img/ventas/left_arrow.svg">			
+			
 			<div class="row no-margin-bottom"  >
 				<div class="col s12" style="position: relative;" >
-
-					<div class="div-center">
-						<img src="../../media/img/subasta_esculturas/{{$panorama->first()->filename}}" style="width: 100%" >
-					</div>
-					<div class="threesixty">
+					<div class="threesixty car ">
+						<img id="panorama-icon" class="hide" src="../../media/img/ventas/panorama_icon.svg">
 						<div class="spinner">
 							<span>0%</span>
 						</div>
 						<ol class="threesixty_images"></ol>
 					</div>
+					<div class="div-center">
+						<img src="../../media/img/subasta_esculturas/{{$panorama->first()->filename}}" >
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -308,53 +312,14 @@
 		</article>
 
 	</body>
-	{{HTML::script('/vendor/plugins/threesixty/threesixty.min.js')}}
-	<script src="{{ URL::asset('vendor/plugins/materialize.min.js') }} "></script>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="{{ URL::asset('vendor/plugins/threesixty/threesixty.min.js') }}" ></script>
+	<script src="{{ URL::asset('vendor/plugins/materialize.min.js') }}" ></script>
+	<script src="{{ URL::asset('js/saleinfo.js') }} "></script>
+	<script src="{{ URL::asset('vendor/plugins/timeline.js') }} "></script>
 	<script type="text/javascript">
-		var HOST = "{{URL::to('/')}}";
 		var $panoramaJson = <?php echo json_encode($panorama); ?>;
-	var imgArray = [];
-	var imagePath = '';
-	$.each($panoramaJson, function(index, img) {
-		imagePath = '../../media/img/subasta_esculturas/'+img.filename;
-		imgArray.push(imagePath);
-	});
-	$panoramaJson = [];
-	var product;
-
-		product1 = $('.car').ThreeSixty({
-			totalFrames: imgArray.length,
-			endFrame: imgArray.length,
-			currentFrame: 1,
-
-			imgList: '.threesixty_images',
-			progress: '.spinner',
-			//imagePath:'../../../media/img/subasta_esculturas/',
-			filePrefix: '',
-			ext: '.jpeg',
-			height: 335,
-			width: 336,
-			disableSpin: false,
-			playSpeed:400,
-			framerate:5,
-			imgArray: imgArray
-		});
-		$('.scrollspy').scrollSpy({scrollOffset: 40});
-		$('#navigation-menu').pushpin({ top: $('#navigation-menu').offset().top });
-		$('.carousel').carousel({padding:0});
-		$("#prev-sculpt").click(function(event) {
-			$('.carousel').carousel('prev');
-		});
-		$("#next-sculpt").click(function(event) {
-			$('.carousel').carousel('next');
-		});
-
-
-		$("#left-arrow-icon").click(function(event) {
-			window.location.href = HOST+'/ventas';
-		});
 	</script>
-	{{HTML::script('/vendor/plugins/timeline.js')}}
 </html>
 
 

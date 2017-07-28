@@ -63,7 +63,6 @@
 	<body>
 		<div id="banner" class="fullpage" style="background-image: url('media/img/ventas/ventashome.jpg');" >
 			<button class="menu-icon" id="trigger-menu"><img src="media/img/ventas/menu-circular-button.svg"></button>
-
 			<div class="inner">
 				<div class="row" >
 					<div class="col l6 m7 s9 right fontCrimson right-title-space">
@@ -77,7 +76,6 @@
 			</div>
 		</div>
 		<div class="overlay overlay-contentpush">
-
 			<button class="menu-icon" id="close-menu"><img src="media/img/ventas/menu-circular-button.svg"></button>
 			<nav id="nav-home">
 				<ul>

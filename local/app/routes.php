@@ -28,7 +28,9 @@
 	Route::get('user/auth/{confirmationCode}','UserVerificationController@verify');	
 
 	/*Catalogo de ventas*/
-	Route::controller('ventas', 'SalesListController');
+	Route::get('ventas', 'SalesListController@getIndex');
+	Route::get('ventas/biography', 'SalesListController@viewBiography');
+	Route::get('ventas/contact', 'SalesListController@viewContactUsForm');
 
 	/*Servicios*/
 	Route::post('servicios/sendmail', 'ServicesController@postAppointment');

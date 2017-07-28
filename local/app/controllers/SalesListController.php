@@ -38,4 +38,21 @@ class SalesListController extends BaseController {
 		return "NO ENCONTRADO";
 	}
 
+	/**
+	 * Function viewBiography
+	 */
+	public function viewBiography()
+	{
+		$dataGermanBiography = Component::getPageContent(5);
+		return View::make("sales.biography")->with("biography", $dataGermanBiography);
+	}
+
+	/**
+	 * Function viewContactUsForm
+	 */
+	public function viewContactUsForm()
+	{
+		return View::make("sales.contact-us");
+	}
+
 }

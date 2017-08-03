@@ -226,6 +226,43 @@
 		border-left: 1px solid #c79a73;
 		padding: 20px 30px !important;
 	}
+
+	/* Contact */
+
+	.ga-title-name-contact-us {
+		color: #fff;
+		font-size: 60px;
+		font-weight: bold;
+		font-style: italic;
+		line-height: 0;
+	}
+
+	.ba-radius50 {
+		-webkit-border-radius: 50px;
+		-moz-border-radius: 50px;
+		-o-border-radius: 50px;
+		border-radius: 50px;
+	}
+
+	.ga-melon {
+		background-color: #c9a07f;
+	}
+
+	.ga-melon:hover, .ga-melon:focus {
+		background-color: #c9a07f;
+	}
+
+	.ga-bold {
+		font-weight: bold;
+	}
+
+	.contact-form.input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea {
+		color: #fff;
+		font-style: italic;
+		background: transparent !important;
+		border-bottom: 2px solid #3a444f;
+	}
+
 	</style>
 	<!-- Google Analytics -->
 </head>
@@ -244,7 +281,7 @@
 						<div class="col s12 m12 l4">
 							<ul class="main-nav-menu main-nav-menu-effect">
 								<!-- <li><a class="main-nav-link letter-spacing active" href="{{ URL::to('/ventas') }}">Inicio</a></li> -->
-								<li><a class="main-nav-link letter-spacing active" href="{{ URL::to('/ventas/biography') }}">Biografia</a></li>
+								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/biography') }}">Biografia</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/cv-artist') }}">Cv de artista</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/works') }}">Obras</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/contact') }}">Contacto</a></li>
@@ -255,7 +292,7 @@
 				<div class="social" style="background: #12161a; position: absolute; left: 0px; bottom: 0px; right: 0px; text-align: center; width: 50%;">
 					<div class="main-nav-link">
 						<div class="box_logo">
-							<a href="{{ URL::to('/ventas') }}"><img class="img-logo-min logomarginright" alt="logo drygital" title="" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="180"></a>
+							<a href="{{ URL::to('/ventas/home') }}"><img class="img-logo-min logomarginright" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="180"></a>
 							<a href="https://www.facebook.com/GermanArzateSculptor/"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/facebook.svg') }}" width="25"></a>
 							<a href="https://twitter.com/germanarzate"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/twitter.svg') }}" width="25"></a>
 						</div>
@@ -273,9 +310,12 @@
 
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript">
 	var HOST = "{{URL::to('/')}}";
 </script>
+<script src="{{ URL::asset('js/script.js') }}"></script>
+<script src="{{ URL::asset('/vendor/plugins/jquery.validate.min.js ') }}"></script>
 {{HTML::script('/vendor/plugins/fullscreen/modernizr.js')}}
 {{HTML::script('/vendor/plugins/fullscreen/classie.js')}}
 {{HTML::script('/vendor/plugins/fullscreen/menu.js')}}

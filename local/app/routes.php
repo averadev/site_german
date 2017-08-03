@@ -28,9 +28,12 @@
 	Route::get('user/auth/{confirmationCode}','UserVerificationController@verify');	
 
 	/*Catalogo de ventas*/
-	Route::get('ventas', 'SalesListController@getIndex');
+	Route::get('ventas/home', 'SalesListController@getIndex');
 	Route::get('ventas/biography', 'SalesListController@viewBiography');
+	Route::get('ventas/cv-artist', 'SalesListController@viewCVArtist');
+	Route::get('ventas/works', 'SalesListController@viewWorks');
 	Route::get('ventas/contact', 'SalesListController@viewContactUsForm');
+	Route::post('ventas/contact/sendForm', 'SalesListController@saveContactFormPost');
 
 	/*Servicios*/
 	Route::post('servicios/sendmail', 'ServicesController@postAppointment');
@@ -40,15 +43,16 @@
     Route::controller('german', 'GermanController');
     Route::get('/contacto', 'ContactoController@getIndex');
     Route::post('/contacto/contactomail', 'ContactoController@SendContactUSGerman');
+	
 	/** Subasta **/
-		Route::get('/subasta', 'AuctionController@getSectionSubPQ');
-		//Route::get('/subasta/comentarios', 'AuctionController@getSectionComments');
-		//Route::get('/subasta/subastas', 'AuctionController@getSectionAuction');
-		//Route::get('/subasta/proximamente', 'AuctionController@getSectionComingSoon');
-		Route::post('/subasta/coming', 'AuctionController@SendmailContactUS');
-		Route::get('/subasta/allComments', 'AuctionController@getAllComments');
-		//Route::get('/subasta/registro', 'AuctionController@getRegistrate');
-		Route::get('/subasta/bids', 'AuctionController@getAuctionBids');
+	Route::get('/subasta', 'AuctionController@getSectionSubPQ');
+	//Route::get('/subasta/comentarios', 'AuctionController@getSectionComments');
+	//Route::get('/subasta/subastas', 'AuctionController@getSectionAuction');
+	//Route::get('/subasta/proximamente', 'AuctionController@getSectionComingSoon');
+	Route::post('/subasta/coming', 'AuctionController@SendmailContactUS');
+	Route::get('/subasta/allComments', 'AuctionController@getAllComments');
+	//Route::get('/subasta/registro', 'AuctionController@getRegistrate');
+	Route::get('/subasta/bids', 'AuctionController@getAuctionBids');
 	
 	/*User sign up and bids*/
 	Route::controller('/usuariopujas', 'AuctionUserAndBidsController');

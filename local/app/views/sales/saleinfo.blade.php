@@ -40,7 +40,7 @@
 		</script>	
 		<div  class="scrollspy" style="background-image: url('../../media/img/ventas/panorama_bg.jpg'); background-size: cover; position: relative; ">
 			<div class="top-bar" >
-				<a href="{{ url('/ventas') }}" class="back-arrow"><img src="../../media/img/ventas/left_arrow.svg"></a>
+				<a href="{{ url('/ventas/home') }}" class="back-arrow"><img src="../../media/img/ventas/left_arrow.svg"></a>
 			</div>
 			<img id="left-arrow-icon" class="hide" src="../../media/img/ventas/left_arrow.svg">			
 			

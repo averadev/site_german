@@ -29,6 +29,7 @@
 
 	/*Catalogo de ventas*/
 	Route::get('ventas/home', 'SalesListController@getIndex');
+	Route::get('ventas/obra/{slug}', 'SalesListController@getObra');
 	Route::get('ventas/biography', 'SalesListController@viewBiography');
 	Route::get('ventas/cv-artist', 'SalesListController@viewCVArtist');
 	Route::get('ventas/works', 'SalesListController@viewWorks');

@@ -8,8 +8,6 @@ $(document).ready(function(){
 			subject: $("#subject").val(),
 			comment: $("#message").val()
 		}
-
-		console.log(data);
 		
 		$.ajax({
 			url: HOST+"/ventas/contact/sendForm",
@@ -28,7 +26,6 @@ $(document).ready(function(){
 					$(".msgModal").modal('open');
 					cleanForm();
 				}
-				console.log(data.msg);
 			},
 			error: function (data) {
 				console.log("Error");

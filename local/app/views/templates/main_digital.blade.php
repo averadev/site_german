@@ -5,9 +5,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 	<meta name="description" content="German Arzate, Escultor Mexicano">
-	<meta name="keywords" content="Escultor Mexicano">
+	<meta name="keywords" content="German Arzate, Escultor Mexicano, Artista Plástico">
 	<meta name="author" content="German Arzate">
-	<link rel="icon" href="{{ URL::asset('media/img/favicon.ico') }}">
+	<link rel="icon" href="{{ URL::asset('media/img/favicon-16x16.png') }}">
 	<link rel="apple-touch-icon" sizes="152x152" href="{{ URL::asset('media/img/apple-touch-icon.png') }}">
 	<link rel="icon" type="image/png" href="{{ URL::asset('media/img/favicon-32x32.png') }}" sizes="32x32">
 	<link rel="icon" type="image/png" href="{{ URL::asset('media/img/favicon-16x16.png') }}" sizes="16x16">
@@ -23,6 +23,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 	<link rel="stylesheet" href="{{ URL::asset('/vendor/plugins/fullscreen/menu.css') }}">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
 	<style type="text/css">
 	.fullpage.overlay-open::after {
 		visibility: hidden;
@@ -93,7 +94,8 @@
 
 	.ga-text-biography {
 		color: #fff;
-		font-size: 24px;
+		font-size: 20px;
+		line-height: normal;
 		text-align: center;
 		margin-bottom: 0rem;
 		margin-top: 0rem;
@@ -228,13 +230,12 @@
 	}
 
 	/* Contact */
-
 	.ga-title-name-contact-us {
 		color: #fff;
 		font-size: 60px;
 		font-weight: bold;
 		font-style: italic;
-		line-height: 0;
+		line-height: normal;
 	}
 
 	.ba-radius50 {
@@ -263,6 +264,18 @@
 		border-bottom: 2px solid #3a444f;
 	}
 
+	.contact-form.input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+		border-bottom: #3a444f;
+		box-shadow: 0 1px 0 0 #3a444f;
+	}
+
+	.truncate-text {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		max-height: 3.6em;
+	}
+
 	</style>
 	<!-- Google Analytics -->
 </head>
@@ -285,16 +298,21 @@
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/cv-artist') }}">Cv de artista</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/works') }}">Obras</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/contact') }}">Contacto</a></li>
+								<br>
+								<div class="center-align">
+									<img class="" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="180">
+								</div>
 							</ul>
 						</div>
 					<div class="col s12 m12 l4"></div>
 				</div>
-				<div class="social" style="background: #12161a; position: absolute; left: 0px; bottom: 0px; right: 0px; text-align: center; width: 50%;">
-					<div class="main-nav-link">
-						<div class="box_logo">
-							<a href="{{ URL::to('/ventas/home') }}"><img class="img-logo-min logomarginright" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="180"></a>
-							<a href="https://www.facebook.com/GermanArzateSculptor/"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/facebook.svg') }}" width="25"></a>
-							<a href="https://twitter.com/germanarzate"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/twitter.svg') }}" width="25"></a>
+				<div class="row">
+					<div class="col s12 m12 l6 center-align" style="background: #12161a; position: absolute; bottom: 0; left: 0;">
+						<div class="main-nav-link">
+							<div class="box_logo">
+								<a href="https://www.facebook.com/GermanArzateSculptor/"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/facebook.svg') }}" width="45"></a>
+								<a href="https://twitter.com/germanarzate"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/twitter.svg') }}" width="45"></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -316,8 +334,20 @@
 </script>
 <script src="{{ URL::asset('js/script.js') }}"></script>
 <script src="{{ URL::asset('/vendor/plugins/jquery.validate.min.js ') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 {{HTML::script('/vendor/plugins/fullscreen/modernizr.js')}}
 {{HTML::script('/vendor/plugins/fullscreen/classie.js')}}
 {{HTML::script('/vendor/plugins/fullscreen/menu.js')}}
+<!-- <script type="text/javascript">
+	$(document).ready(function() {
+		$(".carousel").owlCarousel({
+			singleItem:true,
+			navigation: true,
+			dots: false,
+			dotData: false,
+			autoplay: true
+		});
+	});
+</script> -->
 </body>
 </html>

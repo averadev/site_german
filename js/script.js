@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	// var v_hidework = $(".hidework").css("display", "none");
 	var BtnFormContact = $("#BtnFormContact");
 
 	BtnFormContact.click(function(){
@@ -34,28 +33,6 @@ $(document).ready(function(){
 		});
 
 	});
-
-	/* Owl carousel */
-	$('.owl-carousel').owlCarousel({
-		loop:true,
-		margin:10,
-		nav:true,
-		dots: false,
-		items: 3,
-		responsive:{
-			0:{
-				items:1
-			},
-			600:{
-				items:2
-			},
-			1000:{
-				items:3
-			}
-		}
-	});
-	$(".owl-prev").html('<img src="../media/img/ventas/sculp_left.svg" width="50">');
-	$(".owl-next").html('<img src="../media/img/ventas/sculp_right.svg" width="50">');
 
 });
 

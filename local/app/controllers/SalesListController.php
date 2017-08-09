@@ -15,7 +15,6 @@ class SalesListController extends BaseController {
 
 	public function getObra($slug){
 		$obra = Obra_lang::findBySlug($slug);
-		// $work = new stdClass();
 		if($obra){
 			$price = Obra::getPrice($obra->subasta->id);
 			$panorama = Images::getPanoramaImagesByAuction($obra->subasta->id);
@@ -31,7 +30,7 @@ class SalesListController extends BaseController {
 						->with('panorama',$panorama)
 						->with('fbcomments',$fbcomments)	
 						->with('fblikes',$fblikes)
-						->with('sculptures',$otrasobras);
+						->with('sculptures',$otrasobras);	
 			}
 			return "VENDIDO";
 		}
@@ -61,8 +60,7 @@ class SalesListController extends BaseController {
 	 */
 	public function viewWorks()
 	{
-		$work = Obra::getWorksActive();
-		return View::make("sales.works")->with("works", $work);
+		return View::make("sales.works");
 	}
 
 	/**

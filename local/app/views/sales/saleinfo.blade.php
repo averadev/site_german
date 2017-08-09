@@ -24,6 +24,8 @@
 		<link rel="stylesheet" type="text/css" href="{{ URL::asset('/vendor/plugins/threesixty/threesixty.css') }}">		
 		<link rel="stylesheet" href="{{ URL::asset('css/style-timeline.css') }}">
 		<link rel="stylesheet" href="{{ URL::asset('css/app/ventas.css') }}">
+		
+		
 	</head>
 	<body>
 		<div id="fb-root"></div> 
@@ -42,9 +44,9 @@
 			</div>
 			<img id="left-arrow-icon" class="hide" src="../../media/img/ventas/left_arrow.svg">			
 			
-			<div class="row no-margin-bottom hidework">
-				<div class="col s12" style="position: relative;">
-					<div class="threesixty car">
+			<div class="row no-margin-bottom"  >
+				<div class="col s12" style="position: relative;" >
+					<div class="threesixty car ">
 						<img id="panorama-icon" class="hide" src="../../media/img/ventas/panorama_icon.svg">
 						<div class="spinner">
 							<span>0%</span>
@@ -52,14 +54,15 @@
 						<ol class="threesixty_images"></ol>
 					</div>
 					<div class="div-center">
-						<img src="../../media/img/subasta_esculturas/{{$panorama->first()->filename}}">
+						<img src="../../media/img/subasta_esculturas/{{$panorama->first()->filename}}" >
 					</div>
+
 				</div>
 			</div>
 		</div>
-		<div style="background-color: #1E1F23; position: relative;">
-			<nav id="navigation-menu" style="background-color: #1E1F23; z-index: 1000; position: absolute;">
-				<ul class="tabs-menu percent-tabs" style="background-color: #1E1F23;">
+		<div  style="background-color: #1E1F23; position: relative; ">
+			<nav id="navigation-menu" style="background-color: #1E1F23; z-index: 1000; position: absolute; ">
+				<ul class="tabs-menu percent-tabs" style="background-color: #1E1F23; ">
 					<li class="tab"><a href="#tab1">EL PROCESO</a></li>
 					<li class="tab"><a href="#tab2">QUE REPRESENTA</a></li>
 					<li class="tab"><a href="#tab3">VIDEO</a></li>
@@ -69,7 +72,7 @@
 			</nav>
 		</div>
 		<!-- Proceso -->
-		<article id="tab1" class="scrollspy" style="margin-top:50px;">
+		<article id="tab1" class="scrollspy" style="margin-top:50px;" >
 			<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
 				<section class="cd-horizontal-timeline" style="position: relative;">
 					<div class="events-content">
@@ -196,17 +199,17 @@
 		<!-- QUE REPRESENTA -->
 		<article id="tab2" class="scrollspy">
 			<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
-				<div class="container padding-section">
+				<div class="container padding-section " >
 					<div class="row no-margin-bottom">
 						<div class="col l6 m6 s12">
-							<img src="../../media/img/ventas/escultura_representa.png" style="width: 100%;">
+							<img src="../../media/img/ventas/escultura_representa.png" style="width: 100%;" >
 						</div>
 						<div class="col l6 m6 s12">
 							<p style="margin-top: 12%;" class="gb_top_x3 title-representa"><span class="size-x45">Inspiración </span> <span class="size-x25">en los sueños y en el<br>
 								cantar del zwampath del barril.</span><br>
 							</p>
 							<div class="row no-margin-bottom">
-								<div class=" col l10 s12 center-align">
+								<div class=" col l10 s12 center-align" >
 									<p class="text-obras">
 										Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasipon entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zic que pesó un kilo.
 									</p>
@@ -222,7 +225,7 @@
 		<!-- VIDEO -->
 		<article id="tab3" class="scrollspy">
 			<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
-				<div class="container padding-section">
+				<div class="container padding-section" >
 					<div class="row no-margin-bottom">
 						<div class="col l10 offset-l1 s12">
 							<div class="videoWrapper">
@@ -235,7 +238,7 @@
 		</article>
 
 		<!-- LO QUE OPINA LA COMUNIDAD -->
-		<article id="tab4" class="scrollspy">
+		<article  >
 			<div id="tab4" class="scrollspy padding-section" style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
 				<div class="container " style="width: 90%; " >
 					<div class="row no-margin-bottom">
@@ -314,8 +317,6 @@
 	<script src="{{ URL::asset('vendor/plugins/materialize.min.js') }}" ></script>
 	<script src="{{ URL::asset('js/saleinfo.js') }} "></script>
 	<script src="{{ URL::asset('vendor/plugins/timeline.js') }} "></script>
-	<script src="{{ URL::asset('js/script.js') }}"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 	<script type="text/javascript">
 		var $panoramaJson = <?php echo json_encode($panorama); ?>;
 	</script>

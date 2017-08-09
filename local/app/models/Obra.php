@@ -201,21 +201,4 @@ class Obra extends Eloquent
 		return false;
 	}	
 
-	/**
-	 * Works active - status 101
-	 */
-
-	public static function getWorksActive()
-	{
-		$data = DB::table("obra as works")
-		->select("works.id as worksId", "works.status as status", "works.price as price", "obra_lang.name as name", "obra_lang.slug as slug", "obra_lang.detail as detail", "images.filename as filename")
-		->join("obra_lang as obra_lang", "obra_lang.subasta_id", "=", "works.id")
-		->join("images as images", "images.subasta_id", "=", "obra_lang.subasta_id")
-		->where("works.status", 101)
-		->where("images.type", 1)
-		->orderBy("obra_lang.name")
-		->get();
-		return $data;
-	}
-
 }

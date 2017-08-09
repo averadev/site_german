@@ -113,14 +113,14 @@
 		top: 0;
 		overflow-y: auto;
 		z-index: 1599;
-		/*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+		background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
 		background: -moz-linear-gradient(left, rgba(105,75,155,0.9) 0%, rgba(105,75,155,0.9) 19%, rgba(242,1,56,0.9) 99%, rgba(242,1,56,0.9) 100%);
 		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(105,75,155,0.9)), color-stop(19%,rgba(105,75,155,0.9)), color-stop(99%,rgba(242,1,56,0.9)), color-stop(100%,rgba(242,1,56,0.9)));
 		background: -webkit-linear-gradient(left, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
 		background: -o-linear-gradient(left, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
 		background: -ms-linear-gradient(left, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
 		background: linear-gradient(to right, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6694b9b', endColorstr='#e6f20138',GradientType=1 );*/
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6694b9b', endColorstr='#e6f20138',GradientType=1 );
 	}
 
 	.main-nav-menu {
@@ -257,10 +257,6 @@
 		font-weight: bold;
 	}
 
-	.ga-capitalize {
-		text-transform: capitalize;
-	}
-
 	.contact-form.input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea {
 		color: #fff;
 		font-style: italic;
@@ -342,5 +338,16 @@
 {{HTML::script('/vendor/plugins/fullscreen/modernizr.js')}}
 {{HTML::script('/vendor/plugins/fullscreen/classie.js')}}
 {{HTML::script('/vendor/plugins/fullscreen/menu.js')}}
+<!-- <script type="text/javascript">
+	$(document).ready(function() {
+		$(".carousel").owlCarousel({
+			singleItem:true,
+			navigation: true,
+			dots: false,
+			dotData: false,
+			autoplay: true
+		});
+	});
+</script> -->
 </body>
 </html>

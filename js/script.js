@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	// var v_hidework = $(".hidework").css("display", "none");
 	var BtnFormContact = $("#BtnFormContact");
 
 	BtnFormContact.click(function(){
@@ -56,6 +55,50 @@ $(document).ready(function(){
 	});
 	$(".owl-prev").html('<img src="../media/img/ventas/sculp_left.svg" width="50">');
 	$(".owl-next").html('<img src="../media/img/ventas/sculp_right.svg" width="50">');
+
+	/* works detail */
+	$(".tab1").hide();
+	$(".tab2").hide();
+	$(".tab3").hide();
+	$(".tab4").hide();
+	$(".tab5").hide();
+
+	$(".one").click(function(){
+		$(".tab1").show();
+		$("html, body").animate({ scrollTop: $('.tab1').offset().top }, 1000);
+	});
+
+	$(".two").click(function(){
+		$(".tab2").show();
+		$("html, body").animate({ scrollTop: $('.tab2').offset().top }, 1000);
+	});
+
+	$(".three").click(function(){
+		$(".tab3").show();
+		$("html, body").animate({ scrollTop: $('.tab3').offset().top }, 1000);
+	});
+
+	$(".four").click(function(){
+		$(".tab4").show();
+		$("html, body").animate({ scrollTop: $('.tab4').offset().top }, 1000);
+	});
+
+	$(".five").click(function(){
+		$(".tab5").show();
+		$("html, body").animate({ scrollTop: $('.tab5').offset().top }, 1000);
+	});
+
+	$(window).scroll(function() {
+		if ($(window).scrollTop() <= 30)
+		{
+			$(".tab1").hide();
+			$(".tab2").hide();
+			$(".tab3").hide();
+			$(".tab4").hide();
+			$(".tab5").hide();
+			return;
+		}
+	});
 
 });
 

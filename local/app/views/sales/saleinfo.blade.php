@@ -5,8 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
 		<meta name="description" content="German Arzate, Escultor Mexicano">
-	    <meta name="keywords" content="Escultor Mexicano">
-	    <meta name="author" content="German Arzate">
+		<meta name="keywords" content="Escultor Mexicano">
+		<meta name="author" content="German Arzate">
 		<link rel="icon" href="{{ URL::asset('media/img/favicon.ico') }}">
 		<link rel="apple-touch-icon" sizes="152x152" href="{{ URL::asset('media/img/apple-touch-icon.png') }}">
 		<link rel="icon" type="image/png" href="{{ URL::asset('media/img/favicon-32x32.png') }}" sizes="32x32">
@@ -14,9 +14,9 @@
 		<meta name="_token" content="{{ csrf_token() }}"/>
 		<title>German Arzate</title>
 		<!-- CSS  -->
-	    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600i" rel="stylesheet">
-	    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="{{ URL::asset('css/text-parser.css') }}">	
 		<link rel="stylesheet" href="{{ URL::asset('css/materialize.min.css') }}">
@@ -36,8 +36,8 @@
 			}
 			(document, 'script', 'facebook-jssdk'));
 		</script>	
-		<div  class="scrollspy" style="background-image: url('../../media/img/ventas/panorama_bg.jpg'); background-size: cover; position: relative; ">
-			<div class="top-bar" >
+		<div class="scrollspy" style="background-image: url('../../media/img/ventas/panorama_bg.jpg'); background-size: cover; position: relative;">
+			<div class="top-bar">
 				<a href="{{ url('/ventas/home') }}" class="back-arrow"><img src="../../media/img/ventas/left_arrow.svg"></a>
 			</div>
 			<img id="left-arrow-icon" class="hide" src="../../media/img/ventas/left_arrow.svg">			
@@ -60,16 +60,16 @@
 		<div style="background-color: #1E1F23; position: relative;">
 			<nav id="navigation-menu" style="background-color: #1E1F23; z-index: 1000; position: absolute;">
 				<ul class="tabs-menu percent-tabs" style="background-color: #1E1F23;">
-					<li class="tab"><a href="#tab1">EL PROCESO</a></li>
-					<li class="tab"><a href="#tab2">QUE REPRESENTA</a></li>
-					<li class="tab"><a href="#tab3">VIDEO</a></li>
-					<li class="tab"><a href="#tab4">LO QUE OPINA LA COMUNIDAD</a></li>
-					<li class="tab"><a href="#tab5">MÁS OBRAS</a></li>
+					<li class="tab"><a class="one" href="#tab1">EL PROCESO</a></li>
+					<li class="tab"><a class="two" href="#tab2">QUE REPRESENTA</a></li>
+					<li class="tab"><a class="three" href="#tab3">VIDEO</a></li>
+					<li class="tab"><a class="four" href="#tab4">LO QUE OPINA LA COMUNIDAD</a></li>
+					<li class="tab"><a class="five" href="#tab5">MÁS OBRAS</a></li>
 				</ul>
 			</nav>
 		</div>
 		<!-- Proceso -->
-		<article id="tab1" class="scrollspy" style="margin-top:50px;">
+		<article id="tab1" class="scrollspy tab1" style="margin-top:50px;">
 			<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
 				<section class="cd-horizontal-timeline" style="position: relative;">
 					<div class="events-content">
@@ -80,10 +80,10 @@
 										<div class="col l12 s12">
 											<p class="title_proceso">{{$submodule_section_data->SeccionTituloConcepto}}</p>
 										</div>
-										<div class="col l4 s12 ">
-												<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso" >
+										<div class="col l4 s12">
+											<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
 										</div>
-										<div class="col l3 s12 text-padding" >
+										<div class="col l3 s12 text-padding">
 											<h5 class="light proceso_top">1. {{$submodule_section_data->SeccionSubTProcesoConcepto}}</h5>
 											<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoConcepto}}</p>
 										</div>
@@ -100,14 +100,14 @@
 											<p class="title_proceso">{{$submodule_section_data->SeccionTituloSuenos}}</p>
 										</div>											
 										<div class="col l4 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
+											<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
 										</div>
 										<div class="col l3 s12 text-padding">
 											<h5 class="light proceso_top">2. {{$submodule_section_data->SeccionSubTProcesoSuenos}}</h5>
 											<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoSuenos}}</p>
 										</div>
 										<div class="col l5 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGSuenos_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}">
+											<img alt="{{$submodule_section_data->SeccionIMGSuenos_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGSuenos}}">
 										</div>
 									</div>
 								</div>
@@ -119,14 +119,14 @@
 											<p class="title_proceso">{{$submodule_section_data->SeccionTituloMagia}}</p>
 										</div>											
 										<div class="col l4 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
+											<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
 										</div>
 										<div class="col l3 s12 text-padding">
 											<h5 class="light proceso_top">3. {{$submodule_section_data->SeccionSubTProcesoMagia}}</h5>
 											<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoMagia}}</p>
 										</div>
 										<div class="col l5 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGMagia_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}">
+											<img alt="{{$submodule_section_data->SeccionIMGMagia_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGMagia}}">
 										</div>
 									</div>
 								</div>
@@ -138,14 +138,14 @@
 											<p class="title_proceso">{{$submodule_section_data->SeccionTituloPasion}}</p>
 										</div>											
 										<div class="col l4 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}"  class="hide-on-med-and-down img_proceso">
+											<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
 										</div>
 										<div class="col l3 s12 text-padding">
 											<h5 class="light proceso_top">4. {{$submodule_section_data->SeccionSubTProcesoPasion}}</h5>
 											<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoPasion}}</p>
 										</div>
 										<div class="col l5 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGPasion_alt}}"  class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}">
+											<img alt="{{$submodule_section_data->SeccionIMGPasion_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGPasion}}">
 										</div>
 									</div>
 								</div>
@@ -157,14 +157,14 @@
 											<p class="title_proceso">{{$submodule_section_data->SeccionTituloLuz}}</p>
 										</div>
 										<div class="col l4 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}"  class="hide-on-med-and-down img_proceso">
+											<img alt="{{$submodule_section_data->SeccionIMGConcepto_alt}}" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGConcepto}}" class="hide-on-med-and-down img_proceso">
 										</div>
 										<div class="col l3 s12 text-padding">
 											<h5 class="light proceso_top">5. {{$submodule_section_data->SeccionSubTProcesoLuz}}</h5>
 											<p class="proceso-text justify-text2">{{$submodule_section_data->SeccionDescProcesoLuz}}</p>
 										</div>
 										<div class="col l5 s12">
-			    	  						<img alt="{{$submodule_section_data->SeccionIMGLuz_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}">
+											<img alt="{{$submodule_section_data->SeccionIMGLuz_alt}}" class="hide-on-med-and-down img2_proceso" src="../../media/img/subasta/{{$submodule_section_data->SeccionIMGLuz}}">
 										</div>
 									</div>
 								</div>
@@ -194,7 +194,7 @@
 		</article>
 		
 		<!-- QUE REPRESENTA -->
-		<article id="tab2" class="scrollspy">
+		<article id="tab2" class="scrollspy tab2">
 			<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
 				<div class="container padding-section">
 					<div class="row no-margin-bottom">
@@ -206,7 +206,7 @@
 								cantar del zwampath del barril.</span><br>
 							</p>
 							<div class="row no-margin-bottom">
-								<div class=" col l10 s12 center-align">
+								<div class="col l10 s12 center-align">
 									<p class="text-obras">
 										Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasipon entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zic que pesó un kilo.
 									</p>
@@ -220,7 +220,7 @@
 		</article>
 
 		<!-- VIDEO -->
-		<article id="tab3" class="scrollspy">
+		<article id="tab3" class="scrollspy tab3">
 			<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
 				<div class="container padding-section">
 					<div class="row no-margin-bottom">
@@ -235,28 +235,28 @@
 		</article>
 
 		<!-- LO QUE OPINA LA COMUNIDAD -->
-		<article id="tab4" class="scrollspy">
-			<div id="tab4" class="scrollspy padding-section" style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
-				<div class="container " style="width: 90%; " >
+		<article id="tab4" class="scrollspy tab4">
+			<div class="padding-section" style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
+				<div class="container" style="width: 90%;">
 					<div class="row no-margin-bottom">
-						<div class="col l5 s12"  >
+						<div class="col l5 s12">
 							<div class="fb-like" 
 								data-href="https://developers.facebook.com/docs/plugins/" 
 								data-layout="button_count" 
 								data-action="like" 
 								data-show-faces="false">
 							</div>
-							<div  class="fb-div">
-								<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/" data-numposts="10" data-mobile="true" ></div>
+							<div class="fb-div">
+								<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/" data-numposts="10" data-mobile="true"></div>
 							</div>
 						</div>
-						<div class="col l7 s12 gold-font mob-divider " >
+						<div class="col l7 s12 gold-font mob-divider">
 							<p class="title-comunity">
 								<span class="size-x3">Lo que comenta la comunidad sobre </span>
 								<span class="size-x5"> Poseidón </span>	
 							</p>
-							<div class="col s6" >
-								<img src="../../media/img/ventas/facebook_like.svg"  class="social-icon">
+							<div class="col s6">
+								<img src="../../media/img/ventas/facebook_like.svg" class="social-icon">
 								<p class="social-number">
 									<span class="size-x4">
 										{{$fblikes}}
@@ -268,8 +268,8 @@
 									</span>
 								</p>
 							</div>
-							<div class="col s6" >
-								<img src="../../media/img/ventas/chat.svg"  class="social-icon" >
+							<div class="col s6">
+								<img src="../../media/img/ventas/chat.svg"  class="social-icon">
 								<p class="social-number">
 									<span class="size-x4">
 										{{$fbcomments}}
@@ -288,14 +288,13 @@
 		</article>
 
 		<!-- MAS OBRAS -->
-
-		<article id="tab5" class="scrollspy" >
-			<div  class="padding-section" style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg'); position: relative; ">
-			<img id="prev-sculpt" src="../../media/img/ventas/sculp_left.svg" >
-			<img id="next-sculpt" src="../../media/img/ventas/sculp_right.svg" >	
-				<div class="container"  >
+		<article id="tab5" class="scrollspy tab5">
+			<div class="padding-section" style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg'); position: relative;">
+			<img id="prev-sculpt" src="../../media/img/ventas/sculp_left.svg">
+			<img id="next-sculpt" src="../../media/img/ventas/sculp_right.svg">	
+				<div class="container">
 					<div class="row no-margin-bottom">
-						<div class="col l12 s12 " >
+						<div class="col l12 s12">
 						<p class="title-esculturas"><span class="size-x35" >Conoce otras obras relacionadas</span></p>
 							<div class="carousel">
 								@foreach( $sculptures as $key => $sculpture )
@@ -310,10 +309,10 @@
 
 	</body>
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="{{ URL::asset('vendor/plugins/threesixty/threesixty.min.js') }}" ></script>
-	<script src="{{ URL::asset('vendor/plugins/materialize.min.js') }}" ></script>
-	<script src="{{ URL::asset('js/saleinfo.js') }} "></script>
-	<script src="{{ URL::asset('vendor/plugins/timeline.js') }} "></script>
+	<script src="{{ URL::asset('vendor/plugins/threesixty/threesixty.min.js') }}"></script>
+	<script src="{{ URL::asset('vendor/plugins/materialize.min.js') }}"></script>
+	<script src="{{ URL::asset('js/saleinfo.js') }}"></script>
+	<script src="{{ URL::asset('vendor/plugins/timeline.js') }}"></script>
 	<script src="{{ URL::asset('js/script.js') }}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 	<script type="text/javascript">

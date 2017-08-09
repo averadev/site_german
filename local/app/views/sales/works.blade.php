@@ -44,27 +44,17 @@
 		width: 90%;
 	}
 
-	.carousel {
-		height: auto !important;
+	.owl-carousel .owl-item img {
+		margin: auto;
 	}
 
-	.owl-item {
-		width: 100% !important;
-		height: auto;
-	}
-
-	.owl-item img {
-		width: 100%;
-		height: auto;
-	}
 	.owl-prev, .owl-next {
 		position: absolute;
 		top: 50%;
-		margin-top: -50px;
+		margin-top: -150px;
 		width: 50px;
 		height: 50px;
 		text-align: center;
-		background-color: #fff;
 		filter: Alpha(Opacity=50);/*IE7 fix*/
 		opacity: 0.5;
 	}
@@ -72,33 +62,13 @@
 		filter: Alpha(Opacity=100);/*IE7 fix*/
 		opacity: 1;
 	}
+
 	.owl-next {
 		right: 0px;
 	}
-	.owl-controls {
-		text-align: center;
-	}
-	.owl-controls .owl-page {
-		display: inline-block;
-	}
-	.owl-controls .owl-page span {
-		background-color: #333;
-		-webkit-border-radius: 30px;
-		-moz-border-radius: 30px;
-		border-radius: 30px;
-		display: block;
-		height: 12px;
-		margin: 5px 7px;
-		width: 12px;
-		filter: Alpha(Opacity=500);/*IE7 fix*/
-		opacity: 0.5;
-	}
-	.owl-controls .owl-page.active span, .owl-controls .owl-page:hover span {
-		filter: Alpha(Opacity=100);/*IE7 fix*/
-		opacity: 1;
-	}
 </style>
-<div class="fullpage" style="position: relative; background: rgb(25,30,36) url('../media/img/ventas/proceso_ventas_bg.jpg') no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
+<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.min.css') }}">
+<div class="fullpage" style="position: relative; background: rgb(25,30,36) url('media/img/ventas/proceso_ventas_bg.jpg') no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
 	<button class="menu-icon" id="trigger-menu"><img src="../media/img/ventas/menu-circular-button.svg"></button>
 	<div class="row">
 		<div class="col s12 m12 l12">
@@ -109,25 +79,17 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="carousel">
-						<div class="col s12 m12 l4 center align work-description margin-ten no-margin-top">
-							<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/art1.jpg') }}" alt="">
-							<span class="name center-align fontCrimson">Obras</span>
-							<p class="center-col center-align truncate-text w90">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-							<a href="#" class="btn ba-radius50 ga-melon ga-bold">Conocer más</a>
+					<div class="owl-carousel owl-theme">
+						@foreach($works as $works)
+						<div class="item">
+							<div class="col s12 m12 center align work-description margin-ten no-margin-top">
+								<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $works->filename }}" width="300" height="300" alt="">
+								<span class="name center-align fontCrimson">{{ $works->name }}</span>
+								<p class="center-col center-align truncate-text w90">{{ $works->detail }}</p>
+								<a href="{{ URL::to('/ventas/obra/') }}/{{$works->slug}}" class="btn ba-radius50 ga-melon ga-bold ga-capitalize">Conocer más</a>
+							</div>
 						</div>
-						<div class="col s12 m12 l4 center align work-description margin-ten no-margin-top">
-							<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/art1.jpg') }}" alt="">
-							<span class="name center-align fontCrimson">Obras</span>
-							<p class="center-col center-align truncate-text w90">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-							<a href="#" class="btn ba-radius50 ga-melon ga-bold">Conocer más</a>
-						</div>
-						<div class="col s12 m12 l4 center align work-description margin-ten no-margin-top">
-							<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/art1.jpg') }}" alt="">
-							<span class="name center-align fontCrimson">Obras</span>
-							<p class="center-col center-align truncate-text w90">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-							<a href="#" class="btn ba-radius50 ga-melon ga-bold">Conocer más</a>
-						</div>
+						@endforeach
 					</div>
 				</div>
 			</div>

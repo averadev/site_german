@@ -67,7 +67,6 @@
 		right: 0px;
 	}
 </style>
-<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.min.css') }}">
 <div class="fullpage" style="position: relative; background: rgb(25,30,36) url('media/img/ventas/proceso_ventas_bg.jpg') no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
 	<button class="menu-icon" id="trigger-menu"><img src="../media/img/ventas/menu-circular-button.svg"></button>
 	<div class="row">

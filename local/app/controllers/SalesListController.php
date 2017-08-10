@@ -15,7 +15,6 @@ class SalesListController extends BaseController {
 
 	public function getObra($slug){
 		$obra = Obra_lang::findBySlug($slug);
-		// $work = new stdClass();
 		if($obra){
 			$price = Obra::getPrice($obra->subasta->id);
 			$panorama = Images::getPanoramaImagesByAuction($obra->subasta->id);

@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="{{ URL::asset('/vendor/plugins/fullscreen/menu.css') }}">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.min.css') }}">
 	<style type="text/css">
 	.fullpage.overlay-open::after {
 		visibility: hidden;
@@ -279,7 +280,6 @@
 		text-overflow: ellipsis;
 		max-height: 3.6em;
 	}
-
 	</style>
 	<!-- Google Analytics -->
 </head>

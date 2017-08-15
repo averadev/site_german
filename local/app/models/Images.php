@@ -36,7 +36,7 @@ class Images extends Eloquent
 	}
 
 	public static function getSculpturesOnSaleImages(){
-		return Obra::Select('images.filename','obra_lang.name','obra_lang.detail')
+		return Obra::Select('images.filename','obra_lang.name', 'obra_lang.slug', 'obra_lang.detail')
 					->join('obra_lang','obra.id', '=', 'obra_lang.subasta_id')
 					->join('images','obra.id', '=', 'images.subasta_id')
 					->where('obra.status',101)
@@ -80,6 +80,19 @@ class Images extends Eloquent
 			return true;
 		}
 		return false;
-	}	
+	}
+
+	public static function getSculpturesOnSaleImages_Detail($id){
+		$query = Obra::Select('images.filename', 'obra_lang.subasta_id', 'obra_lang.name', 'obra_lang.slug', 'obra_lang.detail')
+					->join('obra_lang','obra.id', '=', 'obra_lang.subasta_id')
+					->join('images','obra.id', '=', 'images.subasta_id')
+					->where('obra_lang.subasta_id', $id)
+					->where('obra.status',101)
+					->where('obra_lang.language_id',1)
+					->whereNull('images.number')
+					->groupBy('obra.id')
+					->get();
+		return $query;
+	}
 
 }

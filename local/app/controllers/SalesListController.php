@@ -19,6 +19,7 @@ class SalesListController extends BaseController {
 			$price = Obra::getPrice($obra->subasta->id);
 			$panorama = Images::getPanoramaImagesByAuction($obra->subasta->id);
 			$otrasobras = Images::getSculpturesOnSaleImages();
+			$works_detail = Images::getSculpturesOnSaleImages_Detail($obra->subasta->id);
 			$submodule_section_data = Component::getPageContent(2);
 			if($price){
 				$json=file_get_contents('https://graph.facebook.com/?fields=og_object{likes.limit(0).summary(true)},share&ids=https://developers.facebook.com/docs/plugins/');
@@ -30,7 +31,8 @@ class SalesListController extends BaseController {
 						->with('panorama',$panorama)
 						->with('fbcomments',$fbcomments)	
 						->with('fblikes',$fblikes)
-						->with('sculptures',$otrasobras);
+						->with('sculptures',$otrasobras)
+						->with('works_detail', $works_detail);
 			}
 			return "VENDIDO";
 		}

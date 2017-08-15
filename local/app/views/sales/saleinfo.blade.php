@@ -300,17 +300,19 @@
 					<img src="../../media/img/ventas/escultura_representa.png" style="width: 100%;">
 				</div>
 				<div class="col l6 m6 s12">
+					@foreach($works_detail as $works)
 					<p style="margin-top: 12%;" class="gb_top_x3 title-representa"><span class="size-x45">Inspiración </span> <span class="size-x25">en los sueños y en el<br>
 						cantar del zwampath del barril.</span><br>
 					</p>
 					<div class="row no-margin-bottom">
 						<div class="col l10 s12 center-align">
 							<p class="text-obras">
-								Poseidón nace de la fuerza de la relación que tengo con el mar desde pequeño, esta obra esta hecha con polizethano mundo donde la naturaleza, el misticismo, la magia, el erotismo, el dolor y la pasipon entrelazan para dar forma material. Rey godo de España, fue exhumado y trasladado en una caja de zic que pesó un kilo.
+								{{$works->detail}}
 							</p>
-							<a class="waves-effect waves-light btn btn-more">Conocer más</a>
+							<a class="waves-effect waves-light btn ba-radius50 ga-melon ga-bold btn-more">Conocer más</a>
 						</div>
 					</div>
+					@endforeach
 				</div>
 			</div>
 		</div>
@@ -324,7 +326,7 @@
 			<div class="row no-margin-bottom">
 				<div class="col l10 offset-l1 s12">
 					<div class="videoWrapper">
-						<iframe width="560" height="349" src="https://www.youtube.com/embed/AutFXcCcxXs"></iframe>
+						<iframe width="560" height="349" src="https://www.youtube.com/embed/AutFXcCcxXs" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
@@ -349,10 +351,12 @@
 					</div>
 				</div>
 				<div class="col l7 s12 gold-font mob-divider">
+					@foreach($works_detail as $works)
 					<p class="title-comunity">
-						<span class="size-x3">Lo que comenta la comunidad sobre </span>
-						<span class="size-x5"> Poseidón </span>	
+						<span class="size-x3">Lo que comenta la comunidad sobre </span><br>
+						<span class="size-x5">{{$works->name}}</span>	
 					</p>
+					@endforeach
 					<div class="col s6">
 						<img src="../../media/img/ventas/facebook_like.svg" class="social-icon">
 						<p class="social-number">

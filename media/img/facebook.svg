@@ -1,29 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1"
-	 id="Layer_1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px"
-	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-<g id="g2996" transform="translate(0.32800146,0.07000866)">
-	<g id="g2987" transform="matrix(0.98046874,0,0,0.98046874,4.9935963,4.9986352)">
-		<g id="path2989">
-			<path fill="#FFFFFF" d="M255.672,517.131c-69.769,0-135.363-27.169-184.697-76.504C21.641,391.292-5.529,325.699-5.529,255.93
-				c0-69.769,27.17-135.363,76.504-184.697S185.903-5.271,255.672-5.271c69.769,0,135.362,27.17,184.697,76.504
-				c49.335,49.335,76.504,114.928,76.504,184.697c0,69.769-27.169,135.363-76.504,184.697S325.441,517.131,255.672,517.131z
-				 M255.672,5.131c-66.991,0-129.972,26.088-177.342,73.457S4.873,188.939,4.873,255.93S30.961,385.902,78.33,433.272
-				s110.351,73.457,177.342,73.457c66.991,0,129.972-26.088,177.342-73.457c47.37-47.37,73.457-110.351,73.457-177.342
-				c0-66.991-26.088-129.972-73.457-177.342C385.644,31.219,322.663,5.131,255.672,5.131z"/>
-		</g>
-	</g>
-	<g id="g2983" transform="translate(889.672,27.929991)">
-		<g id="path2989-2">
-			<path fill="#FFFFFF" d="M-569.047,178.741h-44.241v-29.016c0-10.897,7.222-13.438,12.309-13.438c5.075,0,31.221,0,31.221,0
-				V88.383l-42.997-0.168c-47.731,0-58.593,35.729-58.593,58.594v31.933h-27.604v49.363h27.604c0,63.351,0,139.681,0,139.681h58.061
-				c0,0,0-77.083,0-139.681h39.178L-569.047,178.741z"/>
-		</g>
-	</g>
-</g>
-<g id="Layer_1_1_">
-</g>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="67px" height="67px" viewBox="0 0 67 67" enable-background="new 0 0 67 67" xml:space="preserve">
+<path fill="#9E7D61" d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095l0.007-2.816c0-1.466,0.141-2.253,2.244-2.253h2.812
+	V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z M3,4h60v60H3V4z"/>
 </svg>

@@ -25,7 +25,8 @@ class SalesListController extends BaseController {
 				$json=file_get_contents('https://graph.facebook.com/?fields=og_object{likes.limit(0).summary(true)},share&ids=https://developers.facebook.com/docs/plugins/');
 				$json=json_decode($json,true);
 				$fbcomments = $json['https://developers.facebook.com/docs/plugins/']['share']['comment_count'];
-				$fblikes = $json['https://developers.facebook.com/docs/plugins/']['share']['share_count'];	
+				$fblikes = $json['https://developers.facebook.com/docs/plugins/']['share']['share_count'];
+				$fblikes = number_format($fblikes);
 				return View::make('sales.saleinfo')
 						->with('submodule_section_data', $submodule_section_data)
 						->with('panorama',$panorama)
@@ -54,7 +55,8 @@ class SalesListController extends BaseController {
 	 */
 	public function viewCVArtist()
 	{
-		return View::make("sales.cv_artist");
+		$cvartist  = CvArtist::with('cvdetailItems')->orderBy('year_event', 'asc')->get();
+		return View::make("sales.cv_artist")->with("cvartist", $cvartist);
 	}
 
 	/**

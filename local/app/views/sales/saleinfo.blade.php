@@ -309,7 +309,6 @@
 							<p class="text-obras">
 								{{$works->detail}}
 							</p>
-							<a class="waves-effect waves-light btn ba-radius50 ga-melon ga-bold btn-more">Conocer más</a>
 						</div>
 					</div>
 					@endforeach
@@ -322,11 +321,17 @@
 <!-- VIDEO -->
 <article id="tab3" class="scrollspy tab3">
 	<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
-		<div class="container padding-section">
+		<div class="containers padding-section">
 			<div class="row no-margin-bottom">
 				<div class="col l10 offset-l1 s12">
 					<div class="videoWrapper">
-						<iframe width="560" height="349" src="https://www.youtube.com/embed/AutFXcCcxXs" frameborder="0" allowfullscreen></iframe>
+						@foreach($works_detail as $video)
+							@if($video->url_video == "")
+							<iframe width="560" height="349" src="https://www.youtube.com/embed/ocAc--CQdPw" frameborder="0" allowfullscreen></iframe>
+							@else
+							<iframe width="560" height="349" src="{{$video->url_video}}" frameborder="0" allowfullscreen></iframe>
+							@endif
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -371,7 +376,7 @@
 						</p>
 					</div>
 					<div class="col s6">
-						<img src="../../media/img/ventas/chat.svg"  class="social-icon">
+						<img src="../../media/img/ventas/chat.svg" class="social-icon">
 						<p class="social-number">
 							<span class="size-x4">
 								{{$fbcomments}}
@@ -403,9 +408,13 @@
 							@foreach($sculptures as $key => $sculpture)
 							<div class="item">
 								<div class="col s12 m12 center align work-description margin-ten no-margin-top">
-									<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $sculpture->filename }}" width="300" height="300" alt="">
-									<span class="name center-align fontCrimson">{{ $sculpture->name }}</span>
-									<p class="center-col center-align truncate-text w90">{{ $sculpture->detail }}</p>
+									@if($sculpture->filename == "")
+									<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/picture-default.jpg') }}" width="300" height="300">
+									@else
+									<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $sculpture->filename }}" width="300" height="300" alt="{{$sculpture->name}}">
+									@endif
+									<span class="name center-align fontCrimson">{{$sculpture->name}}</span>
+									<p class="center-col center-align truncate-text w90">{{$sculpture->detail}}</p>
 									<a href="{{ URL::to('/ventas/obra/') }}/{{$sculpture->slug}}" class="btn ba-radius50 ga-melon ga-bold ga-capitalize">Conocer más</a>
 								</div>
 							</div>

@@ -114,14 +114,6 @@
 		top: 0;
 		overflow-y: auto;
 		z-index: 1599;
-		/*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-		background: -moz-linear-gradient(left, rgba(105,75,155,0.9) 0%, rgba(105,75,155,0.9) 19%, rgba(242,1,56,0.9) 99%, rgba(242,1,56,0.9) 100%);
-		background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(105,75,155,0.9)), color-stop(19%,rgba(105,75,155,0.9)), color-stop(99%,rgba(242,1,56,0.9)), color-stop(100%,rgba(242,1,56,0.9)));
-		background: -webkit-linear-gradient(left, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
-		background: -o-linear-gradient(left, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
-		background: -ms-linear-gradient(left, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
-		background: linear-gradient(to right, rgba(105,75,155,0.9) 0%,rgba(105,75,155,0.9) 19%,rgba(242,1,56,0.9) 99%,rgba(242,1,56,0.9) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6694b9b', endColorstr='#e6f20138',GradientType=1 );*/
 	}
 
 	.main-nav-menu {
@@ -294,29 +286,36 @@
 		<div class="row">
 			<article class="col s12 m12 l6" style="background: rgb(25,30,36); min-height: 100vh; height: 100%;">
 				<div id="" class="row">
-					<div class="col s12 m12 l4"></div>
-						<div class="col s12 m12 l4">
+					<div class="col s12 m12 l3"></div>
+						<div class="col s12 m12 l6">
 							<ul class="main-nav-menu main-nav-menu-effect">
+								<div class="center-align">
+									<img class="" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="280">
+								</div>
+								<br>
 								<!-- <li><a class="main-nav-link letter-spacing active" href="{{ URL::to('/ventas') }}">Inicio</a></li> -->
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/biography') }}">Biografia</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/cv-artist') }}">Cv de artista</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/works') }}">Obras</a></li>
 								<li><a class="main-nav-link letter-spacing" href="{{ URL::to('/ventas/contact') }}">Contacto</a></li>
-								<br>
-								<div class="center-align">
-									<img class="" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="180">
-								</div>
 							</ul>
 						</div>
-					<div class="col s12 m12 l4"></div>
+					<div class="col s12 m12 l3"></div>
 				</div>
 				<div class="row">
 					<div class="col s12 m12 l6 center-align" style="background: #12161a; position: absolute; bottom: 0; left: 0;">
+						<div class="row">
+							<div class="col s12 m12 l3"></div>
+							<div class="col s12 m12 l6">
+								
 						<div class="main-nav-link">
 							<div class="box_logo">
-								<a href="https://www.facebook.com/GermanArzateSculptor/"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/facebook.svg') }}" width="45"></a>
-								<a href="https://twitter.com/germanarzate"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/twitter.svg') }}" width="45"></a>
+								<a href="https://www.facebook.com/GermanArzateSculptor/" target="_blank"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/facebook.svg') }}" width="45"></a>
+								<a href="https://twitter.com/germanarzate" target="_blank"><img class="img-logo-min logomarginright" src="{{ URL::asset('media/img/twitter.svg') }}" width="45"></a>
 							</div>
+						</div>
+							</div>
+							<div class="col s12 m12 l3"></div>
 						</div>
 					</div>
 				</div>

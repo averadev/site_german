@@ -65,27 +65,52 @@ $(document).ready(function(){
 
 	$(".one").click(function(){
 		$(".tab1").show();
+		$(".tab2").show();
+		$(".tab3").show();
+		$(".tab4").show();
+		$(".tab5").show();
 		$("html, body").animate({ scrollTop: $('.tab1').offset().top }, 1000);
+		return false;
 	});
 
 	$(".two").click(function(){
+		$(".tab1").show();
 		$(".tab2").show();
+		$(".tab3").show();
+		$(".tab4").show();
+		$(".tab5").show();
 		$("html, body").animate({ scrollTop: $('.tab2').offset().top }, 1000);
+		return false;
 	});
 
 	$(".three").click(function(){
+		$(".tab1").show();
+		$(".tab2").show();
 		$(".tab3").show();
+		$(".tab4").show();
+		$(".tab5").show();
 		$("html, body").animate({ scrollTop: $('.tab3').offset().top }, 1000);
+		return false;
 	});
 
 	$(".four").click(function(){
+		$(".tab1").show();
+		$(".tab2").show();
+		$(".tab3").show();
 		$(".tab4").show();
+		$(".tab5").show();
 		$("html, body").animate({ scrollTop: $('.tab4').offset().top }, 1000);
+		return false;
 	});
 
 	$(".five").click(function(){
+		$(".tab1").show();
+		$(".tab2").show();
+		$(".tab3").show();
+		$(".tab4").show();
 		$(".tab5").show();
 		$("html, body").animate({ scrollTop: $('.tab5').offset().top }, 1000);
+		return false;
 	});
 
 	$(window).scroll(function() {

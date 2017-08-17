@@ -83,7 +83,7 @@ class Images extends Eloquent
 	}
 
 	public static function getSculpturesOnSaleImages_Detail($id){
-		$query = Obra::Select('images.filename', 'obra_lang.subasta_id', 'obra_lang.name', 'obra_lang.slug', 'obra_lang.detail')
+		$query = Obra::Select('images.filename', 'obra_lang.subasta_id', 'obra_lang.name', 'obra_lang.slug', 'obra_lang.url_video', 'obra_lang.detail')
 					->join('obra_lang','obra.id', '=', 'obra_lang.subasta_id')
 					->join('images','obra.id', '=', 'images.subasta_id')
 					->where('obra_lang.subasta_id', $id)

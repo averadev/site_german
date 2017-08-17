@@ -14,11 +14,11 @@
 								<p class="ga-title-name center-align">{{ $biography->ger_sec2_txt1 }}</p>
 								<p class="ga-subtitle-name center-align">{{ $biography->ger_sec2_txt2 }}</p>
 								<br>
-								<p class="ga-text-biography">Escultor autodidacta, explorador de la forma desde temprana edad. Sus <br> obras son fruto de la fusión de 2 figuras, elementos o conceptos donde <br> una concepción dual es la constante.</p>
+								<p class="ga-text-biography">Escultor autodidacta, explorador de la forma desde temprana edad. <br> Sus obras son fruto de la fusión de 2 figuras, elementos o conceptos <br> donde una concepción dual es la constante.</p>
 								<br>
-								<p class="ga-text-biography">Escultor autodidacta, explorador de la forma desde temprana edad. Sus <br> obras son fruto de la fusión de 2 figuras, elementos o conceptos donde <br> una concepción dual es la constante.</p>
+								<p class="ga-text-biography">Escultor autodidacta, explorador de la forma desde temprana edad. <br> Sus obras son fruto de la fusión de 2 figuras, elementos o conceptos <br> donde una concepción dual es la constante.</p>
 								<br>
-								<p class="ga-text-biography">Escultor autodidacta, explorador de la forma desde temprana edad. Sus <br> obras son fruto de la fusión de 2 figuras, elementos o conceptos donde <br> una concepción dual es la constante.</p>
+								<p class="ga-text-biography">Escultor autodidacta, explorador de la forma desde temprana edad. <br> Sus obras son fruto de la fusión de 2 figuras, elementos o conceptos <br> donde una concepción dual es la constante.</p>
 								<br>
 								<br>
 								<p class="center-align">

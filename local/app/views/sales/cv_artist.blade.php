@@ -87,6 +87,57 @@
 		line-height: normal;
 		text-align: left;
 	}
+
+	#container {
+      width: 100%;
+      height: 100vh;
+      max-height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 2rem;
+      color: #fff;
+      text-align: left;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    ::-webkit-scrollbar {
+	    width: 8px;
+	    background: #bfbec2;
+	    z-index: 10;
+	}
+
+    ::-moz-scrollbar {
+	    width: 8px;
+	    background: #bfbec2;
+	    z-index: 10;
+	}
+
+	::-webkit-scrollbar:horizontal {
+	    height: 4px;
+	}
+
+	::-webkit-scrollbar-track {
+	    border-radius: 2px;
+	}
+
+	::-webkit-scrollbar-thumb {
+	    border-radius: 2px;
+	    background: #c79a73;
+	}
+
+	::-moz-scrollbar-thumb {
+	    border-radius: 2px;
+	    background: #c79a73;
+	}
+	
+	@media (max-width: 480px) {
+	    ::-webkit-scrollbar {
+	    	width: 2px;
+		}
+	    ::-moz-scrollbar {
+	    	width: 2px;
+		}
+	}
 </style>
 <div class="fullpages" style="position: relative; background: rgb(25,30,36) no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
 	<button class="menu-icon" id="trigger-menu"><img src="../media/img/ventas/menu-circular-button.svg"></button>
@@ -115,18 +166,20 @@
 			<div class="container">
 				<div class="row">
 					<div class="col s12 m12 l12 center-align">
+					<div id="container">
 						@foreach ($cvartist as $key => $value)
 							@if (count($value->cvdetailItems) > 0)
 							<h4 class="ga-cvartist-item-year bold left-align">{{$value->year_event}}</h4>
 							<ul class="sub-menu ga-cvartist-submenu-s">
 								@foreach ($value->cvdetailItems as $key => $subItems)
 									<li class="ga-cvartist-submenu">
-										<a href="{{ url('/admin/section/'.$subItems->name.'') }}" class="">{{$subItems->description}}</a>
+										<a href="#" id="{{$subItems->id_cv_artist_detail}}" class="btnItemCV">{{$subItems->description}}</a>
 									</li>
 								@endforeach
 							</ul>
 							@endif
 						@endforeach
+					</div>
 					</div>
 				</div>
 			</div>
@@ -140,13 +193,50 @@
 				</div>
 				<div class="row fontCrimson">
 					<div class="col s12 m12 l12 center-align">
-						<img src="{{ URL::asset('media/img/subasta_esculturas/cv-work-1.jpg') }}" alt="" class="responsive-img ga-circle-img">
-						<h3 class="ga-cv-title-name center-align">Galeria de obras</h3>
-						<p class="ga-cv-description truncate-text w90">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+						<div class="loading"></div>
+						<img id="txtCVImg" src="{{ URL::asset('media/img/subasta_esculturas/cv-work-1.jpg') }}" class="responsive-img ga-circle-img">
+						<h3 id="txtCVTitle" class="ga-cv-title-name center-align">Galeria de obras</h3>
+						<p id="txtCVDescription" class="ga-cv-description truncate-text w90">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sint odit nulla qui maiores recusandae reprehenderit vero, et nesciunt voluptatum necessitatibus harum ullam nobis incidunt corrupti, velit unde eius molestiae!</p>
 					</div>
 				</div>
 			</div>
 		</section>
 	</div>
 </div>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		var v_path = HOST+"/media/img/cv_artist/";
+
+		$('.btnItemCV').on("click", function(e) {
+			e.preventDefault();
+		    var v_id = $(this).attr("id");
+		    var v_getLastId, v_html = "";
+		    if (v_id != "" || v_id != "undefined") {
+		        $.ajax({
+		            type : "POST",
+		            url : HOST+"/ventas/cv-artist/getCVWorksById",
+		            data : "id=" + v_id,
+		            success : function(data){
+						if(data.success == true)
+						{
+							$.each(data.cvWorksItems, function(data, value){
+								$('#txtCVImg').attr('src',v_path+value.filename);
+								$('#txtCVTitle').html(value.name);
+								$('#txtCVDescription').html(value.description);
+							});
+						} else if(data.success == false){
+							console.log(data.msg);
+						}
+		            },
+		            error: function(){
+		            	console.log('Ajax request failed');
+		            }
+		        });
+		    }
+		    return false;
+		});
+
+	});
+</script>
 @stop

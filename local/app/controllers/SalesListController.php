@@ -60,6 +60,24 @@ class SalesListController extends BaseController {
 	}
 
 	/**
+	 * Function GET CVWorks by id
+	 */
+	public function getCVWorksById()
+	{
+		try {
+			if(Request::ajax()){
+				$id = Input::get("id");
+				$cvWorksItems = CvArtist::getCVWorksItems($id);
+				return Response::json(array('success' => true, 'cvWorksItems' => $cvWorksItems));
+			} else{
+				return Response::json(array('success' => false, 'msg' => 'No se ha podido enviar su mensaje'));
+			}
+		} catch (Exception $e) {
+			return "Ha ocurrido un error inesperado - ".$e->getMessage();
+		}
+	}
+
+	/**
 	 * Function viewWorks
 	 */
 	public function viewWorks()

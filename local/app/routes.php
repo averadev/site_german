@@ -32,6 +32,7 @@
 	Route::get('ventas/obra/{slug}', 'SalesListController@getObra');
 	Route::get('ventas/biography', 'SalesListController@viewBiography');
 	Route::get('ventas/cv-artist', 'SalesListController@viewCVArtist');
+	Route::post('ventas/cv-artist/getCVWorksById/', 'SalesListController@getCVWorksById');
 	Route::get('ventas/works', 'SalesListController@viewWorks');
 	Route::get('ventas/contact', 'SalesListController@viewContactUsForm');
 	Route::post('ventas/contact/sendForm', 'SalesListController@saveContactFormPost');

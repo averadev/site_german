@@ -82,7 +82,11 @@
 						@foreach($works as $works)
 						<div class="item">
 							<div class="col s12 m12 center align work-description margin-ten no-margin-top">
-								<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $works->filename }}" width="300" height="300" alt="">
+								@if($works->filename == "")
+								<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/picture-default.jpg') }}" width="300" height="300">
+								@else
+								<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $works->filename }}" width="300" height="300" alt="{{ $works->name }}">
+								@endif
 								<span class="name center-align fontCrimson">{{ $works->name }}</span>
 								<p class="center-col center-align truncate-text w90">{{ $works->detail }}</p>
 								<a href="{{ URL::to('/ventas/obra/') }}/{{$works->slug}}" class="btn ba-radius50 ga-melon ga-bold ga-capitalize">Conocer más</a>

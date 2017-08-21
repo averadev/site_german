@@ -28,31 +28,35 @@
 		height: 500px;
 		max-width: 100%;
 		max-height: 100%;
-		border: 10px solid #313536;
+		border: 10px solid #333439;
 	}
 
 	.ga-cvartist-bg-left {
-		background: linear-gradient(rgba(194,151,118,0.45), rgba(194,151,118,0.45)), url('../media/img/ventas/ventashome.jpg') no-repeat; 
-		background-position: 5% 50%;
+		background: linear-gradient(rgba(194,151,118,0.45), rgba(194,151,118,0.45)), url('../media/img/ventas/bg_cv_artist.jpg') no-repeat; 
+		background-position: 50% 50%;
 		background-size: cover;
 		height: 100vh;
 		min-height: 100%;
 	}
 
 	.ga-cvartist-bg-center {
-		background: linear-gradient(rgba(45,46,51,0.15), rgba(80,81,84,0.45));
+		background: linear-gradient(rgb(42,41,46), rgb(80,81,84));
 		height: 100vh;
 		min-height: 100%; 
 	}
 
 	.ga-cvartist-bg-right {
-		background: linear-gradient(rgba(45,46,51,0.15), rgba(80,81,84,0.45)); 
+		background: linear-gradient(rgb(45,46,51), rgb(80,81,84)); 
 		height: 100vh;
 		min-height: 100%; 
 	}
 
 	.section-block {
 	    padding-top: 11rem;
+	    padding-bottom: 11rem;
+	}
+
+	.section-block-right {
 	    padding-bottom: 11rem;
 	}
 
@@ -138,8 +142,13 @@
 	    	width: 2px;
 		}
 	}
+	@media only screen and (min-width:320px) and (max-width: 1200px){
+		.cvmovil {
+			overflow: initial !important;
+		}
+	}
 </style>
-<div class="fullpages" style="position: relative; background: rgb(25,30,36) no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
+<div class="fullpages cvmovil" style="position: relative; background: rgb(25,30,36) no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
 	<button class="menu-icon" id="trigger-menu"><img src="../media/img/ventas/menu-circular-button.svg"></button>
 	<div class="row">
 		<section class="col s12 m12 l4 ga-cvartist-bg-left">
@@ -151,8 +160,11 @@
 								<div class="hero-content-inner">
 									<div class="section-box">
 										<div class="center-align fontCrimson">
-											<img class="responsive-img" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v2.svg') }}" width="380">
-											<p class="ga-cv-title">Mi currículum de artista</p>
+											<img class="responsive-img" alt="Logo German Arzate" src="{{ URL::asset('media/img/german-logo-v1.svg') }}" width="380">
+											<div class="col s4 m4 l4"></div>
+											<div class="col s4 m4 l4" style="border-bottom: 2px solid #000;"></div>
+											<div class="col s4 m4 l4"></div>
+											<p class="ga-cv-title">Mi currículum <br>de artista</p>
 										</div> 
 									</div>
 								</div> 
@@ -163,7 +175,7 @@
 			</div>
 		</section>
 		<section class="col s12 m12 l2 ga-cvartist-bg-center">
-			<div class="container">
+			<div class="containers">
 				<div class="row">
 					<div class="col s12 m12 l12 center-align">
 					<div id="container">
@@ -173,7 +185,7 @@
 							<ul class="sub-menu ga-cvartist-submenu-s">
 								@foreach ($value->cvdetailItems as $key => $subItems)
 									<li class="ga-cvartist-submenu">
-										<a href="#" id="{{$subItems->id_cv_artist_detail}}" class="btnItemCV">{{$subItems->description}}</a>
+										<a href="#" id="{{$subItems->id_cv_artist_detail}}" class="btnItemCV">{{$subItems->description_short}}</a>
 									</li>
 								@endforeach
 							</ul>
@@ -193,10 +205,20 @@
 				</div>
 				<div class="row fontCrimson">
 					<div class="col s12 m12 l12 center-align">
-						<div class="loading"></div>
-						<img id="txtCVImg" src="{{ URL::asset('media/img/subasta_esculturas/cv-work-1.jpg') }}" class="responsive-img ga-circle-img">
-						<h3 id="txtCVTitle" class="ga-cv-title-name center-align">Galeria de obras</h3>
-						<p id="txtCVDescription" class="ga-cv-description truncate-text w90">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum sint odit nulla qui maiores recusandae reprehenderit vero, et nesciunt voluptatum necessitatibus harum ullam nobis incidunt corrupti, velit unde eius molestiae!</p>
+						<div class="section-block-right">
+							<div class="hero-content">
+								<div class="hero-content-inner">
+									<div class="section-box">
+										<div class="center-align fontCrimson">
+											<img id="txtCVImg" src="{{ URL::asset('media/img/cv_artist/cv-artist-default.jpg') }}" class="responsive-img ga-circle-img">
+											<img id="CvNoImg" src="" class="responsive-img ga-circle-img">
+											<h3 id="txtCVTitle" class="ga-cv-title-name center-align">Galeria de obras</h3>
+											<p id="txtCVDescription" class="ga-cv-description w90">Ha realizado exposiciones individuales en la Secretaría de Hacienda, en el Museo del Carmen, en el Museo Culiacán, y en galerías particulares en la Ciudad de México y del interior de la República. La exposición más reciente fue en Agora Gallery en Nueva York durante el año 2016.</p>
+										</div> 
+									</div>
+								</div> 
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -207,6 +229,7 @@
 <script>
 	$(document).ready(function(){
 		var v_path = HOST+"/media/img/cv_artist/";
+		$('#CvNoImg').hide();
 
 		$('.btnItemCV').on("click", function(e) {
 			e.preventDefault();
@@ -221,7 +244,17 @@
 						if(data.success == true)
 						{
 							$.each(data.cvWorksItems, function(data, value){
-								$('#txtCVImg').attr('src',v_path+value.filename);
+								if(!value.filename){
+									$('#CvNoImg').attr('src',v_path+'cv-artist-default.jpg');
+									$('#txtCVImg').attr('src', '');
+									$('#txtCVImg').hide();
+									$('#CvNoImg').show();
+								}else {
+									$('#txtCVImg').attr('src',v_path+value.filename);
+									$('#txtCVImg').show();
+									$('#CvNoImg').attr('src', '');
+									$('#CvNoImg').hide();
+								}
 								$('#txtCVTitle').html(value.name);
 								$('#txtCVDescription').html(value.description);
 							});

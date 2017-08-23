@@ -2,6 +2,18 @@
 @section("content")
 <style>
 	/* Works */
+	.bg-works {
+		position: relative;
+		background: rgb(45,46,51) url('../media/img/ventas/proceso_ventas_bg.jpg') no-repeat;
+		height: 100vh;
+		max-height: 100%;
+		overflow: hidden;
+		background-position: center;
+		background-size: cover;
+		-webkit-align-items: center;
+		align-items: center;
+	}
+
 	.title-work {
 		color: #fff;
 		font-size: 60px;
@@ -66,33 +78,40 @@
 	.owl-next {
 		right: 0px;
 	}
+
+	@media only screen and (min-width:20em) and (max-width: 75em){
+		.bg-works{height: 100% !important;}
+		.work-movil{margin-top: -3rem}
+	}
 </style>
-<div class="fullpage" style="position: relative; background: rgb(25,30,36) url('media/img/ventas/proceso_ventas_bg.jpg') no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
+<div class="fullpage bg-works">
 	<button class="menu-icon" id="trigger-menu"><img src="../media/img/ventas/menu-circular-button.svg"></button>
-	<div class="row">
-		<div class="col s12 m12 l12">
-			<div class="container">
-				<div class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col s12 m12 l12">
+				<div class="row work-movil">
 					<div class="col s12 m12 l12 no-margin-top">
 						<p class="title-work center-align fontCrimson">Conoce mis obras</p>
 					</div>
 				</div>
-				<div class="row">
-					<div class="owl-carousel owl-theme">
-						@foreach($works as $works)
-						<div class="item">
-							<div class="col s12 m12 center align work-description margin-ten no-margin-top">
-								@if($works->filename == "")
-								<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/picture-default.jpg') }}" width="300" height="300">
-								@else
-								<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $works->filename }}" width="300" height="300" alt="{{ $works->name }}">
-								@endif
-								<span class="name center-align fontCrimson">{{ $works->name }}</span>
-								<p class="center-col center-align truncate-text w90">{{ $works->detail }}</p>
-								<a href="{{ URL::to('/ventas/obra/') }}/{{$works->slug}}" class="btn ba-radius50 ga-melon ga-bold ga-capitalize">Conocer más</a>
+				<div class="row work-movil">
+					<div class="col s12 m12 l12">
+						<div class="owl-carousel owl-theme">
+							@foreach($works as $works)
+							<div class="item">
+								<div class="col s12 m12 center align work-description margin-ten no-margin-top">
+									@if($works->filename == "")
+									<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/picture-default.jpg') }}" width="300" height="300">
+									@else
+									<img class="circle" src="{{ URL::asset('media/img/subasta_esculturas/') }}/{{ $works->filename }}" width="300" height="300" alt="{{ $works->name }}">
+									@endif
+									<span class="name center-align fontCrimson">{{ $works->name }}</span>
+									<p class="center-col center-align truncate-text w90">{{ $works->detail }}</p>
+									<a href="{{ URL::to('/ventas/obra/') }}/{{$works->slug}}" class="btn ba-radius50 ga-melon ga-bold ga-capitalize">Conocer más</a>
+								</div>
 							</div>
+							@endforeach
 						</div>
-						@endforeach
 					</div>
 				</div>
 			</div>

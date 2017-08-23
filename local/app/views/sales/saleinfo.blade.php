@@ -148,7 +148,7 @@
 				</div>
 				<ol class="threesixty_images"></ol>
 			</div>
-			<div class="div-center z99">
+			<div class="div-center z99s">
 				<img src="../../media/img/subasta_esculturas/{{$panorama->first()->filename}}">
 				<div class="Legend360"></div>
 			</div>
@@ -321,7 +321,7 @@
 <!-- VIDEO -->
 <article id="tab3" class="scrollspy tab3">
 	<div style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg');">
-		<div class="containers padding-section">
+		<div class="container padding-section">
 			<div class="row no-margin-bottom">
 				<div class="col l10 offset-l1 s12">
 					<div class="videoWrapper">
@@ -397,8 +397,6 @@
 <!-- MAS OBRAS -->
 <article id="tab5" class="scrollspy tab5">
 	<div class="padding-section" style="color: white; background-size: cover; background-image: url('../../media/img/ventas/proceso_ventas_bg.jpg'); position: relative;">
-		<img id="prev-sculpt" src="../../media/img/ventas/sculp_left.svg">
-		<img id="next-sculpt" src="../../media/img/ventas/sculp_right.svg">
 		<div class="container">
 			<div class="row no-margin-bottom">
 				<div class="col l12 s12">
@@ -432,7 +430,7 @@
 <script src="{{ URL::asset('vendor/plugins/materialize.min.js') }}"></script>
 <script src="{{ URL::asset('js/saleinfo.js') }}"></script>
 <script src="{{ URL::asset('vendor/plugins/timeline.js') }}"></script>
-<script src="{{ URL::asset('js/script.js') }}"></script>
+<script src="{{ URL::asset('js/owl_carousel.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
 <script type="text/javascript">
 	var $panoramaJson = <?php echo json_encode($panorama); ?>;

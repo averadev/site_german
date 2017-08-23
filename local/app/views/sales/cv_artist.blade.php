@@ -31,23 +31,42 @@
 		border: 10px solid #333439;
 	}
 
+	.no-margin-bottom {
+		margin-bottom: 0 !important;
+	}
+
+	.bg-cv-page {
+		position: relative;
+		background: rgb(45,46,51) no-repeat;
+		height: 100vh;
+		min-height: 100%;
+		overflow: hidden;
+		background-position: center;
+		background-size: cover;
+		-webkit-align-items: center;
+		align-items: center;
+	}
+
 	.ga-cvartist-bg-left {
 		background: linear-gradient(rgba(194,151,118,0.45), rgba(194,151,118,0.45)), url('../media/img/ventas/bg_cv_artist.jpg') no-repeat; 
 		background-position: 50% 50%;
 		background-size: cover;
 		height: 100vh;
+		overflow: hidden;
 		min-height: 100%;
 	}
 
 	.ga-cvartist-bg-center {
-		background: linear-gradient(rgb(42,41,46), rgb(80,81,84));
+		background: linear-gradient(rgb(45,46,51), rgb(80,81,84));
 		height: 100vh;
+		overflow: hidden;
 		min-height: 100%; 
 	}
 
 	.ga-cvartist-bg-right {
 		background: linear-gradient(rgb(45,46,51), rgb(80,81,84)); 
 		height: 100vh;
+		overflow: hidden;
 		min-height: 100%; 
 	}
 
@@ -57,6 +76,7 @@
 	}
 
 	.section-block-right {
+		margin-top: -3rem;
 	    padding-bottom: 11rem;
 	}
 
@@ -142,15 +162,18 @@
 	    	width: 2px;
 		}
 	}
-	@media only screen and (min-width:320px) and (max-width: 1200px){
-		.cvmovil {
-			overflow: initial !important;
-		}
+	@media only screen and (min-width:20em) and (max-width: 75em){
+		.cvmovil{overflow: initial !important;}
+		.bg-cv-page{height: 100% !important;}
+		.ga-cvartist-bg-left{height: 100% !important;}
+		.ga-cvartist-bg-center{height: 100% !important;}
+		.ga-cvartist-bg-right{height: 100% !important;}
+		.ga-circle-img{width: 400px !important;}
 	}
 </style>
-<div class="fullpages cvmovil" style="position: relative; background: rgb(25,30,36) no-repeat; height: 100vh; overflow: hidden; background-position: center; background-size: cover; -webkit-align-items: center; align-items: center;">
+<div class="fullpages bg-cv-page cvmovil">
 	<button class="menu-icon" id="trigger-menu"><img src="../media/img/ventas/menu-circular-button.svg"></button>
-	<div class="row">
+	<div class="row no-margin-bottom">
 		<section class="col s12 m12 l4 ga-cvartist-bg-left">
 			<div class="container">
 				<div class="row">
@@ -178,31 +201,26 @@
 			<div class="containers">
 				<div class="row">
 					<div class="col s12 m12 l12 center-align">
-					<div id="container">
-						@foreach ($cvartist as $key => $value)
-							@if (count($value->cvdetailItems) > 0)
-							<h4 class="ga-cvartist-item-year bold left-align">{{$value->year_event}}</h4>
-							<ul class="sub-menu ga-cvartist-submenu-s">
-								@foreach ($value->cvdetailItems as $key => $subItems)
-									<li class="ga-cvartist-submenu">
-										<a href="#" id="{{$subItems->id_cv_artist_detail}}" class="btnItemCV">{{$subItems->description_short}}</a>
-									</li>
-								@endforeach
-							</ul>
-							@endif
-						@endforeach
-					</div>
+						<div id="container">
+							@foreach ($cvartist as $key => $value)
+								@if (count($value->cvdetailItems) > 0)
+								<h4 class="ga-cvartist-item-year bold left-align">{{$value->year_event}}</h4>
+								<ul class="sub-menu ga-cvartist-submenu-s">
+									@foreach ($value->cvdetailItems as $key => $subItems)
+										<li class="ga-cvartist-submenu">
+											<a href="#" id="{{$subItems->id_cv_artist_detail}}" class="btnItemCV">{{$subItems->description_short}}</a>
+										</li>
+									@endforeach
+								</ul>
+								@endif
+							@endforeach
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section class="col s12 m12 l6 ga-cvartist-bg-right">
 			<div class="container">
-				<div class="row">
-					<div class="col s12 m12 l12 center-align">
-						<!-- <p class="ga-cv-title fontCrimson">CV del Artista</p> -->
-					</div>
-				</div>
 				<div class="row fontCrimson">
 					<div class="col s12 m12 l12 center-align">
 						<div class="section-block-right">
